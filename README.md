@@ -1,4 +1,4 @@
-# Stitz-Zeager Open Source Mathematics Text
+# Stitz-Zeager Textbook
 
 This is the source code for the open source algebra/trig/precalc text at
 http://www.stitz-zeager.com.
