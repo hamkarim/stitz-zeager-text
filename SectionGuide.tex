@@ -1,0 +1,274 @@
+\documentclass[11pt]{book}
+\oddsidemargin 0in
+\evensidemargin 0in
+\marginparwidth 0in
+\textheight 8in
+\textwidth 6.5in
+\topmargin 0in
+\usepackage{amssymb,amsmath,amsthm,fancyhdr,supertabular,longtable}
+\usepackage{import, multicol,boxedminipage}
+\usepackage{chapterfolder}
+\usepackage[metapost,truebbox]{mfpic}
+\usepackage[pdflatex]{graphicx}
+\usepackage{makeidx}
+\usepackage[colorlinks, hyperindex, plainpages=false, linkcolor=blue, urlcolor=blue, pdfpagelabels]{hyperref}
+\theoremstyle{definition}  % this prevents the text in definitions, theorems, and corollaries from being italicized
+\newtheorem{defn}{Definition}[chapter]
+\newtheorem{thm}{Theorem}[chapter]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{eqn}{Equation}[chapter]
+\newtheorem{ex}{Example}[section]
+\newtheorem{fig}{\sc Figure}[chapter]
+\setlength{\parindent}{0in}
+\newcommand{\bbm}{\begin{boxedminipage}{\textwidth}}
+\newcommand{\ebm}{\end{boxedminipage}}
+\usepackage{array}
+\setlength{\extrarowheight}{2pt}
+\usepackage{cancel}
+
+\begin{document}
+
+\centerline{\textbf{GUIDE TO .TEX FILES FOR STITZ-ZEAGER COLLEGE ALGEBRA}}
+
+\vspace{.125in}
+
+\textbf{Main Book File:}  AlgTrig.tex \\
+
+\begin{multicols}{2} \raggedcolumns
+
+\textbf{Chapter 1:} \\
+
+
+Chapter Folder:  RelationsandFunctions \\
+
+Chapter Compiler:  Compiler1.tex \\
+
+Chapter File:  RelationsandFunctions.tex \\
+
+
+1.1:  CartesianPlane.tex \\
+
+1.2:  Relations.tex \\
+
+1.3:  IntrotoFunctions.tex \\
+
+1.4:  FunctionNotation.tex \\
+
+1.5:  FunctionArithmetic.tex \\
+
+1.6:  GraphsofFunctions.tex \\
+
+1.7:  Transformations.tex \\
+
+
+
+
+
+\textbf{Chapter 2:} \\
+
+
+Chapter Folder:  LinearQuadratic \\
+
+Chapter Compiler:  Compiler2.tex \\
+
+Chapter File:  LinearQuadratic.tex \\
+
+2.1:  LinearFunctions.tex \\
+
+2.2:  AbsoluteValueFunctions.tex \\
+
+2.3:  QuadraticFunctions.tex \\
+
+2.4:  Inequalities.tex \\
+
+2.5:  Regression.tex \\
+
+\textbf{Chapter 3:} \\
+
+
+Chapter Folder:  Polynomials \\
+
+Chapter Compiler:  Compiler3.tex \\
+
+Chapter File:  Polynomials.tex \\
+
+3.1:  GraphsofPolynomials.tex \\
+
+3.2:  Polydivision.tex \\
+
+3.3:  RealZeros.tex \\
+
+3.4:  ComplexZeros.tex \\
+
+
+\textbf{Chapter 4:} \\
+
+
+Chapter Folder:  Rationals \\
+
+Chapter Compiler:  Compiler4.tex \\
+
+Chapter File:  Rationals.tex \\
+
+4.1:  IntroRational.tex \\
+
+4.2:  RationalGraphs.tex \\
+
+4.3:  RationalIneq.tex \\
+
+\newpage
+
+\textbf{Chapter 5:} \\
+
+
+Chapter Folder: Further \\
+
+Chapter Compiler:  Compiler5.tex \\
+
+Chapter File:  Further.tex \\
+
+5.1:  FunctionComposition.tex \\
+
+5.2:  InverseFunctions.tex \\
+
+5.3:  AlgebraicFunctions.tex \\
+
+\textbf{Chapter 6:} \\
+
+
+Chapter Folder:  ExpLogs \\
+
+Chapter Compiler:  Compiler6.tex \\
+
+Chapter File: ExpLogs.tex \\
+
+6.1:  IntroExpLogs.tex \\
+
+6.2:  LogProperties.tex \\
+
+6.3:  ExpEquations.tex \\
+
+6.4:  LogEquations.tex \\
+
+6.5:  ExpLogApplications.tex \\
+
+\textbf{Chapter 7:} \\
+
+
+Chapter Folder: Conics \\
+
+Chapter Compiler:  Compiler7.tex \\
+
+Chapter File:  Conics.tex \\
+
+7.1:  IntrotoConics.tex \\
+
+7.2:  Circles.tex \\
+
+7.3:  Parabolas.tex \\
+
+7.4:  Ellipses.tex \\
+
+7.5:  Hyperbolas.tex \\
+
+
+
+
+\textbf{Chapter 8:} \\
+
+
+Chapter Folder:  Matrices \\
+
+Chapter Compiler:  Compiler8.tex \\
+
+Chapter File:  Matrices.tex \\
+
+8.1:  LinSystems.tex \\
+
+8.2:  AugMatrices.tex \\
+
+8.3:  MatArithmetic.tex \\
+
+8.4:  MatMethods.tex \\
+
+8.5:  Determinants.tex \\
+
+8.6:  ParFrac.tex \\
+
+8.7:  NonLinear.tex \\
+
+
+\newpage
+
+\textbf{Chapter 9:} \\
+
+
+Chapter Folder:  SequencesandSeries \\
+
+Chapter Compiler:  Compiler9.tex \\
+
+Chapter File:  SequencesandSeries.tex \\
+
+9.1:  Sequences.tex \\
+
+9.2:  Summation.tex \\
+
+9.3:  Induction.tex \\
+
+9.4:  Binomial.tex \\
+
+\textbf{Chapter 10:} \\
+
+
+Chapter Folder:  IntroTrig \\
+
+Chapter Compiler:  Compiler10.tex \\
+
+Chapter File:  IntroTrig.tex \\
+
+10.1:  Angles.tex \\
+
+10.2:  TheUnitCircle.tex \\
+
+10.3:  CircularFunctions.tex \\
+
+10.4:  Identities.tex \\
+
+10.5:  TrigGraphs.tex \\
+
+10.6:  ArcTrig.tex \\
+
+10.7:  TrigEquIneq.tex \\
+
+
+\textbf{Chapter 11:} \\
+
+Chapter Folder:  AppExt \\
+
+Chapter Compiler:  Compiler11.tex \\
+
+Chapter File:  AppExt.tex \\
+
+11.1:  Sinusoid.tex \\
+
+11.2:  LawofSines.tex \\
+
+11.3:  LawofCosines.tex \\
+
+11.4:  IntroPolar.tex \\
+
+11.5:  PolarGraphs.tex \\
+
+11.6:  PolarConics.tex \\
+
+11.7:  PolarComplex.tex \\
+
+11.8:  Vectors.tex \\
+
+11.9:  DotProduct.tex \\
+
+11.10:  Parametric.tex \\
+
+\end{multicols}
+\end{document}
+

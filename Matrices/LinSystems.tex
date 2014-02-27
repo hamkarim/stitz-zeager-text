@@ -1,0 +1,1402 @@
+\mfpicnumber{1}
+
+\opengraphsfile{LinSystems}
+
+\setcounter{footnote}{0}
+
+\label{LinSystems}
+
+\setlength{\extrarowheight}{0pt}
+
+Up until now, when we concerned ourselves with solving different types of equations there was only one equation to solve at a time.  Given an equation $f(x) = g(x)$, we could check our solutions geometrically by finding where the graphs of $y=f(x)$ and $y=g(x)$ intersect. The $x$-coordinates of these intersection points correspond to the solutions to the equation $f(x) = g(x)$, and the $y$-coordinates were largely ignored.  If we modify the problem and ask for the intersection points of the graphs of $y=f(x)$ and $y=g(x)$, where both the solution to $x$ and $y$ are of interest, we have what is known as a \index{system of equations ! definition} \textbf{system of equations}, usually written as \[ \left\{ \begin{array}{rcl} y & = & f(x) \\ y & = & g(x) \\ \end{array} \right.\]  The `curly bracket' notation means we are  to find all \textbf{pairs} of points $(x,y)$ which satisfy \textbf{both} equations.  We begin our study of systems of equations by reviewing some basic notions from Intermediate Algebra.
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{defn}  \label{lineareqntwovariables}  A \index{equation ! linear of two variables} \index{linear equation ! two variables} \textbf{linear equation in two variables} is an equation of the form $a_{\mbox{\tiny$1$}} x + a_{\mbox{\tiny$2$}} y = c$ where $a_{\mbox{\tiny$1$}}$, $a_{\mbox{\tiny$2$}}$ and $c$ are real numbers and at least one of $a_{\mbox{\tiny$1$}}$ and $a_{\mbox{\tiny$2$}}$ is nonzero.
+
+\end{defn}
+
+\ebm}
+
+\smallskip
+
+For reasons which will become clear later in the section, we are using subscripts in Definition \ref{lineareqntwovariables} to indicate different, but fixed, real numbers and those subscripts have no mathematical meaning beyond that.  For example, $3x - \frac{y}{2} = 0.1$ is a linear equation in two variables with $a_{\mbox{\tiny$1$}} = 3$, $a_{\mbox{\tiny$2$}} = -\frac{1}{2}$ and $c = 0.1$.  We can also consider $x = 5$ to be a linear equation in two variables\footnote{Critics may argue that $x=5$ is clearly an equation in one variable.  It can also be considered an equation in $117$ variables with the coefficients of $116$ variables set to $0$.  As with many conventions in Mathematics, the context will clarify the situation.} by identifying $a_{\mbox{\tiny$1$}} = 1$, $a_{\mbox{\tiny$2$}} = 0$, and $c = 5$.  If $a_{\mbox{\tiny$1$}}$ and $a_{\mbox{\tiny$2$}}$ are both $0$, then depending on $c$, we get either an equation which is \textit{always} true, called an \index{equation ! identity} \index{identity ! statement which is always true} \textbf{identity}, or an equation which is \textit{never} true, called a \index{equation ! contradiction} \index{contradiction} \textbf{contradiction}. (If $c = 0$, then we get $0 = 0$, which is always true.  If $c \neq 0$, then we'd have  $0 \neq 0$, which is never true.)  Even though identities and contradictions have a large role to play in the upcoming sections, we do not consider them linear equations.  The key to identifying linear equations is to note that the variables involved are to the first power and that the coefficients of the variables are numbers.  Some examples of equations which are non-linear are $x^2 + y = 1$, $xy = 5$ and $e^{2x} + \ln(y) = 1$.  We leave it to the reader to explain why these do not satisfy Definition \ref{lineareqntwovariables}.  From what we know from Sections \ref{Relations} and \ref{LinearFunctions}, the graphs of linear equations are lines.  If we couple two or more linear equations together, in effect to find the points of intersection of two or more lines, we obtain a \textbf{system of linear equations in two variables}. \index{system of equations ! linear ! two variables} Our first example reviews some of the basic techniques first learned in Intermediate Algebra.
+
+\begin{ex} \label{reviewsubelim}  Solve the following systems of equations.  Check your answer algebraically and graphically.
+
+\begin{multicols}{3}
+
+\begin{enumerate}
+
+\item  $\left\{ \begin{array}{rcr} 2x - y & = & 1 \\ y & = & 3 \\ \end{array} \right.$
+
+\item  $\left\{ \begin{array}{rcr} 3x+4y & = & -2  \\ -3x-y & = & 5 \\ \end{array} \right.$
+
+\item  $\left\{ \begin{array}{rcr} \frac{x}{3} -\frac{4y}{5} & = & \frac{7}{5} \\ [3pt] 
+\frac{2x}{9} + \frac{y}{3} & = & \frac{1}{2} \\ \end{array} \right.$
+
+\item  $\left\{ \begin{array}{rcr} 2x - 4y & = & 6 \\ 3x -6y & = & 9\\ \end{array} \right.$
+
+\item  $\left\{ \begin{array}{rcr} 6x + 3y & = & 9 \\ 4x + 2y & = & 12 \\ \end{array} \right.$
+
+\item   $\left\{ \begin{array}{rcr} x - y & = & 0 \\ x + y & = & 2 \\ -2x + y & = & -2 \end{array} \right.$
+
+
+\end{enumerate}
+
+\end{multicols}
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item  Our first system is nearly solved for us.  The second equation tells us that $y=3$.  To find the corresponding value of $x$, we \textbf{substitute} this value for $y$ into the the first equation to obtain $2x -  3 = 1$, so that $x = 2$.  Our solution to the system is $(2,3)$.  To check this algebraically, we substitute $x=2$ and $y=3$ into each equation and see that they are satisfied.  We see $2(2) - 3 = 1$, and $3=3$, as required.  To check our answer graphically, we graph the lines $2x-y = 1$ and $y=3$ and verify that they intersect at $(2,3)$.
+
+\item  To solve the second system, we use the \textbf{addition} method to \textbf{eliminate} the variable $x$.  We take the two equations as given and `add equals to equals' to obtain
+
+\setlength{\extrarowheight}{2pt}
+\[ \begin{array}{lrcr} & 3x+4y & = & -2  \\ + & (-3x-y  & = & 5 ) \\ \hline & 3y & = & 3\end{array}\]
+\setlength{\extrarowheight}{0pt}
+
+This gives us $y = 1$.  We now substitute $y=1$ into either of the two equations, say $-3x-y = 5$, to get $-3x-1 = 5$ so that $x = -2$.  Our solution is $(-2,1)$.  Substituting $x=-2$ and $y=1$ into the first equation gives $3(-2) + 4(1) = -2$, which is true, and, likewise, when we check $(-2, 1)$ in the second equation, we get $-3(-2) - 1 = 5$, which is also true.  Geometrically, the lines $3x+4y = -2$ and $-3x-y=5$ intersect at $(-2,1)$.
+
+\begin{center}
+
+\begin{tabular}{m{.5in}m{2in}m{.5in}m{2in}}
+
+$~$
+
+&
+
+\begin{mfpic}[15]{-2}{5}{-2}{5}
+\arrow \reverse \arrow \polyline{(-0.5,-2), (3,5)}
+\point[3pt]{(2,3)}
+\axes
+\tlabel[cc](2.5,2.5){\tiny $(2,3)$}
+\xmarks{-1,1,2,3,4}
+\ymarks{-1,1,2,3,4}
+\tlabel(5,-0.5){\scriptsize $x$}
+\tlabel(0.5,5){\scriptsize $y$}
+\tcaption{\scriptsize \centerline{$2x-y=1$} \\ \centerline{\boldmath $y=3$}}
+\tlpointsep{4pt}
+\axislabels {x}{{\tiny $-1 \hspace{7pt}$} -1, {\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4}
+\axislabels {y}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $4$} 4}
+\penwd{1.1pt}
+\arrow \reverse \arrow \polyline{(-2,3), (5,3)}
+\end{mfpic}
+
+&
+
+$~$
+ 
+&
+
+\begin{mfpic}[15]{-5}{1}{-3}{3}
+\arrow \reverse \arrow \polyline{(-4.666,3), (1,-1.25)}
+\point[3pt]{(-2,1)}
+\axes
+\tlabel[cc](-3,0.5){\tiny $(-2,1)$}
+\xmarks{-4,-3,-2,-1}
+\ymarks{-2,-1,1,2}
+\tlabel(1,-0.5){\scriptsize $x$}
+\tlabel(0.5,3){\scriptsize $y$}
+\tcaption{\scriptsize \centerline{$3x+4y=-2$} \\ \centerline{\boldmath $-3x-y=5$}}
+\tlpointsep{4pt}
+\axislabels {x}{{\tiny $-4 \hspace{7pt}$} -4,{\tiny $-3 \hspace{7pt}$} -3,{\tiny $-2 \hspace{7pt}$} -2,{\tiny $-1 \hspace{7pt}$} -1}
+\axislabels {y}{{\tiny $-2$} -2,{\tiny $-1$} -1,{\tiny $1$} 1, {\tiny $2$} 2}
+\penwd{1.1pt}
+\arrow \reverse \arrow \polyline{(-2.666,3), (-0.666,-3)}
+\end{mfpic}
+
+\\
+
+\end{tabular}
+
+\end{center}
+
+\item  The equations in the third system are more approachable if we clear denominators.  We multiply both sides of the first equation by $15$ and both sides of the second equation by $18$ to obtain the kinder, gentler system \[\left\{ \begin{array}{rcr} 5x - 12y & = & 21  \\ 4x  + 6y & = & 9 \\ \end{array} \right.\]  Adding these two equations directly fails to eliminate either of the variables, but we note that if we multiply the first equation by $4$ and the second by $-5$, we will be in a position to eliminate the $x$ term 
+
+\setlength{\extrarowheight}{2pt}
+\[ \begin{array}{lrcr} & 20x-48y & = & 84  \\ + & (-20x-30y  & = & -45 ) \\ \hline  & -78y & = & 39\end{array}\] 
+\setlength{\extrarowheight}{0pt}
+
+From this we get $y = -\frac{1}{2}$.  We can temporarily avoid too much unpleasantness by choosing to substitute $y = -\frac{1}{2}$ into one of the equivalent equations we found by clearing denominators, say into $5x - 12y  =  21$.  We get $5x + 6 = 21$ which gives $x=3$.  Our answer is $\left(3, -\frac{1}{2}\right)$.  At this point, we have no choice $-$ in order to check an answer algebraically, we must see if the answer satisfies both of the \textit{original} equations, so we substitute $x = 3$ and $y = -\frac{1}{2}$ into both $\frac{x}{3} -\frac{4y}{5} = \frac{7}{5}$ and $\frac{2x}{9} + \frac{y}{3} = \frac{1}{2}$.  We leave it to the reader to verify that the solution is correct.  Graphing both of the lines involved with considerable care yields an intersection point of $\left(3, -\frac{1}{2}\right)$.  
+
+
+\item  An eerie calm settles over us as we cautiously approach our fourth system.  Do its friendly integer coefficients belie something more sinister?  We note that if we multiply both sides of the first equation by $3$ and the both sides of the second equation by $-2$, we are ready to eliminate the $x$ 
+
+\setlength{\extrarowheight}{2pt}
+\[ \begin{array}{lrcr} & 6x-12y & = & 18  \\ + & (-6x+12y  & = & -18 ) \\ \hline  & 0 & = & 0\end{array}\] 
+\setlength{\extrarowheight}{0pt}
+
+We eliminated not only the $x$, but the $y$ as well and we are left with the identity $0=0$.  This means that these two different linear equations are, in fact, equivalent.  In other words, if an ordered pair $(x,y)$ satisfies the equation $2x-4y = 6$, it \textit{automatically} satisfies the equation $3x-6y = 9$.  One way to describe the solution set to this system is to use the roster method\footnote{See Section \ref{Relations} for a review of this.} and write $\{(x,y) \, | \, 2x-4y = 6\}$.  While this is correct (and corresponds exactly to what's happening graphically, as we shall see shortly), we take this opportunity to introduce the notion of a \index{parametric solution} \index{system of equations ! parametric solution}\textbf{parametric solution to a system}.  Our first step is to solve $2x-4y = 6$ for one of the variables, say $y = \frac{1}{2} x - \frac{3}{2}$.  For each value of $x$, the formula $y = \frac{1}{2} x - \frac{3}{2}$ determines the corresponding $y$-value of a solution.  Since we have no restriction on $x$, it is called a \index{system of equations ! free variable} \index{free variable} \textbf{free variable}.  We let $x=t$, a so-called `parameter', and get $y = \frac{1}{2} t - \frac{3}{2}$. Our set of solutions can then be described as $\left\{ \left(t, \frac{1}{2} t - \frac{3}{2}\right) \, | \, -\infty < t < \infty \right\}$.\footnote{Note that we could have just as easily chosen to solve $2x-4y = 6$ for $x$ to obtain $x = 2y + 3$.  Letting $y$ be the parameter $t$, we have that for any value of $t$, $x = 2t+3$, which gives $\{(2t+3, t) \, | \, - \infty < t < \infty\}$.  There is no one correct way to parameterize the solution set, which is why it is always best to check your answer.}  For specific values of $t$, we can generate solutions.  For example, $t=0$ gives us the solution $\left(0,-\frac{3}{2}\right)$;  $t = 117$ gives us $(117,57)$, and while we can readily check  each of these particular solutions satisfy both equations, the question is how do we check our general answer algebraically?  Same as always.  We claim that for any real number $t$, the pair $\left(t, \frac{1}{2} t - \frac{3}{2}\right)$ satisfies both equations.  Substituting $x = t$ and $y =  \frac{1}{2} t - \frac{3}{2}$ into $2x - 4y = 6$ gives $2t - 4\left(\frac{1}{2} t - \frac{3}{2}\right) = 6$.  Simplifying, we get $2t - 2t + 6 = 6$, which is always true.  Similarly, when we make these substitutions in the equation $3x-6y = 9$, we get $3t - 6\left(\frac{1}{2} t - \frac{3}{2}\right) = 9$ which reduces to $3t - 3t + 9 = 9$, so it checks out, too.  Geometrically, $2x-4y = 6$ and $3x-6y=9$ are the same line, which means that they intersect at every point on their graphs.  The reader is encouraged to think about how our parametric solution says exactly that.
+
+\begin{center}
+
+\begin{tabular}{m{.5in}m{2in}m{.5in}m{2in}}
+
+$~$
+
+&
+
+\begin{mfpic}[10]{-2}{8}{-5}{3}
+\arrow \reverse \arrow \polyline{(-2,-2.583), (8,1.583)}
+\point[3pt]{(3,-0.5)}
+\axes
+\tlabel[cc](3,-2){\tiny $\left(3,-\frac{1}{2}\right)$}
+\xmarks{-1,1,2,3,4,5,6,7}
+\ymarks{-4,-3,-2,-1,1,2}
+\tlabel(8,-0.5){\scriptsize $x$}
+\tlabel(0.5,3){\scriptsize $y$}
+\tcaption{\scriptsize \centerline{$\frac{x}{3} -\frac{4y}{5} = \frac{7}{5}$} \\ \centerline{\boldmath $\frac{2x}{9} + \frac{y}{3} = \frac{1}{2}$}}
+\tlpointsep{4pt}
+\axislabels {x}{{\tiny $-1 \hspace{7pt}$} -1, {\tiny $1$} 1, {\tiny $2$} 2, {\tiny $4$} 4, {\tiny $5$} 5, {\tiny $6$} 6, {\tiny $7$} 7}
+\axislabels {y}{{\tiny $-4 \hspace{7pt}$} -4,{\tiny $-3 \hspace{7pt}$} -3,{\tiny $-2 \hspace{7pt}$} -2,{\tiny $-1 \hspace{7pt}$} -1,{\tiny $1$} 1}
+\penwd{1.1pt}
+\arrow \reverse \arrow \polyline{(-2.25,3), (8,-3.833)}
+\end{mfpic}
+
+&
+
+$~$
+ 
+&
+
+\begin{mfpic}[15]{-1}{5}{-3}{3}
+\axes
+\xmarks{1,2,3,4}
+\ymarks{-2,-1,1,2}
+\tlabel(5,-0.5){\scriptsize $x$}
+\tlabel(0.5,3){\scriptsize $y$}
+\tcaption{\scriptsize \centerline{$2x - 4y = 6$} \\ \centerline{\boldmath $3x-6y = 9$} \\ \centerline{(Same line.)}}
+\tlpointsep{4pt}
+\axislabels {x}{{\tiny $1$} 1,{\tiny $2$} 2,{\tiny $3$} 3,{\tiny $4$} 4}
+\axislabels {y}{{\tiny $-1$} -1,{\tiny $1$} 1, {\tiny $2$} 2}
+\penwd{1.1pt}
+\arrow \reverse \arrow \polyline{(-1,-2), (5,1)}
+\end{mfpic}
+
+\\
+
+\end{tabular}
+
+\end{center}
+
+\item  Multiplying both sides of the first equation by $2$ and the both sides of the second equation by $-3$, we set the stage to eliminate $x$ 
+
+\setlength{\extrarowheight}{2pt}
+\[ \begin{array}{lrcr} & 12x + 6y & = & 18  \\ + & (-12x-6y  & = & -36 ) \\ \hline  & 0 & = & -18 \end{array}\] 
+\setlength{\extrarowheight}{0pt}
+
+As in the previous example, both $x$ and $y$ dropped out of the equation, but we are left with an irrevocable contradiction, $0 = -18$. This tells us that it is impossible to find a pair $(x,y)$ which satisfies both equations; in other words, the system has no solution.  Graphically, the lines  $6x + 3y =9$ and  $4x + 2y = 12$ are distinct and parallel, so they do not intersect.
+
+\item  We can begin to solve our last system by adding the first two equations  
+
+\setlength{\extrarowheight}{2pt}
+\[ \begin{array}{lrcr} & x - y & = & 0  \\ + & (x + y & = & 2 ) \\ \hline  & 2x & = & 2 \end{array}\]  
+\setlength{\extrarowheight}{0pt}
+
+which gives $x = 1$.  Substituting this into the first equation gives $1 - y = 0$ so that $y = 1$.  We seem to have determined a solution to our system, $(1,1)$.  While this checks in the first two equations, when we substitute $x=1$ and $y=1$ into the third equation, we get $-2(1) + (1) = -2$ which simplifies to the contradiction $-1 = -2$.  Graphing the lines $x-y=0$, $x+y = 2$, and $-2x+y=-2$, we see that the first two lines do, in fact, intersect at $(1,1)$, however, all three lines never intersect at the same point simultaneously, which is what is required if a solution to the system is to be found.
+
+\begin{center}
+
+\begin{tabular}{m{.5in}m{2in}m{.5in}m{2in}}
+
+$~$
+
+&
+
+\begin{mfpic}[15][7]{-1}{4}{-4}{7}
+\arrow \reverse \arrow \polyline{(-1,5), (3.5,-4)}
+\axes
+\xmarks{1,2,3}
+\ymarks{-3,-2,-1,1,2,3,4,5,6}
+\tlabel(4,-0.5){\scriptsize $x$}
+\tlabel(0.5,7){\scriptsize $y$}
+\tcaption{\scriptsize \centerline{$6x + 3y =9$} \\ \centerline{\boldmath $4x + 2y = 12$}}
+\tlpointsep{4pt}
+\axislabels {x}{{\tiny $1$} 1, {\tiny $2$} 2}
+\axislabels {y}{{\tiny $-3 \hspace{7pt}$} -3,{\tiny $-2 \hspace{7pt}$} -2,{\tiny $-1 \hspace{7pt}$} -1,{\tiny $1$} 1,{\tiny $2$} 2,{\tiny $3$} 3,{\tiny $4$} 4,{\tiny $5$} 5,{\tiny $6$} 6}
+\penwd{1.1pt}
+\arrow \reverse \arrow \polyline{(-0.5,7), (4,-2)}
+\end{mfpic}
+
+&
+
+$~$
+ 
+&
+
+\begin{mfpic}[15]{-1}{3}{-3}{3}
+\axes
+\xmarks{1,2}
+\ymarks{-2,-1,1,2}
+\tlabel(3,-0.5){\scriptsize $x$}
+\tlabel(0.5,3){\scriptsize $y$}
+\tcaption{\scriptsize \centerline{$y-x = 0$} \\ \centerline{$y+x = 2$} \\ \centerline{$-2x+y=-2$}}
+\tlpointsep{4pt}
+\axislabels {y}{{\tiny $-1$} -1,{\tiny $1$} 1}
+\arrow \reverse \arrow \polyline{(-1,-1), (3,3)}
+\arrow \reverse \arrow \polyline{(-1,3), (3,-1)}
+\arrow \reverse \arrow \polyline{(-0.5,-3), (2.5,3)}
+\end{mfpic} \\
+
+\end{tabular}
+
+\end{center}
+
+\qed
+
+\end{enumerate}
+
+\end{ex}
+
+A few remarks about Example \ref{reviewsubelim} are in order.  It is clear that some systems of equations have solutions, and some do not.  Those which have solutions are called \index{consistent system} \index{system of equations ! consistent} \textbf{consistent}, those with no solution are called \index{inconsistent system} \index{system of equations ! inconsistent} \textbf{inconsistent}. We also distinguish the two different types of behavior among consistent systems. Those which admit free variables are called \index{system of equations ! dependent} \index{dependent system} \textbf{dependent};  those with no free variables are called \index{system of equations ! independent} \index{independent system} \textbf{independent}.\footnote{In the case of systems of linear equations, regardless of the number of equations or variables, consistent independent systems have exactly one solution.  The reader is encouraged to think about why this is the case for linear equations in two variables.  Hint: think geometrically.}   Using this new vocabulary, we classify numbers 1, 2 and 3 in Example \ref{reviewsubelim} as consistent independent systems, number 4 is consistent dependent, and numbers 5 and 6 are inconsistent.\footnote{The adjectives `dependent' and `independent' apply only to \textit{consistent} systems -- they describe the \textit{type} of solutions.  Is there a free variable (dependent) or not (independent)?}  The system in 6 above is called \index{system of equations ! overdetermined} \index{overdetermined system} \textbf{overdetermined}, since we have more equations  than variables.\footnote{If we think if each variable being an unknown quantity, then ostensibly, to recover two unknown quantities, we need two pieces of information - i.e., two equations.  Having more than two equations suggests we have more information than necessary to determine the values of the unknowns.  While this is not necessarily the case, it does explain the choice of terminology `overdetermined'.}  Not surprisingly, a system with more variables than equations is called \index{system of equations ! underdetermined} \index{underdetermined system} \textbf{underdetermined}.  While the system in number 6 above is overdetermined and inconsistent, there exist overdetermined consistent systems (both dependent and independent) and we leave it to the reader to think about what is happening algebraically and geometrically in these cases.  Likewise, there are both consistent and inconsistent underdetermined systems,\footnote{We need more than two variables to give an example of the latter.} but a consistent underdetermined system of linear equations is necessarily dependent.\footnote{Again, experience with systems with more variables helps to see this here, as does a solid course in Linear Algebra.}  
+
+\smallskip
+
+In order to move this section beyond a review of Intermediate Algebra, we now define what is meant by a linear equation in $n$ variables.
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{defn}  \label{lineareqnnvariables}  A \index{equation ! linear of $n$ variables} \index{linear equation ! $n$ variables} \textbf{linear equation in \textit{n} variables}, $x_{\mbox{\tiny $1$}}$, $x_{\mbox{\tiny $2$}}$, \ldots, $x_{n}$ is an equation of the form $a_{\mbox{\tiny $1$}} x_{\mbox{\tiny $1$}} + a_{\mbox{\tiny $2$}} x_{\mbox{\tiny $2$}} + \ldots + a_{n} x_{n} = c$ where $a_{\mbox{\tiny $1$}}$, $a_{\mbox{\tiny $2$}}$, \dots $a_{n}$  and $c$ are real numbers and at least one of $a_{\mbox{\tiny $1$}}$, $a_{\mbox{\tiny $2$}}$, \dots, $a_{n}$ is nonzero.
+
+\end{defn}
+
+\ebm}
+
+\smallskip
+
+Instead of using more familiar variables like $x$, $y$, and even $z$ and/or $w$ in Definition \ref{lineareqnnvariables}, we use subscripts to distinguish the different variables.  We have no idea how many variables may be involved, so we use numbers to distinguish them instead of letters.  (There is an endless supply of distinct numbers.)  As an example, the linear equation $3x_{\mbox{\tiny $1$}} - x_{\mbox{\tiny $2$}} = 4$ represents the same relationship between the variables $x_{\mbox{\tiny $1$}}$ and $x_{\mbox{\tiny $2$}}$  as the equation $3x-y=4$ does between the variables $x$ and $y$. In addition, just as we cannot combine the terms in the expression $3x-y$, we cannot combine the terms in the expression $3x_{\mbox{\tiny $1$}} - x_{\mbox{\tiny $2$}}$.  Coupling more than one linear equation in $n$ variables results in a \textbf{system of linear equations in \textit{n} variables}. \index{system of equations ! linear ! $n$ variables} When solving these systems, it becomes increasingly important to keep track of what operations are performed to which equations and to develop a strategy based on the kind of manipulations we've already employed.  To this end, we first remind ourselves of the maneuvers which can be applied to a system of linear equations that result in an equivalent system.\footnote{That is, a system with the same solution set.}  
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{thm}  \label{equationmoves} Given a system of equations, the following moves will result in an equivalent system of equations.
+
+\begin{itemize}
+
+\item  Interchange the position of any two equations.
+
+\item  Replace an equation with a nonzero multiple of itself.\footnote{That is, an equation which results from multiplying both sides of the equation by the same nonzero number.}
+
+\item  Replace an equation with itself plus a nonzero multiple of another equation.
+
+
+\end{itemize}
+
+\end{thm}  
+
+\ebm}
+
+\smallskip
+
+We have seen plenty of instances of the second and third moves in Theorem \ref{equationmoves} when we solved the systems Example \ref{reviewsubelim}. The first move, while it obviously admits an equivalent system, seems silly.  Our perception will change as we consider more equations and more variables in this, and later sections.
+
+\smallskip
+
+Consider the system of equations 
+
+\[ \left\{ \begin{array}{rcr} x-\frac{1}{3}y+\frac{1}{2}z  & = & 1 \\ [3pt]
+y - \frac{1}{2} z & = & 4 \\ [3pt]
+z & = & -1 \\ \end{array} \right.\]  
+
+Clearly $z = -1$, and we substitute this into the second equation $y - \frac{1}{2} (-1) = 4$ to obtain $y = \frac{7}{2}$.  Finally, we substitute $y = \frac{7}{2}$ and $z=-1$ into the first equation to get $x - \frac{1}{3}\left(\frac{7}{2}\right) + \frac{1}{2}(-1) = 1$, so that $x = \frac{8}{3}$.  The reader can verify that these values of $x$, $y$ and $z$ satisfy all three original equations.  It is tempting for us to write the solution to this system by extending the usual $(x,y)$ notation to $(x,y,z)$ and list our solution as $\left(\frac{8}{3},\frac{7}{2},-1\right)$.  The question quickly becomes what does an `ordered triple' like $\left(\frac{8}{3},\frac{7}{2},-1\right)$ represent?  Just as ordered pairs are used to locate points on the two-dimensional plane, ordered triples can be used to locate points in space.\footnote{You were asked to think about this in Exercise \ref{orderedtripleexercise} in Section \ref{CartesianPlane}.}  Moreover, just as equations involving the variables $x$ and $y$ describe graphs of one-dimensional lines and curves in the two-dimensional plane, equations involving variables $x$, $y$, and $z$ describe objects called \textbf{surfaces} in three-dimensional space.  Each of the equations in the above system can be visualized as a plane situated in three-space.  Geometrically, the system is trying to find the intersection, or common point, of all three planes. If you imagine three sheets of notebook paper each representing a portion of these planes, you will start to see the complexities involved in how three such planes can intersect. Below is a sketch of the three planes.  It turns out that any two of these planes intersect in a line,\footnote{In fact, these lines are described by the parametric solutions to the systems formed by taking any two of these equations by themselves.} so our intersection point is where all three of these lines meet. 
+
+\centerline{\includegraphics[width=3in]{./MatricesGraphics/3planes01.jpg}}
+
+Since the geometry for equations involving more than two variables is complicated, we will focus our efforts on the algebra.  Returning to the system 
+
+\[ \left\{ \begin{array}{rcr} x-\frac{1}{3}y+\frac{1}{2}z  & = & 1 \\ [3pt]
+y - \frac{1}{2} z & = & 4 \\ [3pt]
+z & = & -1 \\ \end{array} \right.\] 
+
+we note the reason it was so easy to solve is that the third equation is solved for $z$, the second equation involves only $y$ and $z$, and since the coefficient of $y$ is $1$, it makes it easy to solve for $y$ using our known value for $z$.  Lastly, the coefficient of  $x$ in the first equation is $1$ making it easy to substitute the known values of $y$ and $z$ and then solve for $x$.  We formalize this pattern below for the most general systems of linear equations.  Again, we use subscripted variables to describe the general case.  The variable with the smallest subscript in a given equation is typically called the \index{system of equations ! leading variable} \textbf{leading variable} of that equation.
+
+\smallskip
+\colorbox{ResultColor}{\bbm  \begin{defn} \label{systemtriangularform} A system of linear equations with variables $x_{\mbox{\tiny$1$}}$, $x_{\mbox{\tiny$2$}}$, \ldots $x_{n}$ is said to be in \index{system of equations ! triangular form} \index{triangular form} \textbf{triangular form} provided all of the following conditions hold:
+
+\begin{enumerate}
+
+\item  The subscripts of the variables in each equation are always increasing from left to right.
+
+\item  The leading variable in each equation has coefficient $1$.
+
+\item  The subscript on the leading variable in a given equation is greater than the subscript on the leading variable in the equation above it.
+
+\item  Any equation without variables\footnote{necessarily an identity or contradiction} cannot be placed above an equation with variables.
+
+\end{enumerate}
+
+\end{defn}
+
+\ebm}
+
+\smallskip
+
+In our previous system, if we make the obvious choices $x = x_{\mbox{\tiny$1$}}$, $y = x_{\mbox{\tiny$2$}}$, and $z = x_{\mbox{\tiny$3$}}$, we see that the system is in triangular form.\footnote{If letters are used instead of subscripted variables, Definition \ref{systemtriangularform} can be suitably modified using alphabetical order of the variables instead of numerical order on the subscripts of the variables.}   An example of a more complicated system in triangular form is
+
+\[ \left\{ \begin{array}{rcr} x_{\mbox{\tiny$1$}} - 4x_{\mbox{\tiny$3$}} + x_{\mbox{\tiny$4$}} - x_{\mbox{\tiny$6$}} & = & 6 \\ x_{\mbox{\tiny$2$}} + 2x_{\mbox{\tiny$3$}} & = & 1 \\ x_{\mbox{\tiny$4$}} + 3x_{\mbox{\tiny$5$}} - x_{\mbox{\tiny$6$}} & = & 8 \\ x_{\mbox{\tiny$5$}} + 9x_{\mbox{\tiny$6$}} & = & 10 \end{array} \right.\]
+
+Our goal henceforth will be to transform a given system of linear equations into triangular form using the moves in Theorem \ref{equationmoves}.
+
+\begin{ex} \label{GaussEqnEx} Use Theorem \ref{equationmoves} to put the following systems into triangular form and then solve the system if possible.  Classify each system as consistent independent, consistent dependent, or inconsistent.
+
+\begin{multicols}{3}
+
+\begin{enumerate}
+
+\item  $\left\{ \begin{array}{rcr} 3x-y+z & = & 3 \\ 2x-4y+3z & = & 16 \\ x-y+z & = & 5 \\ \end{array} \right.$
+
+\item  $\left\{ \begin{array}{rcr} 2x+3y-z & = & 1 \\ 10x-z & = & 2 \\ 4x-9y+2z & = & 5 \\ \end{array} \right.$
+
+\item  $\left\{ \begin{array}{rcr} 3x_{\mbox{\tiny$1$}} +x_{\mbox{\tiny$2$}} + x_{\mbox{\tiny$4$}} & = & 6 \\ 2x_{\mbox{\tiny$1$}} + x_{\mbox{\tiny$2$}} -x_{\mbox{\tiny$3$}}  & = & 4  \\  x_{\mbox{\tiny$2$}} -3x_{\mbox{\tiny$3$}} -2x_{\mbox{\tiny$4$}} & = & 0 \end{array} \right.$
+
+\end{enumerate}
+
+\end{multicols}
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item For definitiveness, we label the topmost equation in the system $E1$, the equation beneath that $E2$, and so forth. We now attempt to put the system in triangular form using an algorithm known as \index{system of equations ! Gaussian Elimination} \index{Gaussian Elimination} \textbf{Gaussian Elimination}.  What this means is that, starting with $x$, we transform the system so that conditions 2 and 3 in Definition \ref{systemtriangularform} are satisfied.  Then we move on to the next variable, in this case $y$, and repeat.  Since the variables in all of the equations have a consistent ordering from left to right, our first move is to get an $x$ in $E1$'s spot with a coefficient of $1$.  While there are many ways to do this, the easiest is to apply the first move listed in Theorem \ref{equationmoves} and interchange $E1$ and $E3$.
+
+\[\begin{array}{ccc}
+
+\left\{  \begin{array}{lrcr}
+
+(E1) & 3x-y+z & = & 3 \\
+(E2)  & 2x-4y+3z & = & 16 \\
+(E3)  &  x-y+z & = & 5 \\ 
+
+\end{array} \right.
+
+&
+\xrightarrow{\text{Switch $E1$ and $E3$}}
+
+&
+
+\left\{ \begin{array}{lrcr}
+
+(E1) & x-y+z & = & 5 \\
+(E2) & 2x-4y+3z & = & 16 \\
+(E3) & 3x-y+z & = & 3 \\
+
+\end{array} \right.
+
+\end{array}\]
+
+
+
+To satisfy Definition \ref{systemtriangularform}, we need to eliminate the $x$'s from $E2$ and $E3$.  We accomplish this by replacing each of them with a sum of themselves and a multiple of $E1$.  To eliminate the $x$ from $E2$, we need to multiply $E1$ by $-2$ then add;  to eliminate the $x$ from $E3$, we need to multiply $E1$ by $-3$ then add.  Applying the third move listed in Theorem \ref{equationmoves} twice, we get
+
+\[ \begin{array}{ccc}
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x-y+z & = & 5 \\
+(E2) & 2x-4y+3z & = & 16 \\
+(E3) & 3x-y+z & = & 3 \\
+
+\end{array} 
+
+\right.
+
+&
+
+\xrightarrow[\text{Replace $E3$ with $-3E1 + E3$}]{\text{Replace $E2$ with $-2E1 + E2$}}
+
+&
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x-y+z & = & 5 \\
+(E2) & -2y+z & = & 6 \\
+(E3) & 2y-2z & = & -12 \\
+
+\end{array} 
+
+\right.
+
+ \end{array} \]
+
+Now we enforce the conditions stated in Definition \ref{systemtriangularform} for the variable $y$.  To that end we need to get the coefficient of $y$ in $E2$ equal to $1$.  We apply the second move listed in Theorem \ref{equationmoves} and replace $E2$ with itself times $-\frac{1}{2}$.
+
+\[\begin{array}{ccc}
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x-y+z & = & 5 \\
+(E2) & -2y+z & = & 6 \\
+(E3) & 2y-2z & = & -12 \\
+
+\end{array} 
+
+\right.
+
+&
+\xrightarrow{\text{Replace $E2$ with $-\frac{1}{2}E2$}}
+
+&
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x-y+z & = & 5 \\
+(E2) & y - \frac{1}{2}z & = & -3\\
+(E3) & 2y-2z & = & -12 \\
+
+\end{array} 
+
+\right.
+
+\end{array}\]
+
+To eliminate the $y$ in $E3$, we add $-2E2$ to it.
+
+\[\begin{array}{ccc}
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x-y+z & = & 5 \\
+(E2) & y - \frac{1}{2}z & = & -3\\
+(E3) & 2y-2z & = & -12 \\
+
+\end{array} 
+
+\right.
+&
+\xrightarrow{\text{Replace $E3$ with $-2E2 + E3$}}
+
+&
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x-y+z & = & 5 \\
+(E2) & y - \frac{1}{2}z & = & -3\\
+(E3) & -z & = & -6 \\
+
+\end{array} 
+
+\right.
+\end{array}\]
+
+Finally, we apply the second move from  Theorem \ref{equationmoves} one last time and multiply $E3$ by $-1$ to satisfy the conditions of Definition \ref{systemtriangularform} for the variable $z$.
+
+\[\begin{array}{ccc}
+
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x-y+z & = & 5 \\
+(E2) & y - \frac{1}{2}z & = & -3\\
+(E3) & -z & = & -6 \\
+
+\end{array} 
+
+\right.
+
+&
+\xrightarrow{\text{Replace $E3$ with $-1E3$}}
+
+&
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x-y+z & = & 5 \\
+(E2) & y - \frac{1}{2}z & = & -3\\
+(E3) & z & = & 6 \\
+
+\end{array} 
+
+\right.
+
+\end{array}\]
+
+
+Now we proceed to substitute.  Plugging in $z=6$ into $E2$ gives $y - 3 = -3$ so that $y = 0$.  With $y=0$ and $z=6$, $E1$ becomes $x - 0 + 6 = 5$, or $x = -1$.  Our solution is $(-1,0,6)$.  We leave it to the reader to check that substituting the respective values for $x$, $y$, and $z$ into the original system results in three identities.  Since we have found a solution, the system is consistent;  since there are no free variables, it is independent.
+
+\item  Proceeding as we did in 1, our first step is to get an equation with $x$ in the $E1$ position with $1$ as its coefficient.  Since there is no easy fix, we multiply $E1$ by $\frac{1}{2}$.
+
+
+\[\begin{array}{ccc}
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & 2x+3y-z & = & 1 \\ 
+(E2) & 10x-z & = & 2 \\
+(E3) &  4x-9y+2z & = & 5 \\
+
+\end{array} 
+
+\right.
+
+&
+\xrightarrow{\text{Replace $E1$ with $\frac{1}{2}E1$}}
+
+&
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x+\frac{3}{2}y-\frac{1}{2}z & = & \frac{1}{2} \\ 
+(E2) & 10x-z & = & 2 \\
+(E3) &  4x-9y+2z & = & 5 \\
+
+\end{array} 
+
+\right.
+\end{array}\]
+
+Now it's time to take care of the $x$'s in $E2$ and $E3$.
+
+\[ \begin{array}{ccc}
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x+\frac{3}{2}y-\frac{1}{2}z & = & \frac{1}{2} \\ 
+(E2) & 10x-z & = & 2 \\
+(E3) &  4x-9y+2z & = & 5 \\
+
+\end{array} 
+
+\right.
+&
+\xrightarrow[\text{Replace $E3$ with $-4E1 + E3$}]{\text{Replace $E2$ with $-10E1 + E2$}}
+
+&
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x+\frac{3}{2}y-\frac{1}{2}z & = & \frac{1}{2} \\ 
+(E2) & -15y+4z & = & -3 \\
+(E3) & -15y+4z & = & 3 \\
+
+\end{array} 
+
+\right.
+ \end{array} \]
+
+Our next step is to get the coefficient of $y$ in $E2$ equal to $1$.  To that end, we have
+
+\[\begin{array}{ccc}
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x+\frac{3}{2}y-\frac{1}{2}z & = & \frac{1}{2} \\ [3pt]
+(E2) & -15y+4z & = & -3 \\ [3pt]
+(E3) & -15y+4z & = & 3 \\
+
+\end{array} 
+
+\right.
+
+&
+\xrightarrow{\text{Replace $E2$ with $-\frac{1}{15}E2$}}
+
+&
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x+\frac{3}{2}y-\frac{1}{2}z & = & \frac{1}{2} \\ [3pt]
+(E2) & y - \frac{4}{15}z & = & \frac{1}{5} \\ [3pt]
+(E3) & -15y+4z & = & 3 \\
+
+\end{array} 
+
+\right.
+
+\end{array}\]
+
+
+Finally, we rid $E3$ of $y$.
+
+\[\begin{array}{ccc}
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x+\frac{3}{2}y-\frac{1}{2}z & = & \frac{1}{2} \\ [3pt]
+(E2) & y - \frac{4}{15}z & = & \frac{1}{5} \\ [3pt]
+(E3) & -15y+4z & = & 3 \\
+
+\end{array} 
+
+\right.
+&
+\xrightarrow{\text{Replace $E3$ with $15E2 + E3$}}
+
+&
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x-y+z & = & 5 \\ [3pt]
+(E2) & y - \frac{1}{2}z & = & -3\\ [3pt]
+(E3) & 0 & = & 6 \\
+
+\end{array} 
+
+\right.
+\end{array}\]
+
+The last equation, $0=6$, is a contradiction so the system has no solution.  According to Theorem \ref{equationmoves}, since this system has no solutions, neither does the original, thus we have an inconsistent system.
+
+\item  For our last system, we begin by multiplying $E1$ by $\frac{1}{3}$ to get a coefficient of $1$ on  $x_{\mbox{\tiny$1$}}$.
+
+\[\begin{array}{ccc}
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & 3x_{\mbox{\tiny$1$}} +x_{\mbox{\tiny$2$}} + x_{\mbox{\tiny$4$}} & = & 6 \\   
+(E2) & 2x_{\mbox{\tiny$1$}} + x_{\mbox{\tiny$2$}} -x_{\mbox{\tiny$3$}}  & = & 4  \\
+(E3) &  x_{\mbox{\tiny$2$}} -3x_{\mbox{\tiny$3$}} -2x_{\mbox{\tiny$4$}} & = & 0 \\
+
+\end{array} 
+
+\right.
+
+&
+\xrightarrow{\text{Replace $E1$ with $\frac{1}{3}E1$}}
+
+&
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x_{\mbox{\tiny$1$}} + \frac{1}{3}x_{\mbox{\tiny$2$}} + \frac{1}{3}x_{\mbox{\tiny$4$}} & = & 2 \\  
+(E2) & 2x_{\mbox{\tiny$1$}} + x_{\mbox{\tiny$2$}} -x_{\mbox{\tiny$3$}}  & = & 4  \\
+(E3) &  x_{\mbox{\tiny$2$}} -3x_{\mbox{\tiny$3$}} -2x_{\mbox{\tiny$4$}} & = & 0 \\
+
+\end{array} 
+
+\right.
+
+\end{array}\]
+
+Next we eliminate $x_{\mbox{\tiny$1$}}$ from $E2$
+
+
+\[\begin{array}{ccc}
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x_{\mbox{\tiny$1$}} + \frac{1}{3}x_{\mbox{\tiny$2$}} + \frac{1}{3}x_{\mbox{\tiny$4$}} & = & 2 \\  [3pt]
+(E2) & 2x_{\mbox{\tiny$1$}} + x_{\mbox{\tiny$2$}} -x_{\mbox{\tiny$3$}}  & = & 4  \\ [3pt]
+(E3) &  x_{\mbox{\tiny$2$}} -3x_{\mbox{\tiny$3$}} -2x_{\mbox{\tiny$4$}} & = & 0 \\
+
+\end{array} 
+
+\right.
+
+&
+
+\xrightarrow[\text{with $-2E1 + E2$}]{\text{Replace $E2$}}
+&
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x_{\mbox{\tiny$1$}} + \frac{1}{3}x_{\mbox{\tiny$2$}} + \frac{1}{3}x_{\mbox{\tiny$4$}} & = & 2 \\ [3pt]
+(E2) &        \frac{1}{3} x_{\mbox{\tiny$2$}} -x_{\mbox{\tiny$3$}} -\frac{2}{3}x_{\mbox{\tiny$4$}} & = & 0  \\ [3pt]
+(E3) &  x_{\mbox{\tiny$2$}} -3x_{\mbox{\tiny$3$}} -2x_{\mbox{\tiny$4$}} & = & 0 \\
+
+\end{array} 
+
+\right.
+
+\end{array}\]
+
+We switch $E2$ and $E3$ to get a coefficient of $1$ for $x_{\mbox{\tiny$2$}}$.
+
+\[\begin{array}{ccc}
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x_{\mbox{\tiny$1$}} + \frac{1}{3}x_{\mbox{\tiny$2$}} + \frac{1}{3}x_{\mbox{\tiny$4$}} & = & 2 \\  [3pt]
+(E2) &        \frac{1}{3} x_{\mbox{\tiny$2$}} -x_{\mbox{\tiny$3$}} -\frac{2}{3}x_{\mbox{\tiny$4$}} & = & 0  \\ [3pt]
+(E3) &  x_{\mbox{\tiny$2$}} -3x_{\mbox{\tiny$3$}} -2x_{\mbox{\tiny$4$}} & = & 0 \\
+
+\end{array} 
+
+\right.
+
+&
+\xrightarrow{\text{Switch $E2$ and $E3$}}
+
+&
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x_{\mbox{\tiny$1$}} + \frac{1}{3}x_{\mbox{\tiny$2$}} + \frac{1}{3}x_{\mbox{\tiny$4$}} & = & 2 \\  [3pt]
+(E2) &    x_{\mbox{\tiny$2$}} -3x_{\mbox{\tiny$3$}} -2x_{\mbox{\tiny$4$}} & = & 0 \\ [3pt]
+(E3) &  \frac{1}{3} x_{\mbox{\tiny$2$}} -x_{\mbox{\tiny$3$}} -\frac{2}{3}x_{\mbox{\tiny$4$}} & = & 0  \\
+
+\end{array} 
+
+\right.\end{array}\]
+
+Finally, we eliminate $x_{\mbox{\tiny$2$}}$ in $E3$.
+
+\[\begin{array}{ccc}
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x_{\mbox{\tiny$1$}} + \frac{1}{3}x_{\mbox{\tiny$2$}} + \frac{1}{3}x_{\mbox{\tiny$4$}} & = & 2 \\  [3pt]
+(E2) &    x_{\mbox{\tiny$2$}} -3x_{\mbox{\tiny$3$}} -2x_{\mbox{\tiny$4$}} & = & 0 \\ [3pt]
+(E3) &  \frac{1}{3} x_{\mbox{\tiny$2$}} -x_{\mbox{\tiny$3$}} -\frac{2}{3}x_{\mbox{\tiny$4$}} & = & 0  \\
+
+\end{array} 
+
+\right.
+
+&
+
+\xrightarrow[\text{with $-\frac{1}{3}E2 + E3$}]{\text{Replace $E3$} }
+
+&
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x_{\mbox{\tiny$1$}} + \frac{1}{3}x_{\mbox{\tiny$2$}} + \frac{1}{3}x_{\mbox{\tiny$4$}} & = & 2 \\  [3pt]
+(E2) &    x_{\mbox{\tiny$2$}} -3x_{\mbox{\tiny$3$}} -2x_{\mbox{\tiny$4$}} & = & 0 \\    [3pt]
+(E3) & 0 & = & 0  \\
+
+\end{array} 
+
+\right.\end{array}\]
+
+Equation $E3$ reduces to $0=0$,which is always true.  Since we have no equations with $x_{\mbox{\tiny$3$}}$ or $x_{\mbox{\tiny$4$}}$ as leading variables, they are both free, which means we have a consistent dependent system.  We parametrize the solution set by letting $x_{\mbox{\tiny$3$}} = s$ and $x_{\mbox{\tiny$4$}} = t$ and obtain from $E2$ that $x_{\mbox{\tiny$2$}} =  3s + 2t$.  Substituting this and $x_{\mbox{\tiny$4$}} = t$ into $E1$, we have $x_{\mbox{\tiny$1$}} + \frac{1}{3}\left( 3s+2t \right) + \frac{1}{3}t = 2$ which gives $x_{\mbox{\tiny$1$}} = 2 - s - t$.  Our solution is the set $\{ (2-s-t,2s+3t,s,t) \, | \, -\infty < s, t < \infty\}$.\footnote{Here, any choice of $s$ and $t$ will determine a solution which is a point in $4$-dimensional space.  Yeah, we have trouble visualizing that, too.}  We leave it to the reader to verify that the substitutions $x_{1} = 2-s-t$, $x_{2} = 3s+2t$, $x_{3} = s$ and $x_{4} = t$ satisfy the equations in the original system. \qed
+
+\end{enumerate}
+\end{ex}
+
+Like all algorithms, Gaussian Elimination has the advantage of always producing what we need, but it can also be inefficient at times. For example, when solving 2 above, it is clear after we eliminated the $x$'s in the second step to get the system
+ 
+\[ \left\{ \begin{array}{lrcr} (E1) & x+\frac{3}{2}y-\frac{1}{2}z & = & \frac{1}{2} \\ [3pt]
+(E2) & -15y+4z & = & -3 \\ [3pt]
+(E3) & -15y+4z & = & 3 \\ \end{array}  \right.\] 
+
+that equations $E2$ and $E3$ when taken together form a contradiction since we have identical left hand sides and different right hand sides.  The algorithm takes two more steps to reach this contradiction.  We also note that substitution in Gaussian Elimination is delayed until all the elimination is done, thus it gets called \index{system of equations ! back-substitution} \index{back substitution} \textbf{back-substitution}.  This may also be inefficient in many cases.  Rest assured, the technique of substitution as you may have learned it in Intermediate Algebra will once again take center stage in Section \ref{NonLinear}. Lastly, we note that the system in 3 above is underdetermined, and as it is consistent, we have free variables in our answer.  We close this section with a standard `mixture' type application of systems of linear equations.
+
+\begin{ex} \label{lucasmixex} Lucas needs to create a $500$ milliliters (mL) of a $40 \%$ acid solution.  He has stock solutions of $30 \%$ and $90 \%$ acid as well as all of the distilled water he wants. Set-up and solve a system of linear equations which determines all of the possible combinations of the stock solutions and water which would produce the required solution.
+
+\smallskip
+
+{ \bf Solution.}  We are after three unknowns, the amount (in mL) of the $30 \%$ stock solution (which we'll call $x$), the amount (in mL) of the $90 \%$ stock solution (which we'll call $y$) and the amount (in mL) of water (which we'll call $w$). We now need to determine some relationships between these variables.  Our goal is to produce $500$ milliliters of a $40 \%$ acid solution.  This product has two defining characteristics.  First, it must be $500$ mL;  second, it must be $40 \%$ acid.  We take each of these qualities in turn.  First, the total volume of $500$ mL must be the sum of the contributed volumes of the two stock solutions and the water.  That is \[ \mbox{amount of  $30 \%$ stock solution} + \mbox{amount of  $90 \%$ stock solution} + \mbox{amount of water} = 500 \, \mbox{mL}\] Using our defined variables, this reduces to $x+y+w = 500$.  Next, we need to make sure the final solution is $40 \%$ acid.   Since water contains no acid, the acid will come from the stock solutions only.  We find $40 \%$ of $500$ mL to be $200$ mL which means the final solution must contain $200$ mL of acid.  We have \[ \mbox{amount of  acid in $30 \%$ stock solution} + \mbox{amount of acid $90 \%$ stock solution}  = 200 \, \mbox{mL}\]  The amount of acid in  $x$ mL of $30 \%$ stock is $0.30x$ and the amount of acid in $y$ mL of $90 \%$ solution is $0.90y$.  We have $0.30x + 0.90y = 200$.  Converting to fractions,\footnote{We do this only because we believe students can use all of the practice with fractions they can get!} our system of equations becomes 
+
+\[ \left\{ \begin{array}{rcl} x+y+w & = & 500 \\ 
+\frac{3}{10}x + \frac{9}{10}y & = & 200 \\ \end{array} \right.\]  
+
+We first eliminate the $x$ from the second equation 
+
+\[\begin{array}{ccc}
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x+y+w & = & 500 \\  
+(E2) & \frac{3}{10}x + \frac{9}{10}y & = & 200 \\    
+
+\end{array} 
+
+\right.
+
+&
+
+\xrightarrow{\text{Replace $E2$ with $-\frac{3}{10}E1 + E2$}}
+
+&
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x+y+w & = & 500 \\  
+(E2) &  \frac{3}{5}y - \frac{3}{10}w & = & 50 \\    
+
+\end{array} 
+
+\right.
+
+\end{array}\]
+
+
+Next, we get a coefficient of $1$ on the leading variable in $E2$
+
+\[\begin{array}{ccc}
+
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x+y+w & = & 500 \\  
+(E2) &  \frac{3}{5}y - \frac{3}{10}w & = & 50 \\    
+
+\end{array} 
+
+\right.
+
+&
+
+\xrightarrow{\text{Replace $E2$ with $\frac{5}{3}E2$}}
+
+&
+
+
+\left\{ 
+
+\begin{array}{lrcr}
+
+(E1) & x+y+w & = & 500 \\  
+(E2) &  y - \frac{1}{2}w & = & \frac{250}{3} \\    
+
+\end{array} 
+
+\right.
+\end{array}\]
+
+Notice that we have no equation to determine $w$, and as such, $w$ is free.  We set $w = t$ and from $E2$ get $y = \frac{1}{2} t + \frac{250}{3}$.  Substituting into $E1$ gives $x + \left(\frac{1}{2} t + \frac{250}{3}\right) + t = 500$ so that $x = -\frac{3}{2} t + \frac{1250}{3}$.  This system is consistent, dependent and its solution set is $\{ \left(-\frac{3}{2} t + \frac{1250}{3}, \frac{1}{2} t + \frac{250}{3}, t\right) \, | \, - \infty < t < \infty\}$.  While this answer checks algebraically, we have neglected to take into account that $x$, $y$ and $w$, being amounts of acid and water, need to be nonnegative.  That is, $x \geq 0$, $y \geq 0$ and $w \geq 0$.  The constraint $x \geq 0$ gives us  $-\frac{3}{2} t + \frac{1250}{3} \geq 0$, or $t \leq \frac{2500}{9}$. From $y \geq 0$, we get $\frac{1}{2} t + \frac{250}{3} \geq 0$ or $t \geq -\frac{500}{3}$.  The condition $z \geq 0$ yields $t \geq 0$, and we see that when we take the set theoretic intersection of these intervals, we get $0 \leq t \leq \frac{2500}{9}$.  Our final answer is $\{ \left(-\frac{3}{2} t + \frac{1250}{3}, \frac{1}{2} t + \frac{250}{3}, t\right) \, | \,0 \leq t \leq \frac{2500}{9} \}$.  Of what practical use is our answer?  Suppose there is only $100$ mL of the $90 \%$ solution remaining and it is due to expire.  Can we use all of it to make our required solution?  We would have $y = 100$ so that $\frac{1}{2} t + \frac{250}{3} = 100$, and we get $t = \frac{100}{3}$.  This means the amount of $30 \%$ solution required is $x = -\frac{3}{2} t + \frac{1250}{3} =  -\frac{3}{2} \left(\frac{100}{3}\right) + \frac{1250}{3} = \frac{1100}{3}$ mL, and for the water, $w = t = \frac{100}{3}$ mL.  The reader is invited to check that mixing these three amounts of our constituent solutions produces the required $40 \%$ acid mix.  \qed
+
+\end{ex}
+
+\newpage
+
+\subsection{Exercises}
+
+(Review Exercises) In Exercises \ref{reviewsystemfirst} - \ref{reviewsystemlast}, take a trip down memory lane and solve the given system using substitution and/or elimination. Classify each system as consistent independent, consistent dependent, or inconsistent. Check your answers both algebraically and graphically.
+
+\begin{multicols}{2}
+\begin{enumerate}
+
+\item $\left\{ \begin{array}{rcr} x+2y & = & 5  \\ x  & = & 6  \end{array} \right.$ \label{reviewsystemfirst}  
+
+\item  $\left\{ \begin{array}{rcr} 2y-3x & = & 1  \\ y  & = & -3 \end{array} \right.$  
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $\left\{ \begin{array}{rcr} \frac{x+2y}{4} & = & -5  \\[5pt] \frac{3x-y}{2}  & = & 1 \end{array} \right.$ 
+
+
+\item $\left\{ \begin{array}{rcr} \frac{2}{3} x-\frac{1}{5}y & = & 3  \\[5pt]  \frac{1}{2}x+\frac{3}{4}y& = & 1  \end{array} \right.$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $\left\{ \begin{array}{rcr} \frac{1}{2}x-\frac{1}{3}y & = & -1  \\ [5pt] 2y-3x & = & 6 \end{array} \right.$  
+
+
+\item $\left\{ \begin{array}{rcr} x+4y & = & 6  \\ [5pt] \frac{1}{12}x+\frac{1}{3}y& = & \frac{1}{2}  \end{array} \right.$ 
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $\left\{ \begin{array}{rcr} 3y-\frac{3}{2}x & = & -\frac{15}{2}  \\ [5pt] \frac{1}{2}x-y & = & \frac{3}{2} \end{array} \right.$   
+
+
+\item $\left\{ \begin{array}{rcr} \frac{5}{6}x+\frac{5}{3}y & = & -\frac{7}{3}  \\ [5pt] -\frac{10}{3}x-\frac{20}{3}y & = & 10  \end{array} \right.$ \label{reviewsystemlast} 
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+In Exercises \ref{triangfirst} - \ref{trianglast}, put each system of linear equations into triangular form and solve the system if possible.  Classify each system as consistent independent, consistent dependent, or inconsistent.
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\left\{ \begin{array}{rcr} -5x + y & = & 17  \\ x + y & = & 5  \end{array} \right.$ \label{triangfirst}
+\item $\left\{ \begin{array}{rcr} x + y + z & = & 3 \\ 2x - y + z & = & 0 \\ -3x + 5y + 7z & = & 7  \end{array} \right.$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item \label{dependentsystemmuliple} $\left\{ \begin{array}{rcr} 4x - y + z & = & 5 \\ 2y + 6z & = & 30 \\ x + z & = & 5  \end{array} \right.$
+\item $\left\{ \begin{array}{rcr} 4x - y + z & = & 5 \\ 2y + 6z & = & 30 \\ x + z & = & 6  \end{array} \right.$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\left\{ \begin{array}{rcr} x + y + z & = & -17  \\ y - 3z & = & 0  \end{array} \right.$
+
+
+\item $\left\{ \begin{array}{rcr} x-2y+3z & = & 7 \\ -3x+y+2z & = & -5 \\ 2x+2y+z & = & 3  \end{array} \right.$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item $\left\{ \begin{array}{rcr} 3x-2y+z & = & -5 \\ x+3y-z & = & 12 \\ x+y+2z & = & 0  \end{array} \right.$
+\item $\left\{ \begin{array}{rcr} 2x-y+z& = & -1 \\ 4x+3y+5z & = & 1 \\  5y+3z & = & 4 \end{array} \right.$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item $\left\{ \begin{array}{rcr} x-y+z & = & -4 \\ -3x+2y+4z & = & -5 \\ x-5y+2z & = & -18  \end{array} \right.$
+\item $\left\{ \begin{array}{rcr} 2x-4y+z & = & -7 \\ x-2y+2z & = & -2 \\ -x+4y-2z & = & 3  \end{array} \right.$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item $\left\{ \begin{array}{rcr} 2x-y+z & = & 1 \\ 2x+2y-z & = & 1 \\ 3x+6y+4z & = & 9  \end{array} \right.$
+\item $\left\{ \begin{array}{rcr} x-3y-4z & = & 3 \\ 3x+4y-z & = & 13 \\ 2x-19y-19z & = & 2  \end{array} \right.$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item $\left\{ \begin{array}{rcr} x+y+z & = & 4 \\ 2x-4y-z& = & -1 \\ x-y & = & 2 \end{array} \right.$
+\item $\left\{ \begin{array}{rcr} x-y+z & = & 8 \\ 3x+3y-9z & = & -6 \\  7x-2y+5z & = & 39 \end{array} \right.$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item $\left\{ \begin{array}{rcr} 2x-3y+z & = & -1 \\ 4x-4y+4z & = & -13 \\ 6x-5y+7z & = & -25  \end{array} \right.$
+
+\item  $\left\{ \begin{array}{rcr} 2x_{\mbox{\tiny$1$}} + x_{\mbox{\tiny$2$}} - 12x_{\mbox{\tiny$3$}} -  x_{\mbox{\tiny$4$}} & = & 16 \\ 
+-x_{\mbox{\tiny$1$}} + x_{\mbox{\tiny$2$}} + 12x_{\mbox{\tiny$3$}} - 4x_{\mbox{\tiny$4$}} & = & -5  \\  
+3x_{\mbox{\tiny$1$}} +  2x_{\mbox{\tiny$2$}} - 16x_{\mbox{\tiny$3$}} - 3x_{\mbox{\tiny$4$}} & = & 25 \\
+x_{\mbox{\tiny$1$}} +  2x_{\mbox{\tiny$2$}} - 5x_{\mbox{\tiny$4$}} & = & 11  \end{array} \right.$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+
+\item  $\left\{ \begin{array}{rcr} x_{\mbox{\tiny$1$}} - x_{\mbox{\tiny$3$}} & = & -2 \\ 
+2x_{\mbox{\tiny$2$}} - x_{\mbox{\tiny$4$}} & = & 0  \\  
+x_{\mbox{\tiny$1$}} -  2x_{\mbox{\tiny$2$}} + x_{\mbox{\tiny$3$}} & = & 0 \\
+-x_{\mbox{\tiny$3$}} + x_{\mbox{\tiny$4$}} & = & 1  \end{array} \right.$
+
+\item  $\left\{ \begin{array}{rcr} x_{\mbox{\tiny$1$}} - x_{\mbox{\tiny$2$}} - 5x_{\mbox{\tiny$3$}} +  3x_{\mbox{\tiny$4$}} & = & -1 \\ 
+x_{\mbox{\tiny$1$}} + x_{\mbox{\tiny$2$}} + 5x_{\mbox{\tiny$3$}} - 3x_{\mbox{\tiny$4$}} & = & 0  \\  
+x_{\mbox{\tiny$2$}} + 5x_{\mbox{\tiny$3$}} - 3x_{\mbox{\tiny$4$}} & = & 1 \\
+x_{\mbox{\tiny$1$}} -  2x_{\mbox{\tiny$2$}} - 10x_{\mbox{\tiny$3$}} + 6x_{\mbox{\tiny$4$}} & = & -1  \end{array} \right.$ \label{trianglast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item Find two other forms of the parametric solution to Exercise \ref{dependentsystemmuliple} above by reorganizing the equations so that $x$ or $y$ can be the free variable.
+
+\item  A local buffet charges $\$7.50$ per person for the basic buffet and $\$9.25$ for the deluxe buffet (which includes crab legs.)  If 27 diners went out to eat and the total bill was $\$227.00$ before taxes, how many chose the basic buffet and how many chose the deluxe buffet?
+
+\item At The Old Home Fill'er Up and Keep on a-Truckin' Cafe, Mavis mixes two different types of coffee beans to produce a house blend.   The first type costs \$3 per pound and the second costs \$8 per pound.  How much of each type does Mavis use to make 50 pounds of a blend which costs \$6 per pound?
+
+\item  Skippy has a total of $\$$10,000 to split between two investments.  One account offers $3\%$ simple interest, and the other account offers $8\%$ simple interest.  For tax reasons, he can only earn $\$500$ in interest the entire year.  How much money should Skippy invest in each account to earn $\$500$ in interest for the year?
+
+\item A $10 \%$ salt solution is to be mixed with pure water to produce 75 gallons of a $3\%$ salt solution.  How much of each are needed?
+
+\item \label{herbalteablend} At The Crispy Critter's Head Shop and Patchouli Emporium along with their dried up weeds, sunflower seeds and astrological postcards they sell an herbal tea blend.  By weight, Type I herbal tea is 30\% peppermint, 40\% rose hips and 30\% chamomile, Type II has percents 40\%, 20\% and 40\%, respectively, and Type III has percents 35\%, 30\% and 35\%, respectively.  How much of each Type of tea is needed to make 2 pounds of a new blend of tea that is equal parts peppermint, rose hips and chamomile?  
+
+\item Discuss with your classmates how you would approach Exercise \ref{herbalteablend} above if they needed to use up a pound of Type I tea to make room on the shelf for a new canister.
+
+\item If you were to try to make 100 mL of a $60\%$ acid solution using stock solutions at $20\%$ and $40\%$, respectively, what would the triangular form of the resulting system look like?  Explain.
+
+\end{enumerate}
+
+\newpage
+
+\subsection{Answers}
+
+\begin{multicols}{2}
+\begin{enumerate}
+
+\item Consistent independent \\
+Solution $\left(6, -\frac{1}{2}\right)$
+
+\item Consistent independent \\
+Solution $\left(-\frac{7}{3}, -3\right)$ 
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  Consistent independent \\
+Solution $\left(-\frac{16}{7}, -\frac{62}{7}\right)$  
+
+\item Consistent independent \\
+Solution $\left(\frac{49}{12}, -\frac{25}{18}\right)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  Consistent dependent\\
+Solution $\left(t, \frac{3}{2}t+3\right)$ \\
+for all real numbers $t$
+
+\item  Consistent dependent\\
+Solution $\left(6-4t, t\right)$ \\
+for all real numbers $t$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  Inconsistent \\
+No solution
+
+\item   Inconsistent \\
+No solution
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+Because triangular form is not unique, we give only one possible answer to that part of the question.  Yours may be different and still be correct.
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\begin{multicols}{2} \raggedcolumns
+
+\item $\left\{ \begin{array}{rcr} x + y & = & 5  \\ y & = & 7  \end{array} \right.$ 
+
+Consistent independent\\
+Solution $(-2, 7)$
+
+\end{multicols}
+
+\begin{multicols}{2} \raggedcolumns
+
+\item $\left\{ \begin{array}{rcr} x - \frac{5}{3}y - \frac{7}{3}z & = & -\frac{7}{3} \\ [3pt] y + \frac{5}{4}z & = & 2 \\ z & = & 0  \end{array} \right.$
+
+Consistent independent\\
+Solution $(1, 2, 0)$
+
+\end{multicols}
+
+\begin{multicols}{2} \raggedcolumns
+
+\item $\left\{ \begin{array}{rcr} x - \frac{1}{4}y + \frac{1}{4}z & = & \frac{5}{4} \\ [3pt] y + 3z & = & 15 \\ 0 & = & 0  \end{array} \right.$
+
+Consistent dependent\\
+Solution $(-t + 5, -3t + 15, t)$\\
+for all real numbers $t$
+
+\end{multicols}
+
+\begin{multicols}{2} \raggedcolumns
+
+\item $\left\{ \begin{array}{rcr} x - \frac{1}{4}y + \frac{1}{4}z & = & \frac{5}{4} \\ [3pt] y + 3z & = & 15 \\ 0 & = & 1 \end{array} \right.$
+
+Inconsistent\\
+No solution
+
+\end{multicols}
+
+\begin{multicols}{2} \raggedcolumns
+
+\item $\left\{ \begin{array}{rcr} x + y + z & = & -17  \\ y - 3z & = & 0  \end{array} \right.$
+\vspace{.25in}
+
+Consistent dependent\\
+Solution $(-4t - 17, 3t, t)$\\
+for all real numbers $t$
+
+\end{multicols}
+
+\begin{multicols}{2} \raggedcolumns
+\item $\left\{ \begin{array}{rcr} x-2y+3z & = & 7  \\ y - \frac{11}{5}z & = & -\frac{16}{5} \\ z & = & 1 \\  \end{array} \right.$
+\vspace{.25in}
+
+Consistent independent\\
+Solution $(2,-1,1)$
+
+\end{multicols}
+
+\begin{multicols}{2} \raggedcolumns
+\item $\left\{ \begin{array}{rcr} x+y+2z & = & 0  \\ y - \frac{3}{2}z & = & 6 \\ z & = & -2 \\  \end{array} \right.$
+\vspace{.25in}
+
+Consistent independent\\
+Solution $(1,3,-2)$
+
+\end{multicols}
+
+
+\begin{multicols}{2} \raggedcolumns
+\item $\left\{ \begin{array}{rcr} x - \frac{1}{2} y + \frac{1}{2} z & = & -\frac{1}{2}  \\ [3pt] y + \frac{3}{5} z & = & \frac{3}{5} \\ 0 & = & 1 \\  \end{array} \right.$
+\vspace{.25in}
+
+Inconsistent\\
+no solution
+
+
+\end{multicols}
+
+
+\begin{multicols}{2} \raggedcolumns
+\item $\left\{ \begin{array}{rcr} x-y+z & = & -4  \\ y - 7z & = & 17 \\ z & = & -2 \\  \end{array} \right.$
+\vspace{.25in}
+
+Consistent independent\\
+Solution $(1,3,-2)$
+
+\end{multicols}
+
+\begin{multicols}{2} \raggedcolumns
+\item $\left\{ \begin{array}{rcr} x-2y+2z & = & -2  \\ y  & = & \frac{1}{2} \\ z & = & 1 \\  \end{array} \right.$
+\vspace{.25in}
+
+Consistent independent\\
+Solution $\left(-3,\frac{1}{2},1\right)$
+
+\end{multicols}
+
+\begin{multicols}{2} \raggedcolumns
+\item $\left\{ \begin{array}{rcr} x-\frac{1}{2} y+\frac{1}{2} z & = & \frac{1}{2}  \\ [3pt] y - \frac{2}{3} z & = & 0 \\ z & = & 1 \\  \end{array} \right.$
+\vspace{.25in}
+
+Consistent independent\\
+Solution $\left(\frac{1}{3},\frac{2}{3},1\right)$
+
+\end{multicols}
+
+
+\begin{multicols}{2} \raggedcolumns
+\item $\left\{ \begin{array}{rcr} x-3y-4z & = & 3  \\ y + \frac{11}{13} z & = & \frac{4}{13} \\ 0 & = & 0 \\  \end{array} \right.$
+\vspace{.25in}
+
+Consistent dependent\\
+Solution $\left(\frac{19}{13} t + \frac{51}{13},-\frac{11}{13} t+\frac{4}{13},t\right)$\\
+for all real numbers $t$
+
+\end{multicols}
+
+\begin{multicols}{2} \raggedcolumns
+\item $\left\{ \begin{array}{rcr} x+y+z & = & 4  \\ y + \frac{1}{2} z & = & \frac{3}{2} \\ 0 & = & 1 \\  \end{array} \right.$
+\vspace{.25in}
+
+Inconsistent\\
+no solution
+
+
+\end{multicols}
+
+\begin{multicols}{2} \raggedcolumns
+\item $\left\{ \begin{array}{rcr} x-  y +  z & = & 8  \\ y -2z & = & -5 \\ z & = & 1 \\  \end{array} \right.$
+\vspace{.25in}
+
+Consistent independent\\
+Solution $\left(4,-3,1\right)$
+
+
+\end{multicols}
+
+
+\begin{multicols}{2} \raggedcolumns
+\item $\left\{ \begin{array}{rcr} x- \frac{3}{2} y + \frac{1}{2} z & = & -\frac{1}{2}  \\[3pt] y +  z & = & -\frac{11}{2} \\ 0 & = & 0 \\  \end{array} \right.$
+\vspace{.25in}
+
+Consistent dependent\\
+Solution $\left(-2t - \frac{35}{4},-t - \frac{11}{2},t\right)$\\
+for all real numbers $t$
+
+\end{multicols}
+
+
+\begin{multicols}{2} \raggedcolumns
+
+\item  $\left\{ \begin{array}{rcr} x_{\mbox{\tiny$1$}} + \frac{2}{3}x_{\mbox{\tiny$2$}} - \frac{16}{3}x_{\mbox{\tiny$3$}} -  x_{\mbox{\tiny$4$}} & = & \frac{25}{3} \\ [3pt]
+x_{\mbox{\tiny$2$}} + 4x_{\mbox{\tiny$3$}} - 3x_{\mbox{\tiny$4$}} & = & 2  \\  
+0 & = & 0 \\
+0 & = & 0  \end{array} \right.$
+
+Consistent dependent\\
+Solution $(8s - t + 7, -4s + 3t + 2, s, t)$\\
+for all real numbers $s$ and $t$
+
+\end{multicols}
+
+\begin{multicols}{2} \raggedcolumns
+
+\item  $\left\{ \begin{array}{rcr} x_{\mbox{\tiny$1$}} - x_{\mbox{\tiny$3$}} & = & -2 \\ [3pt]
+x_{\mbox{\tiny$2$}} - \frac{1}{2}x_{\mbox{\tiny$4$}} & = & 0  \\ [3pt]
+x_{\mbox{\tiny$3$}} - \frac{1}{2} x_{\mbox{\tiny$4$}} & = & 1 \\ [3pt]
+x_{\mbox{\tiny$4$}} & = & 4  \end{array} \right.$
+
+Consistent independent\\
+Solution $(1, 2, 3, 4)$
+
+\end{multicols}
+
+\begin{multicols}{2} \raggedcolumns
+
+\item  $\left\{ \begin{array}{rcr} x_{\mbox{\tiny$1$}} - x_{\mbox{\tiny$2$}} - 5x_{\mbox{\tiny$3$}} +  3x_{\mbox{\tiny$4$}} & = & -1 \\ 
+x_{\mbox{\tiny$2$}} + 5x_{\mbox{\tiny$3$}} - 3x_{\mbox{\tiny$4$}} & = & \frac{1}{2}  \\  
+0 & = & 1 \\
+0 & = & 0 \end{array} \right.$
+
+Inconsistent\\
+No solution
+
+\end{multicols}
+
+\item If $x$ is the free variable then the solution is $(t, 3t, -t + 5)$ and if $y$ is the free variable then the solution is $\left(\frac{1}{3}t, t, -\frac{1}{3}t + 5\right)$.
+
+\item  $13$ chose the basic buffet and $14$ chose the deluxe buffet.
+
+\item Mavis needs 20 pounds of \$3 per pound coffee and 30 pounds of \$8 per pound coffee.
+
+\item  Skippy needs to invest $\$$6000 in the $3\%$ account and $\$$4000 in the $8 \%$ account.
+
+\item  $22.5$ gallons of the $10 \%$ solution and $52.5$ gallons of pure water.
+
+\item $\frac{4}{3}- \frac{1}{2}t$ pounds of Type I, $\frac{2}{3} - \frac{1}{2}t$ pounds of Type II and $t$ pounds of Type III where $0 \leq t \leq \frac{4}{3}$.
+
+\end{enumerate}
+
+\closegraphsfile

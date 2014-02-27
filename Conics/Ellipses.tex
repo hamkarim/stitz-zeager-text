@@ -1,0 +1,966 @@
+\mfpicnumber{1}
+
+\opengraphsfile{Ellipses}
+
+\setcounter{footnote}{0}
+
+\label{Ellipses}
+
+In the definition of a circle, Definition \ref{circledefn}, we fixed a point called the \textbf{center} and considered all of the points which were a fixed distance $r$ from that one point.  For our next conic section, the ellipse, we fix two distinct points and a distance $d$ to use in our definition.  
+
+\medskip
+
+\colorbox{ResultColor}{\bbm
+
+ \begin{defn} \label{ellipsedefn} Given two distinct points $F_{\mbox{\tiny$1$}}$ and $F_{\mbox{\tiny$2$}}$ in the plane and a fixed distance $d$, an \index{ellipse ! definition of}  \textbf{ellipse} is the set of all points $(x, y)$ in the plane such that the sum of each of the distances from $F_{\mbox{\tiny$1$}}$ and $F_{\mbox{\tiny$2$}}$ to $(x, y)$ is $d$.  The points $F_{\mbox{\tiny$1$}}$ and $F_{\mbox{\tiny$2$}}$ are called the \index{ellipse ! foci} \index{focus (foci) ! of an ellipse} \textbf{foci}\footnote{the plural of `focus'} of the ellipse.
+
+\end{defn} 
+
+\ebm}
+
+\medskip
+
+\begin{center}
+
+\begin{mfpic}[20]{-6}{6}{-5}{5}
+\ellipse{(0,0),5,4}
+\dashed \polyline{(-3,0), (4,2.4)}
+\dashed \polyline{(3,0), (4,2.4)}
+\point[3pt]{(4,2.4)}
+\tlabel[cc](5, 2.4){$(x, y)$}
+\tlabel[cc](-1,1.1){$d_{\mbox{\tiny$1$}}$}
+\tlabel[cc](3,1.1){$d_{\mbox{\tiny$2$}}$}
+\tlabel[cc](-3,-0.5){$F_{\mbox{\tiny$1$}}$}
+\tlabel[cc](3,-0.5){$F_{\mbox{\tiny$2$}}$}
+\plotsymbol[3pt]{Asterisk}{(-3,0)}
+\plotsymbol[3pt]{Asterisk}{(3,0)}
+\tcaption{$d_{\mbox{\tiny$1$}} + d_{\mbox{\tiny$2$}} = d$ for all $(x, y)$ on the ellipse}
+\end{mfpic}
+
+\end{center}
+
+
+We may imagine taking a length of string and anchoring it to two points on a piece of paper.  The curve traced out by taking a pencil and moving it so the string is always taut is an ellipse. 
+
+\medskip
+
+The \index{ellipse ! center} \index{center ! of an ellipse} \textbf{center} of the ellipse is the midpoint of the line segment connecting the two foci.  The \index{ellipse ! major axis} \index{major axis of an ellipse} \textbf{major axis} of the ellipse is the line segment connecting two opposite ends of the ellipse which also contains the center and foci.  The \index{ellipse ! minor axis} \index{minor axis of an ellipse} \textbf{minor axis} of the ellipse is the line segment connecting two opposite ends of the ellipse which contains the center but is perpendicular to the major axis.  The \index{ellipse ! vertices} \index{vertex ! of an ellipse} \textbf{vertices} of an ellipse are the points of the ellipse which lie on the major axis.  Notice that the center is also the midpoint of the major axis, hence it is the midpoint of the vertices.  In pictures we have,
+
+\medskip
+
+\begin{center}
+
+\begin{mfpic}[20]{-6}{6}{-5}{5}
+\ellipse{(0,0),5,4}
+\dotted[1pt, 3pt] \polyline{(-5,0), (5,0)}
+\dotted[1pt, 3pt] \polyline{(0,-4), (0,4)}
+\point[3pt]{(5,0),(-5,0)}
+\tlabel[cc](-3,-0.5){$F_{\mbox{\tiny$1$}}$}
+\tlabel[cc](3,-0.5){$F_{\mbox{\tiny$2$}}$}
+\plotsymbol[3pt]{Asterisk}{(-3,0),(3,0)}
+\plotsymbol[3pt]{Cross}{(0,0)}
+\tlabel[cc](5.5,0){$V_{\mbox{\tiny$2$}}$}
+\tlabel[cc](-5.5,0){$V_{\mbox{\tiny$1$}}$}
+\gclear \tlabelrect[cc](0,-0.5){$C$}
+\tlabel[cc](2.5,0.5){\tiny Major Axis}
+\tlabel[cc](-0.5,2){\tiny \rotatebox{90}{Minor Axis}}
+\end{mfpic}
+
+An ellipse with center $C$; foci $F_{\mbox{\tiny$1$}}$, $F_{\mbox{\tiny$2$}}$; and vertices $V_{\mbox{\tiny$1$}}$, $V_{\mbox{\tiny$2$}}$
+
+\end{center} 
+
+\medskip
+
+Note that the major axis is the longer of the two axes through the center, and likewise, the minor axis is the shorter of the two.  In order to derive the standard equation of an ellipse, we assume that the ellipse has its center at $(0,0)$, its major axis along the $x$-axis, and has foci $(c,0)$ and $(-c,0)$ and vertices $(-a,0)$ and $(a,0)$.  We will label the $y$-intercepts of the ellipse as $(0,b)$ and $(0,-b)$  (We assume $a$, $b$, and $c$ are all positive numbers.) Schematically,
+
+\medskip
+
+\begin{center}
+
+\begin{mfpic}[20]{-6}{6}{-5}{5}
+\axes
+\ellipse{(0,0),5,4}
+\dashed \polyline{(-3,0), (4,2.4)}
+\dashed \polyline{(3,0), (4,2.4)}
+\point[3pt]{(4,2.4),(-5,0),(5,0),(0,4),(0,-4)}
+\tlabel[cc](-3,-0.5){$(-c,0)$}
+\tlabel[cc](3,-0.5){$(c,0)$}
+\plotsymbol[3pt]{Asterisk}{(-3,0),(3,0)}
+\plotsymbol[3pt]{Cross}{(0,0)}
+\tlabel[cc](-6,-0.5){$(-a,0)$}
+\tlabel[cc](6,-0.5){$(a,0)$}
+\tlabel[cc](1,4.5){$(0,b)$}
+\tlabel[cc](1, -4.5){$(0,-b)$}
+\tlabel[cc](5, 2.4){$(x,y)$}
+\tlabel(6,0.25){\scriptsize $x$}
+\tlabel(-0.5,5){\scriptsize $y$}
+\end{mfpic}
+
+\end{center}
+
+\medskip
+
+Note that since $(a,0)$ is on the ellipse, it must satisfy the conditions of Definition \ref{ellipsedefn}.  That is, the distance from $(-c,0)$ to $(a,0)$ plus the distance from  $(c,0)$ to $(a,0)$ must equal the fixed distance $d$.  Since all of these points lie on the $x$-axis, we get
+
+\[ \begin{array}{rclr} \mbox{distance from $(-c,0)$ to $(a,0)$} + \mbox{distance from $(c,0)$ to $(a,0)$} & = & d & \\ (a+c) + (a-c) & = & d & \\ 2a & = & d \\ \end{array}\]
+
+\medskip
+
+In other words, the fixed distance $d$ mentioned in the definition of the ellipse is none other than the length of the major axis.  We now use that fact $(0,b)$ is on the ellipse, along with the fact that $d=2a$ to get
+
+\[ \begin{array}{rclr} \mbox{distance from  $(-c,0)$ to $(0,b)$} + \mbox{distance from $(c,0)$ to $(0,b)$} & = & 2a & \\ \sqrt{(0-(-c))^2+(b-0)^2} + \sqrt{(0-c)^2+(b-0)^2} & = & 2a & \\ \sqrt{b^2+c^2}+\sqrt{b^2+c^2} & = & 2a  \\ 2 \sqrt{b^2+c^2} & = & 2a \\ \sqrt{b^2+c^2} & = & a \end{array}\]
+
+\medskip
+
+From this, we get $a^2 = b^2 + c^2$, or $b^2 = a^2 - c^2$, which will prove useful later.  Now consider a point $(x,y)$ on the ellipse.  Applying Definition \ref{ellipsedefn}, we get
+
+
+\[ \begin{array}{rclr} \mbox{distance from  $(-c,0)$ to $(x,y)$} + \mbox{distance from $(c,0)$ to $(x,y)$} & = & 2a & \\ \sqrt{(x-(-c))^2+(y-0)^2} + \sqrt{(x-c)^2+(y-0)^2} & = & 2a & \\ \sqrt{(x+c)^2+y^2}+\sqrt{(x-c)^2+y^2} & = & 2a  \\ \end{array}\]
+
+\medskip
+
+In order to make sense of this situation, we need to make good use of Intermediate Algebra.
+
+\[ \begin{array}{rclr}  \sqrt{(x+c)^2+y^2}+\sqrt{(x-c)^2+y^2} & = & 2a  & \\ \sqrt{(x+c)^2+y^2} & = & 2a - \sqrt{(x-c)^2+y^2} & \\ \left(\sqrt{(x+c)^2+y^2}\right)^2 & = & \left(2a - \sqrt{(x-c)^2+y^2}\right)^2 & \\ (x+c)^2+y^2 & = & 4a^2 - 4a\sqrt{(x-c)^2+y^2} + (x-c)^2+y^2 & \\ 4a\sqrt{(x-c)^2+y^2} & = & 4a^2 + (x-c)^2 - (x+c)^2 & \\ 4a\sqrt{(x-c)^2+y^2} & = & 4a^2 - 4cx & \\ a\sqrt{(x-c)^2+y^2} & = & a^2 - cx & \\ \left(a\sqrt{(x-c)^2+y^2}\right)^2 & = & \left(a^2 - cx\right)^2 & \\ a^2\left((x-c)^2+y^2\right) & = & a^4 - 2a^2cx +c^2 x^2 & \\  a^2x^2 - 2a^2cx + a^2c^2+a^2 y^2 & = & a^4 - 2a^2cx +c^2 x^2 & \\  a^2x^2 - c^2 x^2 +a^2 y^2 & = & a^4  - a^2c^2 & \\ \left(a^2 - c^2\right) x^2 +a^2 y^2 & = & a^2 \left(a^2 - c^2\right)  & \\ \end{array}\]
+
+\medskip
+
+We are nearly finished.  Recall that $b^2 = a^2 - c^2$ so that
+
+\[ \begin{array}{rclr} \left(a^2 - c^2\right)x^2 +a^2 y^2 & = & a^2\left(a^2 - c^2\right) & \\ b^2 x^2 +a^2 y^2 & = & a^2 b^2 & \\  \dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} & = & 1 &  \\ \end{array}\]
+
+\medskip
+
+This equation is for an ellipse centered at the origin. To get the formula for the ellipse centered at $(h,k)$, we could use the transformations from Section \ref{Transformations} or re-derive the equation using Definition \ref{ellipsedefn} and the distance formula to obtain the formula below.
+
+\medskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{eqn}  \label{standardellipse} \index{ellipse ! standard equation} \textbf{The Standard Equation of an Ellipse:}  For positive unequal numbers $a$ and $b$, the equation of an ellipse with center $(h,k)$ is
+
+\[ \dfrac{(x-h)^2}{a^2} + \dfrac{(y-k)^2}{b^2} = 1 \]
+
+\end{eqn}
+  
+\ebm}
+  
+\medskip
+
+Some remarks about Equation \ref{standardellipse} are in order.  First note that the values $a$ and $b$ determine how far in the $x$ and $y$ directions, respectively, one counts from the center to arrive at points on the ellipse.  Also take note that if $a > b$, then we have an ellipse whose major axis is horizontal, and hence, the foci lie to the left and right of the center.  In this case, as we've seen in the derivation, the distance from the center to the focus, $c$, can be found by $c = \sqrt{a^2 - b^2}$.  If $b > a$, the roles of the major and minor axes are reversed, and the foci lie above and below the center. In this case, $c = \sqrt{b^2 - a^2}$.  In either case, $c$ is the distance from the center to each focus, and $c = \sqrt{\mbox{bigger denominator} - \mbox{smaller denominator}}$.  Finally, it is worth mentioning that if we take the standard equation of a circle, Equation \ref{standardcircle}, and divide both sides by $r^2$, we get
+
+\medskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{eqn} \label{standardcirclealternate} \index{circle ! standard equation, alternate} \textbf{The Alternate Standard Equation of a Circle:}  The equation of a circle with center $(h,k)$ and radius $r >0$ is
+
+\[ \dfrac{(x-h)^2}{r^2} + \dfrac{(y-k)^2}{r^2} = 1 \]
+
+\end{eqn}
+
+\ebm}
+  
+\medskip
+  
+Notice the similarity between Equation \ref{standardellipse} and Equation \ref{standardcirclealternate}.  Both equations involve a sum of squares equal to $1$;  the difference is that with a circle, the denominators are the same, and with an ellipse, they are different.  If we take a transformational approach, we can consider both Equations \ref{standardellipse} and \ref{standardcirclealternate} as shifts and stretches of the Unit Circle $x^2 + y^2 = 1$ in Definition \ref{UnitCircle}.  Replacing $x$ with $(x-h)$ and $y$ with $(y-k)$ causes the usual horizontal and vertical shifts.  Replacing $x$ with $\frac{x}{a}$ and $y$ with $\frac{y}{b}$ causes the usual vertical and horizontal stretches.  In other words, it is perfectly fine to think of an ellipse as the deformation of a circle in which the circle is stretched farther in one direction than the other.\footnote{This was foreshadowed in Exercise \ref{circletransunitcircleexercise} in Section \ref{Circles}.}
+
+\medskip
+
+\begin{ex} Graph $\frac{(x+1)^2}{9} + \frac{(y-2)^2}{25} = 1$.  Find the center, the lines which contain the major and minor axes, the vertices, the endpoints of the minor axis, and the foci.
+
+\medskip
+
+{\bf Solution.} We see that this equation is in the standard form of Equation \ref{standardellipse}.  Here $x-h$ is $x+1$ so $h = -1$, and $y-k$ is $y-2$ so $k = 2$.  Hence, our ellipse is centered at $(-1,2)$.  We see that $a^2 = 9$ so $a=3$, and $b^2 = 25$ so $b=5$.  This means that we move $3$ units left and right from the center and $5$ units up and down from the center to arrive at points on the ellipse.  As an aid to sketching, we draw a rectangle matching this description, called a \index{ellipse ! guide rectangle} \index{guide rectangle ! for an ellipse} \textbf{guide rectangle}, and sketch the ellipse inside this rectangle as seen below on the left.
+
+\medskip
+
+\begin{center}
+
+\begin{tabular}{cc}
+
+\begin{mfpic}[20]{-5}{3}{-4}{8}
+\axes
+\tlabel(3,-0.5){\scriptsize $x$}
+\tlabel(0.5,8){\scriptsize $y$}
+\xmarks{-4, -3, -2, -1, 0, 1, 2}
+\ymarks{-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7}
+\ellipse{(-1,2),3,5}
+\dotted[1pt, 3pt] \polyline{(-4,-3), (2,-3), (2,7), (-4,7), (-4,-3) }
+\plotsymbol[3pt]{Cross}{(-1,2)}
+\point[3pt]{(-4,2)}
+\point[3pt]{(2,2)}
+\point[3pt]{(-1,7)}
+\point[3pt]{(-1,-3)}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1,  {$2$} 2}
+\axislabels {y}{{$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7}
+\normalsize
+\end{mfpic}   \hspace{0.75in} & 
+
+\begin{mfpic}[20]{-5}{3}{-4}{8}
+\axes
+\tlabel(3,-0.5){\scriptsize $x$}
+\tlabel(0.5,8){\scriptsize $y$}
+\xmarks{-4, -3, -2, -1, 0, 1, 2}
+\ymarks{-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7}
+\ellipse{(-1,2),3,5}
+\plotsymbol[3pt]{Asterisk}{(-1,-2)}
+\plotsymbol[3pt]{Asterisk}{(-1,6)}
+\plotsymbol[3pt]{Cross}{(-1,2)}
+\point[3pt]{(-1,7)}
+\point[3pt]{(-1,-3)}
+\dotted[1pt, 3pt] \polyline{(-1,7), (-1,-3)}
+\dotted[1pt, 3pt] \polyline{(-4,2), (2,2)}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1,  {$2$} 2}
+\axislabels {y}{{$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7}
+\normalsize
+\end{mfpic}  \\
+
+\end{tabular}
+
+\end{center}
+ 
+\medskip
+
+Since we moved farther in the $y$ direction than in the $x$ direction, the major axis will lie along the vertical line $x=-1$, which means the minor axis lies along the horizontal line, $y = 2$.  The vertices are the points on the ellipse which lie along the major axis so in this case, they are the points $(-1,7)$ and $(-1,-3)$, and the endpoints of the minor axis are $(-4,2)$ and $(2,2)$.  (Notice these points are the four points we used to draw the guide rectangle.)  To find the foci, we find $c = \sqrt{25-9} = \sqrt{16} = 4$, which means the foci lie $4$ units from the center. Since the major axis is vertical, the foci lie $4$ units above and below the center, at $(-1,-2)$ and $(-1,6)$.  Plotting all this information gives the graph seen above on the right. \qed
+
+\end{ex}
+
+\medskip
+
+\begin{ex} Find the equation of the ellipse with foci  $(2,1)$ and $(4,1)$ and vertex $(0,1)$.
+
+\medskip
+
+{\bf Solution.} Plotting the data given to us, we have
+
+\begin{center}
+
+\begin{mfpic}[25]{-1}{6}{0}{2}
+\axes
+\xmarks{ 0,1,2,3,4,5}
+\ymarks{0,1}
+\point[3pt]{(0,1)}
+\plotsymbol[3pt]{Asterisk}{(2,1)}
+\plotsymbol[3pt]{Asterisk}{(4,1)}
+\tlabel(6, -0.25){\scriptsize $x$}
+\tlabel(0.25,2){\scriptsize $y$}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\axislabels {y}{{$1$} 1}
+\normalsize
+\end{mfpic}
+
+\end{center}
+
+From this sketch, we know that the major axis is horizontal, meaning $a > b$.  Since the center is the midpoint of the foci, we know it is $(3, 1)$.  Since one vertex is $(0,1)$ we have that $a = 3$, so $a^2 =  9$.  All that remains is to find $b^2$. Since the foci are $1$ unit away from the center, we know $c=1$.  Since $a > b$, we have $c = \sqrt{a^2-b^2}$, or $1 = \sqrt{9-b^2}$, so $b^2 = 8$.  Substituting all of our findings into the equation $\frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = 1$, we get our final answer to be  $\frac{(x-3)^2}{9}+\frac{(y-1)^2}{8}=1$. \qed
+
+\end{ex}
+
+As with circles and parabolas, an equation may be given which is an ellipse, but isn't in the standard form of Equation \ref{standardellipse}.  In those cases, as with circles and parabolas before, we will need to massage the given equation into the standard form.
+
+\medskip
+
+\colorbox{ResultColor}{\bbm
+
+\centerline{\textbf{To Write the Equation of an Ellipse in Standard Form}}
+
+\begin{enumerate}
+
+\item  Group the same variables together on one side of the equation and position the constant on the other side.
+
+\item  Complete the square in both variables as needed.
+
+\item  Divide both sides by the constant term so that the constant on the other side of the equation becomes $1$.
+
+\end{enumerate}
+
+\ebm}
+
+\medskip
+
+\begin{ex} \label{ctsellipseex} Graph $x^2+4y^2-2x+24y+33 = 0$. Find the center, the lines which contain the major and minor axes, the vertices, the endpoints of the minor axis, and the foci.
+
+\medskip
+
+{\bf Solution.}  Since we have a sum of squares and the squared terms have unequal coefficients, it's a good bet we have an ellipse on our hands.\footnote{The equation of a parabola has only one squared variable and the equation of a circle has two squared variables with \textit{identical} coefficients.}  We need to complete both squares, and then divide, if necessary, to get the right-hand side equal to $1$.
+
+\[ \begin{array}{rclr} x^2+4y^2-2x+24y+33 & = & 0 & \\ x^2-2x+4y^2+24y & = & -33 & \\   x^2 - 2x + 4\left(y^2+6y\right)  &  = & - 33 &  \\   \left(x^2 - 2x +1\right) + 4\left(y^2+6y+9\right)  &  = & - 33 + 1 + 4(9)& \\ (x-1)^2 + 4(y+3)^2  &  = & 4 & \\[5pt]  \dfrac{(x-1)^2 + 4(y+3)^2}{4}  &  = & \dfrac{4}{4} & \\[10pt] \dfrac{(x-1)^2}{4} + (y+3)^2 & = & 1 & \\[10pt] \dfrac{(x-1)^2}{4} + \dfrac{(y+3)^2}{1} & = & 1 & \\  \end{array} \]
+
+\medskip
+
+Now that this equation is in the standard form of Equation \ref{standardellipse}, we see that $x-h$ is $x-1$ so $h = 1$, and $y-k$ is $y+3$ so $k = -3$.  Hence, our ellipse is centered at $(1,-3)$.  We see that $a^2 = 4$ so $a=2$, and $b^2 = 1$ so $b=1$.  This means we move $2$ units left and right from the center and $1$ unit up and down from the center to arrive at points on the ellipse.  Since we moved farther in the $x$ direction than in the $y$ direction, the major axis will lie along the horizontal line $y=-3$, which means the minor axis lies along the vertical line $x = 1$. The vertices are the points on the ellipse which lie along the major axis so in this case, they are the points $(-1,-3)$ and $(3,-3)$, and the endpoints of the minor axis are $(1,-2)$ and $(1,-4)$. To find the foci, we find $c = \sqrt{4-1} = \sqrt{3}$, which means the foci lie $\sqrt{3}$ units from the center. Since the major axis is horizontal, the foci lie $\sqrt{3}$ units to the left and right of the center, at $(1-\sqrt{3},-3)$ and $(1+\sqrt{3},-3)$.  Plotting all of this information gives
+
+\begin{center}
+
+\begin{mfpic}[25]{-2}{5}{-5}{1}
+\axes
+\tlabel(5,-0.25){\scriptsize $x$}
+\tlabel(0.25, 1){\scriptsize $y$}
+\xmarks{-1,0,1,2,3,4}
+\ymarks{-4,-3,-2,-1,0}
+\point[3pt]{(3,-3), (-1,-3), (1,-2), (1,-4)}
+\ellipse{(1,-3),2,1}
+\dotted[1pt, 3pt] \polyline{(-1,-3),(3,-3)}
+\dotted[1pt, 3pt] \polyline{(1,-2),(1,-4)}
+\plotsymbol[3pt]{Asterisk}{(2.732050808,-3)}
+\plotsymbol[3pt]{Asterisk}{(-0.732050808,-3)}
+\plotsymbol[3pt]{Cross}{(1,-3)}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$-1 \hspace{6pt}$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1,}
+\normalsize
+\end{mfpic}
+
+\end{center}
+
+\qed
+
+\end{ex}
+
+\medskip
+
+As you come across ellipses in the homework exercises and in the wild, you'll notice they come in all shapes in sizes. Compare the two ellipses below.
+
+\begin{center}
+
+\begin{tabular}{cc}
+
+\begin{mfpic}[10]{-5}{5}{-3}{3}
+\ellipse{(0,0),5,1}
+\end{mfpic}  &
+
+\begin{mfpic}[10]{-5}{5}{-3}{3}
+\ellipse{(0,0),4,3}
+\end{mfpic}  \\
+
+\end{tabular}
+
+\end{center}
+
+Certainly, one ellipse is more round than the other.  This notion of `roundness' is quantified below.
+
+\medskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{defn}
+
+The \label{ellipseeccentricity} \index{ellipse ! eccentricity} \index{eccentricity} \textbf{eccentricity} of an ellipse, denoted $e$, is the following ratio:
+
+\[  e = \dfrac{\mbox{distance from the center to a focus}}{\mbox{distance from the center to a vertex}} \]
+
+\end{defn}
+
+\ebm}
+
+\medskip
+
+In an ellipse, the foci are closer to the center than the vertices, so $0 < e < 1$. The ellipse above on the left has eccentricity $e \approx 0.98$;  for the ellipse above on the right, $e \approx 0.66$.  In general, the closer the eccentricity is to $0$, the more `circular' the ellipse;  the closer the eccentricity is to $1$, the more `eccentric' the ellipse.
+
+\medskip
+
+\begin{ex}  Find the equation of the ellipse whose vertices are $(\pm 5,0 )$ with eccentricity $e = \frac{1}{4}$.
+
+\medskip
+
+{\bf Solution.}  As before, we plot the data given to us
+
+\begin{center}
+
+\begin{mfpic}[10]{-6}{6}{-2}{2}
+\axes
+\tlabel(6,-0.5){\scriptsize $x$}
+\tlabel(0.5,1){\scriptsize $y$}
+\xmarks{-5,-4,-3,-2,-1,0,1,2,3,4,5}
+\ymarks{-1,1}
+\point[4pt]{(5,0),(-5,0)}
+\end{mfpic}
+
+\end{center}
+
+From this sketch, we know that the major axis is horizontal, meaning $a > b$.  With the vertices located at $(\pm 5,0)$, we get $a = 5$ so $a^2 = 25$.  We also know that the center is $(0,0)$ because the center is the midpoint of the vertices.  All that remains is to find $b^2$.  To that end, we use the fact that the eccentricity $e = \frac{1}{4}$ which means
+
+\[   e = \dfrac{\mbox{distance from the center to a focus}}{\mbox{distance from the center to a vertex}}  = \dfrac{c}{a} = \dfrac{c}{5} = \dfrac{1}{4}\]
+
+from which we get $c = \frac{5}{4}$.  To get $b^2$, we use the fact that $c = \sqrt{a^2 - b^2}$, so $\frac{5}{4} = \sqrt{25-b^2}$ from which we get $b^2 = \frac{375}{16}$.  Substituting all of our findings into the equation $\frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = 1$, yields our final answer $\frac{x^2}{25} + \frac{16y^2}{375}=1$. \qed
+
+\end{ex}
+
+As with parabolas, ellipses have a  \index{ellipse ! reflective property} reflective property. If we imagine the dashed lines below representing sound waves, then the waves emanating from one focus reflect off the top of the ellipse and head towards the other focus.  
+
+\medskip
+
+\begin{center}
+
+\begin{mfpic}[20]{-6}{6}{-5}{5}
+\parafcn{0,3.14,.1}{(5*cos(t),4*sin(t))}
+\dashed \polyline{(-3,0), (4,2.4)}
+\dashed \polyline{(3,0), (4,2.4)}
+\point[3pt]{(4,2.4)}
+\tlabel[cc](-3,-0.5){$F_{\mbox{\tiny$1$}}$}
+\tlabel[cc](3,-0.5){$F_{\mbox{\tiny$2$}}$}
+\plotsymbol[3pt]{Asterisk}{(-3,0),(3,0)}
+\end{mfpic}
+
+\end{center}
+Such geometry is exploited in the construction of so-called `Whispering Galleries'. If a person whispers at one focus, a person standing at the other focus will hear the first person as if they were standing right next to them.  We explore the Whispering Galleries in our last example. 
+
+\begin{ex} \label{whisgalleryex} Jamie and Jason want to exchange secrets (terrible secrets) from across a crowded whispering gallery.  Recall that a whispering gallery is a room which, in cross section, is half of an ellipse.  If the room is 40 feet high at the center and 100 feet wide at the floor, how far from the outer wall should each of them stand so that they will be positioned at the foci of the ellipse? 
+
+\medskip
+
+{\bf Solution.} Graphing the data yields
+
+\begin{center}
+
+\begin{mfpic}[25]{-6}{6}{-1}{5}
+\axes
+\tlabel(6,-0.5){\scriptsize $x$}
+\tlabel(0.5,5){\scriptsize $y$}
+\parafcn{0,pi,0.1}{(5*cos t, 4*sin t)}
+\arrow \reverse \arrow \polyline{(-5,-0.5),(5,-0.5)}
+\gclear \tlabelrect[cc](0,-1.5){$100$ units wide}
+\arrow \reverse \arrow \polyline{(0,0),(0,4 )}
+\gclear \tlabelrect[cc](0, 2){$40$ units tall}
+\end{mfpic}
+
+\end{center}
+
+It's most convenient to imagine this ellipse centered at $(0,0)$.  Since the ellipse is $100$ units wide and $40$ units tall, we get $a=50$ and $b=40$.  Hence, our ellipse has the equation  $\frac{x^2}{50^2}+\frac{y^2}{40^2} = 1$.  We're looking for the foci, and we get $c = \sqrt{50^2-40^2} = \sqrt{900} = 30$, so that the foci are $30$ units from the center.  That means they are $50-30=20$ units from the vertices.  Hence, Jason and Jamie should stand $20$ feet from opposite ends of the gallery. \qed
+
+\end{ex}
+
+
+\newpage
+
+\subsection{Exercises}
+
+In Exercises \ref{graphellipseexfirst} - \ref{graphellipseexlast},  graph the ellipse.  Find the center, the lines which contain the major and minor axes, the vertices, the endpoints of the minor axis, the foci and the eccentricity.
+
+\begin{multicols}{2}
+\begin{enumerate}
+
+\item $\dfrac{x^{2}}{169} + \dfrac{y^{2}}{25} = 1$  \label{graphellipseexfirst}
+\item $\dfrac{x^2}{9} + \dfrac{y^2}{25} = 1$
+
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{(x - 2)^{2}}{4} + \dfrac{(y + 3)^{2}}{9} = 1$
+\item $\dfrac{(x + 5)^{2}}{16} + \dfrac{(y - 4)^{2}}{1} = 1$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{(x - 1)^{2}}{10} + \dfrac{(y - 3)^{2}}{11} = 1$
+\item $\dfrac{(x-1)^2}{9}+\dfrac{(y+3)^2}{4} = 1$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{(x+2)^2}{16}+\dfrac{(y-5)^2}{20} = 1$
+\item $\dfrac{(x-4)^2}{8} + \dfrac{(y-2)^2}{18} = 1$ \label{graphellipseexlast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+In Exercises \ref{stdformellipseexfirst} - \ref{stdformellipseexlast}, put the equation in standard form.   Find the center, the lines which contain the major and minor axes, the vertices, the endpoints of the minor axis, the foci and the eccentricity.
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $9x^2+25y^2-54x-50y-119=0$  \label{stdformellipseexfirst}
+\item $12x^{2} + 3y^{2} - 30y + 39 = 0$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $5x^{2} + 18y^{2} - 30x + 72y + 27 = 0$
+\item $x^2 - 2x + 2y^2 - 12y + 3 = 0$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $9x^2 + 4y^2 - 4y - 8 = 0$
+\item $6x^2+5y^2-24x+20y+14=0$  \label{stdformellipseexlast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+In Exercises \ref{buildellipsefirst} - \ref{buildellipselast},  find the standard form of the equation of the ellipse which has the given properties.
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item Center $(3, 7)$, Vertex $(3, 2)$, Focus $(3, 3)$  \label{buildellipsefirst}
+\item Foci $(0, \pm 5)$, Vertices $(0, \pm 8)$.
+\item Foci $(\pm 3, 0)$, length of the Minor Axis $10$
+\item Vertices $(3,2)$, $(13,2)$; Endpoints of the Minor Axis $(8,4)$, $(8,0)$
+\item Center $(5,2)$, Vertex $(0,2)$, eccentricity $\frac{1}{2}$
+\item All points on the ellipse are in Quadrant IV except $(0, -9)$ and $(8, 0)$.  (One might also say that the ellipse is ``tangent to the axes'' at those two points.)  \label{buildellipselast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  Repeat Example \ref{whisgalleryex} for a whispering gallery 200 feet wide and 75 feet tall.
+
+\item \label{ellipsearchex} An elliptical arch is constructed which is 6 feet wide at the base and 9 feet tall in the middle. Find the height of the arch exactly 1 foot in from the base of the arch. Compare your result with your answer to Exercise \ref{parabolaarch} in Section \ref{Parabolas}.
+
+\item The Earth's orbit around the sun is an ellipse with the sun at one focus and eccentricity $e \approx 0.0167$.  The length of the semimajor axis (that is, half of the major axis) is defined to be $1$ astronomical unit (AU).  The vertices of the elliptical orbit are given special names: `aphelion' is the vertex farthest from the sun, and  `perihelion' is the vertex closest to the sun.  Find the distance in AU between the sun and aphelion and the distance in AU between the sun and perihelion.
+
+\item The graph of an ellipse clearly fails the Vertical Line Test, Theorem \ref{VLT}, so the equation of an ellipse does not define $y$ as a function of $x$.  However, much like with circles and horizontal parabolas, we can split an  ellipse into a top half and a bottom half, each of which would indeed represent $y$ as a function of $x$.  With the help of your classmates, use your calculator to graph the ellipses given in Exercises \ref{graphellipseexfirst} - \ref{graphellipseexlast} above. What difficulties arise when you plot them on the calculator?
+
+\item Some famous examples of whispering galleries include \href{http://www.stpauls.co.uk/}{\underline{St. Paul's Cathedral}} in London, England, \href{http://www.aoc.gov/cc/capitol/nat_stat_hall.cfm}{\underline{National Statuary Hall}} in Washington, D.C.,  and \href{http://www.cincymuseum.org/}{\underline{The Cincinnati Museum Center}}. With the help of your classmates, research these whispering galleries.  How does the whispering effect compare and contrast with the scenario in Example  \ref{whisgalleryex}?
+
+\item With the help of your classmates, research ``extracorporeal shock-wave lithotripsy''.  It uses the reflective property of the ellipsoid to dissolve kidney stones.
+
+\end{enumerate}
+
+\newpage
+
+\subsection{Answers}
+
+\begin{enumerate}
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{x^{2}}{169} + \dfrac{y^{2}}{25} = 1$
+
+Center $(0, 0)$\\
+Major axis along $y = 0$\\
+Minor axis along $x = 0$\\
+Vertices $(13, 0), \, (-13, 0)$\\
+Endpoints of Minor Axis $(0,-5)$, $(0,5)$ \\
+Foci $(12, 0), \, (-12, 0)$\\
+$e = \frac{12}{13}$\\
+
+\begin{mfpic}[7][10]{-14}{14}{-6}{6}
+\axes
+\tlabel(14,-0.5){\scriptsize $x$}
+\tlabel(0.5,6){\scriptsize $y$}
+\xmarks{-13 step 1 until 13}
+\ymarks{-5 step 1 until 5}
+\ellipse{(0,0),13,5}
+\plotsymbol[3pt]{Asterisk}{(-12,0), (12,0)}
+\plotsymbol[3pt]{Cross}{(0,0)}
+\point[3pt]{(-13,0), (13,0), (0,5), (0,-5)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-13 \hspace{6pt}$} -13, {$-1 \hspace{6pt}$} -1, {$1$} 1, {$13$} 13}
+\axislabels {y}{{$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\normalsize
+\end{mfpic} 
+
+\end{multicols}
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{x^{2}}{9} + \dfrac{y^{2}}{25} = 1$
+
+Center $(0, 0)$\\
+Major axis along $x = 0$\\
+Minor axis along $y = 0$\\
+Vertices $(0,5), \, (0,-5)$\\
+Endpoints of Minor Axis $(-3,0)$, $(3,0)$ \\
+Foci $(0,-4), \, (0,4)$\\
+$e = \frac{4}{5}$\\
+
+\begin{mfpic}[10]{-4}{4}{-6}{6}
+\axes
+\tlabel(4,-0.5){\scriptsize $x$}
+\tlabel(0.5,6){\scriptsize $y$}
+\xmarks{-3 step 1 until 3}
+\ymarks{-5 step 1 until 5}
+\ellipse{(0,0),3,5}
+\plotsymbol[3pt]{Asterisk}{(0,-4), (0,4)}
+\plotsymbol[3pt]{Cross}{(0,0)}
+\point[3pt]{(-3,0), (3,0), (0,5), (0,-5)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-3 \hspace{6pt}$} -3, {$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$} -1,{$1$} 1, {$2$} 2, {$3$} 3}
+\axislabels {y}{{$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\normalsize
+\end{mfpic} 
+
+\end{multicols}
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{(x - 2)^{2}}{4} + \dfrac{(y + 3)^{2}}{9} = 1$
+
+Center $(2, -3)$\\
+Major axis along $x = 2$\\
+Minor axis along $y = -3$\\
+Vertices $(2, 0), \, (2, -6)$\\
+Endpoints of Minor Axis $(0,-3)$, $(4,-3)$\\
+Foci $(2, -3 + \sqrt{5}), \, (2, -3 - \sqrt{5})$\\
+$e = \frac{\sqrt{5}}{3}$\\
+
+\begin{mfpic}[15]{-1}{5}{-7}{1}
+\axes
+\tlabel(5,-0.5){\scriptsize $x$}
+\tlabel(0.5,1){\scriptsize $y$}
+\xmarks{1 step 1 until 4}
+\ymarks{-6 step 1 until 0}
+\ellipse{(2,-3),2,3}
+\plotsymbol[3pt]{Asterisk}{(2, -0.7639), (2,-5.23606)}
+\plotsymbol[3pt]{Cross}{(2,-3)}
+\point[3pt]{(2,0), (2,-6), (0,-3), (4,-3)}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1}
+\normalsize
+\end{mfpic} 
+
+\end{multicols}
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{(x + 5)^{2}}{16} + \dfrac{(y - 4)^{2}}{1} = 1$
+
+Center $(-5, 4)$\\
+Major axis along $y = 4$\\
+Minor axis along $x = -5$\\
+Vertices $(-9, 4), \, (-1, 4)$\\
+Endpoints of Minor Axis $(-5,3)$, $(-5,5)$\\
+Foci $(-5 + \sqrt{15}, 4), \, (-5 - \sqrt{15}, 4)$\\
+$e = \frac{\sqrt{15}}{4}$\\
+
+\begin{mfpic}[16]{-10}{1}{-.5}{6}
+\axes
+\tlabel(1,-0.5){\scriptsize $x$}
+\tlabel(0.5,6){\scriptsize $y$}
+\xmarks{-9 step 1 until -1}
+\ymarks{1 step 1 until 5}
+\ellipse{(-5,4),4,1}
+\plotsymbol[3pt]{Asterisk}{(-8.873,4), (-1.127,4)}
+\plotsymbol[3pt]{Cross}{(-5,4)}
+\point[3pt]{(-9,4), (-1,4), (-5,5), (-5,3)}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$-9 \hspace{7pt}$} -9, {$-8 \hspace{7pt}$} -8, {$-7 \hspace{7pt}$} -7, {$-6 \hspace{7pt}$} -6, {$-5 \hspace{7pt}$} -5, {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1}
+\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\normalsize
+\end{mfpic} 
+
+\end{multicols}
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{(x - 1)^{2}}{10} + \dfrac{(y - 3)^{2}}{11} = 1$
+
+Center $(1, 3)$\\
+Major axis along $x = 1$\\
+Minor axis along $y = 3$\\
+Vertices $(1, 3 + \sqrt{11}), \, (1, 3 - \sqrt{11})$\\
+Endpoints of the Minor Axis \\ $(1-\sqrt{10}, 3), \, (1+\sqrt{10}, 3)$\\
+Foci $(1, 2), \, (1, 4)$\\
+$e = \frac{\sqrt{11}}{11}$\\
+
+\begin{mfpic}[18]{-3}{5}{-1}{7}
+\axes
+\tlabel(5,-0.25){\scriptsize $x$}
+\tlabel(0.25,7){\scriptsize $y$}
+\xmarks{-2 step 1 until 4}
+\ymarks{1 step 1 until 6}
+\ellipse{(1,3),3.1623,3.3166}
+\plotsymbol[3pt]{Asterisk}{(1,2), (1,4)}
+\plotsymbol[3pt]{Cross}{(1,3)}
+\point[3pt]{(1,6.3166), (1,-0.3166), (-2.1623, 3), (4.1623,3)}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+\normalsize
+\end{mfpic} 
+
+\end{multicols}
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{(x-1)^2}{9}+\dfrac{(y+3)^2}{4} = 1$
+
+Center $(1, -3)$\\
+Major axis along $y = -3$\\
+Minor axis along $x = 1$\\
+Vertices $(4, -3), \, (-2, -3)$\\
+Endpoints of the Minor Axis $(1,-1)$, $(1,-5)$\\
+Foci $(1+\sqrt{5}, -3), \, (1-\sqrt{5}, -3)$\\
+$e = \frac{\sqrt{5}}{3}$\\
+
+\begin{mfpic}[18]{-3}{5}{-6}{1}
+\axes
+\tlabel(5,-0.25){\scriptsize $x$}
+\tlabel(0.25,1){\scriptsize $y$}
+\xmarks{-2 step 1 until 4}
+\ymarks{-5 step 1 until -1}
+\ellipse{(1,-3),3,2}
+\plotsymbol[3pt]{Asterisk}{(3.2361,-3), (-1.2361,-3)}
+\plotsymbol[3pt]{Cross}{(1,-3)}
+\point[3pt]{(4,-3), (-2,-3), (1,-1), (1,-5)}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1}
+\normalsize
+\end{mfpic} 
+
+\end{multicols}
+
+
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{(x+2)^2}{16}+\dfrac{(y-5)^2}{20} = 1$
+
+Center $(-2, 5)$\\
+Major axis along $x = -2$\\
+Minor axis along $y = 5$\\
+Vertices $(-2, 5 + 2\sqrt{5}), \, (-2, 5 - 2\sqrt{5})$\\
+Endpoints of the Minor Axis $(-6,5)$, $(2,5)$
+Foci $(-2, 7), \, (-2, 3)$\\
+$e = \frac{\sqrt{5}}{5}$\\
+
+\begin{mfpic}[18]{-7}{3}{-1}{11}
+\axes
+\tlabel(3,-0.25){\scriptsize $x$}
+\tlabel(0.25,11){\scriptsize $y$}
+\xmarks{-6 step 1 until 2}
+\ymarks{1 step 1 until 11}
+\ellipse{(-2,5),4,4.4721}
+\plotsymbol[3pt]{Asterisk}{(-2,7), (-2,3)}
+\plotsymbol[3pt]{Cross}{(-2,5)}
+\point[3pt]{(-2,9.4721), (-2,0.5279), (-6,5), (2,5)}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$-6 \hspace{7pt}$} -6,{$-5 \hspace{7pt}$} -5,{$-4 \hspace{7pt}$} -4,{$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2}
+\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9, {$10$} 10 }
+\normalsize
+\end{mfpic} 
+
+\end{multicols}
+
+
+\pagebreak
+
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{(x-4)^2}{8}+\dfrac{(y-2)^2}{18} = 1$
+
+Center $(4, 2)$\\
+Major axis along $x = 4$\\
+Minor axis along $y = 2$\\
+Vertices $(4, 2 + 3\sqrt{2}), \, (4, 2 - 3\sqrt{2})$\\
+Endpoints of the Minor Axis \\
+$(4-2\sqrt{2},2)$, $(4+2\sqrt{2},2)$\\
+Foci $(4, 2+\sqrt{10}), \, (4, 2-\sqrt{10})$\\
+$e = \frac{\sqrt{5}}{3}$\\
+
+\begin{mfpic}[18]{-1}{8}{-4}{8}
+\axes
+\tlabel(8,-0.25){\scriptsize $x$}
+\tlabel(0.25,8){\scriptsize $y$}
+\xmarks{1 step 1 until 7}
+\ymarks{-3 step 1 until 7}
+\ellipse{(4,2),2.8284,4.2426}
+\plotsymbol[3pt]{Asterisk}{(4,5.1623), (4,-1.1623)}
+\plotsymbol[3pt]{Cross}{(4,2)}
+\point[3pt]{(4,6.2426), (4,-2.2426), (1.1716, 2), (6.828,2)}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7}
+\axislabels {y}{{$-3$} -3,{$-2$} -2,{$-1$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7}
+\normalsize
+\end{mfpic} 
+
+\end{multicols}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $\dfrac{(x-3)^2}{25} + \dfrac{\left(y-1\right)^2}{9} = 1$\\
+Center  $\left(3, 1 \right)$\\
+Major Axis along $y=1$\\
+Minor Axis along $x=3$\\
+Vertices  $\left( 8, 1   \right)$, $(-2, 1)$\\
+Endpoints of Minor Axis $\left(3,4\right)$, $\left(3,-2\right)$\\
+Foci $\left(7,1 \right)$, $\left(-1, 1\right)$\\
+$e = \frac{4}{5}$
+
+
+\vfill
+
+\columnbreak
+
+
+\item $\dfrac{x^{2}}{3} + \dfrac{(y - 5)^{2}}{12} = 1$\\
+Center $(0, 5)$\\
+Major axis along $x = 0$\\
+Minor axis along $y = 5$\\
+Vertices $(0, 5 - 2\sqrt{3}), (0, 5 + 2\sqrt{3})$\\
+Endpoints of Minor Axis $(-\sqrt{3},5)$, $(\sqrt{3},5)$\\
+Foci $(0, 2), (0, 8)$\\
+$e = \frac{\sqrt{3}}{2}$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{(x - 3)^{2}}{18} + \dfrac{(y + 2)^{2}}{5} = 1$\\
+Center $(3, -2)$\\
+Major axis along $y = -2$\\
+Minor axis along $x = 3$\\
+Vertices $(3 - 3\sqrt{2}, -2), (3 + 3\sqrt{2}, -2)$\\
+Endpoints of Minor Axis $(3,-2+\sqrt{5})$, $(3,-2-\sqrt{5})$\\
+Foci $(3 - \sqrt{13}, -2), (3 + \sqrt{13}, -2)$\\
+$e = \frac{\sqrt{26}}{6}$
+
+
+\vfill
+
+\columnbreak
+
+\item $\dfrac{(x - 1)^{2}}{16} + \dfrac{(y - 3)^{2}}{8} = 1$\\
+Center  $(1,3)$ \\
+Major Axis along $y=3$\\
+Minor Axis along $x=1$\\
+Vertices $(5, 3)$, $(-3,3)$\\
+Endpoints of Minor Axis $(1,3+2\sqrt{2})$, $(1,3-2\sqrt{2})$\\
+Foci $(1 + 2 \sqrt{2}, 3)$, $(1-2 \sqrt{2},3)$\\
+$e = \frac{\sqrt{2}}{2}$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\pagebreak
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $\dfrac{x^2}{1} + \dfrac{4\left(y-\frac{1}{2}\right)^2}{9} = 1$\\
+Center  $\left(0, \frac{1}{2} \right)$\\
+Major Axis along $x=0$ (the $y$-axis)\\
+Minor Axis along $y=\frac{1}{2}$\\
+Vertices  $\left( 0, 2   \right)$, $(0, -1)$\\
+Endpoints of Minor Axis $\left(-1, \frac{1}{2} \right)$, $\left(1, \frac{1}{2} \right)$\\
+Foci $\left(0, \frac{1+\sqrt{5}}{2}\right)$, $\left(0, \frac{1-\sqrt{5}}{2}\right)$\\
+$e = \frac{\sqrt{5}}{3}$
+
+\vfill
+
+\columnbreak
+
+
+\item  $\dfrac{(x-2)^2}{5} + \dfrac{\left(y+2\right)^2}{6} = 1$\\
+Center  $\left(2, -2 \right)$\\
+Major Axis along $x=2$\\
+Minor Axis along $y=-2$\\
+Vertices  $\left( 2, -2+\sqrt{6}   \right)$, $(2, -2-\sqrt{6})$\\
+Endpoints of Minor Axis $\left(2-\sqrt{5},-2 \right)$, $\left(2+\sqrt{5},-2\right)$\\
+Foci $\left(2,-1 \right)$, $\left(2, -3\right)$\\
+$e = \frac{\sqrt{6}}{6}$
+
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{(x - 3)^{2}}{9} + \dfrac{(y - 7)^{2}}{25} = 1$
+\item $\dfrac{x^{2}}{39} + \dfrac{y^{2}}{64} = 1$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{x^{2}}{34} + \dfrac{y^{2}}{25} = 1$
+\item $\dfrac{(x - 8)^{2}}{25} + \dfrac{(y - 2)^{2}}{4} = 1$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{(x-5)^{2}}{25} + \dfrac{4(y-2)^{2}}{75} = 1$
+\item $\dfrac{(x - 8)^{2}}{64} + \dfrac{(y + 9)^{2}}{81} = 1$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  Jamie and Jason should stand $100-25\sqrt{7} \approx 33.86$ feet from opposite ends of the gallery.
+
+\item  The arch can be modeled by the top half of $\frac{x^2}{9} + \frac{y^2}{81} = 1$.  One foot in from the base of the arch corresponds to either $x = \pm 2$.  Plugging in $x = \pm 2$ gives $y = \pm 3\sqrt{5}$ and since $y$ represents a height, we choose $y=3\sqrt{5} \approx 6.71$ feet. 
+
+\item Distance from the sun to aphelion $\approx 1.0167$ AU.\\
+Distance from the sun to perihelion $\approx 0.9833$ AU.
+
+\end{enumerate}
+
+\closegraphsfile

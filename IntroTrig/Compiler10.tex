@@ -1,0 +1,45 @@
+\documentclass[11pt]{book}
+\oddsidemargin 0in
+\evensidemargin 0in
+\marginparwidth 0in
+\textheight 8in
+\textwidth 6.5in
+\topmargin 0in
+\headheight 14pt
+\usepackage{amssymb,amsmath,amsthm,fancyhdr,supertabular,longtable,hhline}
+\usepackage{colortbl}
+\usepackage{import, multicol,boxedminipage}
+\usepackage{chapterfolder}
+\usepackage[metapost,truebbox]{mfpic}
+\usepackage[pdflatex]{graphicx}
+\usepackage{makeidx}
+\usepackage[colorlinks, hyperindex, plainpages=false, linkcolor=blue, urlcolor=blue, pdfpagelabels]{hyperref}
+\usepackage[all]{hypcap}
+\usepackage{cancel}
+\usepackage{sectsty}
+\usepackage{textcomp}
+\allsectionsfont{\mdseries \scshape}
+\definecolor{ResultColor}{gray}{0.9}
+\theoremstyle{definition}  % this prevents the text in definitions, theorems, and corollaries from being italicized
+\newtheorem{defn}{\sc Definition}[chapter]
+\newtheorem{thm}{\sc Theorem}[chapter]
+\newtheorem{cor}[thm]{\sc Corollary}
+\newtheorem{eqn}{\sc Equation}[chapter]
+\newtheorem{ex}{\sc Example}[section]
+\newtheorem{fig}{\sc Figure}[chapter]
+\setlength{\parindent}{0in}
+\newcommand{\bbm}{\begin{boxedminipage}{6.41in}}
+\newcommand{\ebm}{\end{boxedminipage}}
+\usepackage{array}
+\setlength{\extrarowheight}{2pt}
+\allowdisplaybreaks[2]
+\newcounter{HW}
+\newcounter{HWindent}
+
+\begin{document}
+
+\chapter{\sc Introduction to Trigonometry}
+
+\include{IntroTrig}
+
+\end{document}

@@ -1,0 +1,565 @@
+\mfpicnumber{1}
+
+\opengraphsfile{Circles}
+
+\setcounter{footnote}{0}
+
+\setlength{\extrarowheight}{2pt}
+
+\label{Circles}
+
+Recall from Geometry that a circle can be determined by fixing a point (called the center) and a positive number (called the radius) as follows. \index{circle ! radius of} \index{circle ! center of} \index{center ! of a circle} \index{radius ! of a circle}
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{defn} \label{circledefn} A \textbf{circle} with center $(h,k)$ and radius $r>0$ is the set of all points $(x, y)$ in the plane whose distance to $(h,k)$ is $r$. \index{circle ! definition of} 
+
+\end{defn} 
+
+\ebm}
+
+\smallskip
+
+\begin{center}
+
+\begin{mfpic}[15]{-5}{5}{-5}{5}
+\circle{(0,0),4}
+\tlabel(-0.5,-0.8){$(h,k)$}
+\arrow\reverse\arrow \polyline{(0,0), (2.8284,2.8284)}
+\tlabel(1,1.55){$r$}
+\plotsymbol[3pt]{Cross}{(0,0)}
+\point[3pt]{(2.8284,2.8284)}
+\tlabel(3,3){$(x,y)$}
+\end{mfpic}
+
+\end{center}
+
+From the picture, we see that a point $(x,y)$ is on the circle if and only if its distance to $(h,k)$ is $r$.  We  express this relationship algebraically using the Distance Formula, Equation \ref{distanceformula}, as 
+\[r = \sqrt{(x - h)^2 + (y-k)^2}\]  
+By squaring both sides of this equation, we get an equivalent equation (since $r > 0$) which gives us the standard equation of a circle.
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{eqn}  \label{standardcircle} \index{circle ! standard equation} \textbf{The Standard Equation of a Circle:}  The equation of a circle with center $(h,k)$ and radius $r >0$ is $(x-h)^2 + (y-k)^2 = r^2.$
+
+\end{eqn}
+  
+\ebm}
+  
+\smallskip
+
+\begin{ex}  Write the standard equation of the circle with center $(-2,3)$ and radius $5$.
+
+\smallskip
+
+{\bf Solution.}  Here, $(h,k) = (-2,3)$ and $r = 5$, so we get
+
+\[\begin{array}{rcl} (x-(-2))^2+(y-3)^2 &= &(5)^2 \\
+(x+2)^2+(y-3)^2 & = & 25 \end{array}\]  \qed
+
+\end{ex}
+
+\begin{ex}  Graph $(x+2)^2+(y-1)^2 = 4$.  Find the center and radius.
+
+\smallskip
+
+{\bf Solution.}  From the standard form of a circle, Equation \ref{standardcircle}, we have that $x + 2$ is  $x-h$, so $h = -2$ and $y - 1$ is $y - k$ so $k = 1$.  This tells us that our center is $(-2,1)$.  Furthermore, $r^2 = 4$, so $r = 2$. Thus we have a circle centered at $(-2,1)$ with a radius of $2$.  Graphing gives us
+
+\begin{center}
+
+\begin{mfpic}[20]{-5}{2}{-1.5}{4}
+\axes
+\circle{(-2,1),2}
+\plotsymbol[3pt]{Cross}{(-2,1)}
+\xmarks{-4, -3, -2,-1,0, 1}
+\ymarks{-1,0,1, 2,3}
+\tlabel(2,-0.25){$x$}
+\tlabel(0.25,4){$y$}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1}
+\axislabels {y}{{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\end{mfpic}
+
+\end{center}
+
+\qed
+
+\end{ex}
+
+
+If we were to expand the equation in the previous example and gather up like terms, instead of the easily recognizable $(x+2)^2 + (y-1)^2 = 4$, we'd be contending with $x^2 + 4x + y^2 - 2y  + 1 = 0.$  If we're given such an equation, we can complete the square in each of the variables to see if it fits the form given in Equation \ref{standardcircle} by following the steps given below.
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\centerline{\textbf{To Write the Equation of a Circle in Standard Form}}
+
+\begin{enumerate}
+
+\item  Group the same variables together on one side of the equation and position the constant on the other side.
+
+\item  Complete the square on both variables as needed.
+
+\item  Divide both sides by the coefficient of the squares. (For circles, they will be the same.)
+
+\end{enumerate}
+
+\ebm}
+
+\smallskip
+
+\begin{ex} \label{ctscircleex} Complete the square to find the center and radius of $3x^2 - 6x + 3y^2 + 4y -4 = 0$.
+
+\smallskip
+
+{\bf Solution.}
+
+ \[ \begin{array}{rclr} 3x^2 - 6x + 3y^2 + 4y -4 & = & 0 & \\ 
+ 3x^2 - 6x + 3y^2 + 4y & = & 4 & \mbox{add $4$ to both sides} \\ [3pt]
+ 3\left(x^2 - 2x \right) + 3\left(y^2 + \dfrac{4}{3} y\right) & = & 4 & \mbox{factor out leading coefficients} \\ [10pt]
+ 3\left(x^2 - 2x + \underline{1} \right) + 3\left(y^2 + \dfrac{4}{3} y + \underline{\underline{\dfrac{4}{9}}} \right) & = & 4 + 3\underline{(1)} + 3\underline{\underline{\left(\dfrac{4}{9}\right)}} &  \mbox{complete the square in $x$, $y$} \\  [10pt]
+ 3(x - 1)^2 + 3\left(y + \dfrac{2}{3}\right)^2 & = & \dfrac{25}{3} & \mbox{factor} \\ [10pt]
+ (x - 1)^2 + \left(y + \dfrac{2}{3}\right)^2 & = & \dfrac{25}{9} & \mbox{divide both sides by $3$}\end{array} \]
+ 
+From Equation \ref{standardcircle}, we identify $x - 1$ as $x - h$, so $h = 1$, and $y + \frac{2}{3}$ as $y - k$, so $k =  - \frac{2}{3}$.  Hence, the center is $(h,k) = \left(1, -\frac{2}{3}\right)$.   Furthermore, we see that $r^2 = \frac{25}{9}$ so the radius is $r = \frac{5}{3}$.  \qed
+
+\end{ex}
+
+\smallskip
+
+It is possible to obtain equations like $(x-3)^2 + (y+1)^2 = 0$ or $(x-3)^2 + (y+1)^2 = -1$, neither of which describes a circle. (Do you see why not?)  The reader is encouraged to think about what, if any, points lie on the graphs of these two equations.  The next example uses the Midpoint Formula, Equation \ref{midpointformula}, in conjunction with the ideas presented so far in this section.
+
+\begin{ex}  Write the standard equation of the circle which has $(-1,3)$ and $(2,4)$ as the endpoints of a diameter.
+
+\smallskip
+
+{\bf Solution.}  We recall that a diameter of a circle is a line segment containing the center and two points on the circle.  Plotting the given data yields
+
+\begin{center}
+
+\begin{mfpic}[23]{-2}{4}{-0.25}{5.5}
+\axes
+\dashed \circle{(0.5,3.5),3.162277660/2}
+\point[3pt]{(-1,3)}
+\point[3pt]{(2,4)}
+\plotsymbol[3pt]{Cross}{(0.5,3.5)}
+\xmarks{-2,-1,0,1,2,3}
+\ymarks{0,1,2,3,4,5}
+\tlabel(4,-0.25){ $x$}
+\tlabel(0.25,5.5){ $y$}
+\arrow \reverse \arrow \polyline{(0.5,3.5),(2,4)}
+\tlabel[cc](0.85,3){\scriptsize $(h,k)$}
+\tlabel[cc](1.15,4){\scriptsize $r$}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
+\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$}, 5}
+\normalsize
+\end{mfpic}
+
+\end{center}
+
+Since the given points are endpoints of a diameter, we know their midpoint $(h, k)$ is the center of the circle.  Equation \ref{midpointformula} gives us
+
+\[ \begin{array}{rcl} (h,k) &  = & \left( \dfrac{x_{\mbox{\tiny$1$}} + x_{\mbox{\tiny$2$}}}{2},  \dfrac{y_{\mbox{\tiny$1$}} + y_{\mbox{\tiny$2$}}}{2} \right) \\ [8pt]
+&  = &  \left( \dfrac{-1+2}{2},  \dfrac{3+4}{2} \right) \\ [8pt]
+& = &  \left( \dfrac{1}{2},  \dfrac{7}{2} \right)  \end{array} \]
+
+The diameter of the circle is the distance between the given points, so we know that half of the distance is the radius.  Thus, 
+
+\[ \begin{array}{rcl} r &  = & \dfrac{1}{2} \sqrt{\left(x_{\mbox{\tiny$2$}} - x_{\mbox{\tiny$1$}}\right)^2+\left(y_{\mbox{\tiny$2$}}-y_{\mbox{\tiny$1$}}\right)^2}  \\ [8pt]
+ &  = & \dfrac{1}{2} \sqrt{(2-(-1))^2+(4-3)^2} \\ [8pt]
+ & = & \dfrac{1}{2} \sqrt{3^2+1^2} \\ [8pt]
+ & = &\dfrac{\sqrt{10}}{2} \end{array} \]
+
+Finally, since $\left( \dfrac{\sqrt{10}}{2} \right)^2 = \dfrac{10}{4}$, our answer becomes $\left(x - \dfrac{1}{2} \right)^2 + \left(y - \dfrac{7}{2} \right)^2 =\dfrac{10}{4}$ \qed
+
+\end{ex}
+
+We close this section with the most important\footnote{While this may seem like an opinion, it is indeed a fact.  See Chapters \ref{IntroTrig} and \ref{AppExt} for details.}  circle in all of mathematics:  the \textbf{Unit Circle}.
+
+\bigskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{defn}
+
+The \textbf{Unit Circle} \index{Unit Circle ! definition of} \label{UnitCircle} is the circle centered at $(0,0)$ with a radius of $1$.  The standard equation of the Unit Circle is $x^2 + y^2 = 1.$
+
+\end{defn}
+
+\ebm}
+
+\smallskip
+
+\begin{ex}  Find the points on the unit circle with $y$-coordinate $\dfrac{\sqrt{3}}{2}$.
+
+\medskip
+
+{\bf Solution.}  We replace $y$ with $\dfrac{\sqrt{3}}{2}$ in the equation $x^2 + y^2 = 1$ to get 
+
+ \[ \begin{array}{rcl} x^2 + y^2 & = & 1 \\
+ x^2 + \left(\dfrac{\sqrt{3}}{2}\right)^2 & = & 1 \\ [13pt]
+ \dfrac{3}{4} + x^2 & = & 1 \\
+ x^2 & = & \dfrac{1}{4} \\
+ x  & = & \pm \sqrt{\dfrac{1}{4}} \\ [7pt]
+ x & = & \pm \dfrac{1}{2} \end{array} \]
+
+
+Our final answers are  $\left(\dfrac{1}{2}, \dfrac{\sqrt{3}}{2} \right)$ and $\left(-\dfrac{1}{2}, \dfrac{\sqrt{3}}{2} \right)$.  \qed
+
+\end{ex}
+
+\newpage
+
+\subsection{Exercises}
+
+In Exercises \ref{circleeqnfirst} - \ref{circleeqnlast}, find the standard equation of the circle and then graph it.
+
+\begin{multicols}{2}
+\begin{enumerate}
+
+\item Center $(-1, -5)$, radius $10$  \label{circleeqnfirst}
+\item Center $(4,-2)$, radius $3$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item Center $\left(-3, \frac{7}{13}\right)$, radius $\frac{1}{2}$
+
+\item Center $(5, -9)$, radius $\ln(8)$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item Center $\left(-e, \sqrt{2}\right)$, radius $\pi$
+
+\item Center $(\pi, e^{2})$, radius $\sqrt[3]{91}$ \label{circleeqnlast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+In Exercises \ref{ctscirclefirst} - \ref{ctscirclelast}, complete the square in order to put the equation into standard form.  Identify the center and the radius or explain why the equation does not represent a circle.
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $x^{2} - 4x + y^{2} + 10y = -25$  \label{ctscirclefirst}
+\item $-2x^{2} - 36x - 2y^{2} - 112 = 0$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item $x^2+y^2+8x-10y -1 =0$
+\item $x^2+y^2+5x-y-1=0$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item $4x^{2} + 4y^{2} - 24y + 36 = 0$
+\item $x^{2} + x + y^{2} - \frac{6}{5}y = 1$  \label{ctscirclelast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+In Exercises \ref{buildcirclefirst} - \ref{buildcirclelast}, find the standard equation of the circle which satisfies the given criteria.
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item center $(3, 5)$,  passes through $(-1, -2)$ \label{buildcirclefirst}
+
+\item  center $(3, 6)$,  passes through  $(-1, 4)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  endpoints of a diameter: $(3,6)$ and $(-1,4)$
+
+\item endpoints of a diameter:  $\left( \frac{1}{2}, 4\right)$, $\left(\frac{3}{2}, -1\right)$  \label{buildcirclelast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item The Giant Wheel at Cedar Point is a circle with diameter 128 feet which sits on an 8 foot tall platform making its overall height is 136 feet.\footnote{Source: \href{http://www.cedarpoint.com/public/park/rides/tranquil/giant_wheel.cfm}{\underline{Cedar Point's webpage}}.}  Find an equation for the wheel assuming that its center lies on the $y$-axis.
+\label{giantwheelcircle}
+
+\item Verify that the following points lie on the Unit Circle: $(\pm 1, 0)$, $(0, \pm 1)$, $\left(\pm \frac{\sqrt{2}}{2}, \pm \frac{\sqrt{2}}{2}\right)$, $\left(\pm \frac{1}{2}, \pm \frac{\sqrt{3}}{2}\right)$ and  $\left(\pm \frac{\sqrt{3}}{2}, \pm \frac{1}{2}\right)$
+
+
+\item \label{circletransunitcircleexercise} Discuss with your classmates how to obtain the standard equation of a circle, Equation \ref{standardcircle}, from the equation of the Unit Circle, $x^2+y^2=1$ using the transformations discussed in Section \ref{Transformations}.  (Thus every circle is just a few transformations away from the Unit Circle.)
+
+\item Find an equation for the function represented graphically by the top half of the Unit Circle.  Explain how the transformations is Section \ref{Transformations} can be used to produce a function whose graph is either the top or bottom of an arbitrary circle.
+
+\item Find a one-to-one function whose graph is half of a circle.  (Hint: Think piecewise.)
+
+\end{enumerate}
+
+\newpage
+
+\subsection{Answers}
+
+\begin{multicols}{2}
+\begin{enumerate}
+
+
+\item $(x + 1)^{2} + (y + 5)^{2} = 100$
+
+\begin{mfpic}[8]{-12}{10}{-16}{6}
+\axes
+\circle{(-1,-5),10}
+\plotsymbol[3pt]{Cross}{(-1,-5)}
+\xmarks{-11,-1,9}
+\ymarks{-15,-5,5}
+\tlabel(10,-0.5){\scriptsize $x$}
+\tlabel(0.5,6){\scriptsize $y$}
+\tlabel(0.5,-5.25){\tiny $-5$}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-11 \hspace{6pt}$} -11, {$-1 \hspace{6pt}$} -1, {$9$} 9}
+\axislabels {y}{{$-15$} -15, {$5$} 5}
+\normalsize
+\end{mfpic}
+
+\vfill
+
+\columnbreak
+
+\item  $(x-4)^2+(y+2)^2 = 9$
+
+\begin{mfpic}[20]{-1}{8}{-6}{2}
+\axes
+\circle{(4,-2),3}
+\plotsymbol[3pt]{Cross}{(4,-2)}
+\xmarks{1,4,7}
+\ymarks{-5,-2,1}
+\tlabel(8,-0.5){\scriptsize $x$}
+\tlabel(0.5,2){\scriptsize $y$}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$1$} 1,{$4$} 4,{$7$} 7}
+\axislabels {y}{{$-5$} -5, {$-2$} -2, {$1$} 1 }
+\normalsize
+\end{mfpic}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\left(x + 3\right)^{2} + \left(y - \frac{7}{13}\right)^{2} = \frac{1}{4}$
+
+\begin{mfpic}[35]{-4}{1}{-0.75}{2}
+\axes
+\circle{(-3,0.53846),0.5}
+\plotsymbol[3pt]{Cross}{(-3,0.53846)}
+\xmarks{-3.5,-3,-2.5}
+\ymarks{0.03846, 0.53836, 1.03846}
+\tlabel(1,-0.25){\scriptsize $x$}
+\tlabel(0.25,2){\scriptsize $y$}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-\frac{7}{2} \hspace{6pt}$} -3.5, {$-3 \hspace{6pt}$} -3, {$-\frac{5}{2} \hspace{6pt}$} -2.5}
+\axislabels {y}{{$\frac{1}{26}$} 0.03846, {$\frac{7}{13}$} 0.53846, {$\frac{27}{26}$} 1.03846}
+\normalsize
+\end{mfpic}
+
+\vfill
+
+\columnbreak
+
+\item $(x - 5)^{2} + (y + 9)^{2} = (\ln(8))^{2}$
+
+\begin{mfpic}[10]{-1}{8}{-12}{1}
+\axes
+\circle{(5, -9),2.0794}
+\plotsymbol[3pt]{Cross}{(5,-9)}
+\xmarks{2.92055, 5, 7.07944}
+\ymarks{-11.07944, -9, -6.92055}
+\tlabel(8,0.5){\scriptsize $x$}
+\tlabel(0.5,1){\scriptsize $y$}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$5 - \ln(8)$} 2.92055, {$5$} 5, {$5 + \ln(8)$} 7.07944}
+\axislabels {y}{{$-9 - \ln(8)$} -11.07944, {$-9$} -9, {$-9 + \ln(8)$} -6.92055}
+\normalsize
+\end{mfpic}
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $(x  + e)^{2} + \left(y - \sqrt{2} \right)^{2} = \pi^{2}$
+
+\begin{mfpic}[10]{-7}{3}{-3}{6}
+\axes
+\circle{(-2.71828, 1.41421),3.14159}
+\plotsymbol[3pt]{Cross}{(-2.71828, 1.41421)}
+\xmarks{-5.85987, -2.71828, 0.42331}
+\ymarks{-1.72738,1.41421, 4.55581}
+\tlabel(3,0.5){\scriptsize $x$}
+\tlabel(0.5,6){\scriptsize $y$}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-e-\pi$} -6.85987, {$-e$} -2.71828, {$-e+\pi$} 1.42331}
+\tlabel(0.5,-2.22738){$\sqrt{2}-\pi$}
+\tlabel(0.5,1.41421){$\sqrt{2}$}
+\tlabel(0.5,4.55581){$\sqrt{2}+\pi$}
+\normalsize
+\end{mfpic}
+
+\vfill
+
+\columnbreak
+
+\item $\left(x - \pi \right)^{2} + \left(y -  e^{2}\right)^{2} = 91^{\frac{2}{3}}$
+
+\begin{mfpic}[15]{-2}{8.25}{-0.25}{13}
+\axes
+\circle{(3.14159,7.389),4.4979}
+\plotsymbol[3pt]{Cross}{(3.14159,7.389)}
+\xmarks{-1.3563, 3.14159, 7.6395}
+\ymarks{2.8911, 7.389, 11.88699}
+\tlabel(8.25,0.5){\scriptsize $x$}
+\tlabel(0.25,13){\scriptsize $y$}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$\pi - \sqrt[3]{91}$} -1.3563, {$\pi$} 3.14159, {$\pi + \sqrt[3]{91}$} 7.6395}
+\axislabels {y}{{$e^{2} - \sqrt[3]{91}$} 2.8911, {$e^{2}$} 7.389, {$e^{2} + \sqrt[3]{91}$} 11.88699}
+\normalsize
+\end{mfpic}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $(x - 2)^{2} + (y + 5)^{2} = 4$\\
+Center $(2, -5)$, radius $r = 2$
+
+\item $(x + 9)^{2} + y^{2} = 25$\\
+Center $(-9, 0)$, radius $r = 5$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $(x+4)^2 + (y-5)^2 = 42$ \\
+Center $(-4,5)$, radius $r = \sqrt{42}$
+
+\item $\left(x + \frac{5}{2}\right)^2 + \left(y - \frac{1}{2}\right)^2 = \frac{30}{4}$ \\
+Center $\left( -\frac{5}{2}, \frac{1}{2}\right)$, radius $r = \frac{\sqrt{30}}{2}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $x^{2} + (y - 3)^{2} = 0$\\
+This is not a circle.
+
+\item $\left(x + \frac{1}{2}\right)^{2} + \left(y - \frac{3}{5}\right)^{2} = \frac{161}{100}$\\
+Center $\left(-\frac{1}{2}, \frac{3}{5}\right)$, radius $r = \frac{\sqrt{161}}{10}$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $(x - 3)^{2} + (y - 5)^{2} = 65$
+
+\item  $(x-3)^2+(y-6)^2 = 20$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $(x-1)^2 + (y-5)^2 = 5$
+
+\item $(x-1)^2 + \left(y - \frac{3}{2}\right)^2 = \frac{13}{2}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $x^{2} + (y - 72)^{2} = 4096$
+
+\end{enumerate}
+
+\closegraphsfile

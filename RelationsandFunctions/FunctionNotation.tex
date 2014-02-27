@@ -1,0 +1,1831 @@
+\mfpicnumber{1}
+
+\opengraphsfile{FunctionNotation}
+
+\setcounter{footnote}{0}
+
+\label{FunctionNotation}
+
+In Definition \ref{functiondefn}, we described a function as a special kind of relation $-$ one in which each $x$-coordinate is matched with only one $y$-coordinate.  In this section, we focus more on the \textbf{process} \index{function ! as a process} by which the $x$ is matched with the $y$.  If we think of the domain of a function as a set of \textbf{inputs} and the range as a set of \textbf{outputs}, we can think of a function $f$ as a process by which each input $x$ is matched with only one output $y$.  Since the output is completely determined by the input $x$ and the process $f$, we symbolize the output with \index{function ! notation} \textbf{function notation}: `$f(x)$', read `$f$ \textbf{of} $x$.' In other words, $f(x)$ is the output which results by applying the process $f$ to the input $x$.  In this case, the parentheses here do not indicate multiplication, as they do elsewhere in Algebra.  This can cause confusion if the context is not clear, so you must read carefully.   This relationship is typically visualized using a diagram similar to the one below.
+
+\begin{center}
+
+\footnotesize
+
+\begin{mfpic}[10]{-10}{10}{-10}{10}
+\tlabel[cc](0,6){$f$}
+\tlabel[cc](-9,-1){$x$}
+\tlabel[cc](-9,-2){Domain}
+\tlabel[cc](-9,-3){(Inputs)}
+\tlabel[cc](7,-1){$y = f(x)$}
+\tlabel[cc](7,-2){Range}
+\tlabel[cc](7,-3){(Outputs)}
+\point[2pt]{(-9,0), (7,0)} 
+\sclosed \curve{(-6,7), (-12,0), (-6,-9), (-7,0)}
+\sclosed \curve{(6,7), (11,0), (5,-9)}
+\penwd{0.75pt}
+\arrow \curve{(-8.75,0.25), (0,5), (6.75,0.25)}
+\end{mfpic}
+
+\end{center}
+
+\normalsize
+
+The value of $y$ is completely dependent on the choice of $x$.  For this reason,  $x$ is often called the \index{variable ! independent} \index{independent variable} \index{function ! independent variable of} \textbf{independent variable}, or \index{function ! argument} \index{argument ! of a function} \textbf{argument} of $f$, whereas $y$ is often called the \index{variable ! dependent} \index{dependent variable} \index{function ! dependent variable of} \textbf{dependent variable}. \label{functionargument}
+
+\medskip
+
+As we shall see, the process of a function $f$ is usually described using an algebraic formula. For example, suppose a function $f$ takes a real number and performs the following two steps, in sequence
+
+\begin{enumerate}
+
+\item  multiply by 3
+
+\item  add 4
+
+\end{enumerate}
+
+If we choose $5$ as our input,  in step 1 we multiply by $3$ to get $(5)(3) = 15$.  In step 2, we add 4 to our result from step 1 which yields $15 + 4 = 19$.  Using function notation, we would write  $f(5) = 19$ to indicate that the result of applying the process $f$ to the input $5$ gives the output $19$.  In general, if we use $x$ for the input, applying step 1 produces $3x$.  Following with step 2 produces $3x+4$ as our final output.  Hence for an input $x$, we get the output $f(x) = 3x + 4$.  Notice that to check our formula for the case $x=5$, we replace the occurrence of $x$ in the formula for $f(x)$ with $5$ to get $f(5) = 3(5) + 4 = 15 + 4 = 19$, as required.
+
+\medskip
+
+\begin{ex}  Suppose a function $g$ is described by applying the following steps, in sequence
+
+\begin{enumerate}
+
+\item  add 4
+
+\item  multiply by 3
+
+\end{enumerate}
+
+Determine $g(5)$ and find an expression for $g(x)$.
+
+\medskip
+
+{\bf Solution.}  Starting with $5$, step 1 gives $5+4 = 9$.  Continuing with step 2, we get $(3)(9) = 27$.  To find a formula for $g(x)$, we start with our input $x$.  Step 1 produces $x+4$.  We now wish to multiply this entire quantity by $3$, so we use a parentheses: $3(x+4) = 3x + 12$.  Hence, $g(x) = 3x + 12$.  We can check our formula by replacing $x$ with $5$ to get $g(5) = 3(5) + 12 = 15 + 12 = 27 \, \checkmark$.  \qed
+
+\end{ex}
+
+Most of the functions we will encounter in College Algebra will be described using formulas like the ones we developed for $f(x)$ and $g(x)$ above.  Evaluating formulas using this function notation is a key skill for success in this and many other Math courses.
+
+\medskip
+
+\begin{ex} \label{funcnotatex1} Let $f(x) = -x^2 + 3x + 4$
+
+
+\begin{enumerate}
+
+\item  Find and simplify the following.
+
+\begin{enumerate}
+
+\item $f(-1)$, $f(0)$, $f(2)$
+
+\item  $f(2x)$, $2 f(x)$
+
+\item $f(x+2)$, $f(x)+2$, $f(x) + f(2)$
+
+\end{enumerate}
+
+\item  Solve $f(x) = 4$.
+
+\end{enumerate}
+
+\medskip
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item \begin{enumerate} \item  To find $f(-1)$, we replace every occurrence of $x$ in the expression $f(x)$ with $-1$
+
+\[ \begin{array}{rclr}  
+f(-1) & = & -(-1)^2 + 3(-1) + 4 & \\
+      & = & -(1) + (-3) + 4 & \\ 
+      & = & 0 & \\ 
+      \end{array} \]
+
+
+Similarly, $f(0) = -(0)^2 + 3(0) + 4 = 4$, and $f(2) = -(2)^2 + 3(2) + 4 = -4+6+4 = 6$.
+
+\item To find $f(2x)$, we replace every occurrence of $x$ with the quantity $2x$
+
+\[ \begin{array}{rclr}  
+f(2x) & = & -(2x)^2 + 3(2x) + 4 & \\
+      & = & -(4x^2) + (6x) + 4 & \\
+      & = & -4x^2+6x+4 & \\ 
+      \end{array} \]
+
+The expression $2f(x)$ means we multiply the expression $f(x)$ by $2$
+
+\[ \begin{array}{rclr}  
+2f(x) & = & 2\left(-x^2 + 3x + 4\right) & \\
+      & = & -2x^2 + 6x + 8 \\ 
+      \end{array} \]
+
+
+\item  To find $f(x+2)$, we replace every occurrence of $x$ with the quantity $x+2$
+
+\[ \begin{array}{rclr}  
+f(x+2) & = & -(x+2)^2 + 3(x+2) + 4 & \\
+       & = & -\left(x^2 + 4x + 4\right) + (3x+6) + 4 & \\
+       & = & -x^2-4x-4+3x+6+4 &  \\
+       & = & -x^2-x+6 & 
+       \end{array} \]
+
+ To find $f(x)+2$, we add $2$ to the expression for $f(x)$
+ 
+\[ \begin{array}{rclr}  
+f(x) + 2 & = & \left(-x^2 + 3x + 4\right) + 2  & \\
+         & = & -x^2 + 3x + 6 \\ 
+         \end{array} \]
+
+From our work above, we see $f(2) = 6$ so that
+
+\[ \begin{array}{rclr}  
+f(x) + f(2) & = & \left(-x^2 + 3x + 4\right) + 6  & \\
+            & = & -x^2 + 3x + 10 \\ 
+            \end{array} \]
+
+\end{enumerate}
+
+\item   Since $f(x) = -x^2 + 3x + 4$, the equation $f(x) = 4$ is equivalent to $-x^2+3x+4 = 4$. Solving we get $-x^2+3x = 0$, or $x(-x+3) = 0$.  We get $x=0$ or $x=3$, and we can verify these answers by checking that $f(0) = 4$ and $f(3) = 4$.    \qed   
+         
+\end{enumerate}
+\end{ex}
+
+A few notes about Example \ref{funcnotatex1} are in order.  First note the difference between the answers for $f(2x)$ and $2f(x)$.  For $f(2x)$, we are multiplying the \textit{input} by $2$;  for $2 f(x)$, we are multiplying the \textit{output} by $2$.  As we see, we get entirely different results.  Along these lines, note that $f(x+2)$, $f(x) + 2$ and $f(x) + f(2)$ are three \textit{different} expressions as well.  Even though function notation uses parentheses, as does multiplication, there is \textit{no} general `distributive property' of function notation. Finally, note the practice of using parentheses when substituting one algebraic expression into another;  we highly recommend this practice as it will reduce careless errors. 
+
+\smallskip
+\enlargethispage{.1in}
+
+Suppose now we wish to find $r(3)$ for $r(x) = \frac{2x}{x^2 - 9}$.  Substitution gives
+
+\[r(3) = \dfrac{2(3)}{(3)^2-9} = \dfrac{6}{0},\]
+
+which is undefined. (Why is this, again?) The number $3$ is not an allowable input to the function $r$;  in other words, $3$ is not in the domain of $r$.  Which other real numbers are forbidden in this formula?  We think back to arithmetic.  The reason $r(3)$ is undefined is because substitution results in a division by $0$.  To determine which other numbers result in such a transgression, we set the denominator equal to $0$ and solve
+
+\[ \begin{array}{rclr}  
+x^2 - 9 & = & 0  & \\
+x^2 & = & 9 & \\
+\sqrt{x^2} & = & \sqrt{9} & \mbox{extract square roots}  \\
+x & = & \pm 3 & \\ 
+\end{array} \]
+
+As long as we substitute numbers other than $3$ and $-3$, the expression $r(x)$ is a real number.  Hence, we write our domain in interval notation\footnote{See the Exercises for Section \ref{CartesianPlane}.} as  $(-\infty, -3) \cup (-3,3) \cup (3, \infty)$.  When a formula for a function is given, we assume that the function is valid for all real numbers which make arithmetic sense when substituted into the formula.  This set of numbers is often called the \index{domain ! implied}\index{implied domain of a function}\textbf{implied domain}\footnote{or, `implicit domain'} of the function.  At this stage, there are only two mathematical sins we need to avoid:  division by $0$ and extracting even roots of negative numbers.  The following example illustrates these concepts.
+
+\begin{ex}  Find the domain\footnote{The word `implied' is, well, implied.} of the following functions.
+
+\begin{multicols}{2}
+\begin{enumerate}
+
+\item  $g(x) = \sqrt{4 - 3x}$
+\item  $h(x) =  \sqrt[5]{4 - 3x}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $f(x) = \dfrac{2}{1 - \dfrac{4x}{x-3}}$
+\item  $F(x) = \dfrac{\sqrt[4]{2x+1}}{x^2-1}$ \vphantom{$\dfrac{2}{1 - \dfrac{4x}{x-3}}$}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $r(t) = \dfrac{4}{6 - \sqrt{t+3}}$
+\item  $I(x) = \dfrac{3x^2}{x}$ \vphantom{$\dfrac{4}{6 - \sqrt{t+3}}$}
+
+\end{enumerate}
+\end{multicols}
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+
+\item  The potential disaster for $g$ is if the radicand\footnote{The `radicand' is the expression `inside' the radical.} is negative.  To avoid this, we set $4 - 3x \geq 0$. From this, we get $3x \leq 4$ or $x \leq \frac{4}{3}$.  What this shows is that as long as $x \leq \frac{4}{3}$, the expression $4 - 3x \geq 0$, and the formula $g(x)$ returns a real number.  Our domain is $\left(-\infty, \frac{4}{3}\right]$.
+
+\item  The formula for $h(x)$ is hauntingly close to that of $g(x)$ with one key difference $-$ whereas the expression for $g(x)$ includes an even indexed root (namely a square root), the formula for $h(x)$ involves an odd indexed root (the fifth root).  Since odd roots of real numbers (even negative real numbers) are real numbers, there is no restriction on the inputs to $h$.  Hence, the domain is $(-\infty, \infty)$.
+
+
+\item  In the expression for $f$, there are two denominators.  We need to make sure neither of them is $0$.  To that end, we set each denominator equal to $0$ and solve.  For the `small' denominator, we get $x - 3 = 0$ or $x=3$.  For the `large' denominator
+
+\setlength{\extrarowheight}{10pt}
+
+\[ \begin{array}{rclr}  
+1 - \dfrac{4x}{x-3} & = & 0  & \\
+                  1 & = & \dfrac{4x}{x-3} & \\ 
+           (1)(x-3) & = & \left(\dfrac{4x}{\cancel{x-3}}\right)\cancel{(x-3)} & \mbox{clear denominators}  \\
+              x - 3 & = &  4x & \\
+                 -3 & = & 3x \\
+                 -1 & = & x 
+\end{array} \]
+
+\setlength{\extrarowheight}{2pt} 
+So we get two real numbers which make denominators $0$, namely $x = -1$ and $x=3$.  Our domain is all real numbers except $-1$ and $3$:  $(-\infty, -1) \cup (-1,3) \cup (3, \infty)$.
+
+
+\item  In finding the domain of $F$, we notice that we have two potentially hazardous issues:  not only do we have a denominator, we have a fourth (even-indexed) root.  Our strategy is to determine the restrictions imposed by each part and select the real numbers which satisfy both conditions.  To satisfy the fourth root,  we require $2x+1 \geq 0$.  From this we get $2x \geq -1$ or $x \geq -\frac{1}{2}$.  Next, we round up the values of $x$ which could cause trouble in the denominator by setting the denominator equal to $0$.  We get $x^2 - 1=0$, or $x = \pm 1$.  Hence, in order for a real number $x$ to be in the domain of $F$, $x \geq -\frac{1}{2}$ but $x \neq \pm 1$.  In interval notation, this set is $\left[ -\frac{1}{2}, 1 \right) \cup (1, \infty)$. 
+
+\item    Don't be put off by the `$t$' here. It is an independent variable representing a real number, just like $x$ does, and is subject to the same restrictions.  As in the previous problem, we have double danger here:  we have a square root and a denominator.   To satisfy the square root, we need a non-negative radicand so we set $t + 3 \geq 0$ to get $t \geq -3$.  Setting the denominator equal to zero gives $6 - \sqrt{t+3} =0$, or $\sqrt{t+3} = 6$.  Squaring both sides gives $t+3 = 36$, or $t = 33$. Since we squared both sides in the course of solving this equation, we need to check our answer.\footnote{Do you remember why?  Consider squaring both sides to `solve' $\sqrt{t+1} = -2$.}  Sure enough, when $t=33$, $6 - \sqrt{t+3} = 6 - \sqrt{36} = 0$, so $t=33$ will cause problems in the denominator.  At last we can find the domain of $r$:  we need $t \geq -3$, but $t \neq 33$.  Our final answer is  $[-3, 33) \cup (33, \infty)$.
+
+\item  It's tempting to simplify $I(x) = \frac{3x^2}{x} = 3x$, and, since there are no longer any denominators, claim that there are no longer any restrictions.  However, in simplifying $I(x)$, we are assuming $x \neq 0$, since $\frac{0}{0}$ is undefined.\footnote{More precisely, the fraction $\frac{0}{0}$ is an `indeterminant form'.  Calculus is required tame such beasts.} Proceeding as before, we find the domain of $I$ to be all real numbers except $0$:  $(-\infty, 0) \cup (0, \infty)$.  \qed 
+
+\end{enumerate}
+
+\end{ex}
+
+It is worth reiterating the importance of finding the domain of a function \emph{before} simplifying, as evidenced by the function $I$ in the previous example.  Even though the formula $I(x)$ simplifies to $3x$, it would be inaccurate to write $I(x) = 3x$ without adding the stipulation that $x \neq 0$. It would be analogous to not reporting taxable income or some other sin of omission.
+
+\subsection{Modeling with Functions} \label{modeling}
+
+The importance of Mathematics to our society lies in its value to approximate, or \textbf{model}\index{mathematical model}\index{model ! mathematical} real-world phenomenon.  Whether it be used to predict the high temperature on a given day, determine the hours of daylight on a given day, or predict population trends of various and sundry real and mythical beasts,\footnote{See Sections \ref{Regression}, \ref{Sinusoid}, and \ref{ExpLogApplications}, respectively.} Mathematics is second only to literacy in the importance humanity's development.\footnote{In Carl's humble opinion, of course \dots} 
+
+\medskip
+
+It is important to keep in mind that anytime Mathematics is used to approximate reality, there are always limitations to the model.  For example, suppose grapes are on sale at the local market for $\$1.50$ per pound. Then one pound of grapes costs $\$1.50$, two pounds of grapes cost $\$3.00$, and so forth.  Suppose we want to develop a formula which relates the cost of buying grapes to the amount of grapes being purchased.  Since these two quantities vary from situation to situation, we assign them variables.  Let $c$ denote the cost of the grapes and let $g$ denote the amount of grapes purchased. To find the cost $c$ of the grapes, we multiply the amount of grapes $g$ by the price $\$1.50$ dollars per pound to get \[c = 1.5 g\]  In order for the units to be correct in the formula, $g$ must be measured in \textit{pounds} of grapes in which case the computed value of $c$ is measured in \textit{dollars}.  Since we're interested in finding the cost $c$ given an amount $g$, we think of $g$ as the independent variable and $c$ as the dependent variable.  Using the language of function notation, we write \[c(g) = 1.5 g\] where $g$ is the amount of grapes purchased (in pounds) and $c(g)$ is the cost (in dollars).  For example, $c(5)$ represents the cost, in dollars, to purchase $5$ pounds of grapes. In this case, $c(5) = 1.5(5) = 7.5$, so it would cost $\$ 7.50$. If, on the other hand, we wanted to find the \textit{amount} of grapes we can purchase for $\$5$, we would need to set $c(g) = 5$ and solve for $g$.  In this case, $c(g)=1.5g$, so solving  $c(g) = 5$ is equivalent to solving $1.5g = 5$  Doing so gives $g = \frac{5}{1.5} = 3.\overline{3}$. This means we can purchase exactly $3.\overline{3}$ pounds of grapes for $\$5$.  Of course, you would be hard-pressed to buy exactly $3.\overline{3}$ pounds of grapes,\footnote{You could get close...  within a certain specified margin of error, perhaps.} and this leads us to our next topic of discussion, the \index{domain ! applied}\index{applied domain of a function}\textbf{applied domain}\footnote{or, `explicit domain'} of a function.
+
+\medskip
+
+Even though, mathematically, $c(g) = 1.5g$ has no domain restrictions (there are no denominators and no even-indexed radicals), there are certain values of $g$ that don't make any physical sense.  For example, $g = -1$ corresponds to `purchasing' $-1$ pounds of grapes.\footnote{Maybe this means \textit{returning} a pound of grapes?}  Also, unless the `local market' mentioned is the State of California (or some other exporter of grapes), it also doesn't make much sense for $g = 500,\!000,\!000$, either. So the reality of the situation limits what $g$ can be, and these limits determine the applied domain of $g$.  Typically, an applied domain is stated explicitly.  In this case, it would be common to see something like $c(g) = 1.5g$, $0 \leq g \leq 100$, meaning the number of pounds of grapes purchased is limited from $0$ up to $100$. The upper bound here, $100$ may represent the inventory of the market, or some other limit as set by local policy or law.  Even with this restriction, our model has its limitations.  As we saw above, it is virtually impossible to buy exactly  $3.\overline{3}$ pounds of grapes so that our cost is exactly $\$5$.  In this case, being sensible shoppers, we would most likely `round down' and purchase $3$ pounds of grapes or however close the market scale can read to $3.\overline{3}$ without being over.  It is time for a more sophisticated example.
+
+
+\begin{ex} \label{heightofrocketmodel} The height $h$ in feet of a model rocket above the ground $t$ seconds after lift-off is given by \[ h(t) = \left\{ \begin{array}{rcl} -5t^2 + 100t, & \mbox{if} & 0 \leq t \leq 20 \\ 0, & \mbox{if} & t > 20 \\ \end{array} \right.\]
+
+\begin{enumerate}
+
+\item Find and interpret $h(10)$ and $h(60)$.
+
+\item Solve $h(t) = 375$ and interpret your answers.
+
+\end{enumerate}
+
+{\bf Solution.} \begin{enumerate} \item We first note that the independent variable here is $t$, chosen because it represents time.  Secondly, the function is broken up into two rules:  one formula for values of $t$ between $0$ and $20$ inclusive, and another for values of $t$ greater than 20. Since $t=10$ satisfies the inequality $0 \leq t \leq 20$,  we use the first formula listed,  $h(t) = -5t^2 + 100t$, to find $h(10)$.  We get $h(10) = -5(10)^2 + 100(10) = 500$.  Since $t$ represents the number of seconds since lift-off and $h(t)$ is the height above the ground in feet, the equation $h(10) = 500$ means that $10$ seconds after lift-off, the model rocket is $500$ feet above the ground. To find $h(60)$, we note that $t=60$ satisfies $t > 20$, so we use the rule $h(t) = 0$.  This function returns a value of $0$ regardless of what value is substituted in for $t$, so $h(60) = 0$.  This means that $60$ seconds after lift-off, the rocket is $0$ feet above the ground;  in other words, a minute after lift-off, the rocket has already returned to Earth.
+
+\item Since the function $h$ is defined in pieces, we need to solve $h(t) = 375$ in pieces.  For $0 \leq t \leq 20$, $h(t) =  -5t^2 + 100t$, so for these values of $t$, we solve $-5t^2 + 100t = 375$.  Rearranging terms, we get $5t^2 - 100t + 375 = 0$, and factoring gives $5(t-5)(t-15) = 0$. Our answers are  $t=5$ and $t=15$, and since both of these values of $t$ lie between $0$ and $20$, we keep both solutions.  For $t>20$, $h(t) = 0$, and in this case, there are no solutions to $0=375$.  In terms of the model rocket,  solving $h(t) = 375$ corresponds to finding when, if ever, the rocket reaches $375$ feet above the ground. Our two answers, $t=5$ and $t=15$ correspond to the rocket reaching this altitude \textit{twice} -- once $5$ seconds after launch, and again $15$ seconds after launch.\footnote{What goes up \ldots} \qed
+
+
+\end{enumerate}
+
+\end{ex}
+
+The type of function in the previous example is called a \textbf{piecewise-defined} function, or `piecewise' function for short.  Many real-world phenomena (e.g. postal rates,\footnote{See the United States Postal Service website http://www.usps.com/prices/first-class-mail-prices.htm} income tax formulas\footnote{See the Internal Revenue Service's website http://www.irs.gov/pub/irs-pdf/i1040tt.pdf}) are modeled by such functions.  
+
+\phantomsection
+\label{piecewisefunction}\index{function ! piecewise-defined}\index{piecewise-defined function}
+
+\medskip
+
+By the way, if we wanted to avoid using a piecewise function in Example \ref{heightofrocketmodel}, we could have used $h(t) = -5t^2 + 100t$ on the explicit domain $0 \leq t \leq 20$ because after 20 seconds, the rocket is on the ground and stops moving.  In many cases, though, piecewise functions are your only choice, so it's best to understand them well.
+
+\medskip
+
+Mathematical modeling is not a one-section topic.  It's not even a one-\emph{course} topic as is evidenced by undergraduate and graduate courses in mathematical modeling being offered at many universities.  Thus our goal in this section cannot possibly be to tell you the whole story.  What we can do is get you started.  As we study new classes of functions, we will see what phenomena they can be used to model.  In that respect, mathematical modeling cannot be a topic in a book, but rather, must be a theme of the book.  For now, we have you explore some very basic models in the Exercises because you need to crawl to walk to run.  As we learn more about functions, we'll help you build your own models and get you on your way to applying Mathematics to your world.
+
+
+\newpage
+
+\subsection{Exercises}
+
+In Exercises \ref{buildfunctionfirst} - \ref{buildfunctionlast}, find an expression for $f(x)$ and state its domain.
+
+\begin{enumerate}
+
+\item $f$ is a function that takes a real number $x$ and performs the following three steps in the order given: (1) multiply 2; (2) add 3; (3) divide by 4. \label{buildfunctionfirst}
+
+\item $f$ is a function that takes a real number $x$ and performs the following three steps in the order given: (1) add 3; (2) multiply by 2; (3) divide by 4. 
+
+\item $f$ is a function that takes a real number $x$ and performs the following three steps in the order given: (1) divide by 4; (2) add 3; (3) multiply by 2.
+
+\item $f$ is a function that takes a real number $x$ and performs the following three steps in the order given: (1) multiply 2; (2) add 3; (3) take the square root.
+
+\item $f$ is a function that takes a real number $x$ and performs the following three steps in the order given: (1) add 3; (2) multiply 2; (3) take the square root.
+
+\item $f$ is a function that takes a real number $x$ and performs the following three steps in the order given: (1) add 3; (2) take the square root; (3) multiply by 2.
+\item $f$ is a function that takes a real number $x$ and performs the following three steps in the order given: (1) take the square root; (2) subtract 13; (3) make the quantity the denominator of a fraction with numerator 4. 
+
+\item  $f$ is a function that takes a real number $x$ and performs the following three steps in the order given: (1) subtract 13; (2) take the square root; (3) make the quantity the denominator of a fraction with numerator 4.  
+
+\item  $f$ is a function that takes a real number $x$ and performs the following three steps in the order given: (1) take the square root; (2) make the quantity the denominator of a fraction with numerator 4; (3) subtract 13. 
+
+\item  $f$ is a function that takes a real number $x$ and performs the following three steps in the order given: (1) make the quantity the denominator of a fraction with numerator 4; (2) take the square root; (3) subtract 13. \label{buildfunctionlast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+In Exercises \ref{funcnotationbasicfirst} - \ref{funcnotationbasiclast}, use the given function $f$ to find and simplify the following:
+
+\begin{multicols}{3}
+\begin{itemize}
+\item $f(3)$
+\item $f(-1)$
+\item $f\left(\frac{3}{2} \right)$
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+\item  $f(4x)$
+\item $4f(x)$
+\item $f(-x)$
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+\item  $f(x-4)$
+\item $f(x) - 4$
+\item  $f\left(x^2\right)$
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $f(x) = 2x+1$ \label{funcnotationbasicfirst} 
+\item  $f(x) = 3 - 4x$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = 2 - x^2$
+\item $f(x) = x^2 - 3x + 2$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = \dfrac{x}{x-1}$
+\item $f(x) = \dfrac{2}{x^{3}}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = 6$
+\item $f(x) = 0$ \label{funcnotationbasiclast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+In Exercises \ref{secondfuncnotationbasicfirst} - \ref{secondfuncnotationbasiclast}, use the given function $f$ to find and simplify the following:
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $f(2)$
+\item  $f(-2)$
+\item  $f(2a)$
+
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $2 f(a)$
+\item $f(a+2)$
+\item $f(a) + f(2)$
+
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $f \left( \frac{2}{a} \right)$
+\item $\frac{f(a)}{2}$
+\item  $f(a + h)$
+
+\end{itemize}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = 2x-5$ \label{secondfuncnotationbasicfirst}
+\item $f(x) = 5-2x$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = 2x^2 - 1$
+\item $f(x) = 3x^2+3x-2$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+ 
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = \sqrt{2x+1}$
+\item $f(x) = 117$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = \dfrac{x}{2}$
+\item $f(x) = \dfrac{2}{x}$ \label{secondfuncnotationbasiclast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+In Exercises \ref{findzerofuncfirst} - \ref{findzerofunclast}, use the given function $f$ to find $f(0)$ and solve $f(x) = 0$
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = 2x - 1$ \label{findzerofuncfirst}
+\item $f(x) = 3 - \frac{2}{5} x$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = 2x^2 - 6$
+\item $f(x) = x^2 - x - 12$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = \sqrt{x+4}$
+\item $f(x) = \sqrt{1-2x}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = \dfrac{3}{4-x}$
+\item $f(x) = \dfrac{3x^2-12x}{4-x^2}$ \label{findzerofunclast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  Let $f(x) = \left\{  \begin{array}{rr} x + 5, & x \leq -3 \\ \sqrt{9-x^2}, & -3 < x \leq 3 \\ -x+5, & x > 3 \\ \end{array}        \right.$ Compute the following function values.
+
+\begin{multicols}{3}
+\begin{enumerate}
+
+\item $f(-4)$
+\item  $f(-3)$
+\item  $f(3)$
+
+\setcounter{HWindent}{\value{enumii}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumii}{\value{HWindent}}
+
+\item  $f(3.001)$
+\item  $f(-3.001)$
+\item  $f(2)$
+
+\setcounter{HWindent}{\value{enumii}}
+\end{enumerate}
+\end{multicols}
+
+\newpage
+
+\item Let ${\displaystyle f(x) = \left\{ \begin{array}{rcl}
+x^{2} & \mbox{ if } & x \leq -1\\
+\sqrt{1 - x^{2}} & \mbox{ if } & -1 < x \leq 1\\
+x & \mbox{ if } & x > 1  \end{array} \right. }$  Compute the following function values.
+
+\begin{multicols}{3}
+\begin{enumerate}
+
+\item $f(4)$
+\item $f(-3)$
+\item $f(1)$
+
+\setcounter{HWindent}{\value{enumii}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumii}{\value{HWindent}}
+
+\item $f(0)$
+\item $f(-1)$
+\item $f(-0.999)$
+
+\setcounter{HWindent}{\value{enumii}}
+\end{enumerate}
+\end{multicols}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+In Exercises \ref{finddomainfirst} - \ref{finddomainlast}, find the (implied) domain of the function.
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = x^{4} - 13x^{3} + 56x^{2} - 19$ \label{finddomainfirst}
+\item  $f(x) = x^2 + 4$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = \dfrac{x-2}{x+1}$
+\item  $f(x) = \dfrac{3x}{x^2+x-2}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = \dfrac{2x}{x^2+3}$
+\item  $f(x) = \dfrac{2x}{x^2-3}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $f(x) = \dfrac{x+4}{x^2 - 36}$
+\item $f(x) = \dfrac{x-2}{x-2}$  
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $f(x) = \sqrt{3-x}$
+\item $f(x) = \sqrt{2x+5}$  
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $f(x) = 9x\sqrt{x+3}$
+\item $f(x) = \dfrac{\sqrt{7-x}}{x^2+1}$  
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $f(x) = \sqrt{6x-2}$
+\item  $f(x) = \dfrac{6}{\sqrt{6x-2}}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $f(x) = \sqrt[3]{6x-2}$
+\item  $f(x) = \dfrac{6}{4 - \sqrt{6x-2}}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $f(x) = \dfrac{\sqrt{6x-2}}{x^2-36}$
+\item  $f(x) = \dfrac{\sqrt[3]{6x-2}}{x^2+36}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $s(t) = \dfrac{t}{t - 8}$
+\item $Q(r) = \dfrac{\sqrt{r}}{r - 8}$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $b(\theta) = \dfrac{\theta}{\sqrt{\theta - 8}}$
+\item $A(x) = \sqrt{x - 7} + \sqrt{9 - x}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\alpha(y) = \sqrt[3]{\dfrac{y}{y - 8}}$
+\item $g(v) = \dfrac{1}{4 - \dfrac{1}{v^{2}}}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $T(t) = \dfrac{\sqrt{t} - 8}{5-t}$ 
+\item $u(w) = \dfrac{w - 8}{5 - \sqrt{w}}$ \label{finddomainlast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  The area $A$ enclosed by a square, in square inches,  is a function of the length of one of its sides $x$, when measured in inches.  This relation is expressed by the formula $A(x) = x^2$ for $x > 0$.  Find $A(3)$ and solve $A(x) = 36$.  Interpret your answers to each.  Why is $x$ restricted to $x > 0$?
+
+\item  The area $A$ enclosed by a circle, in square meters, is a function of its radius $r$, when measured in meters.  This relation is expressed by the formula $A(r) = \pi r^2$ for $r > 0$.  Find $A(2)$ and solve $A(r) = 16\pi$.  Interpret your answers to each.  Why is $r$ restricted to $r > 0$?
+
+\item  The volume $V$ enclosed by a cube, in cubic centimeters, is a function of the length of one of its sides $x$, when measured in centimeters.  This relation is expressed by the formula $V(x) = x^3$ for $x > 0$.  Find $V(5)$ and solve $V(x) = 27$.  Interpret your answers to each.  Why is $x$ restricted to $x > 0$?
+
+\item  The volume $V$ enclosed by a sphere, in cubic feet, is a function of the radius of the sphere $r$, when measured in feet.  This relation is expressed by the formula $V(r) =\frac{4\pi}{3} r^{3}$ for $r > 0$.  Find $V(3)$ and solve $V(r) = \frac{32\pi}{3}$.  Interpret your answers to each.  Why is $r$ restricted to $r > 0$?
+
+
+\item  The height of an object dropped from the roof of an eight story building is modeled by:  $h(t) = -16t^2 + 64$, $0 \leq t \leq 2$. Here,  $h$ is the height of the object off the ground, in feet, $t$ seconds after the object is dropped.  Find $h(0)$ and solve $h(t) = 0$.  Interpret your answers to each.  Why is $t$ restricted to $0 \leq t \leq 2$?
+
+\item  The temperature $T$ in degrees Fahrenheit $t$ hours after 6 AM is given by $T(t) = -\frac{1}{2} t^2 + 8t+3$ for $0 \leq t \leq 12$. Find and interpret $T(0)$, $T(6)$ and $T(12)$.  
+
+\item The function $C(x) = x^2-10x+27$  models the cost, in \textit{hundreds} of dollars, to produce $x$ \textit{thousand} pens.  Find and interpret $C(0)$, $C(2)$ and $C(5)$.
+
+\item Using data from the  \href{http://www.bts.gov/publications/national_transportation_statistics/html/table_04_23.html}{\underline{Bureau of Transportation Statistics}}, the average fuel economy $F$ in miles per gallon for passenger cars in the US can be modeled by  $F(t) = -0.0076t^2+0.45t + 16$, $0 \leq t \leq 28$, where $t$ is the number of years since $1980$. Use your calculator to find $F(0)$, $F(14)$ and $F(28)$.  Round your answers to two decimal places and interpret your answers to each.
+
+
+\item The population of Sasquatch in Portage County can be modeled by the function $P(t) = \frac{150t}{t + 15}$, where $t$ represents the number of  years since 1803.  Find and interpret $P(0)$ and $P(205)$.  Discuss with your classmates what the applied domain and range of $P$ should be.
+
+\label{Sasquatchfunc1}
+
+\item \label{piecewiseordering} For $n$ copies of the book \textit{Me and my Sasquatch}, a print on-demand company charges $C(n)$ dollars, where $C(n)$ is determined by the formula \[{\displaystyle C(n) = \left\{ \begin{array}{rcl}  15n & \mbox{ if } & 1 \leq n \leq 25  \\
+                                                            13.50n  & \mbox{ if } & 25 < n \leq 50 \\
+                                                            12n & \mbox{ if } & n > 50 \\
+                                     \end{array} \right. }\]
+                                     
+                                     
+\begin{enumerate}
+
+\item  Find and interpret $C(20)$.  % Ans:  $C(20) = 300$.  It costs $\$300$ for 20 copies of the book.
+
+\item  \label{50vs51} How much does it cost to order 50 copies of the book?  What about 51 copies? %  Ans:  $C(50) = 675$, $\$ 675$.  $C(51) = 612$, $\$ 612$.
+
+\item  Your answer to \ref{50vs51} should get you thinking. Suppose a bookstore estimates it will sell 50 copies of the book.  How many books can, in fact, be ordered for the same price as those 50 copies? (Round your answer to a  whole number of books.)  % Ans:  56 books.
+
+\end{enumerate}
+
+\item \label{piecewiseshipping} An on-line comic book retailer charges shipping costs according to the following formula \[{\displaystyle S(n) = \left\{ \begin{array}{rcl}  1.5 n + 2.5 & \mbox{ if } & 1 \leq n \leq 14  \\
+                                                            0  & \mbox{ if } & n \geq 15
+                                     \end{array} \right. }\]
+                                     
+where $n$ is the number of  comic books purchased and $S(n)$ is the shipping cost in dollars.
+                                     
+\begin{enumerate}
+
+\item  What is the cost to ship 10 comic books?  %  Ans:  $S(10) = 17.5$, $\$ 17.50$.
+
+\item  What is the significance of the formula $S(n) = 0$ for $n \geq 15$?   % Ans:  There is free shipping on orders of $15$ or more comic books. 
+ 
+\end{enumerate}
+
+\item  \label{piecewisemobile} The cost $C$ (in dollars) to talk $m$ minutes a month on a mobile phone plan is modeled by   \[{\displaystyle C(m) = \left\{ \begin{array}{rcl} 25 & \mbox{ if } & 0 \leq m \leq 1000 \\
+                                                            25+0.1(m-1000) & \mbox{ if } & m > 1000
+                                     \end{array} \right. }\]
+                                     
+\begin{enumerate}
+
+\item  How much does it cost to talk $750$ minutes per month with this plan?  % Ans:  $C(750) = 25$, $\$ 25$.
+
+\item  How much does it cost to talk $20$ hours a month with this plan?  % Ans:  $C(1200) = 45$, $\$ 45$. 
+
+\item  Explain the terms of the plan verbally.  % Ans:  It costs $\$25$ for up to $1000$ minutes and $10$ cents per minute for each minute over $1000$ minutes.
+ 
+\end{enumerate}
+
+
+\item  \label{greatestinteger} In Section \ref{SetsofNumbers} we defined the set of \index{integer ! greatest integer function}\textbf{integers} as  $\mathbb{Z} = \{ \ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\}$.\footnote{The use of the letter $\mathbb{Z}$ for the integers is ostensibly because the German word \textit{zahlen} means `to count.'}  The \index{greatest integer function}\textbf{greatest integer of \boldmath{$x$}}, denoted by $\lfloor x \rfloor$, is defined to be the largest integer $k$ with $k \leq x$.
+
+\begin{enumerate}
+
+\item  Find $\lfloor 0.785 \rfloor$, $\lfloor 117 \rfloor$, $\lfloor -2.001 \rfloor$, and $\lfloor \pi + 6 \rfloor$
+
+\item  Discuss with your classmates how $\lfloor x \rfloor$ may be described as a piecewise defined function.
+
+\smallskip
+
+\textbf{HINT:}  There are infinitely many pieces!
+
+\item  Is $\lfloor a + b \rfloor = \lfloor a \rfloor + \lfloor b \rfloor$ always true?  What if $a$ or $b$ is an integer?  Test some values, make a conjecture, and explain your result.
+
+\end{enumerate}
+
+\item We have through our examples tried to convince you that, in general, $f(a + b) \neq f(a) + f(b)$.  It has been our experience that students refuse to believe us so we'll try again with a different approach.  With the help of your classmates, find a function $f$ for which the following properties are always true.
+
+\begin{enumerate}
+
+\item $f(0) = f(-1 + 1) = f(-1) + f(1)$
+\item $f(5) = f(2 + 3) = f(2) + f(3)$
+\item $f(-6) = f(0 - 6) = f(0) - f(6)$
+\item $f(a + b) = f(a) + f(b)\;$ regardless of what two numbers we give you for $a$ and  $b$.
+
+\end{enumerate}
+
+How many functions did you find that failed to satisfy the conditions above?  Did $f(x) = x^{2}$ work?  What about $f(x) = \sqrt{x}$ or $f(x) = 3x + 7$ or $f(x) = \dfrac{1}{x}$?  Did you find an attribute common to those functions that did succeed?  You should have, because there is only one extremely special family of functions that actually works here.  Thus we return to our previous statement, {\bf in general}, $f(a + b) \neq f(a) + f(b)$.
+
+\end{enumerate}
+
+\newpage
+
+\subsection{Answers}
+
+\begin{multicols}{2}
+\begin{enumerate}
+
+\item $f(x) = \frac{2x+3}{4}$ \\  Domain:  $(-\infty, \infty)$ 
+
+\item $f(x) = \frac{2(x+3)}{4} = \frac{x+3}{2}$ \\  Domain:  $(-\infty, \infty)$ 
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = 2\left(\frac{x}{4} + 3\right) = \frac{1}{2} x + 6$ \\ Domain:  $(-\infty, \infty)$  
+
+\item $f(x) = \sqrt{2x+3}$ \\ Domain:  $\left[ -\frac{3}{2}, \infty \right)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = \sqrt{2(x+3)} = \sqrt{2x+6}$ \\ Domain: $[-3, \infty)$
+
+\item $f(x) = 2\sqrt{x+3}$ \\ Domain:  $[-3, \infty)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item $f(x) = \frac{4}{\sqrt{x} - 13}$ \\ Domain: $[0, 169) \cup (169, \infty)$
+\item $f(x) = \frac{4}{\sqrt{x - 13}}$ \\ Domain: $(13, \infty)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = \frac{4}{\sqrt{x}} - 13$ \\ Domain: $(0, \infty)$
+\item $f(x) = \sqrt{\frac{4}{x}} - 13 = \frac{2}{\sqrt{x}} - 13$ \\ Domain: $(0, \infty)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item For $f(x) = 2x+1$ 
+
+\begin{multicols}{3}
+\begin{itemize}
+\item $f(3) = 7$
+\item $f(-1) = -1$
+\item $f\left(\frac{3}{2} \right) = 4$
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+\item  $f(4x) = 8x+1$
+\item $4f(x) = 8x+4$
+\item $f(-x) = -2x+1$
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+\item  $f(x-4) = 2x-7$
+\item $f(x) - 4 = 2x-3$
+\item  $f\left(x^2\right) = 2x^2+1$
+\end{itemize}
+\end{multicols}
+
+\item For $f(x) = 3-4x$ 
+
+\begin{multicols}{3}
+\begin{itemize}
+\item $f(3) = -9$
+\item $f(-1) = 7$
+\item $f\left(\frac{3}{2} \right) = -3$
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+\item  $f(4x) = 3-16x$
+\item $4f(x) = 12-16x$
+\item $f(-x) = 4x+3$
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+\item  $f(x-4) = 19-4x$
+\item $f(x) - 4 = -4x-1$
+\item  $f\left(x^2\right) = 3-4x^2$
+\end{itemize}
+\end{multicols}
+
+\pagebreak
+
+\item For $f(x) = 2 - x^2$ 
+
+\begin{multicols}{3}
+\begin{itemize}
+\item $f(3) = -7$
+\item $f(-1) = 1$
+\item $f\left(\frac{3}{2} \right) = -\frac{1}{4}$
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+\item  $f(4x) = 2-16x^2$
+\item $4f(x) = 8-4x^2$
+\item $f(-x) = 2-x^2$
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+\item  $f(x-4) = -x^2+8x-14$
+\item $f(x) - 4 = -x^{2} - 2$
+\item  $f\left(x^2\right) = 2-x^4$
+\end{itemize}
+\end{multicols}
+
+\item For $f(x) = x^2 - 3x + 2$ 
+
+\begin{multicols}{3}
+\begin{itemize}
+\item $f(3) = 2$
+\item $f(-1) = 6$
+\item $f\left(\frac{3}{2} \right) = -\frac{1}{4}$
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+\item  $f(4x) = 16x^2-12x+2$
+\item $4f(x) = 4x^2-12x+8$
+\item $f(-x) = x^2+3x+2$
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+\item  $f(x-4) = x^2-11x+30$
+\item $f(x) - 4 = x^2-3x-2$
+\item  $f\left(x^2\right) = x^4-3x^2+2$
+\end{itemize}
+\end{multicols}
+
+
+\item For $f(x) = \frac{x}{x-1}$ 
+
+\begin{multicols}{3}
+\begin{itemize}
+\item $f(3) = \frac{3}{2}$
+\item $f(-1) = \frac{1}{2}$
+\item $f\left(\frac{3}{2} \right) = 3$
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+\item  $f(4x) = \frac{4x}{4x-1}$
+\item $4f(x) = \frac{4x}{x-1}$
+\item $f(-x) = \frac{x}{x+1}$
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+\item  $f(x-4) = \frac{x-4}{x-5}$
+
+\vfill
+
+\columnbreak
+	
+\item $f(x) - 4 = \frac{x}{x-1} - 4$ \\
+      $\hphantom{f(x) - 4} = \frac{4-3x}{x-1}$
+      
+\vfill
+
+\columnbreak
+	
+\item  $f\left(x^2\right) = \frac{x^2}{x^2-1}$
+
+\end{itemize}
+\end{multicols}
+
+
+\item For $f(x) = \frac{2}{x^3}$ 
+
+\begin{multicols}{3}
+\begin{itemize}
+\item $f(3) = \frac{2}{27}$
+\item $f(-1) = -2$
+\item $f\left(\frac{3}{2} \right) = \frac{16}{27}$
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+\item  $f(4x) = \frac{1}{32x^3}$
+\item $4f(x) = \frac{8}{x^3}$
+\item $f(-x) = -\frac{2}{x^3}$
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+\item  $f(x-4) = \frac{2}{(x-4)^3}$ \\
+       $=\frac{2}{x^3-12x^2+48x-64}$
+\vfill
+
+\columnbreak
+	
+
+\item $f(x) - 4 = \frac{2}{x^3} - 4$ \\
+      $\hphantom{f(x) - 4} = \frac{2-4x^3}{x^3}$
+      
+	
+\item  $f\left(x^2\right) = \frac{2}{x^6}$
+
+\end{itemize}
+\end{multicols}
+
+\item For $f(x) = 6$ 
+
+\begin{multicols}{3}
+\begin{itemize}
+\item $f(3) = 6$
+\item $f(-1) =6$
+\item $f\left(\frac{3}{2} \right) = 6$
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+\item  $f(4x) = 6$
+\item $4f(x) = 24$
+\item $f(-x) = 6$
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $f(x-4) = 6$ 
+
+\item $f(x) - 4 = 2$
+     
+\item  $f\left(x^2\right) = 6$
+
+\end{itemize}
+\end{multicols}
+
+\pagebreak
+
+\item For $f(x) = 0$ 
+
+\begin{multicols}{3}
+\begin{itemize}
+\item $f(3) = 0$
+\item $f(-1) =0$
+\item $f\left(\frac{3}{2} \right) = 0$
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+\item  $f(4x) = 0$
+\item $4f(x) = 0$
+\item $f(-x) = 0$
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $f(x-4) = 0$ 
+
+\item $f(x) - 4 = -4$
+     
+\item  $f\left(x^2\right) = 0$
+
+\end{itemize}
+\end{multicols}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+
+
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item For $f(x) = 2x-5$
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $f(2) = -1$
+\item  $f(-2) = -9$
+\item  $f(2a) = 4a-5$
+
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $2 f(a) = 4a-10$
+\item $f(a+2) = 2a-1$
+\item $f(a) + f(2) = 2a-6$
+
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $f \left( \frac{2}{a} \right) = \frac{4}{a} - 5$ \\
+$\hphantom{f \left( \frac{2}{a} \right)} = \frac{4-5a}{a}$
+
+\vfill
+
+\columnbreak
+
+\item $\frac{f(a)}{2} =\frac{2a-5}{2}$
+
+\vfill
+
+\columnbreak
+
+
+\item  $f(a + h) = 2a + 2h - 5$
+
+\end{itemize}
+\end{multicols}
+
+\item For $f(x) = 5-2x$
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $f(2) = 1$
+\item  $f(-2) = 9$
+\item  $f(2a) = 5-4a$
+
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $2 f(a) = 10-4a$
+\item $f(a+2) = 1-2a$
+\item $f(a) + f(2) = 6-2a$
+
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $f \left( \frac{2}{a} \right) = 5 - \frac{4}{a}$ \\
+$\hphantom{f \left( \frac{2}{a} \right)} = \frac{5a-4}{a}$
+
+\vfill
+
+\columnbreak
+
+\item $\frac{f(a)}{2} = \frac{5-2a}{2}$
+
+\vfill
+
+\columnbreak
+
+
+\item  $f(a + h) = 5-2a-2h$
+
+\end{itemize}
+\end{multicols}
+
+
+\item For $f(x) = 2x^2-1$
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $f(2) = 7$
+\item  $f(-2) = 7$
+\item  $f(2a) = 8a^2-1$
+
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $2 f(a) = 4a^2-2$
+\item $f(a+2) = 2a^2+8a+7$
+\item $f(a) + f(2) = 2a^2+6$
+
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $f \left( \frac{2}{a} \right) = \frac{8}{a^2} - 1$ \\
+$\hphantom{f \left( \frac{2}{a} \right)} = \frac{8-a^2}{a^2}$
+
+\vfill
+
+\columnbreak
+
+\item $\frac{f(a)}{2} =  \frac{2a^2-1}{2}$
+
+\vfill
+
+\columnbreak
+
+
+\item  $f(a + h) = 2a^2+4ah+2h^2-1$
+
+\end{itemize}
+\end{multicols}
+
+\pagebreak
+
+\item For $f(x) = 3x^2+3x-2$
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $f(2) = 16$
+\item  $f(-2) = 4$
+\item  $f(2a) = 12a^2+6a-2$
+
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $2 f(a) = 6a^2+6a-4$
+\item $f(a+2) = 3a^2+15a+16$
+\item \small $f(a) + f(2) = 3a^2+3a+14$ \normalsize
+
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $f \left( \frac{2}{a} \right) = \frac{12}{a^2} + \frac{6}{a} - 2$ \\
+$\hphantom{f \left( \frac{2}{a} \right)} = \frac{12+6a-2a^2}{a^2}$
+
+\vfill
+
+\columnbreak
+
+\item $\frac{f(a)}{2} =  \frac{3a^2+3a-2}{2}$
+
+\vfill
+
+\columnbreak
+
+
+\item  $f(a + h) = 3a^2 + 6ah + 3h^2+3a+3h-2$
+
+\end{itemize}
+\end{multicols}
+
+\item For $f(x) = \sqrt{2x+1}$
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $f(2) = \sqrt{5}$
+\item  $f(-2)$ is not real 
+\item  $f(2a) = \sqrt{4a+1}$
+
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $2 f(a) = 2\sqrt{2a+1}$
+\item $f(a+2) = \sqrt{2a+5}$
+\item \small $f(a) + f(2) =\sqrt{2a+1} + \sqrt{5}$ \normalsize
+
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $f \left( \frac{2}{a} \right) = \sqrt{\frac{4}{a} + 1}$ \\
+$\hphantom{f \left( \frac{2}{a} \right)} = \sqrt{\frac{a+4}{a}}$
+
+\vfill
+
+\columnbreak
+
+\item $\frac{f(a)}{2} = \frac{\sqrt{2a+1}}{2}$
+
+\vfill
+
+\columnbreak
+
+
+\item  $f(a + h) = \sqrt{2a+2h+1}$
+
+\end{itemize}
+\end{multicols}
+
+
+\item For $f(x) = 117$
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $f(2) = 117$
+\item  $f(-2) = 117$
+\item  $f(2a) = 117$
+
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $2 f(a) = 234$
+\item $f(a+2) = 117$
+\item $f(a) + f(2) = 234$
+
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $f \left( \frac{2}{a} \right) = 117$ 
+
+\vfill
+
+\columnbreak
+
+\item $\frac{f(a)}{2} = \frac{117}{2}$
+
+\vfill
+
+\columnbreak
+
+
+\item  $f(a + h) = 117$
+
+\end{itemize}
+\end{multicols}
+
+
+
+\item For $f(x) = \frac{x}{2}$
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $f(2) = 1$
+\item  $f(-2) = -1$
+\item  $f(2a) = a$
+
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $2 f(a) = a$
+
+\item $f(a+2) = \frac{a+2}{2}$
+
+\vfill
+
+\columnbreak
+
+\item $f(a) + f(2) = \frac{a}{2}+ 1$ \\
+      $\hphantom{f(a) + f(2)} = \frac{a+2}{2}$
+
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $f \left( \frac{2}{a} \right) = \frac{1}{a}$
+
+\vfill
+
+\columnbreak
+
+\item $\frac{f(a)}{2} =  \frac{a}{4}$
+
+\vfill
+
+\columnbreak
+
+
+\item  $f(a + h) = \frac{a+h}{2}$
+
+\end{itemize}
+\end{multicols}
+
+\pagebreak
+
+\item For $f(x) = \frac{2}{x}$
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $f(2) = 1$
+\item  $f(-2) = -1$
+\item  $f(2a) = \frac{1}{a}$
+
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $2 f(a) = \frac{4}{a}$
+\item $f(a+2) = \frac{2}{a+2}$
+
+\vfill
+
+\columnbreak
+
+
+\item $f(a) + f(2) = \frac{2}{a}+1$ \\
+      $\hphantom{f(a)+f(2)}=\frac{a+2}{2}$
+
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{itemize}
+
+\item  $f \left( \frac{2}{a} \right) = a$
+
+\vfill
+
+\columnbreak
+
+\item $\frac{f(a)}{2} =  \frac{1}{a}$
+
+\vfill
+
+\columnbreak
+
+
+\item  $f(a + h) = \frac{2}{a+h}$
+
+\end{itemize}
+\end{multicols}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item For $f(x) = 2x-1$,  $f(0) = -1$ and $f(x) = 0$ when $x = \frac{1}{2}$
+
+\item For $f(x) =  3 - \frac{2}{5} x$, $f(0) = 3$ and $f(x) = 0$ when $x = \frac{15}{2}$
+
+\item For $f(x) =  2x^2-6$, $f(0) = -6$ and $f(x) = 0$ when $x = \pm \sqrt{3}$
+
+\item For $f(x) =  x^2-x-12$, $f(0) = -12$ and $f(x) = 0$ when $x = -3$ or $x=4$
+
+\item For $f(x) =  \sqrt{x+4}$, $f(0) = 2$ and $f(x) = 0$ when $x =-4$
+
+\item For $f(x) =  \sqrt{1-2x}$, $f(0) = 1$ and $f(x) = 0$ when $x = \frac{1}{2}$
+
+\item For $f(x) =   \frac{3}{4-x}$, $f(0) = \frac{3}{4}$ and $f(x)$ is never equal to $0$
+
+\item For $f(x) =   \frac{3x^2-12x}{4-x^2}$, $f(0) =0$ and $f(x) = 0$ when $x=0$ or $x=4$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item 
+
+\begin{multicols}{3}
+\begin{enumerate}
+
+\item $f(-4) = 1$
+\item  $f(-3) = 2$
+\item  $f(3) = 0$
+
+\setcounter{HWindent}{\value{enumii}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumii}{\value{HWindent}}
+
+\item  $f(3.001) = 1.999$
+\item  $f(-3.001) = 1.999$
+\item  $f(2) = \sqrt{5}$
+
+\setcounter{HWindent}{\value{enumii}}
+\end{enumerate}
+\end{multicols}
+
+
+\item
+
+\begin{multicols}{3}
+\begin{enumerate}
+
+
+\item $f(4) = 4$
+\item $f(-3) = 9$
+\item $f(1) = 0$
+
+
+\setcounter{HWindent}{\value{enumii}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumii}{\value{HWindent}}
+
+\item $f(0) = 1$
+\item $f(-1) = 1$
+\item \small $f(-0.999) \approx 0.0447$ \normalsize
+
+\setcounter{HWindent}{\value{enumii}}
+\end{enumerate}
+\end{multicols}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item $(-\infty, \infty)$
+\item  $(-\infty, \infty)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $(-\infty, -1) \cup (-1, \infty)$
+
+\item  $(-\infty,-2) \cup (-2,1) \cup (1, \infty)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $(-\infty, \infty)$
+
+\item  $(-\infty, -\sqrt{3}) \cup (-\sqrt{3}, \sqrt{3}) \cup (\sqrt{3}, \infty)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item  $(-\infty, -6) \cup (-6,6) \cup (6, \infty)$
+
+\item $(-\infty, 2) \cup (2, \infty)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $(-\infty, 3]$
+
+\item $\left[-\frac{5}{2}, \infty \right)$  
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $[-3, \infty)$
+
+\item $(-\infty, 7]$  
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item    $\left[ \frac{1}{3}, \infty \right)$
+
+
+\item   $\left( \frac{1}{3}, \infty \right)$
+
+
+
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item   $(-\infty, \infty)$
+
+\item   $\left[ \frac{1}{3}, 3 \right) \cup (3, \infty)$
+
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $\left[ \frac{1}{3}, 6 \right) \cup (6, \infty)$
+
+\item   $(-\infty, \infty)$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $(-\infty, 8) \cup (8, \infty)$
+\item $[0, 8) \cup (8, \infty)$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $(8, \infty)$
+
+\item $[7, 9]$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $(-\infty, 8) \cup (8, \infty)$
+
+\item $\left( -\infty, -\frac{1}{2} \right) \cup \left( -\frac{1}{2}, 0 \right) \cup \left(0, \frac{1}{2} \right) \cup \left( \frac{1}{2}, \infty\right)$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $[0, 5) \cup (5,\infty)$
+
+\item $[0, 25) \cup (25, \infty)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $A(3) = 9$, so the area enclosed by a square with a side of length $3$ inches is $9$ square inches.  The solutions to $A(x) = 36$ are $x = \pm 6$.  Since $x$ is restricted to  $x > 0$, we only keep $x = 6$.  This means for the area enclosed by the square to be $36$ square inches, the length of the side needs to be $6$ inches.  Since $x$ represents a length, $x > 0$.
+
+
+
+\item  $A(2) = 4\pi$, so the area enclosed by a circle with radius $2$ meters is $4\pi$ square meters.  The solutions to $A(r) = 16\pi$ are $r = \pm 4$.  Since $r$ is restricted to $r > 0$, we only keep $r = 4$.  This means for the area enclosed by the circle to be $16\pi$ square meters, the radius needs to be $4$ meters.  Since $r$ represents a radius (length), $r > 0$.
+
+\item  $V(5) = 125$, so the volume enclosed by a cube with a side of length $5$ centimeters is $125$ cubic centimeters.  The solution to $V(x) = 27$ is $x = 3$.  This means for the volume enclosed by the cube to be $27$ cubic centimeters, the length of the side needs to $3$ centimeters.  Since $x$ represents a length, $x > 0$.
+
+\item  $V(3) = 36\pi$, so the volume enclosed by a sphere with radius $3$ feet is $36\pi$ cubic feet.  The solution to $V(r) = \frac{32\pi}{3}$ is $r = 2$.  This means for the volume enclosed by the sphere to be $\frac{32\pi}{3}$ cubic feet, the radius needs to $2$ feet.  Since $r$ represents a radius (length), $r > 0$.
+
+
+\item $h(0) = 64$, so at the moment the object is dropped off the building, the object is $64$ feet off of the ground.  The solutions to $h(t) = 0$ are $t = \pm 2$.  Since we restrict $0 \leq t \leq 2$, we only keep $t = 2$.  This means $2$ seconds after the object is dropped off the building, it is $0$ feet off the ground.  Said differently, the object hits the ground after $2$ seconds.  The restriction  $0 \leq t \leq 2$ restricts the time to be between the moment the object is released and the moment it hits the ground.
+
+
+\item  $T(0) = 3$, so at 6 AM ($0$ hours after 6 AM), it is $3^{\circ}$ Fahrenheit.  $T(6) = 33$, so at noon ($6$ hours after 6 AM), the temperature is $33^{\circ}$ Fahrenheit.  $T(12) = 27$, so at 6 PM ($12$ hours after 6 AM), it is $27^{\circ}$ Fahrenheit.
+
+
+\item $C(0) = 27$, so to make $0$ pens, it costs\footnote{This is called the `fixed' or `start-up' cost.  We'll revisit this concept on page \pageref{pricerevenuecostprofit}.} $\$ 2700$.  $C(2) = 11$, so to make $2000$ pens, it costs $\$1100$.  $C(5) = 2$, so to make $5000$ pens, it costs $\$2000$.
+
+\item $F(0) = 16.00$, so in 1980 ($0$ years after 1980), the average fuel economy of passenger cars in the US was $16.00$ miles per gallon.  $F(14) = 20.81$, so in 1994 ($14$ years after 1980), the average fuel economy of passenger cars in the US was $20.81$ miles per gallon.  $F(28) = 22.64$, so in 2008 ($28$ years after 1980), the average fuel economy of passenger cars in the US was $22.64$ miles per gallon.  
+
+
+\item $P(0) = 0$ which means in 1803 ($0$ years after 1803), there are no Sasquatch in Portage County.  $P(205) = \frac{3075}{22} \approx 139.77$, so in 2008 ($205$ years after 1803), there were between 139 and 140 Sasquatch in Portage County.
+
+\item \begin{enumerate}
+
+\item $C(20) = 300$.  It costs $\$300$ for 20 copies of the book.
+
+\item $C(50) = 675$, so it costs $\$ 675$ for 50 copies of the book.  $C(51) = 612$, so it costs $\$ 612$ for 51 copies of the book.
+
+\item $56$ books.
+
+\end{enumerate}
+
+\item \begin{enumerate}
+
+\item  $S(10) = 17.5$, so it costs $\$ 17.50$ to ship 10 comic books.
+
+\item  There is free shipping on orders of $15$ or more comic books. 
+ 
+\end{enumerate}
+
+\item \begin{enumerate}
+
+\item  $C(750) = 25$, so it costs $\$ 25$ to talk 750 minutes per month with this plan.
+
+\item  Since $20 \, \text{hours} = 1200 \, \text{minutes}$, we substitute $m = 1200$ and get  $C(1200) = 45$.  It costs $\$ 45$ to talk 20 hours per month with this plan. 
+
+\item It costs $\$25$ for up to $1000$ minutes and $10$ cents per minute for each minute over $1000$ minutes.
+ 
+\end{enumerate}
+
+\item \begin{enumerate}
+
+\item  $\lfloor 0.785 \rfloor = 0$, $\lfloor 117 \rfloor = 117$, $\lfloor -2.001 \rfloor = -3$, and $\lfloor \pi + 6 \rfloor = 9$
+
+\end{enumerate}
+
+\end{enumerate}
+
+\closegraphsfile

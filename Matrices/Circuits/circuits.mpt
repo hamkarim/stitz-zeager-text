@@ -1,0 +1,56 @@
+verbatimtex
+%&latex
+\documentclass{article}\def\ohm{\ensuremath{\,\Omega}}\def\kohm{\,k\ensuremath{\Omega}}\def\modarg#1#2{\setbox0=\hbox{$\mkern-1mu/#2^\circ$}\dp0=.21ex $#1\underline{\box0}$}
+
+\begin{document}
+etex
+% figure 1 : 
+LaTeXPic[1] := btex $V\!\!B_{1}$ etex ;
+% figure 1 : 
+LaTeXPic[2] := btex  etex ;
+% figure 1 : 
+LaTeXPic[3] := btex  etex ;
+% figure 1 : 
+LaTeXPic[4] := btex $R_{5}$ etex ;
+% figure 1 : 
+LaTeXPic[5] := btex  etex ;
+% figure 1 : 
+LaTeXPic[6] := btex  etex ;
+% figure 1 : 
+LaTeXPic[7] := btex $R_{1}$ etex ;
+% figure 1 : 
+LaTeXPic[8] := btex  etex ;
+% figure 1 : 
+LaTeXPic[9] := btex  etex ;
+% figure 1 : 
+LaTeXPic[10] := btex $R_{2}$ etex ;
+% figure 1 : 
+LaTeXPic[11] := btex  etex ;
+% figure 1 : 
+LaTeXPic[12] := btex  etex ;
+% figure 1 : 
+LaTeXPic[13] := btex $R_{6}$ etex ;
+% figure 1 : 
+LaTeXPic[14] := btex  etex ;
+% figure 1 : 
+LaTeXPic[15] := btex $V\!\!B_{2}$ etex ;
+% figure 1 : 
+LaTeXPic[16] := btex  etex ;
+% figure 1 : 
+LaTeXPic[17] := btex  etex ;
+% figure 1 : 
+LaTeXPic[18] := btex $R_{3}$ etex ;
+% figure 1 : 
+LaTeXPic[19] := btex  etex ;
+% figure 1 : 
+LaTeXPic[20] := btex $R_{4}$ etex ;
+% figure 1 : 
+LaTeXPic[21] := btex  etex ;
+% figure 1 : 
+LaTeXPic[22] := btex $i_{1}$ etex ;
+% figure 1 : 
+LaTeXPic[23] := btex $i_{2}$ etex ;
+% figure 1 : 
+LaTeXPic[24] := btex $i_{3}$ etex ;
+% figure 1 : 
+LaTeXPic[25] := btex $i_{4}$ etex ;

@@ -1,0 +1,663 @@
+\mfpicnumber{1}
+
+\opengraphsfile{Binomial}
+
+\setcounter{footnote}{0}
+
+\label{Binomial}
+
+In this section, we aim to prove the celebrated \textbf{Binomial Theorem}.  Simply stated, the Binomial Theorem is a formula for the expansion of quantities $(a+b)^n$ for natural numbers $n$.  In Elementary and Intermediate Algebra, you should have seen specific instances of the formula, namely
+
+\[ \begin{array}{rclr}
+
+(a+b)^1 & = & a + b & \\
+(a+b)^2 & = & a^2 + 2ab + b^2 & \\
+(a+b)^3 & = & a^3 + 3a^2 b + 3ab^2 + b^3 & \\
+\end{array}\]
+
+If we wanted the expansion for $(a+b)^4$ we would write $(a+b)^4 = (a+b)(a+b)^3$ and use the formula that we have for $(a+b)^3$ to get $(a+b)^4 = (a+b) \left( a^3 + 3a^2 b + 3ab^2 + b^3 \right) = a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4$.  Generalizing this a bit, we see that if we have a formula for $(a+b)^{k}$, we can obtain a formula for $(a+b)^{k+1}$ by rewriting the latter as $(a+b)^{k+1} = (a+b)(a+b)^{k}$.  Clearly this means Mathematical Induction plays a major role in the proof of the Binomial Theorem.\footnote{It's pretty much the reason Section \ref{Induction} is in the book.}  Before we can state the theorem we need to revisit the sequence of factorials which were introduced in Example \ref{seqex1} number \ref{factorialintroex} in Section \ref{Sequences}.
+
+\medskip
+
+\colorbox{ResultColor}{\bbm 
+
+\begin{defn}  \label{factorialdefn}  \textbf{Factorials:}  For a whole number $n$, \index{factorial} {\boldmath $n$} \textbf{factorial}, denoted $n!$,  is the term $f_{n}$ of the sequence $f_{\mbox{\tiny$0$}} = 1$, $f_{n} =n \cdot f_{n-\mbox{\tiny$1$}}$, $n \geq 1$.  
+
+
+\end{defn}
+
+\ebm}
+
+
+\medskip
+
+Recall this means $0! = 1$ and $n! = n(n-1)!$ for $n \geq 1$.  Using the recursive definition, we get: $1! = 1 \cdot 0! = 1 \cdot 1 = 1$, $2! = 2 \cdot 1! = 2 \cdot 1 = 2$, $3! = 3 \cdot 2! = 3 \cdot 2 \cdot 1 = 6$ and  $4! = 4 \cdot 3! = 4 \cdot 3 \cdot 2 \cdot 1 = 24$.  Informally, $n! = n\cdot(n -1)\cdot(n -2) \cdots 2 \cdot 1$ with $0! = 1$ as our `base case.'  Our first example familiarizes us with some of the basic computations involving factorials.
+
+\begin{ex}  \label{factorialex}  $~$
+
+\begin{enumerate} 
+
+\item  Simplify the following expressions.
+
+\begin{multicols}{4}
+
+\begin{enumerate}
+
+\item  $\dfrac{3! \, 2!}{0!}$
+
+\item  $\dfrac{7!}{5!}$
+
+\item  $\dfrac{1000!}{998! \, 2!}$
+
+\item  $\dfrac{(k+2)!}{(k-1)!}$, $k \geq 1$
+
+\end{enumerate}
+
+\end{multicols}
+
+\item  Prove $n! > 3^n$ for all $n \geq 7$.
+
+\end{enumerate}
+
+{\bf Solution.}  
+
+\begin{enumerate}
+
+\item  We keep in mind the mantra, ``When in doubt, write it out!'' as we simplify the following.
+
+\begin{enumerate}
+
+\item  We have been programmed to react with alarm to the presence of a $0$ in the denominator, but in this case $0! = 1$, so the fraction is defined after all.  As for the numerator, $3! = 3 \cdot 2 \cdot 1 = 6$ and $2! = 2 \cdot 1 = 2$, so we have $\frac{3! \, 2!}{0!} = \frac{(6)(2)}{1} = 12$.
+
+\item We have $7! = 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 5040$ while $5! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120$.  Dividing, we get $\frac{7!}{5!} = \frac{5040}{120} = 42$.  While this is correct, we note that we could have saved ourselves some of time had we proceeded as follows
+
+\[ \dfrac{7!}{5!} = \dfrac{7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1}{5 \cdot 4 \cdot 3 \cdot 2 \cdot 1} = \dfrac{7 \cdot 6 \cdot \cancel{5} \cdot \cancel{4} \cdot \cancel{3} \cdot \cancel{2} \cdot \cancel{1}}{\cancel{5} \cdot \cancel{4} \cdot \cancel{3} \cdot \cancel{2} \cdot \cancel{1}} = 7 \cdot 6 = 42\]
+
+In fact, should we want to fully exploit the recursive nature of the factorial, we can write
+
+\[ \dfrac{7!}{5!} = \dfrac{7 \cdot 6 \cdot 5!}{5!} = \dfrac{7 \cdot 6 \cdot \cancel{5!}}{\cancel{5!}} = 42\]
+
+
+\item  Keeping in mind the lesson we learned from the previous problem, we have
+
+\[ \dfrac{1000!}{998! \, 2!} = \dfrac{1000 \cdot 999 \cdot 998!}{998! \cdot 2!} = \dfrac{1000 \cdot 999 \cdot \cancel{998!}}{\cancel{998!} \cdot 2!} = \dfrac{999000}{2} = 499500\]
+
+\item  This problem continues the theme which we have seen in the previous two problems.  We first note that since $k+2$ is larger than $k-1$, $(k+2)!$ contains all of the factors of $(k-1)!$ and as a result we can get the $(k-1)!$ to cancel from the denominator.  To see this,  we begin by writing out $(k+2)!$ starting with $(k+2)$ and multiplying it by the numbers which precede it until we reach $(k-1)$: $(k+2)! = (k+2)(k+1)(k)(k-1)!$.  As a result, we have
+
+\[ \dfrac{(k+2)!}{(k-1)!} = \dfrac{(k+2)(k+1)(k)(k-1)!}{(k-1)!} = \dfrac{(k+2)(k+1)(k) \cancel{(k-1)!}}{\cancel{(k-1)!}} = k(k+1)(k+2)\]
+
+
+The stipulation $k \geq 1$ is there to ensure that all of the factorials involved are defined.
+
+
+\end{enumerate}
+
+\item  We proceed by induction and let $P(n)$ be the inequality $n! > 3^n$.  The base case here is $n=7$ and we see that $7! = 5040$ is larger than $3^7 = 2187$, so $P(7)$ is true.  Next, we assume that $P(k)$ is true, that is, we assume $k! > 3^k$ and attempt to show $P(k+1)$ follows. Using the properties of the factorial, we have $(k+1)! = (k+1) k!$ and since $k! > 3^k$, we have $(k+1)! > (k+1) 3^{k}$.  Since $k \geq 7$, $k+1 \geq 8$, so $(k+1) 3^{k} \geq 8 \cdot 3^{k} > 3 \cdot 3^{k} = 3^{k+1}$.  Putting all of this together, we have $(k+1)! = (k+1) k! > (k+1)3^{k} > 3^{k+1}$ which shows $P(k+1)$ is true.  By the Principle of Mathematical Induction, we have $n! > 3^{n}$ for all $n \geq 7$. \qed
+
+\end{enumerate}
+
+\end{ex} 
+
+Of all of the mathematical animals we have discussed in the text, factorials grow most quickly.  In problem 2 of Example \ref{factorialex}, we proved that $n!$ overtakes $3^{n}$ at $n=7$.  `Overtakes' may be too polite a word, since $n!$ thoroughly trounces $3^n$ for $n \geq 7$, as any reasonable set of data will show. It can be shown that for any real number $x > 0$, not only does $n!$ eventually overtake $x^n$, but the ratio $\frac{x^n}{n!} \rightarrow 0$ as $n \rightarrow \infty$.\footnote{This fact is far more important than you could ever possibly imagine.}  
+
+\smallskip
+
+Applications of factorials in the wild often involve counting arrangements. For example, if you have fifty songs on your mp3 player and wish arrange these songs in a playlist in which the order of the songs matters, it turns out that there are $50!$ different possible playlists.  If you wish to select only ten of the songs to create a playlist, then there are $\frac{50!}{40!}$ such playlists.  If, on the other hand, you just want to select ten song files out of the fifty to put on a flash memory card so that now the order no longer matters, there are $\frac{50!}{40! 10!}$ ways to achieve this.\footnote{For reference, \[\begin{array}{ccl} 50! & = &  30414093201713378043612608166064768844377641568960512000000000000, \\  \dfrac{50!}{40!} & = & 37276043023296000, \quad \text{and} \\ [5pt] \dfrac{50!}{40!  10!} & = & 10272278170 \\ \end{array}\]}  While some of these ideas are explored in the Exercises, the authors encourage you to take courses such as Finite Mathematics, Discrete Mathematics and Statistics. We introduce these concepts here because this is how the factorials make their way into the Binomial Theorem, as our next definition indicates.
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{defn} \label{binomialcoeff}  \textbf{Binomial Coefficients:}  Given two whole numbers $n$ and $j$ with $n \geq j$, the \index{binomial coefficient} binomial coefficient  {\boldmath $\displaystyle \binom{n}{j}$} (read, $n$ choose $j$) is the whole number given by
+
+\[ \binom{n}{j} = \dfrac{n!}{j! (n-j)!} \]
+
+\end{defn}
+\ebm}
+
+\smallskip
+ 
+The name `binomial coefficient' will be justified shortly.  For now, we can physically interpret $\binom{n}{j}$as the number of ways to select $j$ items from $n$ items where the order of the items selected is unimportant.   For example, suppose you won two free tickets to a special screening of the latest Hollywood blockbuster and have five good friends each of whom would love to accompany you to the movies.  There are $\binom{5}{2}$ ways to choose who goes with you.  Applying Definition \ref{binomialcoeff}, we get
+
+\[ \binom{5}{2} = \dfrac{5!}{2! (5-2)!} = \dfrac{5!}{2! 3!} = \dfrac{5 \cdot 4}{2} = 10\] 
+
+So there are $10$ different ways to distribute those two tickets among five friends. (Some will see it as $10$ ways to decide which three friends have to stay home.)  The reader is encouraged to verify this by actually taking the time to list all of the possibilities.  
+
+\smallskip
+
+We now state anf prove a theorem which is crucial to the proof of the Binomial Theorem.
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{thm}  \label{addbinomcoeff}  For natural numbers $n$ and $j$ with $n \geq j$, 
+
+\[ \binom{n}{j-1} + \binom{n}{j} = \binom{n+1}{j} \]
+
+
+
+\end{thm}
+
+\ebm}
+
+\smallskip
+
+The proof of Theorem \ref{addbinomcoeff} is purely computational and uses the definition of binomial coefficients, the recursive property of factorials and common denominators.
+
+\[ \begin{array}{rcl}
+
+\displaystyle{\binom{n}{j-1} + \binom{n}{j}} & = & \dfrac{n!}{(j-1)! (n-(j-1))!} + \dfrac{n!}{j! (n-j)!}  \\ [15pt]
+
+& = & \dfrac{n!}{(j-1)! (n-j+1)!} + \dfrac{n!}{j! (n-j)!}  \\ [15pt]
+
+& = & \dfrac{n!}{(j-1)! (n-j+1)(n-j)!} + \dfrac{n!}{j(j-1)! (n-j)!}  \\ [15pt]
+
+& = & \dfrac{n! \, j}{j(j-1)! (n-j+1)(n-j)!} + \dfrac{n! (n-j+1)}{j(j-1)! (n-j+1)(n-j)!} \\ [15pt]
+
+& = & \dfrac{n! \, j}{j! (n-j+1)!} + \dfrac{n! (n-j+1)}{j! (n-j+1)!} \\ [15pt]
+
+& = & \dfrac{n! \, j + n! (n-j+1)}{j! (n-j+1)!} \\ [15pt]
+
+& = & \dfrac{n!\left( j + (n-j+1)\right)}{j! (n-j+1)!} \\ [15pt]
+
+& = & \dfrac{(n+1) n!}{j! (n+1-j))!} \\ [15pt] 
+
+& = & \dfrac{(n+1)!} {j! ((n+1)-j))!} \\ [15pt]
+
+& = & \displaystyle{\binom{n+1}{j}} \, \checkmark \\ 
+
+\end{array} \]
+
+We are now in position to state and prove the Binomial Theorem where we see that binomial coefficients are just that - coefficients in the binomial expansion.
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{thm}  \label{BinomialTheorem} \index{Binomial Theorem} \textbf{Binomial Theorem:}  For nonzero real numbers $a$ and $b$,
+
+\[(a+b)^{n} =\displaystyle{\sum_{j=0}^{n} \binom{n}{j} a^{n-j} b^{j}} \]
+
+for all natural numbers $n$.
+
+\end{thm}
+
+\ebm}
+
+\smallskip
+
+To get a feel of what this theorem is saying and how it really isn't as hard to remember as it may first appear, let's consider the specific case of $n=4$.  According to the theorem, we have
+
+\[ \begin{array}{rcl}
+
+(a+b)^{4} & = & \displaystyle{\sum_{j=0}^{4} \binom{4}{j} a^{4-j} b^{j}} \\ [15pt]
+          & = & \displaystyle{\binom{4}{0}a^{4-0}b^{0} + \binom{4}{1}a^{4-1}b^{1} + \binom{4}{2}a^{4-2}b^{2} + \binom{4}{3}a^{4-3}b^{3} + \binom{4}{4}a^{4-4}b^{4}} \\ [15pt] 
+          & = & \displaystyle{\binom{4}{0}a^{4} + \binom{4}{1}a^{3}b + \binom{4}{2}a^{2}b^{2} + \binom{4}{3}ab^{3} + \binom{4}{4}b^{4}} \\
+          
+\end{array} \] 
+
+We forgo the simplification of the coefficients in order to note the pattern in the expansion.  First note that in each term, the total of the exponents is $4$ which matched the exponent of the binomial $(a+b)^{4}$.  The exponent on $a$ begins at $4$ and decreases by one as we move from one term to the next while the exponent on $b$ starts at $0$ and increases by one each time.  Also note that the binomial coefficients themselves have a pattern. The upper number, $4$, matches the exponent on the binomial $(a+b)^4$ whereas the lower number changes from term to term and matches the exponent of $b$ in that term.  This is no coincidence and corresponds to the kind of counting we discussed earlier.  If we think of obtaining $(a+b)^4$ by multiplying $(a+b)(a+b)(a+b)(a+b)$, our answer is the sum of all possible products with exactly four factors - some $a$, some $b$.  If we wish to count, for instance, the number of ways we obtain $1$ factor of $b$ out of a total of $4$ possible factors, thereby forcing the remaining $3$ factors to be $a$, the answer is $\binom{4}{1}$.  Hence, the term  $\binom{4}{1}a^{3}b$ is in the expansion.  The other terms which appear cover the remaining cases.  While this discussion gives an indication as to \textit{why} the theorem is true, a formal proof requires Mathematical Induction.\footnote{and a fair amount of tenacity and attention to detail.}
+
+\medskip
+
+To prove the Binomial Theorem, we let $P(n)$ be the expansion formula given in the statement of the theorem and we note that $P(1)$ is true since
+
+\[ \begin{array}{rcl}
+
+(a+b)^{1} & \stackrel{?}{=} & \displaystyle{\sum_{j=0}^{1} \binom{1}{j} a^{1-j} b^{j}} \\ [15pt]
+a+b & \stackrel{?}{=} & \displaystyle{\binom{1}{0}a^{1-0}b^{0} +  \binom{1}{1}a^{1-1}b^{1}} \\ [15pt]
+a+b & = & a + b \, \checkmark \\
+
+\end{array} \]
+
+Now we assume that $P(k)$ is true.  That is, we assume that we can expand $(a+b)^k$ using the formula given in Theorem \ref{BinomialTheorem}  and attempt to show that $P(k+1)$ is true.
+
+\[ \begin{array}{rcl}
+
+(a+b)^{k+1} & = & (a+b)(a+b)^{k} \\ [15pt]
+            & = & (a+b) \displaystyle{\sum_{j=0}^{k} \binom{k}{j} a^{k-j} b^{j}}  \\ [15pt]
+            & = & a \displaystyle{\sum_{j=0}^{k} \binom{k}{j} a^{k-j} b^{j}} +  b \displaystyle{\sum_{j=0}^{k} \binom{k}{j} a^{k-j} b^{j}} \\ [15pt]
+            & = & \displaystyle{\sum_{j=0}^{k} \binom{k}{j} a^{k+1-j} b^{j}} +  \displaystyle{\sum_{j=0}^{k} \binom{k}{j} a^{k-j} b^{j+1}} \\ [15pt]           
+            
+\end{array} \]
+
+Our goal is to combine as many of the terms as possible within the two summations. As the counter $j$ in the first summation runs from $0$ through $k$, we get terms involving $a^{k+1}$, $a^{k}b$, $a^{k-1}b^2$, \ldots, $ab^{k}$.  In the second summation,   we get terms involving $a^{k}b$, $a^{k-1}b^{2}$, \ldots, $ab^{k}$, $b^{k+1}$.  In other words, apart from the first term in the first summation and the last term in the second summation, we have terms common to both summations.  Our next move is to `kick out' the terms which we cannot combine and rewrite the summations so that we can combine them.  To that end, we note
+
+\[ \displaystyle{\sum_{j=0}^{k} \binom{k}{j} a^{k+1-j} b^{j} = a^{k+1}+ \sum_{j=1}^{k} \binom{k}{j} a^{k+1-j} b^{j}}\]
+
+and
+
+\[ \displaystyle{\sum_{j=0}^{k} \binom{k}{j} a^{k-j} b^{j+1} = \sum_{j=0}^{k-1} \binom{k}{j} a^{k-j} b^{j+1} + b^{k+1}}\]
+
+so that
+
+\[ (a+b)^{k+1} = \displaystyle{a^{k+1} + \sum_{j=1}^{k} \binom{k}{j} a^{k+1-j} b^{j} + \sum_{j=0}^{k-1} \binom{k}{j} a^{k-j} b^{j+1}  + b^{k+1}}\]
+
+We now wish to write
+
+\[\displaystyle{\sum_{j=1}^{k} \binom{k}{j} a^{k+1-j} b^{j} + \sum_{j=0}^{k-1} \binom{k}{j} a^{k-j} b^{j+1}}\]
+
+as a single summation.  The wrinkle is that the first summation starts with $j=1$, while the second starts with $j=0$. Even though the sums produce terms with the same powers of $a$ and $b$, they do so for different values of $j$.  To resolve this, we need to shift the index on the second summation so that the index $j$ starts at $j=1$ instead of $j=0$ and we make use of Theorem \ref{sigmaprops} in the process.
+
+\[ \begin{array}{rcl}
+
+\displaystyle{ \sum_{j=0}^{k-1} \binom{k}{j} a^{k-j} b^{j+1}} & = & \displaystyle{\sum_{j=0+1}^{k-1+1} \binom{k}{j-1} a^{k-(j-1)} b^{(j-1)+1}} \\[15pt]
+                                                              & = & \displaystyle{\sum_{j=1}^{k} \binom{k}{j-1} a^{k+1-j} b^{j}} \\ [15pt] 
+\end{array} \]
+
+We can now combine our two sums using Theorem \ref{sigmaprops} and simplify using Theorem \ref{addbinomcoeff}
+
+\[ \begin{array}{rcl}
+
+\displaystyle{\sum_{j=1}^{k} \binom{k}{j} a^{k+1-j} b^{j} + \sum_{j=0}^{k-1} \binom{k}{j} a^{k-j} b^{j+1}} & = & \displaystyle{\sum_{j=1}^{k} \binom{k}{j} a^{k+1-j} b^{j} + \sum_{j=1}^{k} \binom{k}{j-1} a^{k+1-j} b^{j}} \\ [15pt] 
+
+& = & \displaystyle{\sum_{j=1}^{k} \left[ \binom{k}{j} + \binom{k}{j-1} \right] a^{k+1-j} b^{j} } \\ [15pt]
+
+& = & \displaystyle{\sum_{j=1}^{k} \binom{k+1}{j} a^{k+1-j} b^{j} } \\
+
+\end{array} \]
+
+Using this and the fact that $\binom{k+1}{0} = 1$ and $\binom{k+1}{k+1} = 1$, we get
+
+\[ \begin{array}{rcl}
+
+(a+b)^{k+1} & = & a^{k+1} + \displaystyle{\sum_{j=1}^{k} \binom{k+1}{j} a^{k+1-j} b^{j} } + b^{k+1} \\ [15pt]
+            & = & \displaystyle{ \binom{k+1}{0} a^{k+1} b^{0} + \sum_{j=1}^{k} \binom{k+1}{j} a^{k+1-j} b^{j}  + \binom{k+1}{k+1} a^{0} b^{k+1}} \\ [15pt]
+            & = & \displaystyle{  \sum_{j=0}^{k+1} \binom{k+1}{j} a^{(k+1)-j} b^{j}} \\ [15pt]
+ \end{array}\]
+ 
+which shows that $P(k+1)$ is true.  Hence, by induction, we have established that the Binomial Theorem holds for all natural numbers $n$.
+
+\begin{ex} \label{binomialthmex}  Use the Binomial Theorem to find the following.
+
+\begin{enumerate}
+
+\begin{multicols}{2}
+\item  $(x-2)^4$
+
+\item  $2.1^{3}$
+
+\end{multicols}
+
+\item  The term containing $x^3$ in the expansion $(2x+y)^{5}$
+
+\end{enumerate}
+
+{\bf Solution.}
+\begin{enumerate}
+\item  Since $(x-2)^4 = (x+(-2))^4$, we identify $a = x$, $b = -2$ and $n=4$ and obtain
+
+\[ \begin{array}{rcl}
+
+(x-2)^4\! &\hspace{-.1in} =  & \hspace{-.1in}\displaystyle{\sum_{j=0}^{4} \binom{4}{j} x^{4-j} (-2)^{j}} \\ [15pt]
+        & \hspace{-.1in} =  & \hspace{-.1in}\displaystyle{\binom{4}{0} x^{4-0} (-2)^{0} \!+\! \binom{4}{1} x^{4-1} (-2)^{1} \!+\! \binom{4}{2} x^{4-2} (-2)^{2} \!+\! \binom{4}{3} x^{4-3} (-2)^{3} \!+\! \binom{4}{4} x^{4-4} (-2)^{4}} \\ [15pt]
+        &\hspace{-.1in}  =  & \hspace{-.1in}x^4 -8x^3 + 24x^2 - 32x + 16 \\
+\end{array} \]
+
+\item  At first this problem seem misplaced, but we can write $2.1^{3} = (2 + 0.1)^3$.  Identifying $a =2$, $b = 0.1 = \frac{1}{10}$ and $n=3$, we get
+
+\[ \begin{array}{rcl}
+
+\left(2+\dfrac{1}{10} \right)^3 & = & \displaystyle{\sum_{j=0}^{3} \binom{3}{j} 2^{3-j} \left(\dfrac{1}{10}\right)^{j}} \\ [15pt]
+        & = & \displaystyle{\binom{3}{0} 2^{3-0} \left(\dfrac{1}{10}\right)^{0} + \binom{3}{1} 2^{3-1} \left(\dfrac{1}{10}\right)^{1} + \binom{3}{2} 2^{3-2} \left(\dfrac{1}{10}\right)^{2} + \binom{3}{3} 2^{3-3} \left(\dfrac{1}{10}\right)^{3}} \\ [15pt]
+        & = & 8 + \dfrac{12}{10} + \dfrac{6}{100} + \dfrac{1}{1000} \\ [15pt]
+        & = & 8 + 1.2 + 0.06 + 0.001 \\
+        & = & 9.261 \\
+\end{array} \]
+
+\item  Identifying $a = 2x$, $b = y$ and $n=5$, the Binomial Theorem gives 
+
+\[ (2x+y)^{5} = \displaystyle{\sum_{j=0}^{5} \binom{5}{j} (2x)^{5-j} y^{j}} \]
+
+Since we are concerned with only the term containing $x^3$, there is no need to expand the entire sum.  The exponents on each term must add to $5$ and if the exponent on $x$ is $3$, the exponent on $y$ must be $2$.  Plucking out the term $j=2$, we get
+
+\[  \displaystyle{\binom{5}{2} (2x)^{5-2} y^{2}} = 10 (2x)^3y^2 = 80x^3y^2 \]
+
+\qed
+
+
+\end{enumerate}
+\end{ex}
+
+We close this section with \index{Pascal's Triangle} \href{http://en.wikipedia.org/wiki/Pascal's_triangle}{\underline{Pascal's Triangle}}, named in honor of the mathematician \href{http://en.wikipedia.org/wiki/Blaise_Pascal}{\underline{Blaise Pascal}}.  Pascal's Triangle is obtained by arranging the binomial coefficients in the triangular fashion below.
+
+\[\begin{array}{ccccccccc} 
+&	&	&	&	\displaystyle{\binom{0}{0}}	&	&	&	&	\\ [5pt]
+&	&	&	\displaystyle{\binom{1}{0}}	&	&	\displaystyle{\binom{1}{1}}	&	&	&\\ [5pt]
+&	&	&	&	\searrow \, \swarrow &	&	&	&	\\ [5pt]
+&	&	\displaystyle{\binom{2}{0}}	&	&	\displaystyle{\binom{2}{1}}	&	&	\displaystyle{\binom{2}{2}}	&	&\\ [5pt]
+&                             &  & 	\searrow \, \swarrow      & & 	\searrow \, \swarrow      & &                             & \\ [5pt]
+&	\displaystyle{\binom{3}{0}}	&	&	\displaystyle{\binom{3}{1}}	&	&	\displaystyle{\binom{3}{2}}	&	&	\displaystyle{\binom{3}{3}}	&	\\ [5pt]
+                            &	&	\searrow \, \swarrow 	&	&	\searrow \, \swarrow 	&	&	\searrow \, \swarrow 	&	& \\ [5pt]
+\displaystyle{\binom{4}{0}}	&	&	\displaystyle{\binom{4}{1}}	&	&	\displaystyle{\binom{4}{2}}	&	&	\displaystyle{\binom{4}{3}}	&	&	\displaystyle{\binom{4}{4}} \\ [5pt]
+ 	&	&	 	&	&	\vdots	&	&	 	&	&	  \\
+\end{array} \]
+
+Since $\binom{n}{0} = 1$ and $\binom{n}{n} = 1$ for all whole numbers $n$, we get that each row of Pascal's Triangle begins and ends with $1$. To generate the numbers in the middle of the rows (from the third row onwards), we take advantage of the additive relationship expressed in  Theorem \ref{addbinomcoeff}.  For instance, $\binom{1}{0} + \binom{1}{1} = \binom{2}{1}$, $\binom{2}{0} + \binom{2}{1} = \binom{3}{1}$ and so forth.  This relationship is indicated by the arrows in the array above. With these two facts in hand, we can quickly generate Pascal's Triangle. We start with the first two rows, $1$ and $1 \quad 1$.  From that point on, each successive row begins and ends with $1$ and the middle numbers are generated using Theorem \ref{addbinomcoeff}.  Below we attempt to demonstrate this building process to generate the first five rows of Pascal's Triangle.
+
+
+\[ \begin{array}{ccc}
+
+\begin{array}{ccccccccc} 
+&	&	&	&	1	&	&	&	&	\\ 
+&	&	&	1	&	&	1	&	&	&\\
+&	&	&	&	\searrow \, \swarrow &	&	&	&	\\ 
+&	&	\fbox{1}	&	&	\underline{1+1}	&	& 	\fbox{1}	&	&\\
+\end{array} 
+
+&
+
+\xrightarrow{\hspace{.5in}}
+
+&
+
+
+\begin{array}{ccccccccc} 
+&	&	&	&	1	&	&	&	&	\\ 
+&	&	&	1	&	&	1	&	&	&\\
+&	&	1	&	&	2	&	&1	&	&\\
+\end{array} \\
+
+&& \\
+
+\begin{array}{ccccccccc} 
+&	&	&	&	1	&	&	&	&	\\ 
+&	&	&	1	&	&	1	&	&	&\\
+&	&	1	&	&	2	&	&1	&	&\\ 
+& &  & 	\searrow \, \swarrow & & 	\searrow \, \swarrow & &  & \\ 
+&		\fbox{1}	&	&	\underline{1+2}	&	&	\underline{2+1}	&	&		\fbox{1}	&	\\
+\end{array} 
+
+&
+
+\xrightarrow{\hspace{.5in}}
+
+&
+
+\begin{array}{ccccccccc} 
+&	&	&	&	1	&	&	&	&	\\ 
+&	&	&	1	&	&	1	&	&	&\\
+&	&	1	&	&	2	&	&1	&	&\\ 
+&	1	&	&	3	&	&	3	&	&	1	&	\\
+\end{array} \\
+
+&& \\
+
+\begin{array}{ccccccccc} 
+&	&	&	&	1	&	&	&	&	\\ 
+&	&	&	1	&	&	1	&	&	&\\
+&	&	1	&	& 2	&	&1	&	&\\ 
+&	1	&	&	3	&	& 3	&	&	1	&	\\ 
+&	&	\searrow \, \swarrow 	&	&	\searrow \, \swarrow 	&	&	\searrow \, \swarrow 	&	& \\ 
+	\fbox{1}	&	&	\underline{1+3}	&	&	\underline{3+3}	&	&	\underline{3+1}	&	&		\fbox{1} \\ 
+
+\end{array}
+
+&
+
+\xrightarrow{\hspace{.5in}}
+
+&
+
+
+\begin{array}{ccccccccc} 
+&	&	&	&	1	&	&	&	&	\\ 
+&	&	&	1	&	&	1	&	&	&\\
+&	&	1	&	& 2	&	&1	&	&\\ 
+&	1	&	&	3	&	& 3	&	&	1	&	\\ 
+1	&	&	4	&	&	6	&	&	4 &	&	1 \\ 
+
+\end{array} \\
+
+\end{array} \]
+
+\smallskip
+
+To see how we can use Pascal's Triangle to expedite the Binomial Theorem, suppose we wish to expand $(3x-y)^{4}$.  The coefficients we need are $\binom{4}{j}$ for $j = 0, 1, 2, 3, 4$ and are the numbers which form the fifth row of Pascal's Triangle. Since we know that the exponent of $3x$ in the first term is $4$ and then decreases by one as we go from left to right while the exponent of $-y$ starts at $0$ in the first term and then increases by one as we move from left to right, we quickly obtain
+ 
+\[ \begin{array}{rcl}
+
+(3x-y)^{4} & = & (1)(3x)^{4} + (4)(3x)^3(-y) + (6)(3x)^2(-y)^2 + 4(3x)(-y)^3 + 1(-y)^4 \\
+           & = & 81x^4 - 108x^3y + 54x^2y^2 -12xy^3 + y^4 \\
+\end{array} \]
+
+We would like to stress that Pascal's Triangle is a very quick method to expand an \textit{entire} binomial.  If only a term (or two or three) is required, then the Binomial Theorem is definitely the way to go.  
+
+\newpage
+
+\subsection{Exercises}
+
+In Exercises \ref{simpfactfirst} - \ref{simpfactlast},  simplify the given expression.
+
+\begin{multicols}{3}
+\begin{enumerate}
+
+\item  $\left(3!\right)^2$ \label{simpfactfirst}
+
+
+\item  $\dfrac{10!}{7!}$
+
+
+\item  $\dfrac{7!}{2^3 3!}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+
+\item  $\dfrac{9!}{4! 3! 2!}$
+
+
+\item  $\dfrac{(n+1)!}{n!}$, $n \geq 0$.
+
+
+\item  $\dfrac{(k-1)!}{(k+2)!}$, $k \geq 1$.
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+
+\item  $\displaystyle{\binom{8}{3}}$
+
+
+\item  $\displaystyle{\binom{117}{0}}$
+
+
+\item  $\displaystyle{\binom{n}{n-2}}$, $n \geq 2$ \label{simpfactlast}
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+In Exercises \ref{pascalfirst} - \ref{pascallast}, use Pascal's Triangle to expand the given binomial.
+
+\begin{multicols}{4}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item  $(x+2)^5$ \label{pascalfirst}
+
+\item  $(2x-1)^4$
+
+\item  $\left(\frac{1}{3} x +  y^2\right)^3$
+
+\item  $\left(x - x^{-1} \right)^{4}$ \label{pascallast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+In Exercises \ref{pascalcomplexfirst} - \ref{pascalcomplexlast},   use Pascal's Triangle to simplify the given power of a complex number.
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $(1+2i)^4$ \label{pascalcomplexfirst}
+
+\item  $\left(-1 + i \sqrt{3}\right)^3$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $\left(\dfrac{\sqrt{3}}{2} +  \dfrac{1}{2}\, i\right)^3$
+
+\item  $\left(\dfrac{\sqrt{2}}{2} - \dfrac{\sqrt{2}}{2} \, i\right)^4$  \label{pascalcomplexlast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+In Exercises \ref{usebinomfirst} - \ref{usenbinomlast}, use the Binomial Theorem to find the indicated term.
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  The term containing $x^3$ in the expansion $(2x-y)^{5}$ \label{usebinomfirst}
+
+\item  The term containing $x^{117}$ in the expansion $(x+2)^{118}$
+
+\item  The term containing $x^{\frac{7}{2}}$ in the expansion $\left(\sqrt{x}-3\right)^8$
+
+\item  The term containing $x^{-7}$ in the expansion  $\left(2x - x^{-3} \right)^{5}$
+
+\item  The constant term in the expansion $\left(x + x^{-1} \right)^{8}$ \label{usenbinomlast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  Use the Prinicple of Mathematical Induction to prove $n! > 2^{n}$ for $n \geq	4$.
+
+\item  Prove $\displaystyle{\sum_{j=0}^{n} \binom{n}{j} = 2^{n}}$ for all natural numbers $n$.  (HINT:  Use the Binomial Theorem!)
+
+\item  With the help of your classmates, research \href{http://en.wikipedia.org/wiki/Pascal's_triangle#Patterns_and_properties}{\underline{Patterns and Properties of Pascal's Triangle}}.  
+
+\item  You've just won three tickets to see the new film, `$8.\overline{9}$.'  Five of your friends, Albert, Beth, Chuck, Dan, and Eugene, are interested in seeing it with you.  With the help of your classmates, list all the possible ways to distribute your two extra tickets among your five friends.  Now suppose you've come down with the flu.  List all the different ways you can distribute the three tickets among these five friends.  How does this compare with the first list you made?  What does this have to do with the fact that $\binom{5}{2} = \binom{5}{3}$? 
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+\newpage
+
+\subsection{Answers}
+
+
+
+\begin{multicols}{3}
+\begin{enumerate}
+
+\item  $36$
+
+\item  $720$
+
+\item  $105$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $1260$
+
+\item  $n+1$
+
+\item  $\frac{1}{k(k+1)(k+2)}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $56$
+
+\item  $1$
+
+\item  $\frac{n(n-1)}{2}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $(x+2)^5 = x^5+10x^4+40x^3+80x^2+80x+32$
+
+\item  $(2x-1)^4 = 16x^4-32x^3+24x^2-8x+1$
+
+\item  $\left(\frac{1}{3} x +  y^2\right)^3 = \frac{1}{27} x^3+\frac{1}{3}x^2y^2+xy^4+y^6$
+
+\item  $\left(x - x^{-1} \right)^{4} = x^4-4x^2+6-4x^{-2}+x^{-4}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+
+\begin{multicols}{4}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $-7-24i$
+
+\item  $8$
+
+\item $i$
+
+\item  $-1$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{5}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $80x^3y^2$
+
+\item  $236x^{117}$
+
+\item  $-24x^{\frac{7}{2}}$
+
+\item  $-40 x^{-7}$
+
+\item  $70$
+
+\end{enumerate}
+
+\end{multicols}
+
+\newpage
+\closegraphsfile

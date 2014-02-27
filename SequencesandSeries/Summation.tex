@@ -1,0 +1,759 @@
+\mfpicnumber{1}
+
+\opengraphsfile{Summation}
+
+\setcounter{footnote}{0}
+
+\label{Summation}
+
+In the previous section, we introduced sequences and now we shall present notation and theorems concerning the sum of terms of a sequence.  We begin with a definition, which, while intimidating, is meant to make our lives easier.
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{defn} \textbf{Summation Notation:} \label{sigmanotation} \index{summation notation ! definition of} Given a sequence $\left\{ a_{n} \right\}_{n=k}^{\infty}$ and numbers $m$ and $p$ satisfying $k \leq m \leq p$, the summation from $m$ to $p$ of the sequence $\left\{a_{n}\right\}$ is written  
+
+\[ \sum_{n=m}^{p} a_{n} = a_{m} + a_{m \mbox{\tiny$+ 1$}} + \ldots + a_{p}\]
+
+The variable $n$ is called the \index{summation notation ! index of summation} \textbf{index of summation}.   The number $m$ is called the \index{summation notation ! lower limit of summation} \textbf{lower limit of summation} while the number $p$ is called the \index{summation notation ! upper limit of summation} \textbf{upper limit of summation}.
+
+\end{defn}
+
+
+\ebm}
+
+\smallskip
+
+In English, Definition \ref{sigmanotation} is simply defining a short-hand notation for adding up the terms of the sequence $\left\{ a_{n} \right\}_{n=k}^{\infty}$  from $a_{m}$ through $a_{p}$. The symbol $\Sigma$ is the capital Greek letter sigma and is shorthand for `sum'.  The lower and upper limits of the summation tells us which term to start with and which term to end with, respectively. For example, using the sequence $a_{n} = 2n-1$ for $n \geq 1$, we can write the sum $a_{\mbox{\tiny$3$}} +a_{\mbox{\tiny$4$}} + a_{\mbox{\tiny$5$}} + a_{\mbox{\tiny$6$}}$ as 
+
+\[ \begin{array}{rcl}
+
+\displaystyle{\sum_{n=3}^{6}(2n-1) } & = & (2(3)-1) + (2(4)-1) + (2(5)-1) +  (2(6)-1) \\
+                     & = &  5 + 7 + 9 + 11 \\
+                     & = & 32 \\
+\end{array} \]
+
+The index variable  is considered a `dummy variable' in the sense that it may be changed to any letter without affecting the value of the summation.  For instance, 
+
+\[ \displaystyle{\sum_{n=3}^{6}(2n-1)} = \displaystyle{\sum_{k=3}^{6}(2k-1)} = \displaystyle{\sum_{j=3}^{6}(2j-1)}\]
+
+One place you may encounter summation notation is in mathematical definitions.  For example, summation notation allows us to define polynomials as functions of the form
+
+\[ f(x) = \displaystyle{\sum_{k=0}^{n} a_{k} x^{k}} \]
+
+for real numbers $a_{k}$, $k = 0, 1, \ldots n$.  The reader is invited to compare this with what is given in Definition \ref{polynomialfunction}.  Summation notation is particularly useful when talking about matrix operations.  For example, we can write the product of the $i$th row $R_{i}$ of a matrix $A = [a_{ij}]_{m \times n}$ and the $j^{\mbox{\scriptsize th}}$ column $C_{j}$ of a matrix $B = [b_{ij}]_{n \times r}$ as
+
+\[ Ri \cdot Cj = \displaystyle{\sum_{k=1}^{n} a_{ik}b_{kj}} \]
+
+Again, the reader is encouraged to write out the sum and compare it to Definition \ref{rowcolumnproduct}.  Our next example gives us practice with this new notation. 
+
+\begin{ex} \label{seriesex1} $~$
+
+\begin{enumerate}
+
+\item  Find the following sums.
+
+\begin{multicols}{3}
+
+\begin{enumerate}
+
+\item  $\displaystyle{\sum_{k=1}^{4} \dfrac{13}{100^k} }$
+
+\item  $\displaystyle{\sum_{n=0}^{4} \dfrac{n!}{2}}$
+
+\item  $\displaystyle{\sum_{n=1}^{5} \dfrac{(-1)^{n+1}}{n} (x-1)^n}$
+
+\end{enumerate}
+
+\end{multicols}
+
+\item  Write the following sums using summation notation.
+
+\begin{enumerate}
+
+\item  $1 + 3 + 5 + \ldots + 117$
+
+\item  $1 - \dfrac{1}{2} + \dfrac{1}{3} - \dfrac{1}{4} + - \ldots + \dfrac{1}{117}$
+
+\item  $0.9 + 0.09 + 0.009 + \ldots 0. \! \! \! \! \underbrace{0 \cdots 0}_{\text{$n-1$ zeros}} \! \! \! \! 9$
+
+\end{enumerate}
+
+\end{enumerate}
+
+{ \bf Solution.}
+
+\begin{enumerate}
+
+\item \begin{enumerate} \item We substitute $k=1$ into the formula $\frac{13}{100^k}$ and add successive terms until we reach $k=4.$
+
+\[ \begin{array}{rcl}
+
+\displaystyle{\sum_{k=1}^{4} \dfrac{13}{100^k} } & = & \dfrac{13}{100^1} + \dfrac{13}{100^2} + \dfrac{13}{100^3} + \dfrac{13}{100^4} \\ 
+																								& = & 0.13 + 0.0013 + 0.000013 + 0.00000013 \\
+																								& = & 0.13131313 \\
+\end{array}\]
+
+\item  Proceeding as in (a), we replace every occurrence of $n$ with the values $0$ through $4$.  We recall the factorials, $n!$ as defined in number Example \ref{seqex1}, number \ref{factorialintroex} and get: 
+
+\[ \begin{array}{rcl}
+
+\displaystyle{\displaystyle{\sum_{n=0}^{4} \dfrac{n!}{2}}} & = & \dfrac{0!}{2} + \dfrac{1!}{2} + \dfrac{2!}{2} + \dfrac{3!}{2} = \dfrac{4!}{2} \\ [10pt]
+																								& = & \dfrac{1}{2} + \dfrac{1}{2} + \dfrac{2 \cdot 1}{2} + \dfrac{3 \cdot 2 \cdot 1}{2} + \dfrac{4 \cdot 3 \cdot 2 \cdot 1 }{2} \\ [10pt]
+																								& = & \dfrac{1}{2} + \dfrac{1}{2} + 1 + 3 + 12 \\ [10pt]
+																								& = & 17 \\
+\end{array}\]
+
+\item  We proceed as before, replacing the index $n$, but \emph{not} the variable $x$, with the values $1$ through $5$ and adding the resulting terms.
+
+\[ \begin{array}{rcl}
+
+\displaystyle{\sum_{n=1}^{5} \dfrac{(-1)^{n+1}}{n} (x-1)^n} & = &  \dfrac{(-1)^{1+1}}{1} (x-1)^1 + \dfrac{(-1)^{2+1}}{2} (x-1)^2 + \dfrac{(-1)^{3+1}}{3} (x-1)^3 \\ && + \dfrac{(-1)^{1+4}}{4} (x-1)^4 + \dfrac{(-1)^{1+5}}{5} (x-1)^5 \\ [10pt]
+& = & (x-1) - \dfrac{(x-1)^2}{2} +  \dfrac{(x-1)^3}{3} -  \dfrac{(x-1)^4}{4} +  \dfrac{(x-1)^5}{5} \\
+\end{array} \]
+
+\end{enumerate}
+
+\item  The key to writing these sums with summation notation is to find the pattern of the terms. To that end, we make good use of the techniques presented in Section \ref{Sequences}.
+
+\begin{enumerate}
+
+\item The terms of the sum $1$, $3$, $5$, etc., form an arithmetic sequence with first term $a = 1$ and common difference $d = 2$.  We get a formula for the $n$th term of the sequence using Equation \ref{arithgeoformula} to get $a_{n} = 1 + (n-1)2 = 2n-1$, $n \geq 1$.  At this stage, we have the formula for the terms, namely $2n-1$, and the lower limit of the summation, $n=1$.  To finish the problem, we need to determine the upper limit of the summation.  In other words, we need to determine which value of $n$ produces the term $117$.  Setting $a_{n} = 117$, we get $2n-1=117$ or $n = 59$.  Our final answer is
+
+\[ \begin{array}{rcl} 1 + 3 + 5 + \ldots + 117 & = & \displaystyle{\sum_{n=1}^{59} (2n-1)} \end{array} \]
+
+\item We rewrite all of the terms as fractions, the subtraction as addition, and associate the negatives `$-$' with the numerators to get
+
+\[ \dfrac{1}{1} + \dfrac{-1}{2} + \dfrac{1}{3} + \dfrac{-1}{4} + \ldots + \dfrac{1}{117}  \]
+
+The numerators, $1$, $-1$, etc. can be described by the geometric sequence\footnote{This is indeed a geometric sequence with first term $a = 1$ and common ratio $r=-1$.} $c_{n} = (-1)^{n-1}$ for $n \geq 1$, while the denominators are given by the arithmetic sequence\footnote{It is an arithmetic sequence with first term $a=1$ and common difference $d=1$.} $d_{n} = n$ for $n \geq 1$.  Hence, we get the formula $a_{n} = \frac{(-1)^{n-1}}{n}$ for our terms, and we find the lower and upper limits of summation to be $n=1$ and  $n = 117$, respectively.  Thus
+
+\[ \begin{array}{rcl} 1 - \dfrac{1}{2} + \dfrac{1}{3} - \dfrac{1}{4} + - \ldots + \dfrac{1}{117} & = & \displaystyle{\sum_{n=1}^{117} \dfrac{(-1)^{n-1}}{n}}   \end{array} \]
+
+\item  Thanks to Example \ref{seqex2}, we know that one formula for the $n^{\mbox{\scriptsize th}}$ term is $a_{n} = \frac{9}{10^{n}}$ for $n \geq 1$.  This gives us a formula for the summation as well as a lower limit of summation.  To determine the upper limit of summation, we note that to produce the $n-1$ zeros to the right of the decimal point before the $9$, we need a denominator of $10^{n}$.  Hence, $n$ is the upper limit of summation.  Since $n$ is used in the limits of the summation, we need to choose a different letter for the index of summation.\footnote{To see why, try writing the summation using `$n$' as the index.}  We choose $k$ and get
+
+  
+\[ \begin{array}{rcl} 0.9 + 0.09 + 0.009 + \ldots 0.\! \! \! \! \underbrace{0 \cdots 0}_{\text{$n-1$ zeros}} \! \! \! \! 9 & = & \displaystyle{\sum_{k=1}^{n} \dfrac{9}{10^{k}}} \end{array} \]
+
+\qed
+
+\end{enumerate}
+
+\end{enumerate}
+                    
+\end{ex}          
+
+The following theorem presents some general properties of summation notation.  While we shall not have much need of these properties in Algebra, they do play a great role in Calculus. Moreover, there is much to be learned by thinking about why the properties hold.  We invite the reader to prove these results.  To get started, remember, ``When in doubt, write it out!''
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{thm}  \label{sigmaprops} \textbf{Properties of Summation Notation:} Suppose $\left\{a_{n}\right\}$ and $\left\{b_{n}\right\}$ are sequences so that the following sums are defined. \index{summation notation ! properties of}
+
+\begin{itemize}
+
+\item $\displaystyle{ \sum_{n=m}^{p} \left(a_{n} \pm b_{n} \right) =  \sum_{n=m}^{p} a_{n} \pm \sum_{n=m}^{p} b_{n} }$
+
+\item $\displaystyle{\sum_{n=m}^{p} c \, a_{n} = c \sum_{n=m}^{p} a_{n}}$, for any real number $c$.
+
+\item $\displaystyle{\sum_{n=m}^{p}  a_{n} = \sum_{n=m}^{j} a_{n} + \sum_{n=j+1}^{p} a_{n}}$, for any natural number $m \leq j < j+1 \leq p$.
+
+\item $\displaystyle{\sum_{n=m}^{p} a_{n} = \sum_{n=m+r}^{p+r} a_{n-r}}$, for any whole number $r$.
+
+\end{itemize}
+
+\end{thm}
+
+\ebm}
+
+\smallskip
+
+
+We now turn our attention to the sums involving arithmetic and geometric sequences. Given an arithmetic sequence $a_{k} = a + (k-1) d$ for $k \geq 1$, we let $S$ denote the sum of the first $n$ terms. To derive a formula for $S$, we write it out in two different ways \[ \begin{array}{ccccccccccc}
+
+S & = & a & + & (a + d) &  + & \ldots & + & (a + (n-2)d) & + & (a + (n-1)d) \\ 
+
+S & = & (a + (n-1)d) & + & (a + (n-2)d)  & + & \ldots & + & (a + d)  & + & a \\
+
+\end{array}\] If we add these two equations and combine the terms which are aligned vertically, we get 
+
+\[2S = (2a + (n-1)d) + (2a + (n-1)d) + \ldots + (2a + (n-1)d) + (2a + (n-1)d)\]
+
+
+The right hand side of this equation contains $n$ terms, all of  which are equal to $(2a + (n-1)d)$ so we get $2S = n(2a + (n-1)d)$.  Dividing both sides of this equation by $2$, we obtain the formula
+
+\[S =  \dfrac{n}{2} (2a + (n-1)d)\]
+
+If we rewrite the quantity $2a + (n-1)d$ as $a + (a + (n-1)d) = a_{\mbox{\tiny$1$}} + a_{n}$, we get the formula 
+
+\[ S = n \left(\dfrac{a_{\mbox{\tiny$1$}} + a_{n}}{2}\right)\]
+
+A helpful way to remember this last formula is to recognize that we have expressed the sum as the product of the number of terms $n$ and the \textit{average} of the first and $n^{\mbox{\scriptsize th}}$ terms.
+
+\smallskip
+
+To derive the formula for the geometric sum, we start with a geometric sequence $a_{k} = ar^{k-1}$, $k \geq 1$, and let $S$ once again denote the sum of the first $n$ terms.  Comparing  $S$ and $rS$, we get
+
+\[ \begin{array}{ccccccccccccccc}
+
+S & = & a & + & ar &  + & ar^2 & + & \ldots & + & ar^{n-2} & + & ar^{n-1} & & \\ 
+
+r S & = & & & ar & + & ar^2 & + & \ldots &  + & ar^{n-2} & + & ar^{n-1} & + & ar^{n}  \\
+
+\end{array}\]
+
+Subtracting the second equation from the first forces all of the terms except $a$ and $ar^{n}$ to cancel out and we get $S - rS = a - ar^{n}$.  Factoring, we get $S(1-r) = a \left(1-r^{n}\right)$.  Assuming $r \neq 1$, we can divide both sides by  the quantity $(1-r)$ to obtain
+
+\[S =  a \left( \dfrac{1-r^n}{1-r}\right)\]
+
+If we distribute $a$ through the numerator, we get $a - ar^{n} = a_{\mbox{\tiny$1$}} - a_{n\mbox{\tiny$ + 1$}}$ which yields the formula
+
+\[S =  \dfrac{a_{\mbox{\tiny$1$}}-a_{n\mbox{\tiny$ + 1$}}}{1-r}\]
+
+In the case when $r=1$, we get the formula
+
+\[ S = \underbrace{a + a + \ldots +a }_{\text{$n$ times}} = n \, a\]
+
+Our results are summarized below.
+
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{eqn}  \label{arithgeosum}  \textbf{Sums of Arithmetic and Geometric Sequences:}
+
+\begin{itemize}
+
+\item  The sum $S$ of the first $n$ terms of an arithmetic sequence $a_{k}= a + (k-1)d$ for $k \geq 1$ is 
+
+\[ S = \displaystyle{\sum_{k=1}^{n} a_{k}} = n \left(\dfrac{a_{\mbox{\tiny$1$}} + a_{n}}{2}\right) = \dfrac{n}{2} (2a + (n-1)d)\]
+
+
+\item  The sum $S$ of the first $n$ terms of a geometric sequence $a_{k}= ar^{k-1}$ for $k \geq 1$ is 
+
+\begin{enumerate}
+
+\item $S = \displaystyle{\sum_{k=1}^{n} a_{k}} = \dfrac{a_{\mbox{\tiny$1$}} - a_{n\mbox{\tiny$ + 1$}}}{1-r} =a \left( \dfrac{1-r^n}{1-r}\right)$, if $r \neq 1$. \index{sequence ! arithmetic ! sum of first $n$ terms}
+
+\item $S = \displaystyle{\sum_{k=1}^{n} a_{k} = \sum_{k=1}^{n} a =n a}$, if $r =1$. \index{sequence ! geometric ! sum of first $n$ terms}
+
+\end{enumerate}
+
+\end{itemize}
+
+\end{eqn}
+
+\ebm}
+
+\smallskip
+
+While we have made an honest effort to derive the formulas in Equation \ref{arithgeosum}, formal proofs require the machinery in Section \ref{Induction}.   An application of the arithmetic sum formula which proves useful in Calculus results in formula for the sum of the first $n$ natural numbers.  The natural numbers themselves are a sequence\footnote{This is the identity function on the natural numbers!} $1$, $2$, $3$, \ldots  which is arithmetic with  $a = d = 1$.  Applying Equation \ref{arithgeosum},
+
+\[ \begin{array}{rcl} 1 + 2 + 3 + \ldots + n & = & \dfrac{n(n+1)}{2} \end{array} \]  
+
+So, for example, the sum of the first $100$ natural numbers\footnote{There is an interesting anecdote which says that the famous mathematician \href{http://en.wikipedia.org/wiki/Carl_Friedrich_Gauss}{\underline{Carl  Friedrich Gauss}} was given this problem in primary school and devised a very clever solution.} is $\frac{100(101)}{2} = 5050$.
+
+\smallskip
+
+An important application of the geometric sum formula is the investment plan called an \index{annuity ! ordinary ! definition of} \textbf{annuity}. Annuities differ from the kind of investments we studied in Section \ref{ExpLogApplications} in that payments are deposited into the account on an on-going basis, and this complicates the mathematics a little.\footnote{The reader may wish to re-read the discussion on compound interest in Section \ref{ExpLogApplications} before proceeding.}  Suppose you have an account with annual interest rate $r$ which is compounded $n$ times per year.  We let $i = \frac{r}{n}$ denote the interest rate  per period.  Suppose we wish to make ongoing deposits of $P$ dollars at the \textit{end} of each compounding period.  Let $A_{k}$ denote the amount in the account after $k$ compounding periods.  Then $A_{\mbox{\tiny$1$}} = P$, because we have  made our first deposit at the \textit{end} of the first compounding period and no interest has been earned.  During the second compounding period, we earn interest on $A_{\mbox{\tiny$1$}}$ so that our initial investment has grown to $A_{\mbox{\tiny$1$}}(1+i) = P(1+i)$ in accordance with Equation \ref{simpleinterest}.  When we add our second payment at the end of the second period, we get
+
+\[A_{\mbox{\tiny$2$}} = A_{\mbox{\tiny$1$}}(1+i) + P = P(1+i) + P = P(1+i)\left(1 + \dfrac{1}{1+i}\right)\]
+
+The reason for factoring out the $P(1+i)$ will become apparent in short order. During the third compounding period, we earn interest on $A_{\mbox{\tiny$2$}}$ which then grows to $A_{\mbox{\tiny$2$}}(1+i)$.  We add our third payment at the end of the third compounding period to obtain
+
+\[A_{\mbox{\tiny$3$}} = A_{\mbox{\tiny$2$}}(1+i) + P = P(1+i)\left(1 + \dfrac{1}{1+i}\right)(1+i) + P = P(1+i)^2\left(1 + \dfrac{1}{1+i} + \dfrac{1}{(1+i)^2}\right)\]
+
+During the fourth compounding period, $A_{\mbox{\tiny$3$}}$ grows to $A_{\mbox{\tiny$3$}}(1+i)$, and when we add the fourth payment, we factor out $P(1+i)^3$ to get
+
+\[A_{\mbox{\tiny$4$}} = P(1+i)^3 \left(1 + \dfrac{1}{1+i} + \dfrac{1}{(1+i)^2} + \dfrac{1}{(1+i)^3}\right)\]
+
+This pattern continues so that at the end of the $k$th compounding, we get 
+
+\[A_{k} = P(1+i)^{k-1} \left(1 + \dfrac{1}{1+i} + \dfrac{1}{(1+i)^2} + \ldots + \dfrac{1}{(1+i)^{k-1}}\right) \]
+
+The sum in the parentheses above is the sum of the first $k$ terms of a geometric sequence with $a = 1$ and $r = \frac{1}{1+i}$.  Using Equation \ref{arithgeosum}, we get
+
+\[1 + \dfrac{1}{1+i} + \dfrac{1}{(1+i)^2} + \ldots + \dfrac{1}{(1+i)^{k-1}} = 1 \left(\dfrac{1 - \dfrac{1}{(1+i)^k}}{1 - \dfrac{1}{1+i}}\right) = \
+\dfrac{(1+i)\left(1 - (1+i)^{-k}\right)}{i}\]
+
+Hence, we get
+
+\[A_{k} = P(1+i)^{k-1} \left(\dfrac{(1+i)\left(1 - (1+i)^{-k}\right)}{i}\right) = \dfrac{P\left((1+i)^k - 1\right)}{i}\]
+
+If we let $t$ be the number of years this investment strategy is followed, then $k = nt$, and we get the formula for the future value of an \index{annuity ! ordinary ! future value} \textbf{ordinary annuity}.
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{eqn}  \label{fvannuity}  \textbf{Future Value of an Ordinary Annuity:}  Suppose an annuity offers an annual interest rate $r$ compounded $n$ times per year. Let $i = \frac{r}{n}$ be the interest rate per compounding period. If a deposit $P$ is made at the end of each compounding  period, the amount $A$ in the account after $t$ years is given by
+
+\[A = \dfrac{P\left((1+i)^{nt} - 1\right)}{i}\]
+
+\end{eqn}
+
+\ebm}
+
+\smallskip
+
+The reader is encouraged to substitute  $i = \frac{r}{n}$ into Equation \ref{fvannuity} and simplify.  Some familiar equations arise which are cause for pause and meditation.  One last note: if the deposit $P$ is made a the \textit{beginning} of the compounding period instead of at the end, the annuity is called an \index{annuity ! annuity-due} \textbf{annuity-due}.  We leave the derivation of the formula for the future value of an annuity-due as an exercise for the reader.
+
+\pagebreak
+
+\begin{ex} \label{annuityex}  An ordinary annuity offers a $6 \%$ annual interest rate, compounded monthly.
+
+\begin{enumerate}
+
+\item  If monthly payments of $\$50$ are made, find the value of the annuity in $30$ years.
+
+\item  How many  years will it take for the  annuity to grow to  $\$100,\! 000$?
+
+\end{enumerate}
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item We have $r = 0.06$ and $n = 12$ so that $i = \frac{r}{n} = \frac{0.06}{12} = 0.005$.  With $P=50$ and  $t=30$,  
+
+\[A = \dfrac{50\left((1+0.005)^{(12)(30)} - 1\right)}{0.005} \approx  50225.75\]
+
+Our final answer is $\$50,\!225.75$.
+
+\item To find how long it will take for the annuity to grow to $\$100,\!000$, we set $A = 100000$ and solve for $t$.  We isolate the exponential and take natural logs of both sides of the equation.
+
+\[ \begin{array}{rcl}
+
+100000 & = &  \dfrac{50\left((1+0.005)^{12t} - 1\right)}{0.005} \\ [10pt]
+
+10 & = &  (1.005)^{12t} - 1 \\  [4pt]
+
+(1.005)^{12t} & = &  11 \\ [4pt]
+
+\ln\left((1.005)^{12t}\right) & = & \ln(11) \\ [4pt]
+
+12t \ln(1.005) & = & \ln(11) \\ [4pt]
+
+t & = & \frac{\ln(11)}{12 \ln(1.005)} \approx 40.06 \\
+
+\end{array} \]
+
+This means that it takes just over $40$ years for the investment to grow to $\$100,\!000$.  Comparing this with our answer to part 1, we see that in just $10$ additional years, the value of the annuity nearly doubles. This is a lesson worth remembering.  \qed 
+
+\end{enumerate}
+
+\end{ex}
+
+We close this section with a peek into Calculus by considering \textit{infinite} sums, called \index{series} \textbf{series}. Consider the number $0.\overline{9}$.  We can write this number as
+
+\[ 0.\overline{9} = 0.9999... = 0.9 + 0.09 + 0.009 + 0.0009 + \ldots \]
+
+
+From Example \ref{seriesex1}, we know we can write the sum of the first $n$ of these terms as 
+
+\[ 0.\underbrace{9 \cdots 9}_{\text{$n$ nines}} = .9 + 0.09 + 0.009 + \ldots 0.\! \! \! \! \underbrace{0 \cdots 0}_{\text{$n-1$ zeros}} \! \! \! \! 9 = \displaystyle{\sum_{k=1}^{n} \dfrac{9}{10^{k}}} \]
+
+Using Equation \ref{arithgeosum}, we have
+
+
+\[\displaystyle{\sum_{k=1}^{n} \dfrac{9}{10^{k}}} = \dfrac{9}{10} \left( \dfrac{1 - \dfrac{1}{10^{n+1}}}{1 - \dfrac{1}{10}} \right) = 1 - \dfrac{1}{10^{n+1}}   \]
+
+It stands to reason that $0.\overline{9}$ is the same value of $1 - \frac{1}{10^{n+1}}$ as $n \rightarrow \infty$. Our knowledge of exponential expressions from Section \ref{IntroExpLogs} tells us that $\frac{1}{10^{n+1}} \rightarrow 0$ as $n \rightarrow \infty$, so $1 - \frac{1}{10^{n+1}} \rightarrow 1$.  We have just argued that $0.\overline{9} = 1$, which may cause some distress for some readers.\footnote{To make this more palatable, it is usually accepted that $0.\overline{3} = \frac{1}{3}$ so that $0.\overline{9} = 3\left(0.\overline{3}\right) = 3\left(\frac{1}{3} \right) = 1$.  Feel better?}  Any non-terminating decimal can be thought of as an infinite sum whose denominators are the powers of $10$, so the phenomenon of adding up infinitely many terms and arriving at a finite number is not as foreign of a concept as it may appear.  We end this section with a theorem concerning geometric series.
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{thm}  \label{geoseries} \textbf{Geometric Series:} Given the sequence $a_{k} = ar^{k-1}$ for $k \geq 1$, where $|r| < 1$,
+
+\[ a + ar + ar^2 + \ldots = \displaystyle{\sum_{k=1}^{\infty} ar^{k-1}} = \dfrac{a}{1-r}\]
+
+If $|r| \geq 1$, the sum $a + ar + ar^2 + \ldots $ is not defined. \index{geometric series}
+
+\end{thm}
+
+\ebm}
+
+\smallskip
+
+The justification of the result in Theorem \ref{geoseries} comes from taking the formula in Equation \ref{arithgeosum} for the sum of the first $n$ terms of a geometric sequence and examining the formula as $n \rightarrow \infty$.  Assuming $|r|<1$ means $-1 < r < 1$, so $r^{n} \rightarrow 0$ as $n \rightarrow \infty$.  Hence as $n \rightarrow \infty$,
+
+\[\displaystyle{\sum_{k=1}^{n} a r^{k-1}} = a \left( \dfrac{1-r^n}{1-r}\right) \rightarrow \dfrac{a}{1-r} \]
+
+As to what goes wrong when $|r| \geq 1$, we leave that to Calculus as well, but will explore some cases in the exercises.
+
+\newpage
+
+\subsection{Exercises}
+
+
+In Exercises \ref{sumfirst} - \ref{sumlast}, find the value of each sum using Definition \ref{sigmanotation}.
+
+\begin{multicols}{4} 
+\begin{enumerate}
+
+\item $\displaystyle \sum_{g = 4}^{9} (5g + 3)$  \label{sumfirst}
+\item $\displaystyle \sum_{k = 3}^{8} \frac{1}{k}$
+\item $\displaystyle \sum_{j = 0}^{5} 2^{j}$
+\item $\displaystyle \sum_{k = 0}^{2} (3k - 5)x^{k}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{4}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\displaystyle \sum_{i = 1}^{4} \frac{1}{4}(i^{2} + 1)$
+\item $\displaystyle \sum_{n = 1}^{100} (-1)^{n}$
+\item $\displaystyle \sum_{n = 1}^{5} \frac{(n+1)!}{n!}$
+\item $\displaystyle \sum_{j = 1}^{3} \frac{5!}{j! \, (5-j)!}$  \label{sumlast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+In Exercises \ref{writesumfirst} - \ref{writesumlast},  rewrite the sum using summation notation.
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $8 + 11 + 14 + 17 + 20$  \label{writesumfirst}
+\item $1 - 2 + 3 - 4 + 5 - 6 + 7 - 8$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $x - \dfrac{x^{3}}{3} + \dfrac{x^{5}}{5} - \dfrac{x^{7}}{7}$
+\item $1 + 2 + 4 + \cdots + 2^{29} \vphantom{x - \dfrac{x^{3}}{3} + \dfrac{x^{5}}{5} - \dfrac{x^{7}}{7}}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $2 + \frac{3}{2} + \frac{4}{3} + \frac{5}{4} + \frac{6}{5}$
+\item $-\ln(3) + \ln(4) - \ln(5) + \cdots + \ln(20)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $1 - \frac{1}{4} + \frac{1}{9} - \frac{1}{16} + \frac{1}{25} - \frac{1}{36}$
+\item $\frac{1}{2}(x - 5) + \frac{1}{4}(x - 5)^{2} + \frac{1}{6}(x - 5)^{3} + \frac{1}{8}(x - 5)^{4}$  \label{writesumlast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+In Exercises \ref{findsumformfirst} - \ref{findsumformulalast}, use the formulas in Equation \ref{arithgeosum} to find the sum.
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\displaystyle \sum_{n = 1}^{10} 5n+3$ \label{findsumformfirst}
+
+\item $\displaystyle \sum_{n = 1}^{20} 2n-1$ 
+
+\item $\displaystyle \sum_{k = 0}^{15} 3-k$ 
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\displaystyle \sum_{n = 1}^{10} \left(\frac{1}{2}\right)^{n}$
+
+\item $\displaystyle \sum_{n = 1}^{5} \left(\frac{3}{2}\right)^{n}$ 
+
+\item $\displaystyle \sum_{k = 0}^{5} 2\left(\frac{1}{4}\right)^{k}$ 
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $1+4+7+ \ldots +295$  
+
+\item  $4+2+0-2- \ldots - 146$  
+
+\item $1+3+9+ \ldots + 2187$ 
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \ldots + \frac{1}{256}\vphantom{\displaystyle \sum_{n = 1}^{10} -2n + \left(\frac{5}{3}\right)^{n}}$ 
+
+\item $3 - \frac{3}{2} + \frac{3}{4} - \frac{3}{8}+- \dots +\frac{3}{256} \vphantom{\displaystyle \sum_{n = 1}^{10} -2n + \left(\frac{5}{3}\right)^{n}}$
+
+
+
+\item $\displaystyle \sum_{n = 1}^{10} -2n + \left(\frac{5}{3}\right)^{n}$ \label{findsumformulalast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+In Exercises \ref{dectofracfirst} - \ref{dectofraclast}, use Theorem \ref{geoseries} to express each repeating decimal as a fraction of integers.
+
+\begin{multicols}{4}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+\item $0.\overline{7}$ \label{dectofracfirst}
+\item $0.\overline{13}$
+\item $10.\overline{159}$
+\item $-5.8\overline{67}$ \label{dectofraclast}
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+\end{multicols}
+
+\pagebreak
+
+In Exercises \ref{annuityfirst} - \ref{annuitylast}, use Equation \ref{fvannuity} to compute the future value of the annuity with the given terms.  In all cases, assume the payment is made monthly, the interest rate given is the annual rate, and interest is compounded monthly.
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item payments are \$300, interest rate is 2.5\%, term is 17 years. \label{annuityfirst}
+
+\item payments are \$50, interest rate is 1.0\%,  term is 30 years. 
+
+\item payments are \$100, interest rate is 2.0\%, term is 20 years 
+
+\item  payments are \$100, interest rate is 2.0\%,  term is  25 years
+
+\item  payments are \$100, interest rate is 2.0\%,  term is  30 years
+
+
+\item  payments are \$100, interest rate is 2.0\%,  term is  35 years
+\label{annuitylast}   
+ 
+\item Suppose an ordinary annuity offers an annual interest rate of $2 \%$, compounded monthly, for 30 years. What should the monthly payment be to have $\$100,\!000$ at the end of the term? 
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item Prove the properties listed in Theorem \ref{sigmaprops}.
+
+\item Show that the formula for the future value of an annuity due is \[A = P(1 + i)\left[\frac{(1 + i)^{nt} - 1}{i}\right]\]
+
+\item  Discuss with your classmates what goes wrong when trying to find the following sums.\footnote{When in doubt, write them out!}
+
+
+\begin{enumerate}
+
+\begin{multicols}{3}
+
+\item  $\displaystyle{ \sum_{k=1}^{\infty} 2^{k-1}}$
+
+
+\item  $\displaystyle{ \sum_{k=1}^{\infty} (1.0001)^{k-1}}$
+
+\item  $\displaystyle{ \sum_{k=1}^{\infty} (-1)^{k-1}}$
+
+\end{multicols}
+
+\end{enumerate}
+
+
+\end{enumerate}
+\newpage
+
+\subsection{Answers}
+
+\begin{multicols}{4} 
+\begin{enumerate}
+
+\item $213$
+\item $\frac{341}{280}$
+\item $63$
+\item $-5 - 2x + x^{2}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{4} 
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item $\frac{17}{2}$
+\item $0$
+\item  $20$
+\item  $25$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{4} 
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\displaystyle \sum_{k = 1}^{5} (3k + 5)$
+\item $\displaystyle \sum_{k = 1}^{8} (-1)^{k - 1}k$
+\item $\displaystyle \sum_{k = 1}^{4} (-1)^{k - 1} \frac{x^{}}{2k - 1}$
+\item $\displaystyle \sum_{k = 1}^{30} 2^{k-1}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{4} 
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item $\displaystyle \sum_{k = 1}^{5} \frac{k + 1}{k}$
+\item $\displaystyle \sum_{k = 3}^{20} (-1)^{k} \ln(k)$
+\item $\displaystyle \sum_{k = 1}^{6} \frac{(-1)^{k - 1}}{k^{2}}$
+\item $\displaystyle \sum_{k = 1}^{4} \frac{1}{2k}(x - 5)^{k}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{4} 
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $305$
+
+\item  $400$
+
+\item  $-72$
+
+\item $\dfrac{1023}{1024}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{4}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{633}{32}$
+
+\item $\dfrac{1365}{512}$
+
+\item  $14652$
+
+\item  $-5396$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{4}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $3280$
+
+\item  $\dfrac{255}{256}$
+
+
+
+\item $\dfrac{513}{256}$
+
+\item $\dfrac{17771050}{59049}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{4}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+
+\item $\dfrac{7}{9}$
+
+\item $\dfrac{13}{99}$
+
+
+\item $\dfrac{3383}{333}$
+\item $-\dfrac{5809}{990}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{4}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item \$76,\!163.67
+\item $\$20,\!981.40$
+
+\item $\$29,\!479.69$
+
+\item  $\$38,\!882.12$ 
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{4}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+ 
+
+\item $49,\!272.55$
+
+\item  $60,\!754.80$
+ 
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+\end{multicols}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  For $\$100,\!000$, the monthly payment is $\approx \$202.95$.
+
+\end{enumerate}
+\closegraphsfile

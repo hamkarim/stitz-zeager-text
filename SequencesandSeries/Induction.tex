@@ -1,0 +1,238 @@
+\mfpicnumber{1}
+
+\opengraphsfile{Induction}
+
+\setcounter{footnote}{0}
+
+\label{Induction}
+
+The Chinese philosopher \href{http://en.wikipedia.org/wiki/Confucius}{\underline{Confucius}} is credited with the saying, ``A journey of a thousand miles begins with a single step.''  In many ways, this is the central theme of this section.  Here we introduce a method of proof, Mathematical Induction, which allows us to \textit{prove} many of the formulas we have merely \textit{motivated} in Sections \ref{Sequences} and \ref{Summation} by starting with just a single step.  A good example is the formula for arithmetic sequences we touted in Equation \ref{arithgeoformula}.  Arithmetic sequences are defined recursively, starting with $a_{\mbox{\tiny$1$}} = a$ and then $a_{n\mbox{\tiny$ + 1$}} = a_{n} + d$ for $n \geq 1$.  This tells us that we start the sequence with  $a$ and we go from one term to the next by successively adding $d$.  In symbols,
+
+\[ a, a+d, a+2d, a + 3d, a + 4d +  \ldots\]
+
+The pattern \textit{suggested} here is  that to reach the $n$th term, we start with $a$ and add $d$ to it exactly $n-1$ times, which lead us to our formula $a_{n} = a + (n-1)d$ for $n \geq 1$.  But how do we \textit{prove} this to be the case?  We have the following.
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\label{PMI} \textbf{The Principle of Mathematical Induction (PMI):}  Suppose $P(n)$ is a sentence involving the natural number $n$. \index{Principle of Mathematical Induction}
+
+\smallskip
+
+\textbf{IF}
+
+\begin{enumerate}
+
+\item  $P(1)$ is true \textbf{and}
+
+\item  whenever $P(k)$ is true, it follows that $P(k+1)$ is also true
+
+\end{enumerate}
+
+\textbf{THEN} the sentence $P(n)$ is true for all natural numbers $n$.
+
+\ebm}
+
+\smallskip
+
+The Principle of Mathematical Induction, or PMI for short, is exactly that - a principle.\footnote{Another word for this you may have seen is `axiom.'}  It is a property of the natural numbers we either choose to accept or reject.  In English, it says that if we want to prove that a formula works for all natural numbers $n$, we start by showing it is true for $n=1$ (the \index{induction ! base step} `\textbf{base step}') and then show that if it is true for a generic natural number $k$, it must be true for the next natural number, $k+1$ (the \index{induction ! inductive step} `\textbf{inductive step}'). The notation $P(n)$ acts just like function notation.  For example, if $P(n)$ is the sentence (formula)  `$n^2 + 1 = 3$', then $P(1)$ would be `$1^2 + 1 = 3$', which is false.  The construction $P(k+1)$ would be `$(k+1)^2 + 1 = 3$'.  As usual, this new concept is best illustrated with an example.  Returning to our quest to prove the formula for an arithmetic sequence, we first identify $P(n)$ as the formula $a_{n} = a + (n-1)d$.  To prove this formula is valid for all natural numbers $n$, we need to do two things.  First, we need to establish that $P(1)$ is true.  In other words, is it true that $a_{\mbox{\tiny$1$}} = a + (1-1)d$?  The answer is yes, since this simplifies to $a_{\mbox{\tiny$1$}} = a$, which is part of the definition of the arithmetic sequence.  The second thing we need to show is that whenever $P(k)$ is true, it follows that $P(k+1)$ is true.  In other words, we \textit{assume} $P(k)$ is true (this is called the\index{induction ! induction hypothesis} `\textbf{induction hypothesis}') and \textit{deduce} that $P(k+1)$ is also true.  Assuming $P(k)$ to be true seems to invite disaster - after all, isn't this essentially what we're trying to prove in the first place? To help explain this step a little better, we show how this works for specific values of $n$.  We've already established $P(1)$ is true, and we now want to show that $P(2)$ is true.  Thus we need to show that $a_{\mbox{\tiny$2$}} = a + (2-1)d$.  Since $P(1)$ is true, we have $a_{\mbox{\tiny$1$}} = a$, and by the definition of an arithmetic sequence, $a_{\mbox{\tiny$2$}}= a_{\mbox{\tiny$1$}} + d = a + d = a + (2-1)d$.  So $P(2)$ is true.  We now use the fact that $P(2)$ is true to show that $P(3)$ is true.  Using the fact that $a_{\mbox{\tiny$2$}} = a + (2-1)d$, we show $a_{\mbox{\tiny$3$}} = a + (3-1)d$.  Since $a_{\mbox{\tiny$3$}} = a_{\mbox{\tiny$2$}} + d$, we get $a_{\mbox{\tiny$3$}}= (a + (2-1)d) + d = a + 2d = a+(3-1)d$, so we have shown $P(3)$ is true.  Similarly, we can use the fact that $P(3)$ is true to show that $P(4)$ is true, and so forth.  In general, if $P(k)$ is true (i.e., $a_{k} = a + (k-1)d$) we set out to show that $P(k+1)$ is true (i.e., $a_{k\mbox{\tiny$ + 1$}} = a + ((k+1)-1)d$).  Assuming $a_{k} = a + (k-1)d$, we have by the definition of an arithmetic sequence that $a_{k\mbox{\tiny$ + 1$}} = a_{k} + d$ so we get $a_{k\mbox{\tiny$ + 1$}} = (a+(k-1)d) + d = a + kd = a + ((k+1)-1)d$. Hence, $P(k+1)$ is true. 
+
+\smallskip
+
+In essence, by showing that $P(k+1)$ must always be true when $P(k)$ is true, we are showing that the formula $P(1)$ can be used to get the formula $P(2)$, which in turn can be used to derive the formula $P(3)$, which in turn can be used to establish the formula $P(4)$, and so on.  Thus as long as $P(k)$ is true for some natural number $k$, $P(n)$ is true for all of the natural numbers $n$ which follow $k$.  Coupling this with the fact $P(1)$ is true, we have established $P(k)$ is true for all natural numbers which follow $n=1$, in other words, all natural numbers $n$.  One might liken Mathematical Induction to a repetitive process like climbing stairs.\footnote{Falling dominoes is the most widely used metaphor in the mainstream College Algebra books.}  If you are sure that (1) you can get on the stairs (the base case) and (2) you can climb from any one step to the next step (the inductive step), then presumably you can climb the entire staircase.\footnote{This is how Carl climbed the stairs in the Cologne Cathedral.  Well, that, and  encouragement from  Kai.}  We get some more practice with induction in the following example.
+
+\begin{ex}  Prove the following assertions using the Principle of Mathematical Induction.
+
+\begin{enumerate}
+
+\item  The sum formula for arithmetic sequences: $\displaystyle{\sum_{j=1}^{n} (a + (j-1)d) = \dfrac{n}{2}(2a + (n-1)d)}$.
+
+\item  For a complex number $z$, $\left(\overline{z}\right)^n = \overline{z^{n}}$ for $n \geq 1$.
+
+\item  $3^{n} > 100n$ for $n > 5$.
+
+\item  Let $A$ be an $n \times n$ matrix and let $A'$ be the matrix obtained by replacing a row $R$ of $A$ with $cR$ for some real number $c$.  Use the definition of determinant to show $\det(A') = c \det(A)$.
+
+
+\end{enumerate}
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item We set $P(n)$ to be the equation we are asked to prove.  For $n=1$, we compare both sides of the equation given in $P(n)$
+
+\[ \begin{array}{rcl} 
+
+\displaystyle{\sum_{j=1}^{1} (a + (j-1)d)} & \stackrel{\text{?}}{=} & \dfrac{1}{2}(2a + (1-1)d) \\ [15pt]
+                              a + (1-1) d & \stackrel{\text{?}}{=} & \dfrac{1}{2} (2a) \\ [10pt]
+                                         a & = & a \, \checkmark \end{array} \]
+
+This shows the base case $P(1)$ is true.  Next we assume $P(k)$ is true, that is, we assume
+
+\[ \displaystyle{\sum_{j=1}^{k} (a + (j-1)d)  = \dfrac{k}{2}(2a + (k-1)d)}\]
+
+and attempt to use this to show $P(k+1)$ is true.  Namely, we must show
+
+\[ \displaystyle{\sum_{j=1}^{k+1} (a + (j-1)d)  =  \dfrac{k+1}{2}(2a + (k+1-1)d)}\]
+
+To see how we can use $P(k)$ in this case to prove $P(k+1)$, we note that the sum in $P(k+1)$ is the sum of the first $k+1$ terms of the sequence $a_{k} = a + (k-1)d$ for $k \geq 1$ while the sum in $P(k)$ is the sum of the first $k$ terms. We compare both side of the equation in $P(k+1)$.
+
+\[\begin{array}{rcl}
+
+\underbrace{\displaystyle{\sum_{j=1}^{k+1} (a + (j-1)d)}}_{\text{summing the first $k+1$ terms}} & \stackrel{\text{?}}{=} &  \dfrac{k+1}{2}(2a + (k+1- 1)d)   \\
+
+&& \\
+
+\underbrace{\displaystyle{\sum_{j=1}^{k} (a + (j-1)d)}}_{\text{summing the first $k$ terms}} + \underbrace{\vphantom{\displaystyle{\sum_{j=1}^{k+1}}}(a+(k+1-1)d)}_{\text{adding the ($k+1$)st term}} & \stackrel{\text{?}}{=} & \dfrac{k+1}{2}(2a + kd) \\ 
+
+&& \\
+
+\underbrace{\dfrac{k}{2}(2a + (k-1)d)}_{\text{Using $P(k)$}} + (a + kd) & \stackrel{\text{?}}{=} &  \dfrac{(k+1)(2a+kd)}{2} \\ 
+
+&& \\
+
+\dfrac{k(2a+(k-1)d) + 2(a + kd)}{2}  & \stackrel{\text{?}}{=} &  \dfrac{2ka+k^2d + 2a + kd}{2} \\
+
+&& \\
+ 
+\dfrac{2ka + 2a + k^2d + kd}{2}      & = &  \dfrac{2ka + 2a + k^2d + kd}{2}  \, \checkmark \\ 
+
+\end{array} \]
+
+Since all of our steps on both sides of the string of equations are reversible, we conclude that the two sides of the equation are equivalent and hence,  $P(k+1)$ is true.  By the Principle of Mathematical Induction, we have that $P(n)$ is true for all natural numbers $n$. 
+
+\item  We let $P(n)$ be the formula $\left(\overline{z}\right)^n = \overline{z^{n}}$.  The base case $P(1)$ is $\left(\overline{z}\right)^1 = \overline{z^{1}}$, which reduces to $\overline{z} = \overline{z}$ which is true.  We now assume $P(k)$ is true, that is, we assume $\left(\overline{z}\right)^k = \overline{z^{k}}$ and attempt to show that $P(k+1)$ is true.  Since $\left(\overline{z}\right)^{k+1} = \left(\overline{z}\right)^{k} \, \overline{z}$, we can use the induction hypothesis and write $\left(\overline{z}\right)^k = \overline{z^{k}}$.  Hence, $\left(\overline{z}\right)^{k+1} = \left(\overline{z}\right)^{k} \, \overline{z} =  \overline{z^{k}} \, \overline{z}$. We now use the product rule for conjugates\footnote{See Exercise \ref{zbarexercise} in Section \ref{ComplexZeros}.} to write  $\overline{z^{k}} \, \overline{z} = \overline{z^k z} = \overline{z^{k+1}}$. This establishes $\left(\overline{z}\right)^{k+1} = \overline{z^{k+1}}$, so that $P(k+1)$ is true.  Hence, by the Principle of Mathematical Induction, $\left(\overline{z}\right)^n = \overline{z^{n}}$ for all $n \geq 1$.
+
+\item The first wrinkle we encounter in this problem is that we are asked to prove this formula for $n > 5$ instead of $n \geq 1$.  Since $n$ is a natural number, this means our base step occurs at $n=6$.  We can still use the PMI in this case, but our conclusion will be that the formula is valid for all $n \geq 6$.  We let $P(n)$ be the inequality  $3^{n} > 100n$, and check that $P(6)$ is true. Comparing $3^6 =  729$ and $100(6) = 600$, we see $3^6 > 100(6)$ as required.  Next, we assume that $P(k)$ is true, that is we assume $3^{k} > 100k$.  We need to show that $P(k+1)$ is true, that is, we need to show $3^{k+1} > 100(k+1)$.  Since $3^{k+1} = 3 \cdot 3^{k}$, the induction hypothesis gives $3^{k+1} = 3 \cdot 3^{k} > 3(100k) = 300k$. We are done if we can show $300k > 100(k+1)$ for $k \geq 6$.  Solving $300k > 100(k+1)$ we get $k > \frac{1}{2}$.  Since $k \geq 6$, we know this is true.  Putting all of this together, we have $3^{k+1} = 3 \cdot 3^{k} > 3(100k) = 300k > 100(k+1)$, and hence $P(k+1)$ is true.  By induction, $3^{n} > 100n$ for all $n \geq 6$. 
+
+\item  To prove this determinant property, we use induction on $n$, where we take $P(n)$ to be that the property we wish to prove is true for all $n \times n$ matrices. For the base case, we note that if $A$ is a $1 \times 1$ matrix, then $A = [a]$ so $A' = [ca]$.  By definition, $\det(A) = a$ and $\det(A') = ca$ so we have $\det(A') = c \det(A)$ as required. Now suppose that the property we wish to prove is true for all $k \times k$ matrices.  Let $A$ be a $(k+1) \times (k+1)$ matrix.  We have two cases, depending on whether or not the row $R$ being replaced is the first row of $A$.  
+
+{ \sc Case 1: } The row $R$ being replaced is the first row of $A$. By definition,
+
+\[ \det(A') = \displaystyle{\sum_{p=1}^{n} a'_{\mbox{\tiny$1$}p} C'_{\mbox{\tiny$1$}p}}\]
+
+where the $1p$ cofactor of $A'$ is $C'_{\mbox{\tiny$1$}p} = (-1)^{(1+p)} \det\left(A'_{\mbox{\tiny$1$}p}\right)$ and $A'_{\mbox{\tiny$1$}p}$ is the $k \times k$ matrix obtained by deleting the $1$st row and $p$th column of $A'$.\footnote{See Section \ref{Determinants} for a review of this notation.} Since the first row of $A'$ is $c$ times the first row of $A$,  we have $a'_{\mbox{\tiny$1$}p} = c \, a_{\mbox{\tiny$1$}p}$.  In addition, since the remaining rows of $A'$ are identical to those of $A$, $A'_{\mbox{\tiny$1$}p} = A_{\mbox{\tiny$1$}p}$.  (To obtain these matrices, the first row of $A'$ is removed.)  Hence $\det\left(A'_{\mbox{\tiny$1$}p}\right) = \det\left(A_{\mbox{\tiny$1$}p}\right)$, so that $C'_{\mbox{\tiny$1$}p} = C_{\mbox{\tiny$1$}p}$.  As a result, we get
+
+\[ \det(A') = \displaystyle{\sum_{p=1}^{n} a'_{\mbox{\tiny$1$}p} C'_{\mbox{\tiny$1$}p}} = \displaystyle{\sum_{p=1}^{n} c \, a_{\mbox{\tiny$1$}p} C_{\mbox{\tiny$1$}p}} = c \displaystyle{\sum_{p=1}^{n} a_{\mbox{\tiny$1$}p} C_{\mbox{\tiny$1$}p}} = c \det(A), \]
+
+as required.  Hence, $P(k+1)$ is true in this case, which means the result is true in this case for all natural numbers $n \geq 1$. (You'll note that we did not use the induction hypothesis at all in this case.  It is possible to restructure the proof so that induction is only used where it is needed.  While mathematically more elegant, it is less intuitive, and we stand by our approach because of its pedagogical value.)
+
+{\sc Case 2:} The row $R$ being replaced is the not the first row of $A$.  By definition,
+
+\[ \det(A') = \displaystyle{\sum_{p=1}^{n} a'_{\mbox{\tiny$1$}p} C'_{\mbox{\tiny$1$}p}},\]
+
+where in this case, $a'_{\mbox{\tiny$1$}p} = a_{\mbox{\tiny$1$}p}$, since the first rows of $A$ and $A'$ are the same. The matrices $A'_{\mbox{\tiny$1$}p}$ and $A_{\mbox{\tiny$1$}p}$, on the other hand, are different but in a very predictable way $-$ the row in $A'_{\mbox{\tiny$1$}p}$ which corresponds to the row $cR$ in $A'$ is exactly $c$ times the row in $A_{\mbox{\tiny$1$}p}$ which corresponds to the row $R$ in $A$.  In other words, $A'_{\mbox{\tiny$1$}p}$ and $A_{\mbox{\tiny$1$}p}$ are $k \times k$ matrices which satisfy the induction hypothesis.  Hence, we know $\det\left(A'_{\mbox{\tiny$1$}p}\right) = c \det\left(A_{\mbox{\tiny$1$}p}\right)$ and $C'_{\mbox{\tiny$1$}p} = c \, C_{\mbox{\tiny$1$}p}$.  We get
+
+\[ \det(A') = \displaystyle{\sum_{p=1}^{n} a'_{\mbox{\tiny$1$}p} C'_{\mbox{\tiny$1$}p}} = \displaystyle{\sum_{p=1}^{n} a_{\mbox{\tiny$1$}p} c\, C_{\mbox{\tiny$1$}p}} = c \displaystyle{\sum_{p=1}^{n} a_{\mbox{\tiny$1$}p} C_{\mbox{\tiny$1$}p}} = c \det(A), \]
+
+which establishes $P(k+1)$ to be true.  Hence by induction, we have shown that the result holds in this case for $n \geq 1$ and we are done.  \qed
+
+\end{enumerate}
+
+\end{ex}
+
+While we have used the Principle of Mathematical Induction to prove some of the formulas we have merely motivated in the text, our main use of this result comes in Section \ref{Binomial} to prove the celebrated Binomial Theorem.  The ardent Mathematics student will no doubt see the PMI in many courses yet to come.  Sometimes it is explicitly stated and sometimes it remains hidden in the background.  If ever you see a property stated as being true `for all natural numbers $n$', it's a solid bet that the formal proof requires the Principle of Mathematical Induction.
+
+\newpage
+
+\subsection{Exercises}
+
+In Exercises \ref{proofindfirst} - \ref{proofindlast}, prove each assertion using the Principle of Mathematical Induction.
+
+\begin{enumerate}
+
+\item  $\displaystyle{ \sum_{j=1}^{n} j^2 = \dfrac{n(n+1)(2n+1)}{6}}$ \label{proofindfirst}
+
+\item  $\displaystyle{ \sum_{j=1}^{n} j^3 = \dfrac{n^2(n+1)^2}{4}}$
+
+\item  $2^{n} > 500 n$ for $n > 12$
+
+\item  $3^{n} \geq n^3$ for $n \geq 4$
+
+\item  Use the Product Rule for Absolute Value to show  $\left|x^{n}\right| = |x|^{n}$ for all real numbers $x$ and all natural numbers $n \geq 1$
+
+\item  Use the Product Rule for Logarithms to show $\log\left(x^{n}\right) = n \log(x)$ for all real numbers $x > 0$ and all natural numbers $n \geq 1$.
+
+\item  $\left[ \begin{array}{cc} a & 0 \\ 0 & b \\ \end{array} \right]^{n} = \left[ \begin{array}{cc} a^{n} & 0 \\ 0 & b^{n} \\ \end{array} \right]$ for $n \geq 1$. \label{proofindlast}
+
+
+\item  Prove Equations \ref{arithgeoformula} and \ref{arithgeosum} for the case of geometric sequences.  That is:
+
+\begin{enumerate}
+
+\item  For the sequence  $a_{\mbox{\tiny $1$}} = a$, $a_{n\mbox{\tiny{$+1$}}} = r a_{n}$, $n \geq 1$, prove $a_{n} = ar^{n-1}$, $n \geq 1$.
+
+\item  $\displaystyle{\sum_{j=1}^{n} a r^{n-1} = a \left( \dfrac{1-r^n}{1-r}\right)}$, if $r \neq 1$, $\displaystyle{\sum_{j=1}^{n} a r^{n-1} = na}$, if $r=1$.
+
+\end{enumerate}
+
+\item  Prove that the determinant of a lower triangular matrix is the product of the entries on the main diagonal.  (See Exercise \ref{triangularmatrices} in Section \ref{MatArithmetic}.)  Use this result to then show $\det\left(I_{n}\right) = 1$ where $I_{n}$ is the $n \times n$ identity matrix.
+
+\item  Discuss the classic  `paradox' \href{http://en.wikipedia.org/wiki/All_horses_are_the_same_color}{\underline{All Horses are the Same Color}} problem with your classmates.
+
+\end{enumerate}
+
+\newpage
+
+\subsection{Selected Answers}
+
+\begin{enumerate}
+
+\item  Let $P(n)$ be the sentence $\displaystyle{ \sum_{j=1}^{n} j^2 = \dfrac{n(n+1)(2n+1)}{6}}$. For the base case, $n=1$, we get
+
+\[ \begin{array}{rcl} 
+
+\displaystyle{ \sum_{j=1}^{1} j^2} & \stackrel{?}{=} &  \dfrac{(1)(1+1)(2(1)+1)}{6} \\ [15pt]
+ 1^2  & = & 1 \, \checkmark \\ \end{array} \]
+
+
+We now assume $P(k)$ is true and use it to show $P(k+1)$ is true.  We have
+
+
+\[ \begin{array}{rcl} 
+
+\displaystyle{ \sum_{j=1}^{k+1} j^2} & \stackrel{?}{=} &  \dfrac{(k+1)((k+1)+1)(2(k+1)+1)}{6} \\ [15pt]
+\displaystyle{ \sum_{j=1}^{k} j^2}  + (k+1)^2 &  \stackrel{?}{=}  & \dfrac{(k+1)(k+2)(2k+3)}{6} \\ [15pt]
+\underbrace{\dfrac{k(k+1)(2k+1)}{6}}_{\text{Using $P(k)$}} + (k+1)^2 &  \stackrel{?}{=}  & \dfrac{(k+1)(k+2)(2k+3)}{6}  \\ 
+
+&& \\
+
+\dfrac{k(k+1)(2k+1)}{6} + \dfrac{6(k+1)^2}{6} &  \stackrel{?}{=}  & \dfrac{(k+1)(k+2)(2k+3)}{6}  \\ [10pt]
+\dfrac{k(k+1)(2k+1)+6(k+1)^2}{6} &  \stackrel{?}{=}  & \dfrac{(k+1)(k+2)(2k+3)}{6}  \\ [10pt]
+\dfrac{(k+1)(k(2k+1)+6(k+1))}{6} &  \stackrel{?}{=}  & \dfrac{(k+1)(k+2)(2k+3)}{6}  \\ [10pt]
+\dfrac{(k+1)\left(2k^2+7k+6\right)}{6} &  \stackrel{?}{=}  & \dfrac{(k+1)(k+2)(2k+3)}{6}  \\ [10pt]
+\dfrac{(k+1)(k+2)(2k+3)}{6} & = & \dfrac{(k+1)(k+2)(2k+3)}{6}  \, \checkmark \\ [10pt]
+ \end{array} \]
+ 
+ By induction, $\displaystyle{ \sum_{j=1}^{n} j^2 = \dfrac{n(n+1)(2n+1)}{6}}$ is true for all natural numbers $n \geq 1$.
+
+\addtocounter{enumi}{2}
+
+\item Let $P(n)$  be the sentence $3^n > n^3$.  Our base case is $n=4$ and we check $3^4 = 81$ and $4^3 = 64$ so that $3^4 > 4^3$ as required.  We now assume $P(k)$ is true, that is $3^k > k^3$, and try to show $P(k+1)$ is true.  We note that $3^{k+1} = 3 \cdot 3^{k} > 3k^3$ and so we are done if we can show $3k^3 > (k+1)^3$ for $k \geq 4$. We can solve the inequality $3x^3 > (x+1)^3$ using the techniques of Section \ref{AlgebraicFunctions}, and doing so gives us $x > \frac{1}{\sqrt[3]{3}-1} \approx 2.26.$  Hence, for $k \geq 4$, $3^{k+1} = 3 \cdot 3^{k} > 3k^3 > (k+1)^3$ so that $3^{k+1} > (k+1)^3$.   By induction, $3^n > n^3$ is true for all natural numbers $n \geq 4$.
+
+\addtocounter{enumi}{1}
+
+\item  Let $P(n)$ be the sentence $\log\left(x^n \right) = n \log(x)$.  For the duration of this argument, we assume $x > 0$. The base case $P(1)$ amounts checking that $\log\left(x^1\right) = 1 \log(x)$ which is clearly true.  Next we assume $P(k)$ is true, that is $\log\left(x^{k}\right) = k \log(x)$ and try to show $P(k+1)$ is true.  Using the Product Rule for Logarithms along with the induction hypothesis, we get
+
+ \[\log\left(x^{k+1}\right) = \log\left(x^{k} \cdot x\right) = \log\left(x^{k}\right) + \log(x) = k \log(x) + \log(x) = (k+1) \log(x) \]
+ 
+ Hence, $\log\left(x^{k+1}\right) = (k+1) \log(x)$.  By induction  $\log\left(x^n \right) = n \log(x)$ is true for all $x>0$ and all natural numbers $n \geq 1$.
+
+
+\addtocounter{enumi}{2}
+
+\item  Let $A$ be an $n \times n$ lower triangular matrix.  We proceed to prove the $\det(A)$ is the product of the entries along the main diagonal by inducting on $n$.  For $n=1$, $A = [a]$ and $\det(A) = a$, so the result is (trivially) true.  Next suppose the result is true for $k \times k$ lower triangular matrices.  Let $A$ be a $(k+1) \times (k+1)$ lower triangular matrix.  Expanding $\det(A)$ along the first row, we have
+
+\[ \det(A)  = \displaystyle{\sum_{p=1}^{n} a_{\mbox{\tiny$1$}p} C_{\mbox{\tiny$1$}p}} \]
+
+Since $a_{\mbox{\tiny$1$}p} = 0$ for $2 \leq p \leq k+1$, this simplifies $\det(A) = a_{\mbox{\tiny$11$}}C_{\mbox{\tiny$11$}}$.  By definition, we know that $C_{\mbox{\tiny$11$}} = (-1)^{1+1} \det\left(A_{\mbox{\tiny$11$}}\right) =\det\left(A_{\mbox{\tiny$11$}}\right)$ where $A_{\mbox{\tiny$11$}}$ is $k \times k$  matrix obtained by deleting the first row and first column of $A$. Since $A$ is lower triangular, so is $A_{\mbox{\tiny$11$}}$ and, as such, the induction hypothesis applies to $A_{\mbox{\tiny$11$}}$. In other words, $\det\left(A_{\mbox{\tiny$11$}}\right)$ is the product of the entries along $A_{\mbox{\tiny$11$}}$'s main diagonal.  Now, the entries on the main diagonal of $A_{\mbox{\tiny$11$}}$ are the entries $a_{\mbox{\tiny$22$}}$, $a_{\mbox{\tiny$33$}}$, \ldots, $a_{(k\mbox{\tiny$+1$})(k\mbox{\tiny$+1$})}$ from the main diagonal of $A$.  Hence,
+
+\[ \det(A) = a_{\mbox{\tiny$11$}} \det\left(A_{\mbox{\tiny$11$}}\right) = a_{\mbox{\tiny$11$}} \left(a_{\mbox{\tiny$22$}}a_{\mbox{\tiny$33$}} \cdots a_{(k\mbox{\tiny$+1$})(k\mbox{\tiny$+1$})} \right) = a_{\mbox{\tiny$11$}} a_{\mbox{\tiny$22$}}a_{\mbox{\tiny$33$}} \cdots a_{(k\mbox{\tiny$+1$})(k\mbox{\tiny$+1$})}\]
+
+We have $\det(A)$ is the product of the entries along its main diagonal.  This shows $P(k+1)$ is true, and, hence, by induction, the result holds for all $n \times n$ upper triangular matrices. The $n \times n$ identity matrix $I_{n}$ is a lower triangular matrix whose main diagonal consists of all $1$'s.  Hence,  $\det\left(I_{n}\right) = 1$, as required.
+
+\end{enumerate}
+
+\closegraphsfile

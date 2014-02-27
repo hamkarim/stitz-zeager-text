@@ -1,0 +1,1812 @@
+\mfpicnumber{1}
+
+\opengraphsfile{PolarComplex}
+
+\setcounter{footnote}{0}
+
+\label{PolarComplex}
+
+In this section, we return to our study of complex numbers which were first introduced in Section \ref{ComplexZeros}.  Recall that a \index{complex number ! definition of}\textbf{complex number} is a number of the form $z = a + bi$ where $a$ and $b$ are real numbers and $i$ is the imaginary unit defined by $i = \sqrt{-1}$. The number $a$ is called the \index{complex number ! real part} \textbf{real part} \index{real part of a complex number} of $z$, denoted  $\text{Re}(z)$, while the real number $b$ is called the \index{imaginary part of a complex number} \index{complex number ! imaginary part}\textbf{imaginary part} of $z$, denoted $\text{Im}(z)$.  From Intermediate Algebra, we know that if $z = a + bi = c + di$ where $a$, $b$, $c$ and $d$ are real numbers, then $a = c$ and $b = d$, which means $\text{Re}(z)$ and $\text{Im}(z)$ are well-defined.\footnote{`Well-defined' means that no matter how we express $z$, the number $\text{Re}(z)$ is always the same, and the number $\text{Im}(z)$ is always the same.  In other words, $\text{Re}$ and $\text{Im}$ are \textit{functions} of complex numbers.} To start off this section, we associate each complex number $z = a+bi$ with the point $(a,b)$ on the coordinate plane.  In this case, the $x$-axis is relabeled as the \index{real axis}\textbf{real axis}, which corresponds to the real number line as usual,  and the $y$-axis is relabeled as the \index{imaginary axis}\textbf{imaginary axis}, which is demarcated in increments of the imaginary unit $i$.  The plane determined by these two axes is called the \index{complex plane}\textbf{complex plane}.
+
+\begin{center}
+
+\begin{mfpic}[15]{-5}{5}{-5}{5}
+\axes
+\tlabel[cl](5,-0.5){\scriptsize Real Axis}
+\tlabel[cl](0.5,5){\scriptsize Imaginary Axis}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-4,-3,-2,-1,1,2,3,4}
+\point[3pt]{(0,0),(3,0), (-4,2), (0,-3)}
+\tlabel[cc](-4,2.5){\scriptsize $(-4,2) \longleftrightarrow z = -4+2i$}
+\tlabel[cl](0.25,-3){\scriptsize $(0,-3) \longleftrightarrow z = -3i$}
+\tlabel[cc](3,0.5){\scriptsize $(3,0) \longleftrightarrow z = 3$}
+\tlabel[cc](0.25,-0.35){\scriptsize $0$}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt} $} -3, {$-2\hspace{7pt} $} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-4i$} -4, {$-3i$} -3, {$-2i$} -2, {$-i$} -1, {$i$} 1, {$2i$} 2, {$3i$} 3, {$4i$} 4}
+\normalsize
+\end{mfpic}
+
+The Complex Plane
+
+\end{center}
+
+Since the ordered pair $(a,b)$ gives the \textit{rectangular} coordinates associated with the complex number $z = a+bi$, the expression $z=a+bi$ is called the \index{complex number ! rectangular form}\index{rectangular form of a complex number}\textbf{rectangular form} of $z$. Of course, we could just as easily associate $z$ with a pair of \textit{polar} coordinates $(r,\theta)$.  Although it is not a straightforward as the definitions of $\text{Re}(z)$ and $\text{Im}(z)$, we can still give $r$ and $\theta$ special names in relation to $z$.
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+\begin{defn} \label{modulusargumentdefn} \textbf{The Modulus and Argument of Complex Numbers:}  Let $z = a+bi$ be a complex number with $a = \text{Re}(z)$ and $b=\text{Im}(z)$.  Let $(r,\theta)$ be a polar representation of the point with rectangular coordinates $(a,b)$ where $r \geq 0$.
+
+\begin{itemize}
+
+\item  The \index{complex number ! modulus ! definition of}\index{modulus of a complex number ! definition of}\textbf{modulus} of $z$, denoted $|z|$, is defined by $|z| = r$.
+
+\item  The angle $\theta$ is an \index{complex number ! argument ! definition of}\index{argument ! of a complex number ! definition of}\textbf{argument} of $z$. The set of all arguments of $z$ is denoted $\text{arg}(z)$.
+
+\item  If $z \neq 0$ and $-\pi < \theta \leq \pi$, then $\theta$ is the \index{complex number ! principal argument}\index{principal argument of a complex number}\textbf{principal argument} of $z$, written $\theta = \text{Arg}(z)$. 
+
+\end{itemize}
+
+\end{defn}
+
+\ebm}
+
+\smallskip
+
+Some remarks about  Definition \ref{modulusargumentdefn} are in order.  We know from Section \ref{IntroPolar} that every point in the plane has infinitely many polar coordinate representations $(r,\theta)$ which means it's worth our time to make sure the quantities `modulus', `argument' and `principal argument' are well-defined. Concerning the modulus, if $z = 0$ then the point associated with $z$ is the origin. In this case, the \textit{only} $r$-value which can be used here is $r=0$.  Hence for $z= 0$, $|z| = 0$ is well-defined. If $z \neq 0$, then the point associated with $z$ is not the origin, and there are \textit{two} possibilities for $r$:  one positive and one negative.  However, we stipulated $r \geq 0$ in our definition so this pins down the value of $|z|$ to one and only one number. Thus the modulus is well-defined in this case, too.\footnote{In case you're wondering, the use of the absolute value notation $|z|$ for modulus will be explained shortly.} Even with the requirement $r \geq 0$,  there are infinitely many angles $\theta$ which can be used in a polar representation of a point $(r,\theta)$. If $z \neq 0$ then the point in question is not the origin, so all of these angles $\theta$ are coterminal.  Since coterminal angles are exactly $2\pi$ radians apart, we are guaranteed that only one of them lies in the interval $(-\pi, \pi]$, and this angle is what we call the principal argument of $z$, $\text{Arg}(z)$. In fact, the set $\text{arg}(z)$ of \text{all} arguments of $z$ can be described using set-builder notation as  $\text{arg}(z) = \left\{ \text{Arg}(z) + 2\pi k \, | \, \text{$k$ is an integer} \right\}$.  Note that since $\text{arg}(z)$ is a \textit{set}, we will write `$\theta \in \text{arg}(z)$' to mean `$\theta$ is in\footnote{Recall the symbol being used here, `$\in$,' is the mathematical symbol which denotes membership in a set.}  the set of arguments of $z$'.   If $z=0$ then the point in question is the origin, which we know can be represented in polar coordinates as $(0,\theta)$ for \textit{any} angle $\theta$. In this case, we have $\text{arg}(0) = (-\infty, \infty)$ and since there is no one value of $\theta$ which lies $(-\pi, \pi]$, we leave $\text{Arg}(0)$ undefined.\footnote{If we had Calculus, we would regard $\text{Arg}(0)$ as an `indeterminate form.'  But we don't, so we won't.} It is time for an example.
+
+
+\begin{ex} \label{plotmodargex}  For each of the following complex numbers find $\text{Re}(z)$, $\text{Im}(z)$, $|z|$, $\text{arg}(z)$ and $\text{Arg}(z)$.  Plot $z$ in the complex plane.
+
+\begin{multicols}{4}
+
+\begin{enumerate}
+
+\item  $z = \sqrt{3}-i$
+
+\item  $z = -2+4i$
+
+\item  $z = 3i$
+
+\item  $z = -117$
+
+\end{enumerate}
+
+\end{multicols}
+
+{\bf Solution.} 
+
+\begin{enumerate}
+
+\item For $z = \sqrt{3} -i = \sqrt{3} + (-1)i$, we have $\text{Re}(z) = \sqrt{3}$ and $\text{Im}(z) = -1$.   To find $|z|$, $\text{arg}(z)$ and $\text{Arg}(z)$, we need to find a polar representation $(r,\theta)$ with $r \geq 0$ for the point $P(\sqrt{3},-1)$ associated with $z$.   We know $r^2 = (\sqrt{3})^2 + (-1)^2 = 4$, so $r = \pm 2$.  Since we require $r \geq 0$, we choose $r =2$, so $|z| = 2$.  Next, we find a corresponding angle $\theta$.  Since $r>0$ and $P$ lies in Quadrant IV, $\theta$ is a Quadrant IV angle.  We know $\tan(\theta) = \frac{-1}{\sqrt{3}} = -\frac{\sqrt{3}}{3}$, so $\theta = -\frac{\pi}{6} + 2\pi k$ for integers $k$.  Hence, $\text{arg}(z) = \left\{-\frac{\pi}{6} + 2\pi k \, | \, \text{$k$ is an integer} \right\}$. Of these values, only  $\theta = -\frac{\pi}{6}$  satisfies the requirement that $-\pi < \theta \leq \pi$, hence $\text{Arg}(z) = -\frac{\pi}{6}$.  
+
+\item The complex number $z = -2+4i$ has  $\text{Re}(z) = -2$,   $\text{Im}(z) = 4$, and is associated with the point $P(-2,4)$.  Our next task is to find a polar representation $(r,\theta)$ for $P$ where $r \geq 0$. Running through the usual calculations gives $r = 2\sqrt{5}$, so $|z| = 2\sqrt{5}$.  To find $\theta$, we get $\tan(\theta) = -2$, and since $r > 0$ and $P$ lies in Quadrant II, we know $\theta$  is a Quadrant II angle.  We find $\theta = \pi + \arctan(-2) + 2\pi k$, or, more succinctly  $\theta = \pi - \arctan(2) + 2\pi k$ for integers $k$.  Hence $\text{arg}(z) = \left\{\pi - \arctan(2) + 2\pi k \, | \, \text{$k$ is an integer}\right\}$.  Only  $\theta = \pi - \arctan(2)$ satisfies the requirement $-\pi < \theta \leq \pi$,  so $\text{Arg}(z) = \pi - \arctan(2)$. 
+
+\item    We rewrite $z = 3i$ as $z = 0+3i$ to find $\text{Re}(z) = 0$ and $\text{Im}(z) = 3$.  The point in the plane which corresponds to $z$ is $(0,3)$ and while we could go through the usual calculations to find the required polar form of this point, we can almost `see' the answer.  The point  $(0,3)$ lies $3$ units away from the origin on the positive $y$-axis.  Hence, $r=|z|=3$ and $\theta = \frac{\pi}{2} + 2\pi k$ for integers $k$. We get $\text{arg}(z) = \left\{ \frac{\pi}{2} + 2\pi k \, | \, \text{$k$ is an integer} \right\}$ and $\text{Arg}(z) = \frac{\pi}{2}$. 
+
+\item As in the previous problem, we write $z = -117 = -117 + 0i$ so $\text{Re}(z) = -117$ and $\text{Im}(z) = 0$. The number $z = -117$ corresponds to the point $(-117,0)$, and this is another instance where  we can determine the polar form `by eye'.  The point $(-117,0)$ is $117$ units away from the origin along the negative $x$-axis.  Hence, $r=|z|=117$ and $\theta = \pi + 2\pi  = (2k+1)\pi k$ for integers $k$. We have  $\text{arg}(z) = \left\{ (2k+1)\pi \, | \, k \text{ is an  integer} \right\}$.  Only one of these values, $\theta = \pi$, just barely lies in the interval $(-\pi, \pi]$ which means and $\text{Arg}(z) =\pi$. We plot $z$ along with the other numbers in this example below.
+
+
+\begin{center}
+
+\begin{mfpic}[15]{-7}{5}{-2}{5}
+\arrow  \polyline{(0,-2), (0,5)}
+\arrow  \polyline{(-2,0), (5,0)}
+\dashed \polyline{(-7,0), (-2,0)}
+\tlabel[cl](5,-0.5){\scriptsize Real Axis}
+\tlabel[cl](0.5,5){\scriptsize Imaginary Axis}
+\xmarks{-6,-2,-1,1,2,3,4}
+\ymarks{-1,1,2,3,4}
+\point[3pt]{(1.72,-1), (-2,4), (0,3), (-6,0)}
+\tlabel(1.5, -1.75){\scriptsize $z = \sqrt{3}-i$}
+\tlabel[cc](-4, 4){\scriptsize $z = -2 + 4i$}
+\tlabel[cc](1,3){\scriptsize $z=3i$}
+\tlabel(-6.25,0.5){\scriptsize $z=-117$}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-117 \hspace{7pt}$} -6, {$-2\hspace{7pt} $} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-i$} -1, {$i$} 1, {$2i$} 2, {$3i$} 3, {$4i$} 4}
+\normalsize
+\end{mfpic}
+
+\end{center}
+
+\vspace{-.25in} \qed
+
+\end{enumerate}
+
+
+\end{ex}
+
+Now that we've had some practice computing the modulus and argument of some complex numbers, it is time to explore their properties.  We have the following theorem.
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{thm} \label{modprops} \textbf{Properties of the Modulus:}  Let $z$ and $w$ be complex numbers. \index{complex number ! modulus ! properties of} \index{modulus of a complex number ! properties of}
+
+\begin{itemize}
+
+\item  $|z|$ is the distance from $z$ to $0$ in the complex plane
+
+\item  $|z| \geq 0$ and $|z| = 0$ if and only if $z=0$
+
+\item  $|z| = \sqrt{\text{Re}(z)^2 + \text{Im}(z)^2}$
+
+\item  \textbf{Product Rule:}  $|zw| = |z||w|$ \index{product rule ! for the modulus of a complex number}
+
+\item  \textbf{Power Rule:}  $\left|z^{n}\right| = |z|^{n}$ for all natural numbers, $n$ \index{power rule ! for the modulus of a complex number}
+
+\item  \textbf{Quotient Rule:}  $\left| \dfrac{z}{w} \right| = \dfrac{|z|}{|w|}$, provided $w \neq 0$ \index{quotient rule ! for the modulus of a complex number}
+
+\end{itemize}
+
+\end{thm}
+
+\ebm}
+
+\smallskip
+
+To prove the first three properties in Theorem \ref{modprops}, suppose $z = a + bi$ where $a$ and $b$ are real numbers.  To determine $|z|$, we find a polar representation $(r,\theta)$ with $r \geq 0$ for the point $(a,b)$.  From Section \ref{IntroPolar}, we know $r^2 = a^2 + b^2$ so that $r = \pm \sqrt{a^2+b^2}$.  Since we require $r \geq 0$, then it must be that $r = \sqrt{a^2 +b^2}$, which means $|z| = \sqrt{a^2+b^2}$.  Using the distance formula, we find the distance from $(0,0)$ to $(a,b)$ is also $\sqrt{a^2+b^2}$, establishing the first property.\footnote{Since the absolute value $|x|$ of a real number $x$ can be viewed as the distance from $x$ to $0$ on the number line, this first property justifies the notation $|z|$ for modulus.  We leave it to the reader to show that if $z$ is real, then the definition of modulus coincides with absolute value so the notation $|z|$ is unambiguous.}  For the second property, note that since $|z|$ is a distance, $|z| \geq 0$.  Furthermore,  $|z| = 0$ if and only if the distance from $z$ to $0$ is $0$, and the latter happens if and only if $z = 0$, which is what we were asked to show.\footnote{This may be considered by some to be a bit of a cheat, so we work through the underlying Algebra to see this is true.  We know  $|z| = 0$ if and only if $\sqrt{a^2+b^2} = 0$ if and only if $a^2+b^2 = 0$, which is true if and only if $a = b = 0$.  The latter happens if and only if $z = a + bi =0$.  There.}  For the third property, we note that since $a = \text{Re}(z)$ and $b = \text{Im}(z)$, $z = \sqrt{a^2+b^2} = \sqrt{\text{Re}(z)^2 + \text{Im}(z)^2}$.
+
+\smallskip
+
+To prove the product rule, suppose $z = a + bi$ and  $w = c + di$ for real numbers $a$, $b$, $c$ and $d$.  Then $zw = (a+bi)(c+di)$.  After the usual arithmetic\footnote{See Example \ref{complexnumberarithmetic} in Section \ref{ComplexZeros} for a review of complex number arithmetic.} we get $zw = (ac-bd) + (ad+bc)i$. Therefore,
+
+\[ \begin{array}{rcll}
+
+|zw| & = & \sqrt{(ac-bd)^2+(ad+bc)^2} & \\[3pt]
+		 & = & \sqrt{a^2c^2 - 2abcd + b^2d^2 + a^2d^2 +2abcd + b^2c^2} & \text{Expand} \\ [3pt]
+		 & = & \sqrt{a^2c^2 + a^2d^2 + b^2c^2 + b^2d^2} & \text{Rearrange terms} \\[3pt]
+		 & = & \sqrt{a^2\left(c^2+d^2\right) + b^2\left(c^2+d^2\right)} & \text{Factor} \\[3pt]
+		 & = & \sqrt{\left(a^2+b^2\right)\left(c^2+d^2\right)} & \text{Factor}\\[3pt]
+		 & = & \sqrt{a^2+b^2} \sqrt{c^2+d^2} & \text{Product Rule for Radicals} \\[3pt]
+		 & = & |z| |w| & \text{Definition of $|z|$ and $|w|$} \\ \end{array} \]
+		 
+Hence $|zw| = |z| |w|$ as required.  
+
+\smallskip
+
+Now that the Product Rule has been established, we use it and the Principle of Mathematical Induction\footnote{See Section \ref{Induction} for a review of this technique.} to 	prove the power rule.  Let $P(n)$ be the statement $\left|z^{n}\right| = |z|^n$.  Then $P(1)$ is true since $\left|z^{1}\right| = |z| = |z|^1$.  Next, assume $P(k)$ is true.  That is, assume $\left|z^{k}\right| = |z|^k$ for some $k \geq 1$.  Our job is to show that $P(k+1)$ is true, namely $\left|z^{k+1}\right| = |z|^{k+1}$.  As is customary with induction proofs, we first try to reduce the problem in such a way as to  use the Induction Hypothesis.
+
+\[\begin{array}{rcll}
+\left|z^{k+1}\right| & = & \left|z^{k} z\right| & \text{Properties of Exponents} \\[3pt]
+										 & = & \left|z^{k}\right| |z| & \text{Product Rule} \\[3pt]
+										 & = &  |z|^{k} |z| & \text{Induction Hypothesis} \\[3pt]
+										 & = &  |z|^{k+1} & \text{Properties of Exponents} \\ \end{array} \]
+Hence, $P(k+1)$ is true, which means $\left|z^{n}\right| = |z|^{n}$ is true for all natural numbers $n$.  
+
+\smallskip
+
+Like the Power Rule, the Quotient Rule can also be established with the help of the Product Rule. We assume $w \neq 0$ (so $|w| \neq 0$) and we get
+\[ \begin{array}{rcll}
+
+\left| \dfrac{z}{w} \right| &  = & \left| (z) \left( \dfrac{1}{w} \right) \right| & \\ [7pt] 
+										        & = & |z| \left| \dfrac{1}{w}\right| & \text{Product Rule.} \\ \end{array} \]
+Hence, the proof really boils down to showing $\left| \frac{1}{w} \right| = \frac{1}{|w|}$.  This is left as an exercise.
+
+\smallskip
+
+Next, we characterize the argument of a complex number in terms of its real and imaginary parts.
+
+
+\colorbox{ResultColor}{\bbm
+
+\begin{thm} \label{argprops} \textbf{Properties of the Argument:}  Let $z$ be a complex number. \index{complex number ! argument ! properties of} \index{argument ! of a complex number ! properties of}
+ 
+\begin{itemize}
+
+\item  If $\text{Re}(z) \neq 0$ and $\theta \in \text{arg}(z)$, then $\tan(\theta) = \frac{\text{Im}(z)}{\text{Re}(z)}$.
+
+\item  If $\text{Re}(z) = 0$ and  $\text{Im}(z) > 0$, then $\text{arg}(z) = \left\{ \frac{\pi}{2} + 2\pi k \, | \, \text{$k$ is an integer} \right\}$.
+
+\item  If $\text{Re}(z) = 0$ and $\text{Im}(z) < 0$, then $\text{arg}(z) = \left\{ -\frac{\pi}{2} + 2\pi k \, | \, \text{$k$ is an integer} \right\}$.
+
+\item  If $\text{Re}(z) = \text{Im}(z) = 0$, then $z = 0$ and $\text{arg}(z) = (-\infty, \infty)$.
+
+\end{itemize}
+
+\end{thm}
+\ebm}
+
+\smallskip
+
+To prove Theorem \ref{argprops}, suppose $z = a + bi$ for real numbers $a$ and $b$.  By definition, $a = \text{Re}(z)$ and $b = \text{Im}(z)$, so the point associated with $z$ is $(a,b) = \left(\text{Re}(z), \text{Im}(z)\right)$.  From Section \ref{IntroPolar}, we know that if $(r,\theta)$ is a polar representation for $\left(\text{Re}(z), \text{Im}(z)\right)$, then $\tan(\theta) = \frac{\text{Im}(z)}{\text{Re}(z)}$, provided $\text{Re}(z) \neq 0$.  If $\text{Re}(z) = 0$ and $\text{Im}(z) > 0$, then $z$ lies on the positive imaginary axis.  Since we take $r > 0$,  we have that $\theta$ is coterminal with $\frac{\pi}{2}$, and the result follows.   If $\text{Re}(z) = 0$ and $\text{Im}(z) < 0$, then $z$ lies on the negative imaginary axis, and a similar argument shows $\theta$ is coterminal with $-\frac{\pi}{2}$.  The last property in the theorem was already discussed in the remarks following Definition \ref{modulusargumentdefn}.  
+
+\smallskip
+
+
+Our next goal is to completely marry the Geometry and the Algebra of the complex numbers.  To that end,  consider the figure below.
+
+\begin{center}
+
+\begin{mfpic}[15]{-1}{10}{-1}{8}
+\axes
+\tlabel[cl](10,-0.5){\scriptsize Real Axis}
+\tlabel[cl](0.5,8){\scriptsize Imaginary Axis}
+\xmarks{8.66}
+\ymarks{5}
+\dashed \polyline{(0,0), \plr{(10,30)}}
+\point[3pt]{(0,0), \plr{(10,30)}}
+\tlabel[cc](8.66,6){\scriptsize $(a,b) \longleftrightarrow z = a+bi \longleftrightarrow (r,\theta)$}
+\tlabel[cc](0.25,-0.35){\scriptsize $0$}
+\tlabel(2.25,0.35){\scriptsize $\theta \in \text{arg}(z)$}
+\arrow \parafcn{2,28,0.1}{2*dir(t)}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$a$} 8.66}
+\axislabels {y}{{$bi$} 5}\tlpointsep{-10pt}
+\tlabel(0,0){\rotatebox{30}{\hspace{.75in}$|z| = \sqrt{a^2+b^2} = r$}}
+\normalsize
+\end{mfpic}
+
+{\scriptsize Polar coordinates, $(r, \theta)$ associated with $z = a+bi$ with $r \geq 0$.}
+
+\end{center}
+
+We know from  Theorem \ref{polarrectangularconversion} that $a = r\cos(\theta)$ and $b = r\sin(\theta)$. Making these substitutions for $a$ and $b$ gives $z = a + bi = r\cos(\theta) + r \sin(\theta) i = r \left[\cos(\theta) + i \sin(\theta)\right]$. The expression `$\cos(\theta) + i\sin(\theta)$' is abbreviated $\text{cis}(\theta)$\index{cis($\theta$)} so we can write  $z = r\text{cis}(\theta)$.	Since  $r = |z|$ and $\theta \in \text{arg}(z)$, we get
+
+\medskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{defn} \label{polarformcomplex} \index{complex number ! polar form ! cis-notation} \index{polar form of a complex number} \textbf{A Polar Form of a Complex Number:} Suppose $z$ is a complex number and $\theta \in \text{arg}(z)$.  The expression:  \[|z| \text{cis}(\theta) = |z|\left[ \cos(\theta) + i \sin(\theta)\right]\]
+
+is called a polar form for $z$.
+
+\end{defn}
+
+\ebm}
+
+\medskip										
+
+Since there are infinitely many choices for $\theta \in \text{arg}(z)$, there infinitely many polar forms for $z$, so we used the indefinite article `a' in Definition \ref{polarformcomplex}.  It is time for an example.
+
+\begin{ex} \label{polarcomplexex} $~$
+
+\begin{enumerate}
+
+\item Find the rectangular form of the following complex numbers. Find $\text{Re}(z)$ and $\text{Im}(z)$.
+
+\begin{multicols}{4}
+
+\begin{enumerate}
+
+\item  $z = 4 \text{cis}\left(\frac{2\pi}{3}\right)$
+
+\item  $z = 2 \text{cis}\left(-\frac{3\pi}{4}\right)$
+
+\item  $z = 3 \text{cis}(0)$
+
+\item  $z = \text{cis}\left(\frac{\pi}{2}\right)$
+
+\end{enumerate}
+
+\end{multicols}
+
+\item  Use the results from Example \ref{plotmodargex} to find a polar form of the following complex numbers.
+
+\begin{multicols}{4}
+
+\begin{enumerate}
+
+\item  $z = \sqrt{3}-i$
+
+\item  $z = -2+4i$
+
+\item  $z = 3i$
+
+\item  $z = -117$
+
+\end{enumerate}
+
+\end{multicols}
+
+
+
+\end{enumerate}
+
+
+{\bf Solution.} 
+
+\begin{enumerate}
+
+
+\item The key to this problem is to write out $\text{cis}(\theta)$ as $\cos(\theta) + i\sin(\theta)$.
+
+\begin{enumerate}
+
+\item By definition, $z =4 \text{cis}\left(\frac{2\pi}{3}\right) = 4\left[\cos\left(\frac{2\pi}{3}\right) + i \sin\left(\frac{2\pi}{3}\right)\right]$. After some simplifying, we get $z = -2 + 2i\sqrt{3}$, so that $\text{Re}(z) = -2$ and $\text{Im}(z) = 2\sqrt{3}$.
+
+\item Expanding, we get $z = 2 \text{cis}\left(-\frac{3\pi}{4}\right) = 2\left[\cos\left(-\frac{3\pi}{4}\right) + i \sin\left(-\frac{3\pi}{4}\right)\right]$. From this, we find $z= -\sqrt{2} - i\sqrt{2}$, so $\text{Re}(z) = -\sqrt{2} = \text{Im}(z)$.
+
+\item  We get  $z = 3 \text{cis}(0) = 3\left[\cos(0) + i\sin(0)\right] = 3$.  Writing $3 = 3 + 0i$, we get $\text{Re}(z) = 3$ and $\text{Im}(z) = 0$, which makes sense seeing as $3$ is a real number.
+
+\item  Lastly, we have  $z = \text{cis}\left(\frac{\pi}{2}\right) = \cos\left(\frac{\pi}{2}\right)+ i\sin\left(\frac{\pi}{2}\right) = i$.  Since $i = 0 + 1i$, we get $\text{Re}(z) = 0$ and $\text{Im}(z) = 1$.  Since $i$ is called the `imaginary unit,'  these answers make perfect sense.
+
+\end{enumerate}
+
+\item  To write a polar form of a complex number $z$, we need two pieces of information:  the modulus $|z|$ and an argument (not necessarily the principal argument) of $z$.   We shamelessly mine our solution to  Example \ref{plotmodargex} to find what we need.
+
+\begin{enumerate}
+
+\item  For $z = \sqrt{3}-i$, $|z| = 2$ and $\theta = -\frac{\pi}{6}$, so $z = 2 \text{cis}\left(-\frac{\pi}{6}\right)$.  We can check our answer by converting it back to rectangular form to see that it simplifies to $z = \sqrt{3} - i$.
+
+\item  For $z = -2+4i$, $|z| = 2\sqrt{5}$ and $\theta = \pi - \arctan(2)$.  Hence, $z = 2\sqrt{5} \text{cis}(\pi - \arctan(2))$.  It is a good exercise to actually show that this polar form reduces to $z=-2+4i$.
+
+\item  For $z = 3i$, $|z| = 3$ and $\theta = \frac{\pi}{2}$.  In this case, $z = 3 \text{cis}\left(\frac{\pi}{2}\right)$.  This can be checked geometrically.  Head out $3$ units from $0$ along the positive real axis. Rotating $\frac{\pi}{2}$ radians counter-clockwise lands you exactly $3$ units above $0$ on the imaginary axis at $z = 3i$.
+
+\item  Last but not least, for $z = -117$, $|z| = 117$ and $\theta = \pi$. We get $z = 117 \text{cis}(\pi)$. As with the previous problem, our answer is easily checked geometrically. \qed
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{ex}
+
+The following theorem summarizes the advantages of working with complex numbers in polar form.
+
+\medskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{thm} \label{prodquotpolarcomplex} \textbf{Products, Powers and Quotients Complex Numbers in Polar Form:}  Suppose $z$ and $w$ are complex numbers with polar forms $z = |z|\text{cis}(\alpha)$ and $w = |w|\text{cis}(\beta)$.  Then
+
+\begin{itemize}
+
+\item  \textbf{Product Rule:} $zw = |z||w| \text{cis}(\alpha + \beta)$ \index{product rule ! for complex numbers}
+
+\item  \textbf{Power Rule} (\index{DeMoivre's Theorem}\textbf{\href{http://en.wikipedia.org/wiki/Abraham_de_Moivre}{\underline{DeMoivre's Theorem}}}) \textbf{:}  $z^{n} = |z|^{n} \text{cis}(n \theta)$ for every natural number $n$ \index{power rule ! for complex numbers}
+
+\item  \textbf{Quotient Rule:} $\dfrac{z}{w} = \dfrac{|z|}{|w|} \text{cis}(\alpha - \beta)$, provided $|w| \neq 0$ \index{quotient rule ! for complex numbers}
+
+\end{itemize}
+
+\end{thm}
+
+\ebm}
+
+\medskip
+
+The proof of Theorem \ref{prodquotpolarcomplex} requires a healthy mix of definition, arithmetic and identities.  We first start with the product rule.
+
+\[ \begin{array}{rcl}
+
+zw & = & \left[|z|\text{cis}(\alpha)\right] \left[|w|\text{cis}(\beta)\right]  \\[3pt]
+   & = & |z||w|\left[\cos(\alpha) + i\sin(\alpha)\right]\left[\cos(\beta) + i \sin(\beta)\right] \\ \end{array} \]
+
+We now focus on the quantity in brackets on the right hand side of the equation.
+
+\[ \begin{array}{rcll}
+
+\left[\cos(\alpha) + i\sin(\alpha)\right]\left[\cos(\beta) + i \sin(\beta)\right] & = & \cos(\alpha)\cos(\beta) + i\cos(\alpha)\sin(\beta) & \\
+																																									&  & + \, i\sin(\alpha)\cos(\beta) + i^2 \sin(\alpha) \sin(\beta) & \\[3pt]
+																																									& = & \cos(\alpha)\cos(\beta) +  i^2 \sin(\alpha) \sin(\beta)& \text{Rearranging terms} \\
+																																									&  & + \, i\sin(\alpha)\cos(\beta) +i\cos(\alpha)\sin(\beta)  & \\[3pt]
+																																									& = & \left(\cos(\alpha)\cos(\beta) - \sin(\alpha) \sin(\beta)\right) & \text{Since $i^2 = -1$}\\
+																																									&  & + \, i\left(\sin(\alpha)\cos(\beta)+ \cos(\alpha)\sin(\beta)\right) & \text{Factor out $i$}\\[3pt] 
+																																									& = & \cos(\alpha + \beta) + i \sin(\alpha+\beta) & \text{Sum identities} \\[3pt]
+																																									& = & \text{cis}(\alpha + \beta) & \text{Definition of `cis'}
+\end{array} \]
+
+Putting this together with our earlier work, we get $zw = |z| |w| \text{cis}(\alpha + \beta)$, as required.  
+
+\smallskip
+
+Moving right along, we next take aim at the Power Rule, better known  as DeMoivre's Theorem.\footnote{Compare this proof with the proof of the Power Rule in Theorem \ref{modprops}.} We proceed by induction on $n$. Let $P(n)$ be the sentence $z^{n} = |z|^{n} \text{cis}(n \theta)$.  Then $P(1)$ is true, since $z^{1} = z = |z| \text{cis}(\theta) = |z|^{1} \text{cis}(1\cdot \theta)$.  We now assume $P(k)$ is true, that is, we assume  $z^{k} = |z|^{k} \text{cis}(k \theta)$ for some $k \geq 1$. Our goal is to show that $P(k+1)$ is true, or that $z^{k+1} = |z|^{k+1} \text{cis}((k+1)\theta)$. We have
+
+\[ \begin{array}{rcll}
+
+z^{k+1} & = & z^{k} z & \text{Properties of Exponents} \\[3pt]
+				& = & \left(|z|^{k} \text{cis}(k \theta)\right) \left(|z| \text{cis}(\theta)\right) & \text{Induction Hypothesis}\\[3pt]
+				& = & \left(|z|^k |z|\right) \text{cis}(k \theta + \theta) & \text{Product Rule}\\[3pt]
+				& = & |z|^{k+1} \text{cis}((k+1)\theta) \\
+
+\end{array} \] 
+
+Hence, assuming $P(k)$ is true, we have that $P(k+1)$ is true, so by the Principle of Mathematical Induction, $z^{n} = |z|^{n} \text{cis}(n \theta)$ for all natural numbers $n$. 
+
+\smallskip
+
+The last property in Theorem \ref{prodquotpolarcomplex} to prove is the quotient rule.   Assuming $|w| \neq 0$ we have
+
+\[ \begin{array}{rcl}
+
+\dfrac{z}{w} & = & \dfrac{|z| \text{cis}(\alpha)}{|w| \text{cis}(\beta)}  \\ [8pt]
+						 & = & \left( \dfrac{|z|}{|w|}\right) \dfrac{\cos(\alpha) + i \sin(\alpha)}{\cos(\beta) + i \sin(\beta)}   \\ 		 \end{array}\]
+						 
+Next, we multiply both the numerator and denominator of the right hand side by $(\cos(\beta) - i \sin(\beta))$ which is the complex conjugate of $(\cos(\beta) + i \sin(\beta))$ to get
+
+\[\begin{array}{rcll}
+
+\dfrac{z}{w}	& = & \left( \dfrac{|z|}{|w|}\right) \dfrac{\cos(\alpha) + i \sin(\alpha)}{\cos(\beta) + i \sin(\beta)} \cdot \dfrac{\cos(\beta) - i \sin(\beta)}{\cos(\beta) - i \sin(\beta)} & \\ \end{array}\]
+
+If we let the numerator be $N = \left[\cos(\alpha) + i \sin(\alpha)\right] \left[\cos(\beta) - i \sin(\beta)\right]$ and simplify we get
+
+\[ \begin{array}{rcll}
+N & = & \left[\cos(\alpha) + i \sin(\alpha)\right] \left[\cos(\beta) - i \sin(\beta)\right] & \\ [3pt]
+  & = & \cos(\alpha)\cos(\beta)-i\cos(\alpha)\sin(\beta)  + i \sin(\alpha)\cos(\beta) - i^2 \sin(\alpha)\sin(\beta) & \text{Expand} \\[3pt]
+	& = & \left[\cos(\alpha)\cos(\beta)+\sin(\alpha)\sin(\beta)\right] + i\left[\sin(\alpha)\cos(\beta) -\cos(\alpha)\sin(\beta)  \right] & \text{Rearrange and Factor} \\[3pt]
+	& = & \cos(\alpha - \beta) + i \sin(\alpha - \beta)  & \text{Difference Identities}  \\ [3pt]
+	& = & \text{cis}(\alpha - \beta)& \text{Definition of `cis'} \\ \end{array} \]
+	
+If we call the denominator $D$ then we get
+
+\[ \begin{array}{rcll}
+D & = & \left[\cos(\beta) + i\sin(\beta)\right]\left[\cos(\beta) - i\sin(\beta)\right] & \\ [3pt]
+  & = & \cos^{2}(\beta) - i\cos(\beta)\sin(\beta) + i\cos(\beta)\sin(\beta) - i^2 \sin^{2}(\beta) & \text{Expand}  \\[3pt]
+  & = & \cos^{2}(\beta) - i^2 \sin^{2}(\beta) & \text{Simplify}  \\[3pt]
+	& = & \cos^{2}(\beta) + \sin^{2}(\beta) &  \text{Again, $i^{2} = -1$}\\[3pt]
+	& = & 	1  & \text{Pythagorean Identity} \\ \end{array} \]
+																																							 
+Putting it all together, we get
+
+\[ \begin{array}{rcll}
+
+\dfrac{z}{w} & = & \left( \dfrac{|z|}{|w|}\right) \dfrac{\cos(\alpha) + i \sin(\alpha)}{\cos(\beta) + i \sin(\beta)} \cdot \dfrac{\cos(\beta) - i \sin(\beta)}{\cos(\beta) - i \sin(\beta)} & \\[8pt]
+						 & = & \left( \dfrac{|z|}{|w|}\right) \dfrac{\text{cis}(\alpha - \beta)}{1}  &  \\ 	[8pt]	 
+						 & = &  \dfrac{|z|}{|w|} \text{cis}(\alpha - \beta) \\ \end{array}\]
+
+and we are done.  The next example makes good use of Theorem \ref{prodquotpolarcomplex}.
+
+\pagebreak
+
+
+\begin{ex}  \label{polararithmeticex} Let $z = 2\sqrt{3} + 2i$ and $w = -1 + i\sqrt{3}$.  Use Theorem \ref{prodquotpolarcomplex} to find the following.
+
+\begin{multicols}{3}
+
+\begin{enumerate}
+
+\item $zw$
+
+\item  $w^5$
+
+\item $\dfrac{z}{w}$
+
+\end{enumerate}
+
+\end{multicols}
+
+Write your final answers in rectangular form.
+
+\medskip
+
+{\bf Solution.}  In order to use Theorem \ref{prodquotpolarcomplex}, we need to write $z$ and $w$ in polar form.  For $z=2\sqrt{3} + 2i$, we find $|z| = \sqrt{(2\sqrt{3})^2 + (2)^2} = \sqrt{16} = 4$.  If $\theta \in \text{arg}(z)$, we know $\tan(\theta) = \frac{\text{Im}(z)}{\text{Re}(z)} = \frac{2}{2\sqrt{3}} = \frac{\sqrt{3}}{3}$.  Since $z$ lies in Quadrant I, we have $\theta = \frac{\pi}{6} + 2\pi k$ for integers $k$.  Hence, $z = 4 \text{cis}\left(\frac{\pi}{6}\right)$. For $w = -1 + i\sqrt{3}$, we have $|w| = \sqrt{(-1)^2+(\sqrt{3})^2} = 2$.  For an argument $\theta$ of $w$, we have $\tan(\theta) = \frac{\sqrt{3}}{-1} = -\sqrt{3}$.  Since $w$ lies in Quadrant II,  $\theta = \frac{2\pi}{3} + 2\pi k$ for integers $k$ and $w = 2\text{cis}\left(\frac{2\pi}{3}\right)$.  We can now proceed.
+
+\begin{enumerate}
+
+\item  We get $zw = \left(4 \text{cis}\left(\frac{\pi}{6}\right)\right) \left(2\text{cis}\left(\frac{2\pi}{3}\right)\right) = 8\text{cis}\left(\frac{\pi}{6} + \frac{2\pi}{3}\right) = 8\text{cis}\left(\frac{5\pi}{6}\right) = 8\left[ \cos\left(\frac{5\pi}{6}\right) + i\sin\left(\frac{5\pi}{6}\right) \right]$.  After simplifying, we get $zw = -4\sqrt{3} + 4i$.
+
+\item We use DeMoivre's Theorem which yields $w^{5} = \left[2\text{cis}\left(\frac{2\pi}{3}\right)\right]^{5} = 2^{5} \text{cis} \left(5\cdot \frac{2\pi}{3}\right) = 32 \text{cis}\left(\frac{10\pi}{3}\right)$.  Since $\frac{10\pi}{3}$ is coterminal with $\frac{4\pi}{3}$, we get $w^{5} = 32\left[ \cos\left(\frac{4\pi}{3}\right) + i\sin\left(\frac{4\pi}{3}\right) \right] = -16-16i\sqrt{3}$.
+
+\item  Last, but not least, we have $\dfrac{z}{w} = \frac{4 \text{cis}\left(\frac{\pi}{6}\right)}{2\text{cis}\left(\frac{2\pi}{3}\right)} = \frac{4}{2} \text{cis}\left(\frac{\pi}{6} - \frac{2\pi}{3}\right) = 2\text{cis}\left(-\frac{\pi}{2}\right)$.  Since $-\frac{\pi}{2}$ is a quadrantal angle, we can `see' the rectangular form by moving out $2$ units along the positive real axis, then rotating $\frac{\pi}{2}$ radians \textit{clockwise} to arrive at the point $2$ units below $0$ on the imaginary axis.  The long and short of it is that $\frac{z}{w} = -2i$. \qed
+
+\end{enumerate}
+
+\end{ex}
+
+Some remarks are in order.  First, the reader may not be sold on using the polar form of complex numbers to multiply complex numbers -- especially if they aren't given in polar form to begin with. Indeed, a lot of work was needed to convert the numbers $z$ and $w$ in Example \ref{polararithmeticex} into polar form, compute their product, and convert back to rectangular form -- certainly more work than is required to multiply out $zw =  (2\sqrt{3} + 2i)(-1 + i\sqrt{3})$ the old-fashioned way.  However, Theorem \ref{prodquotpolarcomplex} pays huge dividends when computing powers of complex numbers.  Consider how we computed $w^{5}$ above and compare that to using the Binomial Theorem, Theorem \ref{BinomialTheorem}, to accomplish the same feat by expanding  $(-1 + i\sqrt{3})^{5}$.  Division is tricky in the best of times, and we saved ourselves a lot of time and effort using Theorem \ref{prodquotpolarcomplex} to find and simplify $\frac{z}{w}$ using their polar forms as opposed to starting with $\frac{2\sqrt{3} + 2i}{-1 + i\sqrt{3}}$, rationalizing the denominator, and so forth.    
+
+\smallskip
+
+There is geometric reason for studying these polar forms and we would be derelict in our duties if we did not mention the Geometry hidden in Theorem \ref{prodquotpolarcomplex}.  Take the product rule, for instance. If $z = |z| \text{cis}(\alpha)$ and $w = |w| \text{cis}(\beta)$, the formula $zw = |z||w| \text{cis}(\alpha + \beta)$ can be viewed geometrically as a two step process.  The multiplication of $|z|$ by $|w|$ can be interpreted as magnifying\footnote{Assuming $|w| > 1$.} the distance $|z|$ from $z$ to $0$, by the factor $|w|$. Adding the argument of $w$ to the argument of $z$ can be interpreted geometrically as a rotation of $\beta$ radians counter-clockwise.\footnote{Assuming $\beta > 0$.}  Focusing on $z$ and $w$ from Example \ref{polararithmeticex}, we can arrive at the product $zw$ by plotting $z$, doubling its distance from $0$ (since $|w| = 2$), and rotating $\frac{2\pi}{3}$ radians counter-clockwise. The sequence of diagrams below attempts to describe this process geometrically.
+
+\begin{center}
+
+\begin{tabular}{cc}
+
+\begin{mfpic}[13]{-1}{8}{-1}{7}
+\axes
+\tlabel[cl](8,-0.5){\scriptsize Real Axis}
+\tlabel[cl](0.5,7){\scriptsize Imaginary Axis}
+\xmarks{1,2,3,4,5,6,7}
+\ymarks{1,2,3,4,5,6}
+\dashed \rotatepath{(0,0),30} \polyline{(0,0),(8,0)}
+\rotatepath{(0,0),30} \polyline{(1,-0.15),(1,0.15)}
+\rotatepath{(0,0),30} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),30} \polyline{(3,-0.15),(3,0.15)}
+\rotatepath{(0,0),30} \polyline{(4,-0.15),(4,0.15)}
+\rotatepath{(0,0),30} \polyline{(5,-0.15),(5,0.15)}
+\rotatepath{(0,0),30} \polyline{(6,-0.15),(6,0.15)}
+\rotatepath{(0,0),30} \polyline{(7,-0.15),(7,0.15)}
+\rotatepath{(0,0),30} \polyline{(8,-0.15),(8,0.15)}
+\point[3pt]{(0,0), \plr{(4,30)}}
+\plotsymbol[3pt]{Asterisk}{\plr{(8,30)}}
+\tlabel[cc](0.25,-0.5){\scriptsize $0$}
+\tlabel[cl](3.75, 1.75){\scriptsize $z = 4\text{cis}\left(\frac{\pi}{6}\right)$}
+\tlabel[cl](7.25, 3.75){\scriptsize $z|w| = 8\text{cis}\left(\frac{\pi}{6}\right)$}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7}
+\axislabels {y}{{$i$} 1, {$2i$} 2, {$3i$} 3, {$4i$} 4, {$5i$} 5, {$6i$} 6}
+\normalsize
+\end{mfpic}
+
+& \hspace{-0.1in}
+
+\begin{mfpic}[13]{-8}{8}{-1}{7}
+\axes
+\tlabel[cl](8,-0.5){\scriptsize Real Axis}
+\tlabel[cl](0.5,7){\scriptsize Imaginary Axis}
+\xmarks{-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7}
+\ymarks{1,2,3,4,5,6}
+\dashed \rotatepath{(0,0),30} \polyline{(0,0),(8,0)}
+\rotatepath{(0,0),30} \polyline{(1,-0.15),(1,0.15)}
+\rotatepath{(0,0),30} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),30} \polyline{(3,-0.15),(3,0.15)}
+\rotatepath{(0,0),30} \polyline{(4,-0.15),(4,0.15)}
+\rotatepath{(0,0),30} \polyline{(5,-0.15),(5,0.15)}
+\rotatepath{(0,0),30} \polyline{(6,-0.15),(6,0.15)}
+\rotatepath{(0,0),30} \polyline{(7,-0.15),(7,0.15)}
+\rotatepath{(0,0),30} \polyline{(8,-0.15),(8,0.15)}
+\dashed \rotatepath{(0,0),150} \polyline{(0,0),(8,0)}
+\rotatepath{(0,0),150} \polyline{(1,-0.15),(1,0.15)}
+\rotatepath{(0,0),150} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),150} \polyline{(3,-0.15),(3,0.15)}
+\rotatepath{(0,0),150} \polyline{(4,-0.15),(4,0.15)}
+\rotatepath{(0,0),150} \polyline{(5,-0.15),(5,0.15)}
+\rotatepath{(0,0),150} \polyline{(6,-0.15),(6,0.15)}
+\rotatepath{(0,0),150} \polyline{(7,-0.15),(7,0.15)}
+\rotatepath{(0,0),150} \polyline{(8,-0.15),(8,0.15)}
+\arrow \parafcn{40,140,5}{2*dir(t)}
+\point[3pt]{(0,0), \plr{(8,30)}}
+\plotsymbol[3pt]{Asterisk}{\plr{(8,150)}}
+\tlabel[cc](0.25,-0.5){\scriptsize $0$}
+\tlabel[cl](-7.25, 4.5){\scriptsize $zw = 8\text{cis}\left(\frac{\pi}{6} + \frac{2\pi}{3}\right)$}
+\tlabel[cl](7.25, 3.75){\scriptsize $z|w| =  8\text{cis}\left(\frac{\pi}{6}\right)$}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-7 \hspace{7pt}$} -7,{$-6 \hspace{7pt}$} -6,{$-5 \hspace{7pt}$} -5,{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt} $} -3, {$-2\hspace{7pt} $} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7}
+\axislabels {y}{{$i$} 1, {$2i$} 2, {$3i$} 3, {$4i$} 4, {$5i$} 5, {$6i$} 6}
+\normalsize
+\end{mfpic} \\
+
+{\scriptsize Multiplying $z$ by $|w| = 2$}. &
+
+\hspace{-0.1in}  {\scriptsize Rotating counter-clockwise by $\text{Arg}(w) = \frac{2\pi}{3}$ radians.} \\
+
+& \\
+
+\end{tabular}
+
+{\scriptsize Visualizing $zw$ for $z = 4\text{cis}\left(\frac{\pi}{6}\right)$ and $w = 2 \text{cis}\left(\frac{2\pi}{3}\right)$.}
+
+\end{center}
+
+We may also visualize division similarly. Here, the formula  $\frac{z}{w} = \frac{|z|}{|w|} \text{cis}(\alpha - \beta)$ may be interpreted as shrinking\footnote{Again, assuming $|w| > 1$.} the distance from $0$ to $z$ by the factor $|w|$, followed up by a \textit{clockwise}\footnote{Again, assuming $\beta > 0$.} rotation of $\beta$ radians.  In the case of $z$ and $w$ from Example \ref{polararithmeticex}, we arrive at $\frac{z}{w}$ by first halving the distance from $0$ to $z$, then rotating clockwise $\frac{2\pi}{3}$ radians.
+
+\begin{center}
+
+\begin{tabular}{cc}
+
+\begin{mfpic}[13]{-1}{8}{-1}{8}
+\axes
+\tlabel[cl](8,-0.5){\scriptsize Real Axis}
+\tlabel[cl](0.5,8){\scriptsize Imaginary Axis}
+\xmarks{2,4,6}
+\ymarks{2,4,6}
+\dashed \rotatepath{(0,0),30} \polyline{(0,0),(8,0)}
+\rotatepath{(0,0),30} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),30} \polyline{(4,-0.15),(4,0.15)}
+\rotatepath{(0,0),30} \polyline{(6,-0.15),(6,0.15)}
+\rotatepath{(0,0),30} \polyline{(8,-0.15),(8,0.15)}
+\point[3pt]{(0,0), \plr{(8,30)}}
+\plotsymbol[3pt]{Asterisk}{\plr{(4,30)}}
+\tlabel[cc](0.25,-0.5){\scriptsize $0$}
+\tlabel[cl](3.75, 1.75){\scriptsize $\left(\frac{1}{|w|}\right) z = 2\text{cis}\left(\frac{\pi}{6}\right)$}
+\tlabel[cl](7.25, 3.75){\scriptsize $z = 4\text{cis}\left(\frac{\pi}{6}\right)$}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{ {$1$} 2,  {$2$} 4, {$3$} 6}
+\axislabels {y}{ {$i$} 2,  {$2i$} 4,  {$3i$} 6}
+\normalsize
+\end{mfpic}
+
+&  \hspace{.5in}
+
+\begin{mfpic}[13]{-1}{8}{-5}{4}
+\arrow \polyline{(-1,0), (8,0)}
+\arrow \polyline{(0,0), (0,4)}
+\dashed \polyline{(0,0), (0,-5)}
+\tlabel[cl](8,-0.5){\scriptsize Real Axis}
+\tlabel[cl](0.5,4){\scriptsize Imaginary Axis}
+\xmarks{2,4,6}
+\ymarks{-4,-2, 2}
+\dashed \rotatepath{(0,0),30} \polyline{(0,0),(4,0)}
+\rotatepath{(0,0),30} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),30} \polyline{(4,-0.15),(4,0.15)}
+\point[3pt]{(0,0), \plr{(4,30)}}
+\plotsymbol[3pt]{Asterisk}{\plr{(4,-90)}}
+\tlabel[cc](0.25,-0.5){\scriptsize $0$}
+\tlabel[cl](0.75, -4){\scriptsize $zw = 2\text{cis}\left(\frac{\pi}{6}  \frac{2\pi}{3}\right)$}
+\tlabel[cl](3.75, 1.75){\scriptsize $\left(\frac{1}{|w|}\right) z = 2\text{cis}\left(\frac{\pi}{6}\right)$}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{ {$1$} 2,  {$2$} 4, {$3$} 6}
+\axislabels {y}{ {$-2i$} -4, {$-i$} -2,{$i$} 2}
+\normalsize
+\arrow \parafcn{20,-80, -5}{2*dir(t)}
+\end{mfpic} \\
+
+{\scriptsize Dividing $z$ by $|w| = 2$}. &
+
+\hspace{.5in} {\scriptsize Rotating clockwise by $\text{Arg}(w) = \frac{2\pi}{3}$ radians.} \\
+
+& \\
+
+\end{tabular}
+
+
+{\scriptsize Visualizing $\dfrac{z}{w}$ for $z = 4\text{cis}\left(\frac{\pi}{6}\right)$ and $w = 2 \text{cis}\left(\frac{2\pi}{3}\right)$.}
+
+\end{center}
+
+Our last goal of the section is to reverse DeMoivre's Theorem to extract roots of complex numbers.
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{defn} \label{nthrootcomplex} Let $z$ and $w$ be complex numbers.  If there is a natural number $n$ such that $w^{n} = z$, then $w$ is an \textbf{\boldmath $n^{\mbox{\textbf{\scriptsize th}}}$ root} of $z$. \index{$n^{\textrm{th}}$ root ! of a complex number} \index{complex number ! $n^{\textrm{th}}$ root} 
+
+
+\end{defn}
+
+\ebm}
+
+\smallskip
+
+Unlike Definition \ref{principalnthrootdefn} in Section \ref{AlgebraicFunctions}, we do not specify one particular \textit{prinicpal} $n^{\text{th}}$ root, hence the use of the indefinite article `an' as in `an $n^{\text{th}}$ root of $z$'.  Using this definition, both $4$ and $-4$ are square roots of $16$, while $\sqrt{16}$ means the principal square root of $16$ as in $\sqrt{16}= 4$.  Suppose we wish to find all complex third (cube) roots of $8$.  Algebraically, we are trying to solve $w^{3} = 8$.  We know that there is only one \textit{real} solution to this equation, namely $w = \sqrt[3]{8} = 2$, but if we take the time to rewrite this equation as $w^3 - 8 = 0$ and factor, we get $(w-2)\left(w^2 + 2w + 4\right) = 0$.  The quadratic factor gives two more cube roots $w = -1 \pm i \sqrt{3}$, for a total of three cube roots of $8$. In accordance with Theorem \ref{complexfactorization}, since the degree of $p(w) = w^3 -8$ is three, there are three complex zeros, counting multiplicity.  Since we have found three distinct zeros, we know these are all of the zeros, so there are exactly three distinct cube roots of $8$.  Let us now solve this same problem using the machinery developed in this section.  To do so, we express $z = 8$ in polar form. Since $z=8$ lies $8$ units away on the positive real axis, we get $z = 8 \text{cis}(0)$.  If we let $w = |w| \text{cis}(\alpha)$ be a polar form of $w$, the equation $w^3 = 8$ becomes
+
+\[ \begin{array}{rcll}
+
+w^3 & = & 8 & \\[3pt]
+\left(|w| \text{cis}(\alpha)\right)^3 & = & 8 \text{cis}(0) & \\[3pt]
+|w|^3 \text{cis}(3\alpha) & = & 8 \text{cis}(0) & \text{DeMoivre's Theorem} \\[3pt]
+
+\end{array}\]
+
+The complex number on the left hand side of the equation corresponds to the point with polar coordinates $\left(|w|^3, 3\alpha\right)$,   while the complex number on the right hand side corresponds to the point with polar coordinates $(8,0)$.  Since $|w| \geq 0$, so is $|w|^3$, which means  $\left(|w|^3, 3\alpha\right)$ and $(8,0)$ are two polar representations corresponding to the same complex number, both with positive $r$ values.  From Section \ref{IntroPolar}, we know $|w|^3 = 8$ and $3\alpha = 0 + 2\pi k$ for integers $k$.  Since $|w|$ is a real number, we solve $|w|^3 = 8$ by extracting the principal cube root to get  $|w| = \sqrt[3]{8} = 2$.  As for $\alpha$, we get  $\alpha = \frac{2\pi k}{3}$ for integers $k$.  This produces three distinct points with polar coordinates corresponding to $k = 0$, $1$ and $2$: specifically $(2,0)$, $\left(2, \frac{2\pi}{3}\right)$ and $\left(2, \frac{4\pi}{3}\right)$.  These correspond to the complex numbers  $w_{\text{\tiny $0$}} = 2 \text{cis}(0)$, $w_{\text{\tiny $1$}} = 2 \text{cis}\left(\frac{2\pi}{3}\right)$ and $w_{\text{\tiny $2$}} = 2 \text{cis}\left(\frac{4\pi}{3}\right)$, respectively.  Writing these out in rectangular form yields $w_{\text{\tiny $0$}} = 2$, $w_{\text{\tiny $1$}} = -1 + i\sqrt{3}$ and $w_{\text{\tiny $2$}} = -1-i\sqrt{3}$. While this process seems a tad more involved than our previous factoring approach, this procedure can be generalized to find, for example, all of the fifth roots of $32$. (Try using Chapter \ref{Polynomials} techniques on that!) If we start with a generic complex number in polar form $z = |z| \text{cis}(\theta)$ and solve $w^{n} = z$ in the same manner as above, we arrive at the following theorem.
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+\begin{thm} \label{nthrootscomplexthm} \textbf{The \boldmath $n^{\mbox{\textbf{\scriptsize th}}}$ roots of a Complex Number:} Let $z \neq 0$ be a complex number with polar form $z = r\text{cis}(\theta)$. For each natural number $n$, $z$ has $n$ distinct $n^{\text{th}}$ roots, which we denote by $w_{\text{\tiny$0$}}$, $w_{\text{\tiny$1$}}$, \ldots, $w_{\text{\tiny$n-1$}}$, and they are given by the formula \index{$n^{\textrm{th}}$ root ! of a complex number} \index{complex number ! $n^{\textrm{th}}$ root} 
+
+\[ w_{\text{\tiny$k$}} = \sqrt[n]{r}\text{cis}\left(\frac{\theta}{n} + \frac{2\pi}{n} k \right) \]
+
+\end{thm}
+\ebm}
+
+The proof of Theorem \ref{nthrootscomplexthm} breaks into to two parts:  first, showing that each $w_{\text{\tiny$k$}}$ is an $n^{\text{th}}$ root, and second, showing that the set  $\left\{ w_{\text{\tiny$k$}} \, | \, k = 0, 1, \ldots, (n-1)\right\}$ consists of $n$ different  complex numbers.  To show $w_{\text{\tiny$k$}}$ is an  $n^{\text{th}}$ root of $z$, we use DeMoivre's Theorem to show $\left(w_{\text{\tiny$k$}}\right)^n = z$.
+
+\[ \begin{array}{rcll}
+
+\left(w_{\text{\tiny$k$}}\right)^n & = & \left(\sqrt[n]{r}\text{cis}\left(\frac{\theta}{n} + \frac{2\pi}{n} k \right)\right)^n & \\ [3pt]
+																	 & = & \left(\sqrt[n]{r}\right)^{n} \text{cis}\left( n \cdot \left[\frac{\theta}{n} + \frac{2\pi}{n} k \right] \right) & \text{DeMoivre's Theorem}\\ [3pt]
+																	 & = & r \text{cis}\left(\theta + 2\pi k\right) & \\ \end{array} \]
+																	 
+Since $k$ is a whole number, $\cos(\theta + 2\pi k) = \cos(\theta)$ and $\sin(\theta + 2\pi k) = \sin(\theta)$. Hence, it follows that $\text{cis}(\theta + 2\pi k) = \text{cis}(\theta)$, so $\left(w_{\text{\tiny$k$}}\right)^n = r \text{cis}(\theta) = z$, as required.  To show that the formula in Theorem  \ref{nthrootscomplexthm} generates $n$ distinct numbers, we assume $n \geq 2$ (or else there is nothing to prove) and note that the modulus of each of the  $w_{\text{\tiny$k$}}$  is the same, namely $\sqrt[n]{r}$.  Therefore, the only way any two of these polar forms correspond to  the same number is if their arguments are coterminal -- that is, if the arguments differ by an integer multiple of $2\pi$. Suppose $k$ and $j$ are whole numbers between $0$ and $(n-1)$, inclusive,  with $k \neq j$.  Since $k$ and $j$ are different, let's assume for the sake of argument that  $k > j$.  Then $\left( \frac{\theta}{n} + \frac{2\pi}{n} k \right)  - \left( \frac{\theta}{n} + \frac{2\pi}{n} j \right) = 2\pi \left(\frac{k-j}{n}\right)$. For this to be an integer multiple of $2\pi$, $(k-j)$ must be a multiple of $n$.  But because of the restrictions on $k$ and $j$, $0 < k - j \leq n-1$. (Think this through.)  Hence, $(k-j)$ is a positive number less  than $n$, so it cannot be a multiple of $n$.  As a result, $w_{\text{\tiny$k$}}$ and $w_{\text{\tiny$j$}}$ are different complex numbers, and we are done.  By Theorem  \ref{complexfactorization}, we know there at most $n$ distinct solutions to $w^{n} = z$, and we have just found all of them.   We illustrate Theorem \ref{nthrootscomplexthm} in the next example.
+
+\begin{ex} \label{nthrootscomplexex}  Use Theorem \ref{nthrootscomplexthm} to find the following:
+
+\begin{enumerate}
+
+\item  both square roots of $z = -2  + 2i\sqrt{3}$
+
+\item  \label{fourthrootsneg16} the four fourth roots of $z = -16$
+
+\item  \label{halfanglecuberoot} the three cube roots of $z = \sqrt{2} + i \sqrt{2}$
+
+\item  \label{calculatorfifthroot} the five fifth roots of $z = 1$.
+
+\end{enumerate}
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item  We start by writing $z= - 2 + 2i\sqrt{3} = 4 \text{cis}\left(\frac{2\pi}{3}\right)$.  To use Theorem \ref{nthrootscomplexthm}, we identify $r =4$,  $\theta = \frac{2\pi}{3}$ and $n=2$.  We know that $z$ has two square roots, and in keeping with the notation in Theorem \ref{nthrootscomplexthm}, we'll call them  $w_{\text{\tiny$0$}}$ and $w_{\text{\tiny$1$}}$.  We get $w_{\text{\tiny$0$}} = \sqrt{4} \text{cis}\left(\frac{(2\pi/3)}{2} + \frac{2\pi}{2} (0)\right) = 2\text{cis}\left(\frac{\pi}{3}\right)$ and $w_{\text{\tiny$1$}} = \sqrt{4} \text{cis}\left(\frac{(2\pi/3)}{2} + \frac{2\pi}{2} (1)\right) = 2\text{cis}\left(\frac{4\pi}{3}\right)$.  In rectangular form, the two square roots of $z$ are $w_{\text{\tiny$0$}} = 1+i\sqrt{3}$ and $w_{\text{\tiny$1$}} = -1-i\sqrt{3}$.  We can check our answers by squaring them and showing that we get $z= -2 + 2i\sqrt{3}$.
+
+\item  Proceeding as above, we get $z = -16 = 16 \text{cis}(\pi)$.  With $r = 16$, $\theta = \pi$ and $n = 4$, we get the four fourth roots of $z$ to be  $w_{\text{\tiny$0$}} = \sqrt[4]{16} \text{cis}\left(\frac{\pi}{4} + \frac{2\pi}{4} (0)\right) = 2\text{cis}\left(\frac{\pi}{4}\right)$, $w_{\text{\tiny$1$}} = \sqrt[4]{16} \text{cis}\left(\frac{\pi}{4} + \frac{2\pi}{4} (1)\right) = 2\text{cis}\left(\frac{3\pi}{4}\right)$, $w_{\text{\tiny$2$}} = \sqrt[4]{16} \text{cis}\left(\frac{\pi}{4} + \frac{2\pi}{4} (2)\right) = 2\text{cis}\left(\frac{5\pi}{4}\right)$ and $w_{\text{\tiny$3$}} = \sqrt[4]{16} \text{cis}\left(\frac{\pi}{4} + \frac{2\pi}{4} (3)\right) = 2\text{cis}\left(\frac{7\pi}{4}\right)$.  Converting these to rectangular form gives $w_{\text{\tiny$0$}} = \sqrt{2} + i\sqrt{2}$,  $w_{\text{\tiny$1$}} = -\sqrt{2} + i\sqrt{2}$,  $w_{\text{\tiny$2$}} = -\sqrt{2} - i\sqrt{2}$ and  $w_{\text{\tiny$3$}} = \sqrt{2} - i\sqrt{2}$.
+
+\item  For $z = \sqrt{2} + i \sqrt{2}$, we have $z = 2\text{cis}\left(\frac{\pi}{4}\right)$.  With $r = 2$, $\theta = \frac{\pi}{4}$ and $n =3$ the usual computations yield $w_{\text{\tiny$0$}} = \sqrt[3]{2} \text{cis}\left(\frac{\pi}{12}\right)$,  $w_{\text{\tiny$1$}} = \sqrt[3]{2} \text{cis}\left(\frac{9\pi}{12}\right) = \sqrt[3]{2} \text{cis}\left(\frac{3\pi}{4}\right) $ and  $w_{\text{\tiny$2$}} = \sqrt[3]{2} \text{cis}\left(\frac{17\pi}{12}\right)$.  If we were to  convert these to rectangular form, we would need to use either the Sum and Difference Identities in Theorem \ref{circularsumdifference} or the Half-Angle Identities in Theorem \ref{halfangle} to evaluate $w_{\text{\tiny$0$}}$ and  $w_{\text{\tiny$2$}}$.  Since we are not explicitly told to do so, we leave this as a good, but messy, exercise.
+
+\item  To find the five fifth roots of $1$, we write $1 = 1 \text{cis}(0)$.  We have $r = 1$, $\theta = 0$ and $n = 5$. Since $\sqrt[5]{1} = 1$, the roots are  $w_{\text{\tiny$0$}} = \text{cis}(0) = 1$, $w_{\text{\tiny$1$}} = \text{cis}\left(\frac{2\pi}{5}\right)$, $w_{\text{\tiny$2$}} = \text{cis}\left(\frac{4\pi}{5}\right)$, $w_{\text{\tiny$3$}} = \text{cis}\left(\frac{6\pi}{5}\right)$ and $w_{\text{\tiny$4$}} = \text{cis}\left(\frac{8\pi}{5}\right)$.  The situation here is even graver than in the previous example, since we have not developed any identities to help us determine the cosine or sine of $\frac{2\pi}{5}$.  At this stage, we could approximate our answers using a calculator, and we leave this as an exercise. \qed
+
+\end{enumerate}
+
+\end{ex}
+
+Now that we have done some computations using  Theorem \ref{nthrootscomplexthm}, we take a step back to look at things geometrically.  Essentially,  Theorem \ref{nthrootscomplexthm} says that to find the $n^{\text{th}}$ roots of a complex number,  we first take the $n^{\text{th}}$ root of the modulus and divide the argument by $n$.  This gives the first root  $w_{\text{\tiny$0$}}$. Each succeessive root is found by adding  $\frac{2\pi}{n}$ to the argument, which amounts to rotating $w_{\text{\tiny$0$}}$ by $\frac{2\pi}{n}$ radians.  This results in $n$ roots, spaced equally around the complex plane.  As an example of this, we plot our answers to number \ref{fourthrootsneg16} in Example \ref{nthrootscomplexex} below.
+
+\begin{center}
+
+
+\begin{mfpic}[13]{-6}{6}{-6}{6}
+\axes
+\tlabel[cl](6,-0.5){\scriptsize Real Axis}
+\tlabel[cl](0.5,6){\scriptsize Imaginary Axis}
+\xmarks{-4,-2,2,4}
+\ymarks{-4,-2,2,4}
+\dashed \rotatepath{(0,0),45} \polyline{(0,0),(4,0)}
+\rotatepath{(0,0),45} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),45} \polyline{(4,-0.15),(4,0.15)}
+\point[3pt]{(0,0), \plr{(4,45)}, \plr{(4,135)}, \plr{(4,225)}, \plr{(4,315)}}
+\dashed \rotatepath{(0,0),135} \polyline{(0,0),(4,0)}
+\rotatepath{(0,0),135} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),135} \polyline{(4,-0.15),(4,0.15)}
+\dashed \rotatepath{(0,0),225} \polyline{(0,0),(4,0)}
+\rotatepath{(0,0),225} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),225} \polyline{(4,-0.15),(4,0.15)}
+\dashed \rotatepath{(0,0),315} \polyline{(0,0),(4,0)}
+\rotatepath{(0,0),315} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),315} \polyline{(4,-0.15),(4,0.15)}
+\arrow \parafcn{55, 125, 5}{1.5*dir(t)}
+\arrow \parafcn{145, 215, 5}{1.5*dir(t)}
+\arrow \parafcn{235, 305, 5}{1.5*dir(t)}
+\arrow \parafcn{325, 395, 5}{1.5*dir(t)}
+\tlabel[cc](0.25,-0.5){\scriptsize $0$}
+\tlabel[cc](4,3){\scriptsize $w_{\text{\tiny$0$}}$}
+\tlabel[cc](-4,3){\scriptsize $w_{\text{\tiny$1$}}$}
+\tlabel[cc](-4,-3){\scriptsize $w_{\text{\tiny$2$}}$}
+\tlabel[cc](4,-3){\scriptsize $w_{\text{\tiny$3$}}$}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-2 \hspace{7pt}$} -4, {$-1\hspace{7pt}$} -2, {$1$} 2, {$2$} 4}
+\axislabels {y}{{$-2i$} -4,{$-i$} -2,{$i$} 2,  {$2i$} 4}
+\normalsize
+\end{mfpic}
+
+{\scriptsize The four fourth roots of $z = -16$ equally spaced $\frac{2\pi}{4} = \frac{\pi}{2}$ around the plane.}
+
+\end{center}
+
+We have only glimpsed at the beauty of the complex numbers in this section.  The complex plane is without a doubt one of the most important mathematical constructs ever devised.  Coupled with Calculus, it is the venue for incredibly important Science and Engineering applications.\footnote{For more on this, see the beautifully written epilogue to Section \ref{ComplexZeros} found on page \pageref{complexepilogue}.}  For now, the following exercises will have to suffice.
+
+\smallskip
+
+\newpage
+
+\subsection{Exercises}
+
+In Exercises \ref{polarcompbasicfirst} - \ref{polarcompbasiclast}, find a polar representation for the complex number $z$ and then identify $\text{Re}(z)$, $\text{Im}(z)$, $|z|$, $\text{arg}(z)$ and $\text{Arg}(z)$.
+
+\begin{multicols}{4}
+
+\begin{enumerate}
+
+\item $z = 9 + 9i$ \label{polarcompbasicfirst}
+\item $z = 5 + 5i\sqrt{3}$
+\item $z = 6i$
+\item $z = -3\sqrt{2} + 3i\sqrt{2}$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{4} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z = -6\sqrt{3} + 6i$ \vphantom{$\dfrac{\sqrt{3}}{2}$}
+\item $z = -2$ \vphantom{$\dfrac{\sqrt{3}}{2}$}
+\item $z = -\dfrac{\sqrt{3}}{2} - \dfrac{1}{2}i$
+\item $z = -3-3i$ \vphantom{$\dfrac{\sqrt{3}}{2}$}
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{4} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z = -5i$
+\item $z = 2\sqrt{2} - 2i\sqrt{2}$
+\item $z = 6$
+\item $z = i\sqrt[3]{7}$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{4} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z = 3 + 4i$
+\item $z = \sqrt{2} + i$
+\item $z = -7 + 24i$
+\item $z = -2+6i$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{4} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z = -12-5i$
+\item $z = -5-2i$
+\item $z = 4-2i$
+\item $z = 1-3i$ \label{polarcompbasiclast}
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+In Exercises \ref{rectcompfirst} - \ref{rectcomplast}, find the rectangular form of the given complex number.  Use whatever identities are necessary to find the exact values.
+
+\begin{multicols}{4}
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z = 6\text{cis}(0)$ \vphantom{$\left(\dfrac{\pi}{6}\right)$} \label{rectcompfirst}
+\item $z = 2\text{cis}\left(\dfrac{\pi}{6}\right)$ 
+\item $z = 7\sqrt{2}\text{cis}\left(\dfrac{\pi}{4}\right)$
+\item $z = 3\text{cis}\left(\dfrac{\pi}{2}\right)$ 
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{4} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z = 4\text{cis}\left(\dfrac{2\pi}{3}\right)$ 
+\item $z = \sqrt{6}\text{cis}\left(\dfrac{3\pi}{4}\right)$ 
+\item $z = 9\text{cis}\left(\pi\right)$ \vphantom{$\left(\dfrac{7\pi}{6}\right)$}
+\item $z = 3\text{cis}\left(\dfrac{4\pi}{3}\right)$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{4} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z = 7\text{cis}\left(-\dfrac{3\pi}{4}\right)$ 
+\item \small $z = \sqrt{13}\text{cis}\left(\dfrac{3\pi}{2}\right)$ \normalsize
+\item $z = \dfrac{1}{2}\text{cis}\left(\dfrac{7\pi}{4}\right)$ 
+\item $z = 12\text{cis}\left(-\dfrac{\pi}{3}\right)$ \vphantom{$\left(\dfrac{7\pi}{6}\right)$}
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z = 8\text{cis}\left(\dfrac{\pi}{12}\right)$ \vphantom{$\left(\dfrac{7\pi}{6}\right)$}
+\item $z = 2\text{cis}\left(\dfrac{7\pi}{8}\right)$ 
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z = 5\text{cis}\left(\arctan\left(\dfrac{4}{3}\right)\right)$
+\item $z = \sqrt{10}\text{cis}\left(\arctan\left(\dfrac{1}{3}\right)\right)$ 
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z = 15\text{cis}\left(\arctan\left(-2\right)\right)$ 
+\item $z=  \sqrt{3}\left(\arctan\left(-\sqrt{2}\right)\right)$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z = 50\text{cis}\left(\pi-\arctan\left(\dfrac{7}{24}\right)\right)$ 
+\item  $z = \dfrac{1}{2}\text{cis}\left(\pi+\arctan\left(\dfrac{5}{12}\right)\right)$ \label{rectcomplast}
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+For Exercises \ref{polarcomparithfirst} - \ref{polarcomparithlast}, use $z = -\dfrac{3\sqrt{3}}{2} + \dfrac{3}{2}i$ and $w = 3\sqrt{2} - 3i\sqrt{2}$ to compute the quantity.  Express your answers in polar form using the principal argument.
+
+\begin{multicols}{4}
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $zw$ \vphantom{$\dfrac{z}{w}$} \label{polarcomparithfirst}
+\item $\dfrac{z}{w}$
+\item $\dfrac{w}{z}$
+\item $z^{4}$ \vphantom{$\dfrac{z}{w}$}
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{4} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $w^{3}$ \vphantom{$\dfrac{z^{2}}{w}$}
+\item $z^{5}w^{2}$ \vphantom{$\dfrac{z^{2}}{w}$}
+\item $z^{3}w^{2}$ \vphantom{$\dfrac{z^{2}}{w}$}
+\item $\dfrac{z^{2}}{w}$ 
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{4} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{w}{z^2}$ \vphantom{$\dfrac{z^{2}}{w^{3}}$}
+\item $\dfrac{z^3}{w^2}$ 
+\item $\dfrac{w^2}{z^3}$ 
+\item $\left(\dfrac{w}{z}\right)^6$ \vphantom{$\dfrac{z^{2}}{w^{3}}$} \label{polarcomparithlast}
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+In Exercises \ref{demoivrefirst} - \ref{demoivrelast}, use DeMoivre's Theorem to find the indicated power of the given complex number.  Express your final answers in rectangular form.
+
+\begin{multicols}{4}
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $\left(-2 + 2i\sqrt{3}\right)^3$ \label{demoivrefirst}
+\item $(-\sqrt{3} - i)^3$ 
+\item $(-3+3i)^{4}$
+\item $(\sqrt{3} + i)^4$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{4} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $\left(\dfrac{5}{2} + \dfrac{5}{2} i\right)^3$ \vphantom{$\left(\dfrac{\sqrt{2}}{2}\right)$}
+\item $\left(-\dfrac{1}{2} - \dfrac{\sqrt{3}}{2} i\right)^{6}$
+\item $\left(\dfrac{3}{2} - \dfrac{3}{2} i\right)^3$ \vphantom{$\left(\dfrac{\sqrt{2}}{2}\right)$}
+\item $\left(\dfrac{\sqrt{3}}{3} - \dfrac{1}{3} i\right)^4$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{4} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $\left(\dfrac{\sqrt{2}}{2} + \dfrac{\sqrt{2}}{2} i\right)^4$
+\item $(2+2i)^5$ \vphantom{$\left(\dfrac{\sqrt{2}}{2}\right)$}
+\item $(\sqrt{3} - i)^{5}$ \vphantom{$\left(\dfrac{\sqrt{2}}{2}\right)$}
+\item $(1-i)^8$ \vphantom{$\left(\dfrac{\sqrt{2}}{2}\right)$} \label{demoivrelast}
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+In Exercises \ref{polarrootsfirst} - \ref{polarrootslast}, find the indicated complex roots.  Express your answers in polar form and then convert them into rectangular form.
+
+\begin{multicols}{2}
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item the two square roots of $z = 4i$ \label{polarrootsfirst}
+\item the two square roots of $z = -25i$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item the two square roots of $z = 1 + i\sqrt{3}$
+\item the two square roots of $\frac{5}{2} - \frac{5\sqrt{3}}{2}i$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item  the three cube roots of $z=64$
+\item  the three cube roots of $z = -125$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item  the three cube roots of $z = i$
+\item  the three cube roots of $z = -8i$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item  the four fourth roots of $z=16$
+\item  the four fourth roots of $z=-81$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item the six sixth roots of $z = 64$
+\item the six sixth roots of $z = -729$ \label{polarrootslast}
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item Use the Sum and Difference Identities in Theorem \ref{circularsumdifference} or the Half Angle Identities in Theorem \ref{halfangle} to express the three cube roots of $z=\sqrt{2} + i\sqrt{2}$ in rectangular form. (See Example \ref{nthrootscomplexex}, number \ref{halfanglecuberoot}.)
+
+\item Use a calculator to approximate the five fifth roots of $1$.  (See Example \ref{nthrootscomplexex}, number \ref{calculatorfifthroot}.)
+
+\item According to Theorem \ref{realfactorization} in Section \ref{ComplexZeros}, the polynomial $p(x) = x^{4} + 4$ can be factored into the product linear and irreducible quadratic factors.  In Exercise \ref{factorpolywithnonlinear} in Section \ref{NonLinear}, we showed you how to factor this polynomial into the product of two irreducible quadratic factors using a system of non-linear equations.  Now that we can compute the complex fourth roots of $-4$ directly, we can simply apply the Complex Factorization Theorem, Theorem \ref{complexfactorization}, to obtain the linear factorization $p(x) = (x - (1 + i))(x - (1 - i))(x - (-1 + i))(x - (-1 - i))$.  By multiplying the first two factors together and then the second two factors together, thus pairing up the complex conjugate pairs of zeros Theorem \ref{conjugatepairsthm} told us we'd get, we have that $p(x) = (x^{2} - 2x + 2)(x^{2} + 2x + 2)$.  Use the 12 complex $12^{\text{th}}$ roots of 4096 to factor $p(x) = x^{12} - 4096$ into a product of linear and irreducible quadratic factors.
+
+\item Complete the proof of Theorem \ref{modprops} by showing that if $w \neq 0$ than  $\left| \frac{1}{w}\right| = \frac{1}{|w|}$.
+
+\item Recall from Section \ref{ComplexZeros} that given a complex number $z = a+bi$ its complex conjugate, denoted $\overline{z}$, is given by $\overline{z} = a - bi$.
+
+\begin{enumerate}
+
+\item Prove that $\left| \overline{z} \right| = |z|$.
+
+\item Prove that $|z| = \sqrt{z \overline{z}}$
+
+\item Show that $\text{Re}(z) = \dfrac{z + \overline{z}}{2}$ and $\text{Im}(z) = \dfrac{z - \overline{z}}{2i}$
+
+\item Show that if $\theta \in \text{arg}(z)$ then $-\theta \in \text{arg}\left(\overline{z}\right)$. Interpret this result geometrically.
+
+\item Is it always true that $\text{Arg}\left(\overline{z}\right) = -\text{Arg}(z)$?
+
+\end{enumerate}
+
+\item Given any natural number $n \geq 2$, the $n$ complex $n^{\text{th}}$ roots of the number $z = 1$ are called the \textbf{\boldmath $n^{\mbox{\textbf{\scriptsize th}}}$ Roots of Unity}. \index{$n^{\textrm{th}}$ Roots of Unity} \index{complex number ! $n^{\textrm{th}}$ Roots of Unity} \index{Roots of Unity} In the following exercises, assume that $n$ is a fixed, but arbitrary, natural number such that $n \geq 2$.
+
+\begin{enumerate}
+
+\item Show that $w = 1$ is an $n^{\text{th}}$ root of unity.
+
+\item Show that if both $w_{\text{\tiny$j$}}$ and $w_{\text{\tiny$k$}}$ are $n^{\text{th}}$ roots of unity then so is their product $w_{\text{\tiny$j$}}w_{\text{\tiny$k$}}$.
+
+\item Show that if $w_{\text{\tiny$j$}}$ is an $n^{\text{th}}$ root of unity then there exists another $n^{\text{th}}$ root of unity $w_{\text{\tiny$j'$}}$ such that $w_{\text{\tiny$j$}}w_{\text{\tiny$j'$}} = 1$.  Hint: If $w_{\text{\tiny$j$}} = \text{cis}(\theta)$ let $w_{\text{\tiny$j'$}} = \text{cis}(2\pi - \theta)$. You'll need to verify that $w_{\text{\tiny$j'$}} = \text{cis}(2\pi - \theta)$ is indeed an $n^{\text{th}}$ root of unity.
+
+\end{enumerate}
+
+\item \label{eulerformulaexercise} Another way to express the polar form of a complex number is to use the exponential function.  For real numbers $t$, \href{http://en.wikipedia.org/wiki/Leonhard_Euler}{\underline{Euler}}'s Formula defines $e^{it} = \cos(t) + i \sin(t)$.  
+
+\begin{enumerate}
+
+\item Use Theorem \ref{prodquotpolarcomplex} to show that $e^{ix} e^{iy} = e^{i(x+y)}$ for all real numbers $x$ and $y$.
+
+\item Use Theorem \ref{prodquotpolarcomplex} to show that $\left(e^{ix}\right)^{n} = e^{i(nx)}$ for any real number $x$ and any natural number $n$.
+
+\item Use Theorem \ref{prodquotpolarcomplex} to show that $\dfrac{e^{ix}}{e^{iy}} = e^{i(x-y)}$ for all real numbers $x$ and $y$.
+
+\item If $z = r\text{cis}(\theta)$ is the polar form of $z$, show that $z = re^{it}$ where $\theta = t$ radians.
+
+\item Show that $e^{i\pi} + 1 = 0$.  (This famous equation relates the five most important constants in all of Mathematics with the three most fundamental operations in Mathematics.)
+
+\item  \label{expformcosandsin} Show that $\cos(t) = \dfrac{e^{it} + e^{-it}}{2}$ and that $\sin(t) = \dfrac{e^{it} - e^{-it}}{2i}$ for all real numbers $t$. 
+
+\end{enumerate}
+
+\end{enumerate}
+
+\newpage
+
+\subsection{Answers}
+
+\begin{enumerate}
+
+\item $z = 9 + 9i = 9\sqrt{2}\text{cis}\left(\frac{\pi}{4}\right)$, \, $\text{Re}(z) = 9$, \, $\text{Im}(z) = 9$, \, $|z| = 9\sqrt{2}$
+
+$\text{arg}(z) = \left\{\frac{\pi}{4} + 2\pi k \, | \, \text{$k$ is an integer} \right\}$ and $\text{Arg}(z) = \frac{\pi}{4}$.
+
+\item $z = 5+5i\sqrt{3} = 10\text{cis}\left(\frac{\pi}{3}\right)$, \, $\text{Re}(z) = 5$, \, $\text{Im}(z) = 5\sqrt{3}$, \, $|z| = 10$
+
+$\text{arg}(z) = \left\{\frac{\pi}{3} + 2\pi k \, | \, \text{$k$ is an integer} \right\}$ and $\text{Arg}(z) = \frac{\pi}{3}$.
+
+\item $z = 6i = 6\text{cis}\left(\frac{\pi}{2}\right)$, \, $\text{Re}(z) = 0$, \, $\text{Im}(z) = 6$, \, $|z| = 6$
+
+$\text{arg}(z) = \left\{\frac{\pi}{2} + 2\pi k \, | \, \text{$k$ is an integer} \right\}$ and $\text{Arg}(z) = \frac{\pi}{2}$.
+
+\item $z = -3\sqrt{2} + 3i\sqrt{2} = 6\text{cis}\left(\frac{3\pi}{4}\right)$, \, $\text{Re}(z) = -3\sqrt{2}$, \, $\text{Im}(z) =3\sqrt{2}$, \, $|z| = 6$
+
+$\text{arg}(z) = \left\{\frac{3\pi}{4} + 2\pi k \, | \, \text{$k$ is an integer} \right\}$ and $\text{Arg}(z) = \frac{3\pi}{4}$.
+
+\item $z =  -6\sqrt{3} + 6i = 12\text{cis}\left(\frac{5\pi}{6}\right)$, \, $\text{Re}(z) = -6\sqrt{3}$, \, $\text{Im}(z) =6$, \, $|z| = 12$
+
+$\text{arg}(z) = \left\{\frac{5\pi}{6} + 2\pi k \, | \, \text{$k$ is an integer} \right\}$ and $\text{Arg}(z) = \frac{5\pi}{6}$.
+
+\item $z =  -2 = 2\text{cis}\left(\pi\right)$, \, $\text{Re}(z) = -2$, \, $\text{Im}(z) =0$, \, $|z| = 2$
+
+$\text{arg}(z) = \left\{(2k+1)\pi \, | \, \text{$k$ is an integer} \right\}$ and $\text{Arg}(z) = \pi$.
+
+\item $z = -\frac{\sqrt{3}}{2} - \frac{1}{2}i = \text{cis}\left(\frac{7\pi}{6}\right)$, \, $\text{Re}(z) = -\frac{\sqrt{3}}{2}$, \, $\text{Im}(z) = -\frac{1}{2}$, \, $|z| = 1$
+
+$\text{arg}(z) = \left\{\frac{7\pi}{6} + 2\pi k \, | \, \text{$k$ is an integer} \right\}$ and $\text{Arg}(z) = -\frac{5\pi}{6}$.
+
+\item $z = -3-3i = 3\sqrt{2}\text{cis}\left(\frac{5\pi}{4}\right)$, \, $\text{Re}(z) = -3$, \, $\text{Im}(z) =-3$, \, $|z| = 3\sqrt{2}$
+
+$\text{arg}(z) = \left\{\frac{5\pi}{4} + 2\pi k \, | \, \text{$k$ is an integer} \right\}$ and $\text{Arg}(z) = -\frac{3\pi}{4}$.
+
+\item $z = -5i = 5\text{cis}\left(\frac{3\pi}{2}\right)$, \, $\text{Re}(z) = 0$, \, $\text{Im}(z) = -5$, \, $|z| = 5$
+
+$\text{arg}(z) = \left\{\frac{3\pi}{2} + 2\pi k \, | \, \text{$k$ is an integer} \right\}$ and $\text{Arg}(z) = -\frac{\pi}{2}$.
+
+\item $z = 2\sqrt{2} - 2i\sqrt{2} = 4\text{cis}\left(\frac{7\pi}{4}\right)$, \, $\text{Re}(z) = 2\sqrt{2}$, \, $\text{Im}(z) = -2\sqrt{2}$, \, $|z| = 4$
+
+$\text{arg}(z) = \left\{\frac{7\pi}{4} + 2\pi k \, | \, \text{$k$ is an integer} \right\}$ and $\text{Arg}(z) = -\frac{\pi}{4}$.
+
+\item $z =6 = 6\text{cis}\left(0\right)$, \, $\text{Re}(z) = 6$, \, $\text{Im}(z) = 0$, \, $|z| = 6$
+
+$\text{arg}(z) = \left\{2\pi k \, | \, \text{$k$ is an integer} \right\}$ and $\text{Arg}(z) =0$.
+
+\item $z = i \sqrt[3]{7} = \sqrt[3]{7}\text{cis}\left(\frac{\pi}{2}\right)$, \, $\text{Re}(z) =0$, \, $\text{Im}(z) = \sqrt[3]{7}$, \, $|z| = \sqrt[3]{7}$
+
+$\text{arg}(z) = \left\{\frac{\pi}{2} + 2\pi k \, | \, \text{$k$ is an integer} \right\}$ and $\text{Arg}(z) = \frac{\pi}{2}$.
+
+\item $z = 3+4i = 5\text{cis}\left(\arctan\left(\frac{4}{3}\right)\right)$, \, $\text{Re}(z) = 3$, \, $\text{Im}(z) = 4$, \, $|z| = 5$
+
+$\text{arg}(z) = \left\{\arctan\left(\frac{4}{3}\right) + 2\pi k \, | \, \text{$k$ is an integer} \right\}$ and $\text{Arg}(z) =\arctan\left(\frac{4}{3}\right) $.
+
+\item $z = \sqrt{2}+i = \sqrt{3}\text{cis}\left(\arctan\left(\frac{\sqrt{2}}{2}\right)\right)$, \, $\text{Re}(z) = \sqrt{2}$, \, $\text{Im}(z) = 1$, \, $|z| = \sqrt{3}$
+
+$\text{arg}(z) = \left\{\arctan\left(\frac{\sqrt{2}}{2}\right) + 2\pi k \, | \, \text{$k$ is an integer} \right\}$ and $\text{Arg}(z) =\arctan\left(\frac{\sqrt{2}}{2}\right) $.
+
+\item $z = -7 + 24i = 25\text{cis}\left(\pi - \arctan\left(\frac{24}{7}\right)\right)$, \, $\text{Re}(z) = -7$, \, $\text{Im}(z) = 24$, \, $|z| = 25$
+
+$\text{arg}(z) = \left\{\pi - \arctan\left(\frac{24}{7}\right) + 2\pi k \, | \, \text{$k$ is an integer} \right\}$ and $\text{Arg}(z) =\pi - \arctan\left(\frac{24}{7}\right) $.
+
+\item $z = -2 + 6i = 2\sqrt{10}\text{cis}\left(\pi - \arctan\left(3\right)\right)$, \, $\text{Re}(z) = -2$, \, $\text{Im}(z) = 6$, \, $|z| =2\sqrt{10}$
+
+$\text{arg}(z) = \left\{\pi - \arctan\left(3\right) + 2\pi k \, | \, \text{$k$ is an integer} \right\}$ and $\text{Arg}(z) =\pi - \arctan\left(3\right) $.
+
+\item $z = -12 -5i = 13\text{cis}\left(\pi + \arctan\left(\frac{5}{12}\right)\right)$, \, $\text{Re}(z) = -12$, \, $\text{Im}(z) = -5$, \, $|z| = 13$
+
+$\text{arg}(z) = \left\{\pi +\arctan\left(\frac{5}{12}\right) + 2\pi k \, | \, \text{$k$ is an integer} \right\}$ and $\text{Arg}(z) =  \arctan\left(\frac{5}{12}\right) -\pi $.
+
+\item $z = -5-2i = \sqrt{29}\text{cis}\left(\pi + \arctan\left(\frac{2}{5}\right)\right)$, \, $\text{Re}(z) = -5$, \, $\text{Im}(z) = -2$, \, $|z| = \sqrt{29}$
+
+$\text{arg}(z) = \left\{\pi +\arctan\left(\frac{2}{5}\right) + 2\pi k \, | \, \text{$k$ is an integer} \right\}$ and $\text{Arg}(z) =  \arctan\left(\frac{2}{5}\right) -\pi $.
+
+\item $z =4-2i = 2\sqrt{5}\text{cis}\left(\arctan\left(-\frac{1}{2}\right)\right)$, \, $\text{Re}(z) =4$, \, $\text{Im}(z) = -2$, \, $|z| = 2\sqrt{5}$
+
+$\text{arg}(z) = \left\{\arctan\left(-\frac{1}{2}\right) + 2\pi k \, | \, \text{$k$ is an integer} \right\}$ and $\text{Arg}(z) = \arctan\left(-\frac{1}{2}\right) = -\arctan\left(\frac{1}{2}\right) $.
+
+\item $z =1-3i = \sqrt{10}\text{cis}\left(\arctan\left(-3\right)\right)$, \, $\text{Re}(z) =1$, \, $\text{Im}(z) = -3$, \, $|z| =\sqrt{10}$
+
+$\text{arg}(z) = \left\{\arctan\left(-3\right) + 2\pi k \, | \, \text{$k$ is an integer} \right\}$ and $\text{Arg}(z) =  \arctan\left(-3\right) = -\arctan(3)$.
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\begin{multicols}{2}
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z = 6\text{cis}(0) = 6$
+\item $z = 2\text{cis}\left(\frac{\pi}{6}\right) = \sqrt{3} + i$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z = 7\sqrt{2}\text{cis}\left(\frac{\pi}{4}\right) = 7+7i$
+\item $z = 3\text{cis}\left(\frac{\pi}{2}\right) = 3i$ 
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z = 4\text{cis}\left(\frac{2\pi}{3}\right) = -2+2i\sqrt{3}$
+\item $z = \sqrt{6}\text{cis}\left(\frac{3\pi}{4}\right) = -\sqrt{3}+i\sqrt{3}$ 
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z = 9\text{cis}\left(\pi\right) = -9$
+\item $z = 3\text{cis}\left(\frac{4\pi}{3}\right) = -\frac{3}{2} - \frac{3i\sqrt{3}}{2}$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z = 7\text{cis}\left(-\frac{3\pi}{4}\right) = -\frac{7\sqrt{2}}{2} - \frac{7\sqrt{2}}{2}i$ 
+\item $z = \sqrt{13}\text{cis}\left(\frac{3\pi}{2}\right) = -i\sqrt{13}$ 
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z = \frac{1}{2}\text{cis}\left(\frac{7\pi}{4}\right) = \frac{\sqrt{2}}{4} - i\frac{\sqrt{2}}{4}$ 
+\item $z = 12\text{cis}\left(-\frac{\pi}{3}\right) = 6 - 6i\sqrt{3}$ 
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z = 8\text{cis}\left(\frac{\pi}{12}\right) = 4\sqrt{2+\sqrt{3}}+4i\sqrt{2-\sqrt{3}}$ 
+\item $z = 2\text{cis}\left(\frac{7\pi}{8}\right) = -\sqrt{2 + \sqrt{2}} + i\sqrt{2 - \sqrt{2}}$ 
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z = 5\text{cis}\left(\arctan\left(\frac{4}{3}\right)\right) = 3 + 4i$ 
+\item $z = \sqrt{10}\text{cis}\left(\arctan\left(\frac{1}{3}\right)\right) = 3+i$ 
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z = 15\text{cis}\left(\arctan\left(-2\right)\right) = 3\sqrt{5} -6i\sqrt{5}$ 
+\item $z=  \sqrt{3}\text{cis}\left(\arctan\left(-\sqrt{2}\right)\right) = 1-i\sqrt{2}$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z = 50\text{cis}\left(\pi-\arctan\left(\frac{7}{24}\right)\right) = -48 + 14i$ 
+\item $z = \frac{1}{2}\text{cis}\left(\pi+\arctan\left(\frac{5}{12}\right)\right) = -\frac{6}{13} - \frac{5i}{26}$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\pagebreak
+
+In Exercises \ref{polarcomparithfirst} - \ref{polarcomparithlast}, we have that $z = -\frac{3\sqrt{3}}{2} + \frac{3}{2}i = 3\text{cis}\left(\frac{5\pi}{6}\right)$ and $w = 3\sqrt{2} - 3i\sqrt{2} = 6\text{cis}\left(-\frac{\pi}{4}\right)$ so we get the following.  
+
+\begin{multicols}{3}
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $zw = 18\text{cis}\left(\frac{7\pi}{12}\right)$
+\item $\frac{z}{w} = \frac{1}{2}\text{cis}\left(-\frac{11\pi}{12}\right)$
+\item $\frac{w}{z} = 2\text{cis}\left(\frac{11\pi}{12}\right)$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{3} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z^{4} = 81\text{cis}\left(-\frac{2\pi}{3}\right)$
+\item $w^{3} = 216\text{cis}\left(-\frac{3\pi}{4}\right)$
+\item $z^{5}w^{2} = 8748\text{cis}\left(-\frac{\pi}{3}\right)$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{3} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $z^3w^2 = 972 \text{cis}(0)$
+\item $\frac{z^2}{w} =\frac{3}{2}\text{cis}\left(-\frac{\pi}{12}\right)$
+\item $\frac{w}{z^2} =\frac{2}{3}\text{cis}\left(\frac{\pi}{12}\right)$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{3} 
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $\frac{z^3}{w^2} =\frac{3}{4}\text{cis}(\pi)$
+\item $\frac{w^2}{z^3} =\frac{4}{3}\text{cis}(\pi)$
+\item $\left(\frac{w}{z}\right)^6 =64\text{cis}\left(-\frac{\pi}{2} \right)$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{3}
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $\left(-2 + 2i\sqrt{3}\right)^3 = 64$
+\item $(-\sqrt{3} - i)^3 =-8i$
+\item $(-3+3i)^{4}=-324$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{3}
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $(\sqrt{3} + i)^4 =-8 + 8i\sqrt{3}$ \vphantom{$\left(\frac{\sqrt{2}}{2}\right)^{2}$}
+\item $\left(\frac{5}{2} + \frac{5}{2} i\right)^3=-\frac{125}{4}+\frac{125}{4} i$ \vphantom{$\left(\frac{\sqrt{2}}{2}\right)^{2}$}
+\item $\left(-\frac{1}{2} - \frac{i \sqrt{3}}{2}\right)^{6}=1$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{3}
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $\left(\frac{3}{2} - \frac{3}{2} i\right)^3=-\frac{27}{4}-\frac{27}{4} i$ \vphantom{$\left(\frac{\sqrt{2}}{2}\right)^{2}$}
+\item $\left(\frac{\sqrt{3}}{3} - \frac{1}{3} i\right)^4 =-\frac{8}{81} - \frac{8i\sqrt{3}}{81}$
+\item $\left(\frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2} i\right)^4=-1$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{3}
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $(2+2i)^5 -128-128i$
+\item $(\sqrt{3} - i)^{5} =  -16\sqrt{3} - 16i$
+\item  $(1-i)^8=16$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item Since $z=4i = 4\text{cis}\left(\frac{\pi}{2}\right)$ we have 
+
+\begin{multicols}{2}
+
+$w_{\text{\tiny$0$}} = 2\text{cis}\left(\frac{\pi}{4}\right) = \sqrt{2} +i\sqrt{2}$
+
+$w_{\text{\tiny$1$}} = 2\text{cis}\left(\frac{5\pi}{4}\right) = -\sqrt{2} - i\sqrt{2}$
+
+\end{multicols}
+
+\item Since $z=-25i = 25\text{cis}\left(\frac{3\pi}{2}\right)$ we have 
+
+\begin{multicols}{2}
+
+$w_{\text{\tiny$0$}} = 5\text{cis}\left(\frac{3\pi}{4}\right) = -\frac{5\sqrt{2}}{2} +\frac{5\sqrt{2}}{2} i$
+
+$w_{\text{\tiny$1$}} = 5\text{cis}\left(\frac{7\pi}{4}\right) = \frac{5\sqrt{2}}{2} - \frac{5\sqrt{2}}{2} i$
+
+\end{multicols}
+
+\item Since $z=1 + i\sqrt{3} = 2\text{cis}\left(\frac{\pi}{3}\right)$ we have 
+
+\begin{multicols}{2}
+
+$w_{\text{\tiny$0$}} = \sqrt{2}\text{cis}\left(\frac{\pi}{6}\right) = \frac{\sqrt{6}}{2} +\frac{\sqrt{2}}{2} i$
+
+$w_{\text{\tiny$1$}} = \sqrt{2}\text{cis}\left(\frac{7\pi}{6}\right) = -\frac{\sqrt{6}}{2}-\frac{\sqrt{2}}{2} i$
+
+\end{multicols}
+
+\item Since $z=\frac{5}{2} - \frac{5\sqrt{3}}{2}i = 5\text{cis}\left(\frac{5\pi}{3}\right)$ we have 
+
+\begin{multicols}{2}
+
+$w_{\text{\tiny$0$}} =\sqrt{5}\text{cis}\left(\frac{5\pi}{6}\right) = -\frac{\sqrt{15}}{2} + \frac{\sqrt{5}}{2}i$
+
+$w_{\text{\tiny$1$}} = \sqrt{5}\text{cis}\left(\frac{11\pi}{6}\right) = \frac{\sqrt{15}}{2} - \frac{\sqrt{5}}{2}i$
+
+\end{multicols}
+
+\item Since $z = 64 = 64\text{cis}\left(0\right)$ we have 
+
+\begin{multicols}{3}
+
+$w_{\text{\tiny$0$}} = 4\text{cis}\left(0\right) = 4$
+
+$w_{\text{\tiny$1$}} =4\text{cis}\left(\frac{2\pi}{3}\right) = -2 + 2i\sqrt{3}$
+
+$w_{\text{\tiny$2$}} = 4\text{cis}\left(\frac{4\pi}{3}\right) =  -2 - 2i\sqrt{3}$
+
+\end{multicols}
+
+\pagebreak
+
+\item Since $z = -125 = 125\text{cis}\left(\pi\right)$ we have 
+
+\begin{multicols}{3}
+
+$w_{\text{\tiny$0$}} = 5\text{cis}\left(\frac{\pi}{3}\right) = \frac{5}{2} + \frac{5\sqrt{3}}{2} i$
+
+$w_{\text{\tiny$1$}} =5\text{cis}\left(\pi\right) = -5$
+
+$w_{\text{\tiny$2$}} = 5\text{cis}\left(\frac{5\pi}{3}\right) = \frac{5}{2} - \frac{5\sqrt{3}}{2} i$
+
+\end{multicols}
+
+\item Since $z = i = \text{cis}\left(\frac{\pi}{2}\right)$ we have 
+
+\begin{multicols}{3}
+
+$w_{\text{\tiny$0$}} = \text{cis}\left(\frac{\pi}{6}\right) = \frac{\sqrt{3}}{2} + \frac{1}{2}i$
+
+$w_{\text{\tiny$1$}} = \text{cis}\left(\frac{5\pi}{6}\right) = -\frac{\sqrt{3}}{2} + \frac{1}{2}i$
+
+$w_{\text{\tiny$2$}} = \text{cis}\left(\frac{3\pi}{2}\right) = -i$
+
+\end{multicols}
+
+\item Since $z = -8i = 8\text{cis}\left(\frac{3\pi}{2}\right)$ we have 
+
+\begin{multicols}{3}
+
+$w_{\text{\tiny$0$}} = 2\text{cis}\left(\frac{\pi}{2}\right) = 2i$
+
+$w_{\text{\tiny$1$}} = 2\text{cis}\left(\frac{7\pi}{6}\right) = -\sqrt{3} -i$
+
+$w_{\text{\tiny$2$}} = \text{cis}\left(\frac{11\pi}{6}\right) = \sqrt{3}-i$
+
+\end{multicols}
+
+
+\item Since $z=16 = 16\text{cis}\left(0 \right)$ we have 
+
+\begin{multicols}{2}
+
+$w_{\text{\tiny$0$}} =2\text{cis}\left(0\right) =2$
+
+$w_{\text{\tiny$1$}} = 2\text{cis}\left(\frac{\pi}{2}\right) = 2i$
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+$w_{\text{\tiny$2$}} = 2\text{cis}\left(\pi\right) = -2$
+
+$w_{\text{\tiny$3$}} = 2\text{cis}\left(\frac{3\pi}{2}\right) = -2i$
+
+\end{multicols}
+
+
+\item Since $z=-81 = 81\text{cis}\left(\pi \right)$ we have 
+
+\begin{multicols}{2}
+
+$w_{\text{\tiny$0$}} =3\text{cis}\left(\frac{\pi}{4}\right) = \frac{3\sqrt{2}}{2} + \frac{3\sqrt{2}}{2}i$
+
+$w_{\text{\tiny$1$}} = 3\text{cis}\left(\frac{3\pi}{4}\right) =-\frac{3\sqrt{2}}{2} + \frac{3\sqrt{2}}{2}i$
+
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+$w_{\text{\tiny$2$}} = 3\text{cis}\left(\frac{5\pi}{4}\right) =-\frac{3\sqrt{2}}{2} - \frac{3\sqrt{2}}{2}i$
+
+$w_{\text{\tiny$3$}} = 3\text{cis}\left(\frac{7\pi}{4}\right) =\frac{3\sqrt{2}}{2} - \frac{3\sqrt{2}}{2}i$
+
+\end{multicols}
+
+
+
+
+
+\item Since $z = 64 = 64\text{cis}(0)$ we have 
+
+
+\begin{multicols}{3}
+
+$w_{\text{\tiny$0$}} = 2\text{cis}(0) = 2$
+
+$w_{\text{\tiny$1$}} = 2\text{cis}\left(\frac{\pi}{3}\right) = 1 + \sqrt{3}i$
+
+$w_{\text{\tiny$2$}} = 2\text{cis}\left(\frac{2\pi}{3}\right) = -1 + \sqrt{3}i$
+
+\end{multicols}
+
+\begin{multicols}{3}
+
+$w_{\text{\tiny$3$}} = 2\text{cis}\left(\pi\right) = -2$
+
+$w_{\text{\tiny$4$}} = 2\text{cis}\left(-\frac{2\pi}{3}\right) = -1 - \sqrt{3}i$
+
+$w_{\text{\tiny$5$}} = 2\text{cis}\left(-\frac{\pi}{3}\right) = 1 - \sqrt{3}i$
+
+\end{multicols}
+
+
+\item Since $z = -729 = 729 \text{cis}(\pi)$ we have 
+
+
+\begin{multicols}{3}
+
+$w_{\text{\tiny$0$}} = 3\text{cis}\left(\frac{\pi}{6}\right) = \frac{3\sqrt{3}}{2} + \frac{3}{2}i$
+
+$w_{\text{\tiny$1$}} = 3\text{cis}\left(\frac{\pi}{2}\right) = 3i$
+
+$w_{\text{\tiny$2$}} = 3\text{cis}\left(\frac{5\pi}{6}\right) = -\frac{3\sqrt{3}}{2} + \frac{3}{2}i$
+
+\end{multicols}
+
+\begin{multicols}{3}
+
+$w_{\text{\tiny$3$}} = 3\text{cis}\left(\frac{7\pi}{6}\right) =  -\frac{3\sqrt{3}}{2}-\frac{3}{2}i$
+
+$w_{\text{\tiny$4$}} = 3\text{cis}\left(-\frac{3\pi}{2}\right) = -3i$
+
+$w_{\text{\tiny$5$}} = 3\text{cis}\left(-\frac{11\pi}{6}\right) = \frac{3\sqrt{3}}{2} - \frac{3}{2}i$
+
+\end{multicols}
+
+
+\item Note: In the answers for $w_{\text{\tiny$0$}}$ and $w_{\text{\tiny$2$}}$ the first rectangular form comes from applying the appropriate Sum or Difference Identity ($\frac{\pi}{12} = \frac{\pi}{3} - \frac{\pi}{4}$ and $\frac{17\pi}{12} = \frac{2\pi}{3} + \frac{3\pi}{4}$, respectively) and the second comes from using the Half-Angle Identities. 
+
+$w_{\text{\tiny$0$}} = \sqrt[3]{2} \text{cis}\left(\frac{\pi}{12}\right) = \sqrt[3]{2}\left( \frac{\sqrt{6} + \sqrt{2}}{4} + i\left( \frac{\sqrt{6} - \sqrt{2}}{4} \right) \right) = \sqrt[3]{2}\left( \frac{\sqrt{2 + \sqrt{3}}}{2} + i\frac{\sqrt{2 - \sqrt{3}}}{2} \right)$ 
+ 
+$w_{\text{\tiny$1$}} = \sqrt[3]{2} \text{cis}\left(\frac{3\pi}{4}\right) = \sqrt[3]{2} \left( -\frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}i \right)$ 
+
+$w_{\text{\tiny$2$}} = \sqrt[3]{2} \text{cis}\left(\frac{17\pi}{12}\right) = \sqrt[3]{2}\left( \frac{\sqrt{2} - \sqrt{6}}{4} + i\left( \frac{-\sqrt{2} - \sqrt{6}}{4} \right) \right) = \sqrt[3]{2}\left( \frac{\sqrt{2 - \sqrt{3}}}{2} + i\frac{\sqrt{2 + \sqrt{3}}}{2} \right)$
+
+\item $w_{\text{\tiny$0$}} = \text{cis}(0) = 1$
+
+$w_{\text{\tiny$1$}} = \text{cis}\left(\frac{2\pi}{5}\right) \approx 0.309 + 0.951i$
+
+$w_{\text{\tiny$2$}} = \text{cis}\left(\frac{4\pi}{5}\right) \approx -0.809 + 0.588i$
+
+$w_{\text{\tiny$3$}} = \text{cis}\left(\frac{6\pi}{5}\right) \approx -0.809 - 0.588i$
+
+$w_{\text{\tiny$4$}} = \text{cis}\left(\frac{8\pi}{5}\right) \approx 0.309 - 0.951i$
+
+\item $p(x) = x^{12} - 4096 = (x - 2)(x + 2)(x^{2} + 4)(x^{2} - 2x + 4)(x^{2} + 2x + 4)(x^{2} - 2\sqrt{3}x + 4)(x^{2} + 2\sqrt{3} + 4)$
+
+\end{enumerate}
+
+\closegraphsfile

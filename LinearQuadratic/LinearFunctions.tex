@@ -1,0 +1,1735 @@
+\mfpicnumber{1}
+
+\opengraphsfile{LinearFunctions}
+
+\setcounter{footnote}{0}
+
+\label{LinearFunctions}
+
+We now begin the study of families of functions.  Our first family, linear functions, are old friends as we shall soon see.  Recall from Geometry that two distinct points in the plane determine a unique line containing those points, as indicated below.
+
+\begin{center}
+
+\begin{mfpic}[15]{0}{4}{0}{4}
+\point[3pt]{(1,3), (3,1)}
+\arrow \reverse \arrow \polyline{(0,4),(4,0)}
+\tlabel(1.5,3){\small $P\left(x_{\mbox{\tiny$0$}}, y_{\mbox{\tiny$0$}}\right)$}
+\tlabel(3.5,1){\small $Q\left(x_{\mbox{\tiny$1$}}, y_{\mbox{\tiny$1$}}\right)$}
+\end{mfpic}
+
+\end{center}
+
+To give a sense of the `steepness' of the line, we recall that we can compute the \textbf{slope} of the line using the formula below.
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+%\smallskip
+
+\begin{eqn} \label{slope} The \index{slope ! definition} \textbf{slope} $m$ of the line containing the points $P\left(x_{\mbox{\tiny$0$}}, y_{\mbox{\tiny$0$}}\right)$ and $Q\left(x_{\mbox{\tiny$1$}}, y_{\mbox{\tiny$1$}}\right)$ is: \index{line ! slope of} \index{slope ! of a line}
+
+\[ m  = \dfrac{y_{\mbox{\tiny$1$}} - y_{\mbox{\tiny$0$}}}{x_{\mbox{\tiny$1$}} - x_{\mbox{\tiny$0$}}},\]
+
+provided $x_{\mbox{\tiny$1$}} \neq x_{\mbox{\tiny$0$}}$.
+
+\end{eqn}
+
+\ebm}
+
+\smallskip
+
+A couple of notes about Equation \ref{slope} are in order.  First, don't ask why we use the letter `$m$' to represent slope.  There are many explanations out there, but apparently no one really knows for sure.\footnote{See  \href{http://mathforum.org/dr.math/faq/faq.terms.html}{\underline{www.mathforum.org}} or \href{http://mathworld.wolfram.com/Slope.html}{\underline{www.mathworld.wolfram.com}} for discussions on this topic.} Secondly, the stipulation  $x_{\mbox{\tiny$1$}} \neq x_{\mbox{\tiny$0$}}$ ensures that we aren't trying to divide by zero.  The reader is invited to pause to think about what is happening geometrically; the anxious reader can skip along to the next example.
+
+\begin{ex}  Find the slope of the line containing the following pairs of points, if it exists.  Plot each pair of points and the line containing them.
+
+\begin{multicols}{2}
+\begin{enumerate}
+
+\item  $P(0,0)$, $Q(2,4)$
+\item  $P(-1,2)$, $Q(3,4)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $P(-2,3)$, $Q(2,-3)$
+\item  $P(-3,2)$, $Q(4,2)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $P(2,3)$, $Q(2,-1)$
+\item  $P(2,3)$, $Q(2.1, -1)$
+
+\end{enumerate}
+\end{multicols}
+
+{\bf Solution.}  In each of these examples, we apply the slope formula, Equation \ref{slope}.
+
+\begin{enumerate}
+
+\item  \begin{tabular}{m{2.5in}m{2.5in}} $ m = \dfrac{4 - 0}{2 - 0} = \dfrac{4}{2} = 2$ & 
+
+\begin{mfpic}[15]{-1}{5}{-1}{5}
+\point[3pt]{(0,0),(2,4)}
+\arrow \reverse \arrow \polyline{(-0.5,-1), (2.5, 5)}
+\tlabel(0.25,-0.5){\tiny $P$}
+\tlabel(2,3.5){\tiny $Q$}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\xmarks{1,2,3,4}
+\ymarks{1,2,3,4}
+\tlpointsep{4pt}
+\axislabels {x}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4}
+\axislabels {y}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4}
+\end{mfpic} \\
+
+\end{tabular}
+
+\item \begin{tabular}{m{2.5in}m{2.5in}} $ m = \dfrac{4 - 2}{3 - (-1)} = \dfrac{2}{4} = \dfrac{1}{2}$ &
+
+\begin{mfpic}[15]{-2}{4}{0}{5}
+\point[3pt]{(-1,2),(3,4)}
+\arrow \reverse \arrow \polyline{( -2,1.5), (4 ,4.5 )}
+\tlabel(-1,1.5){\tiny $P$}
+\tlabel(3,3.5){\tiny $Q$}
+\axes
+\tlabel[cc](4,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\xmarks{-1,1,2,3}
+\ymarks{1,2,3,4}
+\tlpointsep{4pt}
+\axislabels {x}{{\tiny $-1 \hspace{7pt}$} -1,{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
+\axislabels {y}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4}
+\end{mfpic} \\
+
+\end{tabular}
+
+\item  \begin{tabular}{m{2.5in}m{2.5in}} $ m = \dfrac{-3 - 3}{2 - (-2)} = \dfrac{-6}{4} = -\dfrac{3}{2}$ &
+
+\begin{mfpic}[15]{-4}{4}{-5}{5}
+\point[3pt]{(-2,3),(2,-3)}
+\arrow \reverse \arrow \polyline{( -3,4.5), (3 ,-4.5 )}
+\tlabel(-1.5,3){\tiny $P$}
+\tlabel(2.5,-3){\tiny $Q$}
+\axes
+\tlabel[cc](4,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\xmarks{-3,-2,-1,1,2,3}
+\ymarks{-4,-3,-2,-1,1,2,3,4}
+\tlpointsep{4pt}
+\axislabels {x}{{\tiny $-3 \hspace{7pt}$} -3,{\tiny $-2 \hspace{7pt}$} -2,{\tiny $-1 \hspace{7pt}$} -1,{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
+\axislabels {y}{{\tiny $-4$} -4, {\tiny $-3$} -3, {\tiny $-2$} -2, {\tiny $-1$} -1,{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4}
+\end{mfpic} \\
+
+\end{tabular}
+
+\item  \begin{tabular}{m{2.5in}m{2.5in}} $ m = \dfrac{2 - 2}{4 - (-3)} = \dfrac{0}{7} = 0$ &
+
+\begin{mfpic}[15]{-5}{5}{0}{4}
+\point[3pt]{(-3,2),(4,2)}
+\arrow \reverse \arrow \polyline{( -5,2), (5,2)}
+\tlabel[cc](-3,1.5){\tiny $P$}
+\tlabel[cc](4,1.5){\tiny $Q$}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,4){\scriptsize $y$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{1,2,3}
+\tlpointsep{4pt}
+\axislabels {x}{{\tiny $-4 \hspace{7pt}$} -4,{\tiny $-3 \hspace{7pt}$} -3,{\tiny $-2 \hspace{7pt}$} -2,{\tiny $-1 \hspace{7pt}$} -1,{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4}
+\axislabels {y}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
+\end{mfpic} \\
+
+\end{tabular}
+
+\item  \begin{tabular}{m{3in}m{2in}} $ m = \dfrac{-1 - 3}{2 - 2} = \dfrac{-4}{0}$, which is undefined &
+
+\begin{mfpic}[15]{0}{3}{-4}{4}
+\point[3pt]{(2,3),(2,-1)}
+\arrow \reverse \arrow \polyline{( 2,-4), (2,4)}
+\tlabel[t](2.25,3){\tiny $P$}
+\tlabel[t](2.25,-1){\tiny $Q$}
+\axes
+\tlabel[cc](3,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,4){\scriptsize $y$}
+\xmarks{1,2}
+\ymarks{-3,-2,-1,1,2,3}
+\tlpointsep{4pt}
+\axislabels {x}{{\tiny $1$} 1, {\tiny $2$} 2}
+\axislabels {y}{{\tiny $-3$} -3, {\tiny $-2$} -2, {\tiny $-1$} -1,{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
+\end{mfpic} \\
+
+\end{tabular}
+
+\item  \begin{tabular}{m{3in}m{2in}} $ m = \dfrac{-1 - 3}{2.1 - 2} = \dfrac{-4}{0.1}=-40$ &
+
+\begin{mfpic}[15]{0}{3}{-4}{4}
+\point[3pt]{(2,3),(2.1,-1)}
+\arrow \reverse \arrow \polyline{( 1.99,3.4), (2.15,-3)}
+\tlabel[t](2.25,3){\tiny $P$}
+\tlabel[t](2.25,-1){\tiny $Q$}
+\axes
+\tlabel[cc](3,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,4){\scriptsize $y$}
+\xmarks{1,2}
+\ymarks{-3,-2,-1,1,2,3}
+\tlpointsep{4pt}
+\axislabels {x}{{\tiny $1$} 1, {\tiny $2$} 2}
+\axislabels {y}{{\tiny $-3$} -3, {\tiny $-2$} -2, {\tiny $-1$} -1,{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
+\end{mfpic} \\
+
+\end{tabular}
+
+\end{enumerate}
+
+\label{slopeex}
+
+\qed
+
+\end{ex} 
+
+A few comments about Example \ref{slopeex} are in order.  First, for reasons which will be made clear soon, if the slope is positive then the resulting line is said to be increasing.  If it is negative, we say the line is decreasing.  A slope of $0$ results in a horizontal line which we say is constant, and an undefined slope results in a vertical line.\footnote{Some authors use the unfortunate moniker `no slope' when a slope is undefined.  It's easy to confuse the notions of `no slope' with `slope of $0$'.  For this reason, we will describe slopes of vertical lines as `undefined'.}   Second, the larger the slope is in absolute value, the steeper the line.  You may recall from Intermediate Algebra that slope can be described as the ratio `$\frac{\mbox{\small rise}}{\mbox{\small run}}$'.  For example, in the second part of Example \ref{slopeex}, we found the slope to be $\frac{1}{2}$.  We can interpret this as a rise of 1 unit upward for every $2$ units to the right we travel along the line, as shown below.
+
+\begin{center}
+
+\begin{mfpic}[20]{-2}{4}{0}{5}
+\point[3pt]{(-1,2),(1,3), (3,4)}
+\arrow \reverse \arrow \polyline{( -2,1.5), (4 ,4.5 )}
+\dashed \polyline{(-1,2), (1,2), (1,3), (3,3), (3,4)}
+\tlabel[cc](2,2.5){\tiny `over $2$'}
+\tlabel[t](3.25,3.5){\tiny `up $1$'}
+\axes
+\tlabel[cc](4,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\xmarks{-1,1,2,3}
+\ymarks{1,2,3,4}
+\tlpointsep{4pt}
+\axislabels {x}{{\tiny $-1 \hspace{7pt}$} -1,{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
+\axislabels {y}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4}
+\end{mfpic}
+
+\end{center}
+
+Using more formal notation, given points $\left(x_{\mbox{\tiny$0$}}, y_{\mbox{\tiny$0$}}\right)$ and $\left(x_{\mbox{\tiny$1$}}, y_{\mbox{\tiny$1$}}\right)$, we use the Greek letter delta `$\Delta$' to write $\Delta y = y_{\mbox{\tiny$1$}} - y_{\mbox{\tiny$0$}}$ and $\Delta x = x_{\mbox{\tiny$1$}} - x_{\mbox{\tiny$0$}}$.  In most scientific circles, the symbol $\Delta$ means `change in'.  
+
+\smallskip
+
+Hence, we may write \[ m = \dfrac{\Delta y}{\Delta x},\] which describes the slope as the \index{slope ! rate of change}\index{rate of change ! slope of a line}\textbf{rate of change} of $y$ with respect to $x$.  Rates of change abound in the `real world', as the next example illustrates.
+
+\begin{ex} Suppose that two separate temperature readings were taken at the ranger station on the top of Mt. Sasquatch: at $6$ AM the temperature was $24^{\circ}$F and  at $10$ AM it was $32^{\circ}$F.  
+
+\begin{enumerate}
+
+\item Find the slope of the line containing the points $(6,24)$ and $(10, 32)$.
+
+\item Interpret your answer to the first part in terms of temperature and time.
+
+\item  Predict the temperature at noon.
+
+\end{enumerate}
+
+\smallskip
+
+{\bf Solution.}  
+
+\begin{enumerate}
+
+\item For the slope, we have  $m = \frac{32 - 24}{10 - 6} = \frac{8}{4} = 2$.  
+
+\item  Since the values in the numerator correspond to the temperatures in $^{\circ}$F, and the values in the denominator correspond to time in hours, we can interpret the slope as $2 = \dfrac{2}{1} = \dfrac{2^{\circ} \, \mbox{\small F}}{1 \, \mbox{\small hour}},$ or $2^{\circ}$F per hour.  Since the slope is positive, we know this corresponds to an increasing line.  Hence, the temperature is increasing at a rate of $2^{\circ}$F per hour.
+
+\item  Noon is two hours after $10$ AM.  Assuming a temperature increase of $2^{\circ}$F per hour, in two hours the temperature should rise $4^{\circ}$F.  Since the temperature at $10$ AM is $32^{\circ}$F, we would expect the temperature at noon to be $32+4=36^{\circ}$F. \qed
+
+\end{enumerate}
+
+\end{ex}
+
+Now it may well happen that in the previous scenario, at noon the temperature is only $33^{\circ}$F.  This doesn't mean our calculations are incorrect, rather, it means that the temperature change throughout the day isn't a constant $2^{\circ}$F per hour. As discussed in Section \ref{modeling}, mathematical models are just that:  models.  The predictions we get out of the models may be mathematically accurate, but may not resemble what happens in the real world. 
+
+
+\smallskip
+
+In Section \ref{Relations}, we discussed the equations of vertical and horizontal lines.  Using the concept of slope, we can develop equations for the other varieties of lines.  Suppose a line has a slope of $m$ and contains the point $\left(x_{\mbox{\tiny$0$}}, y_{\mbox{\tiny$0$}}\right)$.  Suppose $(x,y)$ is another point on the line, as indicated below.
+
+\begin{center}
+
+\begin{mfpic}[15]{-2}{4}{0}{5}
+\point[3pt]{(-1,2), (3,4)}
+\arrow \reverse \arrow \polyline{( -2,1.5), (4 ,4.5 )}
+\dashed \polyline{(-1,2), (3,2), (3,4)}
+\tlabel[t](-1.5,1.5){$\left(x_{\mbox{\tiny$0$}}, y_{\mbox{\tiny$0$}}\right)$}
+\tlabel[t](3.5,4){$\left(x, y \right)$}
+\end{mfpic}
+
+\end{center}
+
+
+Equation \ref{slope} yields
+
+\setlength{\extrarowheight}{2pt}
+
+\[ \begin{array}{rclr}  
+                      m & = & \dfrac{y - y_{\mbox{\tiny$0$}}}{x-x_{\mbox{\tiny$0$}}} & \\
+m\left(x - x_{\mbox{\tiny$0$}}\right) & = & y - y_{\mbox{\tiny$0$}} & \\ 
+              y - y_{\mbox{\tiny$0$}} & = & m\left(x - x_{\mbox{\tiny$0$}}\right) & \\
+   \end{array} \]
+
+We have just derived the \textbf{point-slope form} of a line.\footnote{We can also understand this equation in terms of applying transformations to the function $I(x) = x$.  See the Exercises.}
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{eqn} \label{pointslope} The \index{line ! point-slope form}\textbf{point-slope form} of the line with slope $m$ containing the point $\left(x_{\mbox{\tiny$0$}}, y_{\mbox{\tiny$0$}}\right)$ is the equation $y - y_{\mbox{\tiny$0$}}  =  m\left(x - x_{\mbox{\tiny$0$}}\right)$. \index{point-slope form of a line}
+\end{eqn}
+
+\ebm}
+
+\begin{ex}  Write the equation of the line containing the points $(-1,3)$ and $(2,1)$.
+
+\smallskip
+
+{\bf Solution.}  In order to use Equation \ref{pointslope} we need to find the slope of the line in question so we use Equation \ref{slope} to get $m = \frac{\Delta y}{\Delta x} = \frac{1 - 3}{2 - (-1)} = -\frac{2}{3}$.  We are spoiled for choice for a point $\left(x_{\mbox{\tiny$0$}}, y_{\mbox{\tiny$0$}}\right)$. We'll use $(-1,3)$ and leave it to the reader to check that using $(2,1)$ results in the same equation.  Substituting into the point-slope form of the line, we get 
+\setlength{\extrarowheight}{10pt}
+\[\begin{array}{rclr} 
+y - y_{\mbox{\tiny$0$}} & = & m\left(x - x_{\mbox{\tiny$0$}}\right)  & \\
+y - 3 & = & -\dfrac{2}{3} \left(x - (-1)\right) & \\
+y - 3 & = & -\dfrac{2}{3} \left(x +1 \right) & \\
+y - 3& = & -\dfrac{2}{3}x - \dfrac{2}{3}\\
+y & = & -\dfrac{2}{3} x + \dfrac{7}{3}. \\ 
+\end{array} \]
+
+\setlength{\extrarowheight}{2pt}
+
+We can check our answer by showing that both $(-1,3)$ and $(2,1)$ are on the graph of $y  =  -\frac{2}{3} x + \frac{7}{3}$ algebraically, as we did in Section \ref{GraphsofEquations}.  \qed
+
+\end{ex}
+
+In simplifying the equation of the line in the previous example, we produced another form of a line, the \textbf{slope-intercept form}.  This is the familiar $y = mx + b$ form you have probably seen in Intermediate Algebra. The `intercept' in `slope-intercept' comes from the fact that if we set $x=0$, we get $y = b$.  In other words, the $y$-intercept of the line $y = mx + b$ is $(0,b)$.
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{eqn} \label{slopeintercept} The \index{line ! slope-intercept form}\textbf{slope-intercept form} of the line with slope $m$ and $y$-intercept $(0,b)$ is the equation $y  =  mx + b.$ \index{slope-intercept form of a line}
+\end{eqn}
+
+\ebm}
+
+\smallskip
+
+Note that if we have slope $m = 0$, we get the equation $y = b$ which matches our formula for a horizontal line given in Section \ref{Relations}.  The formula given in Equation \ref{slopeintercept} can be used to describe all lines except vertical lines.  All lines except vertical lines are functions (Why is this?) so we have finally reached a good point to introduce \textbf{linear functions}.
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{defn} \label{linearfunction} A \index{function ! linear}\index{line ! linear function}\index{linear function}\textbf{linear function} is a function of the form \[ f(x) = mx + b,\] where $m$ and $b$ are real numbers with $m \neq 0$.  The domain of a linear function is $(-\infty, \infty)$.
+
+\end{defn}
+
+\ebm}
+
+\smallskip
+
+For the case $m=0$, we get $f(x) = b$.  These are given their own classification.
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{defn} \label{constantfunction} A \index{function ! constant}\index{constant function ! as a horizontal line}\textbf{constant function} is a function of the form \[ f(x) =  b,\] where $b$ is real number.  The domain of a constant function is $(-\infty, \infty)$.
+
+\end{defn}
+
+\ebm}
+
+\smallskip
+
+Recall that to graph a function, $f$, we graph the equation $y=f(x)$. Hence, the graph of a linear function is a line with slope $m$ and $y$-intercept $(0,b)$; the graph of a constant function is a horizontal line (a line with slope $m = 0$) and a $y$-intercept of $(0,b)$.  Now think back to Section \ref{genfuncbehavior}, specifically Definition \ref{incdeccnstdefn} concerning increasing, decreasing and constant functions.  A line with positive slope was called an increasing line because a linear function with $m > 0$ is an increasing function.  Similarly, a line with a negative slope was called a decreasing line because a linear function with $m < 0$ is a decreasing function.  And horizontal lines were called constant because, well, we hope you've already made the connection.  
+
+\begin{ex}  Graph the following functions.  Identify the slope and $y$-intercept.
+
+\begin{multicols}{2}
+
+\begin{enumerate}
+
+\item  $f(x) = 3$
+
+\item  $f(x) = 3x - 1$
+
+\item  $f(x) = \dfrac{3 - 2x}{4}$
+
+\item  $f(x) = \dfrac{x^2 - 4}{x-2}$
+
+\end{enumerate}
+
+\end{multicols}
+
+{\bf Solution.}  
+
+\begin{enumerate}
+
+\item To graph $f(x) = 3$, we graph $y=3$.  This is a horizontal line ($m=0$) through $(0,3)$.
+
+\item The graph of $f(x) = 3x-1$ is the graph of the line $y = 3x-1$.  Comparison of this equation with Equation \ref{slopeintercept} yields $m=3$ and $b = -1$.  Hence, our slope is $3$ and our $y$-intercept is $(0,-1)$.  To get another point on the line, we can plot $(1,f(1)) = (1,2)$.  
+
+\begin{center}
+
+\begin{tabular}{m{3in}m{2in}} 
+
+\begin{mfpic}[15]{-4}{4}{0}{5}
+\point[3pt]{(0,3)}
+\arrow \reverse \arrow \polyline{( -4,3), (4,3)}
+\axes
+\tlabel[cc](4,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\xmarks{-3,-2,-1,1,2,3}
+\ymarks{1,2,3,4}
+\tcaption{$f(x) = 3$}
+\tlpointsep{4pt}
+\axislabels {x}{ {\tiny $-3 \hspace{7pt}$} -3, {\tiny $-2 \hspace{7pt}$} -2, {\tiny $-1 \hspace{7pt}$} -1, {\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
+\axislabels {y}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4}
+\end{mfpic} & 
+
+\begin{mfpic}[10]{-3}{3}{-5}{5}
+\point[3pt]{(0,-1), (1,2)}
+\arrow \reverse \arrow \polyline{( -1,-4), (2,5)}
+\axes
+\tlabel[cc](3,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\xmarks{-2,-1,1,2}
+\ymarks{-4,-3,-2,-1,1,2,3,4}
+\tcaption{$f(x) = 3x-1$}
+\tlpointsep{4pt}
+\axislabels {x}{ {\tiny $-2 \hspace{7pt}$} -2, {\tiny $-1 \hspace{7pt}$} -1, {\tiny $1$} 1, {\tiny $2$} 2}
+\axislabels {y}{{\tiny $-1$} -1, {\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4}
+\end{mfpic} 
+
+\end{tabular}
+
+\end{center}
+
+\item  At first glance, the function $f(x) = \frac{3 - 2x}{4}$ does not fit the form in Definition \ref{linearfunction} but after some rearranging we get $f(x) = \frac{3 - 2x}{4} = \frac{3}{4} - \frac{2x}{4} = -\frac{1}{2} x + \frac{3}{4}$.  We identify $m = -\frac{1}{2}$ and $b = \frac{3}{4}$.  Hence, our graph is a line with a slope of $-\frac{1}{2}$ and a $y$-intercept of $\left(0, \frac{3}{4}\right)$.  Plotting an additional point, we can choose $(1,f(1))$ to get $\left(1, \frac{1}{4}\right)$.
+
+\begin{center}
+
+
+\end{center}
+
+\item  If we simplify the expression for $f$, we get
+
+\[ f(x) = \dfrac{x^2-4}{x-2} = \dfrac{\cancel{(x-2)}(x+2)}{\cancel{(x-2)}} = x+2.\]
+
+If we were to state $f(x) = x+2$, we would be committing a sin of omission.  Remember, to find the domain of a function, we do so \textbf{before} we simplify! In this case, $f$ has big problems when $x=2$, and as such,  the domain of $f$ is $(-\infty, 2) \cup (2,\infty)$.  To indicate this, we write $f(x) = x+2,$ $x \neq 2$.  So, except at $x=2$, we graph the line $y = x+2$.  The slope $m =1$ and the $y$-intercept is $(0,2)$.  A second point on the graph is $(1,f(1)) = (1,3)$.  Since our function $f$ is not defined at $x=2$, we put an open circle at the point that would be on the line $y=x+2$ when $x=2$, namely $(2,4)$.
+
+\begin{center}
+
+\begin{tabular}{m{3in}m{2in}} 
+
+\begin{mfpic}[15]{-4}{4}{-1}{3}
+\point[3pt]{( 0,0.75), (1,0.25)}
+\arrow \reverse \arrow \polyline{(-3,2.25),(3,-0.75)}
+\axes
+\tlabel[cc](4,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\xmarks{-3,-2,-1,1,2,3}
+\ymarks{1}
+\tcaption{$f(x) = \dfrac{3-2x}{4}$}
+\tlpointsep{4pt}
+\axislabels {x}{ {\tiny $-3 \hspace{7pt}$} -3, {\tiny $-2 \hspace{7pt}$} -2,{\tiny $-1 \hspace{7pt}$} -1, {\tiny $1$} 1, {\tiny $2$} 2 , {\tiny $3$} 3}
+\axislabels {y}{{\tiny $1$} 1,{\tiny $2$} 2}
+\end{mfpic} & 
+
+\begin{mfpic}[15]{-2}{4}{0}{5}
+\point[3pt]{(0,2), (1,3)}
+\arrow \reverse \arrow \polyline{( -1,1), (3,5)}
+\gclear \circle{(2,4),0.1}
+\circle{(2,4),0.1}
+\axes
+\tlabel[cc](4,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\xmarks{-1,1,2,3}
+\ymarks{1,2,3,4}
+\tcaption{$f(x) = \dfrac{x^2-4}{x-2}$}
+\tlpointsep{4pt}
+\axislabels {x}{ {\tiny $-1 \hspace{7pt}$} -1, {\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
+\axislabels {y}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4}
+\end{mfpic}
+
+\end{tabular}
+
+\end{center}
+
+\end{enumerate}
+
+\vspace{-.5in}
+
+\qed
+
+\end{ex} 
+
+The last two functions in the previous example showcase some of the difficulty in defining a linear function using the phrase `of the form' as in Definition \ref{linearfunction}, since some algebraic manipulations may be needed to rewrite a given function to match `the form'. Keep in mind that the domains of linear and constant functions are all real numbers $(-\infty, \infty)$, so while $f(x) = \frac{x^2-4}{x-2}$ simplified to a formula $f(x) = x+2$, $f$ is not considered a linear function since its domain excludes $x=2$.  However, we would consider \[f(x) = \dfrac{2x^2 + 2}{x^2+1}\] to be a constant function since its domain is all real numbers (Can you tell us why?) and \[ f(x) = \dfrac{2x^2 + 2}{x^2+1} = \dfrac{2\cancel{\left(x^2+1\right)}}{\cancel{\left(x^2+1\right)}} = 2\]
+
+The following example uses linear functions to model some basic economic relationships.
+
+\begin{ex} \label{PortaBoyCost} The cost $C$, in dollars, to produce $x$ PortaBoy\footnote{The similarity of this name to \href{http://www.toilets.com}{\underline{PortaJohn}} is deliberate.} game systems for a local retailer is given by   $C(x) = 80x + 150$ for $x \geq 0$.  
+
+\begin{enumerate}
+
+\item Find and interpret $C(10)$.
+
+\item How many PortaBoys can be produced for $\$15,\! 000$?  
+
+\item  Explain the significance of the restriction on the domain, $x \geq 0$.
+
+\item  Find and interpret $C(0)$.
+
+\item  Find and interpret the slope of the graph of  $y = C(x)$.
+
+
+\end{enumerate}
+
+\smallskip
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item  To find $C(10)$, we replace every occurrence of $x$ with $10$ in the formula for $C(x)$ to get $C(10) = 80(10)+150 = 950$.  Since $x$ represents the number of PortaBoys produced, and $C(x)$ represents the cost, in dollars, $C(10) = 950$ means it costs $\$950$ to produce $10$ PortaBoys for the local retailer.
+
+\item  To find how many PortaBoys can be produced for $\$15, \! 000$, we solve $C(x) = 15000$, or $80x+150 = 15000$.  Solving, we get  $x = \frac{14850}{80} = 185.625$. Since we can only produce a whole number amount of PortaBoys, we can produce $185$ PortaBoys for $\$15, \! 000$. 
+
+
+\item  The restriction $x \geq 0$ is the applied domain, as discussed in Section \ref{modeling}.  In this context, $x$ represents the number of PortaBoys produced.  It makes no sense to produce a negative quantity of game systems.\footnote{Actually, it makes no sense to produce a fractional part of a game system, either, as we saw in the previous part of this example.  This absurdity, however, seems quite forgivable in some textbooks but not to us.}
+
+\item  We find $C(0) = 80(0)+150 = 150$.  This means it costs $\$150$ to produce $0$ PortaBoys.  As mentioned on page \pageref{pricerevenuecostprofit}, this is the fixed, or start-up cost of this venture.
+
+\item  If we were to graph $y = C(x)$, we would be graphing the portion of the line $y = 80x + 150$ for $x \geq 0$.  We recognize the slope, $m = 80$.  Like any slope, we can interpret this as a rate of change.  Here, $C(x)$ is the cost in dollars, while $x$ measures the number of PortaBoys so \[ m = \dfrac{\Delta y}{\Delta x} = \dfrac{\Delta C}{\Delta x} = 80 = \dfrac{80}{1} = \dfrac{\$ 80}{1 \, \mbox{PortaBoy}}.\] In other words,  the cost is increasing at a rate of $\$80$ per PortaBoy produced.  This is often called the \index{cost ! variable}\index{variable cost}\textbf{variable cost} for this venture.  \qed
+
+\end{enumerate}
+
+\end{ex}
+
+The next example asks us to find a linear function to model a related economic problem.
+
+\begin{ex} \label{PortaBoyDemand}  The local retailer in Example \ref{PortaBoyCost} has determined that the number $x$ of PortaBoy game systems sold in a week is related to the price $p$ in dollars of each system.  When the price was $\$220$, $20$ game systems were sold in a week.  When the systems went on sale the following week, $40$ systems were sold at $\$190$ a piece. 
+
+\begin{enumerate}
+
+\item Find a linear function which fits this data.  Use the weekly sales $x$ as the independent variable and the price $p$ as the dependent variable.  
+
+\item Find a suitable applied domain.
+
+\item Interpret the slope.
+
+\item  If the retailer wants to sell $150$ PortaBoys next week, what should the price be?
+
+\item  What would the weekly sales be if the price were set at $\$150$ per system?
+
+\end{enumerate}
+
+\smallskip
+
+{\bf Solution.}  
+
+\begin{enumerate}
+
+\item  We recall from Section \ref{FunctionNotation} the meaning of `independent' and `dependent' variable.  Since $x$ is to be the independent variable, and $p$ the dependent variable, we treat $x$ as the input variable and $p$ as the output variable.  Hence, we are looking for a function of the form $p(x) = mx + b$.  To determine $m$ and $b$, we use the fact that $20$ PortaBoys were sold during the week when the price was $220$ dollars and $40$ units were sold when the price was $190$ dollars.  Using function notation, these two facts can be translated as $p(20)=220$ and $p(40)=190$.  Since $m$ represents the rate of change of $p$ with respect to $x$, we have  \[ m = \dfrac{\Delta p}{\Delta x} = \dfrac{190-220}{40-20} = \dfrac{-30}{20} = -1.5.\]  We now have determined $p(x) = -1.5 x + b$.  To determine $b$, we can use our given data again.  Using $p(20) = 220$, we substitute $x=20$ into $p(x) = 1.5x + b$ and set the result equal to $220$:  $-1.5(20)+b = 220$.  Solving, we get  $b = 250$. Hence, we get $p(x) = -1.5x + 250$.  We can check our formula by computing $p(20)$ and $p(40)$ to see if we get $220$ and $190$, respectively.  You may recall from page \pageref{pricerevenuecostprofit} that the function $p(x)$ is called the price-demand (or simply demand) function for this venture.
+
+\item  To determine the applied domain, we look at the physical constraints of the problem.  Certainly, we can't sell a negative number of PortaBoys, so $x \geq 0$. However, we also note that the slope of this linear function is negative, and as such, the price is decreasing as more units are sold.  Thus another constraint on the price is $p(x)\geq 0$.  Solving $-1.5 x + 250 \geq 0$ results in $-1.5 x \geq -250$ or $x \leq \dfrac{500}{3} = 166.\overline{6}$.  Since $x$ represents the number of PortaBoys sold in a week, we round down to $166$.  As a result, a reasonable applied domain for $p$ is $[0,166]$.  
+
+\item The slope $m = -1.5$, once again, represents the rate of change of the price of a system with respect to weekly sales of PortaBoys.  Since the slope is negative, we have that the price is decreasing at a rate of $\$1.50$ per PortaBoy sold.  (Said differently, you can sell one more PortaBoy for every $\$1.50$ drop in price.)
+
+\item  To determine the price which will move $150$ PortaBoys, we find $p(150) = -1.5(150) + 250 = 25$.  That is, the price would have to be $\$25$.
+
+\item  If the price of a PortaBoy were set at $\$150$, we have $p(x) = 150$, or, $-1.5x + 250 = 150$.  Solving, we get $-1.5x = -100$ or $x = 66.\overline{6}$. This means you would be able to sell $66$ PortaBoys a week if the price were $\$150$ per system.  \qed
+
+\end{enumerate}
+
+
+\end{ex}
+
+
+Not all real-world phenomena can be modeled using linear functions.  Nevertheless, it is possible to use the concept of slope to help analyze non-linear functions using the following.
+
+\smallskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{defn} \label{arc}  Let $f$ be a function defined on the interval $[a,b]$. The \index{average rate of change}\index{rate of change ! average}\textbf{average rate of change} of $f$ over $[a,b]$ is defined as: \[ \dfrac{\Delta f}{\Delta x} = \dfrac{f(b) - f(a)}{b-a} \]
+
+\end{defn}
+
+\ebm}
+
+\smallskip
+
+Geometrically, if we have the graph of $y=f(x)$, the average rate of change over $[a,b]$ is the slope of the line which connects $(a,f(a))$ and $(b,f(b))$.  This is called the \index{secant line} \textbf{secant line} through these points.  For that reason, some textbooks use the notation $m_{\sec}$ for the average rate of change of a function.  Note that for a linear function $m = m_{\sec}$, or in other words, its rate of change over an interval is the same as its average rate of change.
+
+\begin{center}
+
+\begin{mfpic}[15][7.5]{-4}{4}{-6}{6}
+\arrow \reverse \arrow \function{-3.5,1.5,0.1}{(x-1)*(x+1)*(x+3)}
+\point[3pt]{(-3.1,-0.861),(1.1,0.861)}
+\tlabel(-3,-1.5){\tiny $(a,f(a))$}
+\tlabel(1.2,0){\tiny $(b,f(b))$}
+\tlabel(2,5){\tiny $y=f(x)$}
+\arrow \reverse \arrow \polyline{(-4,-1.23),(4,2.05)}
+\end{mfpic}
+
+The graph of $y=f(x)$ and its secant line through $(a,f(a))$ and $(b,f(b))$
+
+\end{center}
+
+The interested reader may question the adjective `average' in the phrase `average rate of change'.  In the figure above, we can see that the function changes wildly on $[a,b]$, yet the slope of the secant line only captures a snapshot of the action at $a$ and $b$.  This situation is entirely analogous to the average speed on a trip.  Suppose it takes you $2$ hours to travel $100$ miles.  Your average speed is $\frac{100 \, \mbox{\small miles}}{2 \, \mbox{\small hours}} = 50 \, \mbox{miles per hour}$.  However, it is entirely possible that at the start of your journey, you traveled $25$ miles per hour, then sped up to $65$ miles per hour, and so forth.  The average rate of change is akin to your average speed on the trip.  Your speedometer measures your speed at any one instant along the trip, your \index{rate of change ! instantaneous}\index{instantaneous rate of change}\textbf{instantaneous rate of change}, and this is one of the central themes of Calculus.\footnote{Here we go again...}
+
+\phantomsection
+\label{instantaneousrateofchange}
+
+\smallskip
+
+When interpreting rates of change, we interpret them the same way we did slopes.  In the context of functions, it may be helpful to think of the average rate of change as:
+
+\[ \dfrac{\mbox{change in outputs}}{\mbox{change in inputs}}\] 
+
+\begin{ex} Recall from page  \pageref{pricerevenuecostprofit}, the revenue from selling $x$ units at a price $p$ per unit is given by the formula  $R=xp$.  Suppose we are in the scenario of Examples \ref{PortaBoyCost} and \ref{PortaBoyDemand}.
+\label{PortaBoyRevenue}
+
+\begin{enumerate}
+
+\item  Find and simplify an expression for the weekly revenue $R(x)$ as a function of weekly sales $x$.
+
+\item  Find and interpret the average rate of change of $R(x)$ over the interval $[0,50]$.
+
+\item  Find and interpret the average rate of change of $R(x)$ as $x$ changes from $50$ to $100$ and compare that to your result in part 2.
+
+\item  Find and interpret the average rate of change of weekly revenue as weekly sales increase from $100$ PortaBoys to $150$ PortaBoys.
+
+
+\end{enumerate}
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item  Since $R = xp$, we substitute $p(x) = -1.5x + 250$ from Example \ref{PortaBoyDemand} to get $R(x) = x (-1.5x + 250) = -1.5x^2+250x$. Since we determined the price-demand function $p(x)$ is restricted to $0 \leq x \leq 166$, $R(x)$ is restricted to these values of $x$ as well.
+
+\item  Using Definition \ref{arc}, we get that the average rate of change is \[ \dfrac{\Delta R}{\Delta x} = \dfrac{R(50) - R(0)}{50 - 0} = \dfrac{8750 - 0}{50 - 0} = 175.\]
+
+Interpreting this slope as we have in similar situations, we conclude that for every additional PortaBoy sold during a given week, the weekly revenue increases $\$ 175$.
+
+\item  The wording of this part is slightly different than that in Definition 
+\ref{arc}, but its meaning is to find the average rate of change of $R$ over the interval $[50,100]$.  To find this rate of change, we compute \[ \dfrac{\Delta R}{\Delta x} = \dfrac{R(100) - R(50)}{100-50} = \dfrac{10000 - 8750}{50} = 25.\]
+
+In other words, for each additional PortaBoy sold, the revenue increases by $\$25$.  Note that while the revenue is still increasing by selling more game systems, we aren't getting as much of an increase as we did in part 2 of this example. (Can you think of why this would happen?)
+
+\item  Translating the English to the mathematics, we are being asked to find the average rate of change of $R$ over the interval $[100,150]$.  We find \[ \dfrac{\Delta R}{\Delta x} = \dfrac{R(150) - R(100)}{150-100} = \dfrac{3750 - 10000}{50} = -125.\]
+
+This means that we are losing $\$125$ dollars of weekly revenue for each additional PortaBoy sold.  (Can you think why this is possible?) \qed
+
+\end{enumerate}
+
+
+
+\end{ex}
+
+We close this section with a new look at difference quotients which were first introduced in Section \ref{FunctionNotation}.  If we wish to compute the average rate of change of a function $f$ over the interval $[x, x+h]$, then we would have
+
+\[ \dfrac{\Delta f}{\Delta x} = \dfrac{f(x+h) - f(x)}{(x+h) - x} = \dfrac{f(x+h) - f(x)}{h}\]
+
+As we have indicated, the rate of change of a function (average or otherwise) is of great importance in Calculus.\footnote{So we are not torturing you with these for nothing.} Also, we have the geometric interpretation of difference quotients which was promised to you back on page \pageref{diffquotgeompromise} -- a difference quotient yields the slope of a secant line.
+
+\newpage
+
+\subsection{Exercises}
+
+In Exercises \ref{pointslopegivenlinefirst} - \ref{pointslopegivenlinelast}, find both the point-slope form and the slope-intercept form of the line with the given slope which passes through the given point.
+
+\begin{multicols}{2}
+\begin{enumerate}
+
+\item $m = 3, \;\; P(3, -1)$ \label{pointslopegivenlinefirst}
+\item $m = -2, \;\; P(-5, 8)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $m = -1, \;\; P(-7, -1)$
+\item $m = \frac{2}{3}, \;\; P(-2, 1)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $m = -\frac{1}{5}, \;\; P(10, 4)$
+\item $m = \frac{1}{7}, \;\; P(-1, 4)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $m = 0, \;\; P(3, 117)$
+\item $m = -\sqrt{2}, \;\; P(0, -3)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $m = -5, \;\; P(\sqrt{3}, 2\sqrt{3})$
+\item $m = 678, \;\; P(-1, -12)$ \label{pointslopegivenlinelast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+In Exercises \ref{twopointsgivenlinefirst} - \ref{twopointsgivenlinelast}, find the slope-intercept form of the line which passes through the given points.
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $P(0, 0), \; Q(-3, 5)$ \label{twopointsgivenlinefirst}
+\item $P(-1, -2), \; Q(3, -2)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $P(5, 0), \; Q(0, -8)$
+\item $P(3, -5), \; Q(7, 4)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $P(-1,5), \; Q(7, 5)$
+\item $P(4, -8), \; Q(5, -8)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $P\left(\frac{1}{2}, \frac{3}{4} \right), \; Q\left(\frac{5}{2}, -\frac{7}{4} \right)$
+\item $P\left(\frac{2}{3}, \frac{7}{2} \right), \; Q\left(-\frac{1}{3}, \frac{3}{2} \right)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $P\left(\sqrt{2}, -\sqrt{2} \right), \; Q\left(-\sqrt{2}, \sqrt{2} \right)$
+\item $P\left(-\sqrt{3}, -1 \right), \; Q\left(\sqrt{3}, 1 \right)$ \label{twopointsgivenlinelast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+In Exercises \ref{graphlineexerfirst} - \ref{graphlineexerlast}, graph the function.  Find the slope, $y$-intercept and $x$-intercept, if any exist.
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = 2x - 1$ \label{graphlineexerfirst}
+\item $f(x) = 3 - x$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = 3$
+\item $f(x) = 0$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = \frac{2}{3} x + \frac{1}{3}$ \vphantom{$\dfrac{1-x}{2}$}
+\item $f(x) = \dfrac{1-x}{2}$ \label{graphlineexerlast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  Find all of the points on the line $y=2x+1$ which are $4$ units from the point $(-1,3)$.
+
+
+\item  Jeff can walk comfortably at $3$ miles per hour.  Find a linear function $d$ that represents the total distance Jeff can walk in $t$ hours, assuming he doesn't take any breaks.
+
+\item  Carl can stuff $6$ envelopes per \textit{minute}.  Find a linear function $E$ that represents the total number of envelopes Carl can stuff after $t$ \textit{hours}, assuming he doesn't take any breaks.
+
+\item  A landscaping company charges $\$45$ per cubic yard of mulch plus a delivery charge of $\$20$.  Find a linear function which computes the total cost $C$ (in dollars) to deliver $x$ cubic yards of mulch.
+
+\item  A plumber charges $\$50$ for a service call plus $\$80$ per hour.  If she spends no longer than 8 hours a day at any one site, find a linear function that represents her total daily charges $C$ (in dollars) as a function of time $t$ (in hours) spent at any one given location.
+
+\item A salesperson is paid \$200 per week plus 5\% commission on her weekly sales of $x$ dollars.  Find a linear function that represents her total weekly pay, $W$ (in dollars) in terms of $x$.  What must her weekly sales be in order for her to earn \$475.00 for the week?
+
+
+\item  An on-demand publisher charges $\$22.50$ to print a 600 page book and $\$15.50$ to print a 400 page book.  Find a linear function which models the cost of a book $C$ as a function of the number of pages $p$.  Interpret the slope of the linear function and find and interpret $C(0)$.
+
+\item The Topology Taxi Company charges $\$2.50$ for the first fifth of a mile and $\$0.45$ for each additional fifth of a mile.  Find a linear function which models the taxi fare $F$ as a function of the number of miles driven, $m$.  Interpret the slope of the linear function and find and interpret $F(0)$.
+
+\item Water freezes at $0^{\circ}$ Celsius and $32^{\circ}$ Fahrenheit and it boils at $100^{\circ}$C and $212^{\circ}$F.  
+\label{celsiustofahr}
+
+\begin{enumerate}
+
+\item Find a linear function $F$ that expresses temperature in the Fahrenheit scale in terms of degrees Celsius.  Use this function to convert $20^{\circ}$C into Fahrenheit.
+
+\item Find a linear function $C$ that expresses temperature in the Celsius scale in terms of degrees Fahrenheit.  Use this function to convert $110^{\circ}$F into Celsius.
+
+\item Is there a temperature $n$ such that $F(n) = C(n)$?
+
+\end{enumerate}
+
+\item Legend has it that a bull Sasquatch in rut will howl approximately 9 times per hour when it is $40^{\circ}F$ outside and only 5 times per hour if it's $70^{\circ}F$.  Assuming that the number of howls per hour, $N$, can be represented by a linear function of temperature Fahrenheit, find the number of howls per hour he'll make when it's only $20^{\circ}F$ outside.  What is the applied domain of this function?  Why?
+
+\item \label{exerredoportaboy} Economic forces beyond anyone's control have changed the cost function for PortaBoys to $C(x) = 105x + 175$.  Rework Example \ref{PortaBoyCost} with this new cost function.
+
+\item In response to the economic forces in Exercise \ref{exerredoportaboy} above, the local retailer sets the selling price of a PortaBoy at \$250.  Remarkably, 30 units were sold each week.  When the systems went on sale for \$220, 40 units per week were sold.  Rework Examples \ref{PortaBoyDemand} and \ref{PortaBoyRevenue} with this new data.  What difficulties do you encounter?
+
+\item A local pizza store offers medium two-topping pizzas delivered for $\$6.00$ per pizza plus a $\$1.50$ delivery charge per order.  On weekends, the store runs a `game day' special:  if six or more medium two-topping pizzas are ordered, they are $\$5.50$ each with no delivery charge.  Write a piecewise-defined linear function which calculates the cost $C$ (in dollars) of  $p$ medium two-topping pizzas delivered during a weekend.
+
+\item  A restaurant offers a buffet which costs $\$15$ per person.  For parties of $10$ or more people, a group discount applies, and the cost is $\$12.50$ per person.   Write a piecewise-defined linear function which calculates the total bill $T$ of a party of $n$ people who all choose the buffet.
+ 
+
+
+\item  A mobile plan charges a base monthly rate of $\$10$ for the first $500$ minutes of air time plus a charge of $15$\textcent \, for each additional minute.  Write a piecewise-defined linear function which calculates the monthly cost $C$ (in dollars) for using $m$ minutes of air time. 
+
+\textbf{HINT:}  You may want to revisit Exercise \ref{piecewisemobile} in Section \ref{FunctionNotation}
+
+
+\item  The local pet shop charges $12$\textcent \, per cricket up to 100 crickets, and $10$\textcent \, per cricket thereafter.  Write a piecewise-defined linear function which calculates the price $P$, in dollars, of purchasing $c$ crickets.
+
+\item  The cross-section of a swimming pool is below.  Write a piecewise-defined linear function which describes the depth of the pool, $D$ (in feet) as a function of:
+
+\begin{enumerate}
+
+\item  the distance (in feet) from the edge of the shallow end of the pool, $d$.
+
+\item  the distance (in feet) from the edge of the deep end of the pool, $s$.
+
+\item  Graph each of the functions in (a) and (b).  Discuss with your classmates how to transform one into the other and how they relate to the diagram of the pool.
+
+\end{enumerate}
+
+\begin{center}
+
+\begin{mfpic}[25]{-1}{13}{-1}{4}
+\point[3pt]{(0,4), (12,4)}
+\arrow \polyline{(0,4), (4,4)}
+\arrow \polyline{(12,4), (8,4)}
+\arrow \reverse \arrow \polyline{(-0.25,0), (-0.25,3)}
+\arrow \reverse \arrow \polyline{(0,-0.35), (5,-0.35)}
+\arrow \reverse \arrow \polyline{(0,3.35), (12,3.35)}
+\arrow \reverse \arrow \polyline{(9,1.65), (12,1.65)}
+\arrow \reverse \arrow \polyline{(12.25,2), (12.25,3)}
+\gclear \tlabelrect(2, 4){\,$d$ ft.}
+\gclear \tlabelrect(10, 4){\, $s$ ft.}
+\gclear \tlabelrect(6, 3.35){37 ft.}
+\gclear \tlabelrect(2.5, -0.35){15 ft.}
+\gclear \tlabelrect(10.5, 1.65){10 ft.}
+\gclear \tlabelrect(-1, 1.5){8 ft.}
+\gclear \tlabelrect(13, 2.5){2 ft.}
+\penwd{1.5pt}
+\polyline{(0,0), (5,0), (9, 2), (12, 2), (12,3), (0,3), (0,0)}
+\end{mfpic}
+
+\end{center}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+In Exercises \ref{averagerateexerfirst} - \ref{averagerateexerlast}, compute the average rate of change of the  function over the specified interval.
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = x^{3}, \; [-1, 2]$ \vphantom{$\dfrac{1}{x}$} \label{averagerateexerfirst}
+\item $f(x) = \dfrac{1}{x}, \; [1, 5]$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = \sqrt{x}, \; [0, 16]$
+\item $f(x) = x^{2}, \; [-3, 3]$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = \dfrac{x + 4}{x - 3}, \; [5, 7]$
+\item $f(x) = 3x^{2} + 2x - 7, \; [-4, 2]$ \vphantom{$\dfrac{4}{x}$} \label{averagerateexerlast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\pagebreak
+
+In Exercises \ref{differexerfirst} - \ref{differexerlast}, compute the average rate of change of the given function over the interval $[x, x + h]$.  Here we assume $[x, x + h]$ is in the domain of the function.
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = x^{3}$ \vphantom{$\dfrac{1}{x}$} \label{differexerfirst}
+\item $f(x) = \dfrac{1}{x}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $f(x) = \dfrac{x + 4}{x - 3}$
+\item $f(x) = 3x^{2} + 2x - 7$ \vphantom{$\dfrac{4}{x}$} \label{differexerlast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  The height of an object dropped from the roof of an eight story building is modeled by:  $h(t) = -16t^2 + 64$, $0 \leq t \leq 2$. Here,  $h$ is the height of the object off the ground in feet, $t$ seconds after the object is dropped.  Find and interpret the average rate of change of $h$ over the interval $[0,2]$.
+
+\item Using data from \href{http://www.bts.gov/publications/national_transportation_statistics/html/table_04_23.html}{\underline{Bureau of Transportation Statistics}}, the average fuel economy $F$ in miles per gallon for passenger cars in the US can be modeled by  $F(t) = -0.0076t^2+0.45t + 16$, $0 \leq t \leq 28$, where $t$ is the number of years since $1980$. Find and interpret the average rate of change of $F$ over the interval $[0,28]$.
+
+\item  The temperature $T$ in degrees Fahrenheit $t$ hours after 6 AM is given by:
+
+\[ T(t) = -\frac{1}{2} t^2 + 8t+32, \quad 0 \leq t \leq 12\]
+
+\begin{enumerate}
+
+\item  Find and interpret $T(4)$, $T(8)$ and $T(12)$.
+
+\item  Find and interpret the average rate of change of $T$ over the interval $[4,8]$.
+
+\item  Find and interpret the average rate of change of $T$ from $t=8$ to $t=12$.
+
+\item  Find and interpret the average rate of temperature change between 10 AM and 6 PM.
+
+\end{enumerate}
+
+\item  Suppose $C(x) = x^2-10x+27$ represents the costs, in \textit{hundreds}, to produce $x$ \textit{thousand} pens.  Find and interpret the average rate of change as production is increased from making 3000 to 5000 pens.
+
+
+\item With the help of your classmates find several other ``real-world'' examples of rates of change that are used to describe non-linear phenomena.
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+
+\phantomsection
+\label{parallellines}
+
+(Parallel Lines) \index{line ! parallel}Recall from Intermediate Algebra that parallel lines have the same slope.  (Please note that two vertical lines are also parallel to one another even though they have an undefined slope.)  In Exercises \ref{parallelfirst} - \ref{parallellast}, you are given a line and a point which is not on that line.  Find the line parallel to the given line which passes through the given point.
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $y = 3x + 2, \; P(0, 0)$ \label{parallelfirst}
+\item $y = -6x + 5, \; P(3, 2)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $y = \frac{2}{3} x - 7, \; P(6, 0)$
+\item $y = \dfrac{4-x}{3}, \; P(1, -1)$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $y = 6, \; P(3, -2)$
+\item $x=1, \; P(-5,0)$ \label{parallellast}
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\phantomsection
+\label{perpendicularlines}
+
+(Perpendicular Lines) \index{line ! perpendicular} Recall from Intermediate Algebra that two non-vertical lines are perpendicular if and only if they have negative reciprocal slopes.  That is to say, if one line has slope $m_{\mbox{\tiny$1$}}$ and the other has slope $m_{\mbox{\tiny$2$}}$ then $m_{\mbox{\tiny$1$}} \cdot m_{\mbox{\tiny$2$}} = -1$.  (You will be guided through a proof of this result in Exercise \ref{perpendicularlineproof}.)  Please note that a horizontal line is perpendicular to a vertical line and vice versa, so we assume $m_{\mbox{\tiny$1$}} \neq 0$ and $m_{\mbox{\tiny$2$}} \neq 0$.  In Exercises \ref{perpendlinefirst} - \ref{perpendlinelast}, you are given a line and a point which is not on that line.  Find the line perpendicular to the given line which passes through the given point.
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item $y = \frac{1}{3}x + 2, \; P(0, 0)$ \label{perpendlinefirst}
+\item $y = -6x + 5, \; P(3, 2)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $y = \frac{2}{3} x - 7, \; P(6, 0)$
+\item $y = \dfrac{4-x}{3}, \; P(1, -1)$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $y = 6, \; P(3, -2)$
+\item $x=1, \; P(-5,0)$ \label{perpendlinelast}
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item We shall now prove that $y = m_{\mbox{\tiny$1$}}x + b_{\mbox{\tiny$1$}}$ is perpendicular to $y = m_{\mbox{\tiny$2$}}x + b_{\mbox{\tiny$2$}}$ if and only if $m_{\mbox{\tiny$1$}} \cdot m_{\mbox{\tiny$2$}} = -1$.  To make our lives easier we shall assume that $m_{\mbox{\tiny$1$}} > 0$ and $m_{\mbox{\tiny$2$}} < 0$.  We can also ``move'' the lines so that their point of intersection is the origin without messing things up, so we'll assume $b_{\mbox{\tiny$1$}} = b_{\mbox{\tiny$2$}} = 0.$  (Take a moment with your classmates to discuss why this is okay.)  Graphing the lines and plotting the points $O(0, 0)\;$, $P(1, m_{\mbox{\tiny$1$}})\;$ and $Q(1, m_{\mbox{\tiny$2$}})$ gives us the following set up. \label{perpendicularlineproof}
+
+\begin{center}
+
+\begin{mfpic}[18]{-5}{5}{-5}{5}
+\point[3pt]{(0, 0), (1.5, 0.75), (1.5, -3)}
+\arrow \reverse \arrow \polyline{( -4, -2), (4, 2)}
+\arrow \reverse \arrow \polyline{( -2, 4), (2, -4)}
+\polyline{(1.5, 0.75), (1.5, -3)}
+\tlabel(1.2, 1){\scriptsize $P$}
+\tlabel(-.5,-.6){\scriptsize $O$}
+\tlabel(1.2,-3.55){\scriptsize $Q$}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\end{mfpic}
+
+\end{center}
+
+The line $y = m_{\mbox{\tiny$1$}}x$ will be perpendicular to the line $y = m_{\mbox{\tiny$2$}}x$ if and only if $\bigtriangleup OPQ$ is a right triangle.  Let $d_{\mbox{\tiny$1$}}$ be the distance from $O$ to $P$, let $d_{\mbox{\tiny$2$}}$ be the distance from $O$ to $Q$ and let $d_{\mbox{\tiny$3$}}$ be the distance from $P$ to $Q$.  Use the Pythagorean Theorem to show that $\bigtriangleup OPQ$ is a right triangle if and only if $m_{\mbox{\tiny$1$}} \cdot m_{\mbox{\tiny$2$}} = -1$ by showing $d_{\mbox{\tiny$1$}}^{2} + d_{\mbox{\tiny$2$}}^{2} = d_{\mbox{\tiny$3$}}^2$ if and only if $m_{\mbox{\tiny$1$}} \cdot m_{\mbox{\tiny$2$}} = -1$.  
+
+
+
+\item  \label{inversemidpointex2} Show that if  $a \neq b$, the line containing the points $(a,b)$ and $(b,a)$ is perpendicular to the line $y = x$. (Coupled with the result from Example \ref{inversemidpointex1} on page \pageref{inversemidpoint}, we have now shown that the line $y = x$ is a \textit{perpendicular} bisector of the line segment connecting $(a,b)$ and $(b,a)$.  This means the points $(a,b)$ and $(b,a)$ are symmetric about the line $y = x$.  We will revisit this symmetry in section \ref{InverseFunctions}.)
+
+\item \label{identityexercise} The function defined by $I(x) = x$ is called the \index{function ! identity} Identity Function. 
+
+\begin{enumerate}
+
+\item Discuss with your classmates why this name makes sense.
+\item Show that the point-slope form of a line (Equation \ref{pointslope}) can be obtained from $I$ using a sequence of the transformations defined in Section \ref{Transformations}.
+
+\end{enumerate}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+
+
+\newpage
+
+\subsection{Answers}
+
+\begin{multicols}{2}
+\begin{enumerate}
+
+\item $y+1 = 3(x-3)$ \\ $y = 3x-10$
+\item $y-8 = -2(x+5)$ \\ $y = -2x-2$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $y + 1 = -(x+7)$ \\ $y = -x-8$
+\item $y - 1 = \frac{2}{3} (x+2)$ \\ $y = \frac{2}{3} x + \frac{7}{3}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $y - 4 = -\frac{1}{5} (x-10)$ \\ $y = -\frac{1}{5} x + 6$
+\item $y - 4 = \frac{1}{7}(x + 1)$ \\ $y = \frac{1}{7}x + \frac{29}{7}$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $y - 117 = 0$ \\ $y = 117$
+\item $y + 3 = -\sqrt{2}(x - 0)$ \\ $y = -\sqrt{2}x - 3$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $y - 2\sqrt{3} = -5(x - \sqrt{3})$ \\ $y = -5x + 7\sqrt{3}$ 
+\item $y + 12 = 678(x + 1)$ \\ $y = 678x + 666$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $y = -\frac{5}{3}x$
+\item $y = -2$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $y = \frac{8}{5}x - 8$ 
+\item $y = \frac{9}{4}x - \frac{47}{4}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $y = 5$
+\item $y = -8$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $y = -\frac{5}{4} x + \frac{11}{8}$ 
+\item $y = 2x + \frac{13}{6}$ 
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $y = -x$
+\item $y = \frac{\sqrt{3}}{3} x$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item \begin{multicols}{2} \raggedcolumns 
+
+$f(x) =2x-1$
+
+slope: $m = 2$ 
+
+$y$-intercept:  $(0,-1)$
+
+$x$-intercept: $\left(\frac{1}{2}, 0 \right)$ 
+
+\vfill
+
+\columnbreak
+
+\begin{mfpic}[15]{-3}{3}{-4}{4}
+\point[3pt]{(0,-1), (0.5,0)}
+\axes
+\tlabel[cc](3,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,4){\scriptsize $y$}
+\xmarks{-2,-1,1,2}
+\ymarks{-3,-2,-1,1,2,3}
+\tlpointsep{4pt}
+\tiny 
+\axislabels {x}{{$-2 \hspace{6pt}$} -2,{$-1 \hspace{6pt}$} -1, {$1$} 1, {$2$} 2}
+\axislabels {y}{{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
+\normalsize
+\arrow \reverse \arrow \function{-1,2, 0.1}{2*x-1}
+\end{mfpic}
+
+\end{multicols}
+
+\item \begin{multicols}{2} \raggedcolumns 
+
+$f(x) =3-x$
+
+slope: $m = -1$ 
+
+$y$-intercept:  $(0,3)$
+
+$x$-intercept: $(3, 0)$ 
+
+\vfill
+
+\columnbreak
+
+\begin{mfpic}[15]{-2}{5}{-2}{5}
+\point[3pt]{(0,3), (3,0)}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\xmarks{-1,1,2,3,4}
+\ymarks{-1,1,2,3,4}
+\tlpointsep{4pt}
+\tiny 
+\axislabels {x}{{$-1 \hspace{6pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\arrow \reverse \arrow \function{-1,4, 0.1}{3-x}
+\end{mfpic}
+
+\end{multicols}
+
+
+\item \begin{multicols}{2} \raggedcolumns 
+
+$f(x) = 3$
+
+slope: $m =0$ 
+
+$y$-intercept:  $(0,3)$
+
+$x$-intercept: none
+
+\vfill
+
+\columnbreak
+
+\begin{mfpic}[15]{-3}{3}{-1}{5}
+\point[3pt]{(0,3)}
+\axes
+\tlabel[cc](3,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\xmarks{-2,-1,1,2}
+\ymarks{1,2,3,4}
+\tlpointsep{4pt}
+\tiny 
+\axislabels {x}{{$-2 \hspace{6pt}$} -2,{$-1 \hspace{6pt}$} -1, {$1$} 1, {$2$} 2}
+\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\arrow \reverse \arrow \function{-3,3, 0.1}{3}
+\end{mfpic}
+
+\end{multicols}
+
+\item \begin{multicols}{2} \raggedcolumns 
+
+$f(x) = 0$
+
+slope: $m =0$ 
+
+$y$-intercept:  $(0,0)$
+
+$x$-intercept: $\{ (x,0) \, | \, \text{$x$ is a real number} \}$
+
+\vfill
+
+\columnbreak
+
+\begin{mfpic}[15]{-3}{3}{-2}{2}
+
+\arrow \polyline{(0,-2), (0,2)}
+\tlabel[cc](3,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,2){\scriptsize $y$}
+\xmarks{-2,-1,1,2}
+\ymarks{-1,1}
+\tlpointsep{4pt}
+\tiny 
+\axislabels {x}{{$-2 \hspace{6pt}$} -2,{$-1 \hspace{6pt}$} -1, {$1$} 1, {$2$} 2}
+\axislabels {y}{{$-1$} -1,{$1$} 1}
+\normalsize
+\penwd{1.15pt}
+\arrow \reverse \arrow \function{-3,3, 0.1}{0}
+\end{mfpic}
+
+\end{multicols}
+
+
+\item \begin{multicols}{2} \raggedcolumns 
+
+$f(x) = \frac{2}{3} x + \frac{1}{3}$
+
+slope: $m = \frac{2}{3}$ 
+
+$y$-intercept:  $\left(0, \frac{1}{3}\right)$
+
+$x$-intercept:  $\left(-\frac{1}{2}, 0\right)$
+
+\vfill
+
+\columnbreak
+
+\begin{mfpic}[15]{-3}{3}{-2}{3}
+\point[3pt]{(0,0.33333), (-0.5,0)}
+\axes
+\tlabel[cc](3,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\xmarks{-2,-1,1,2}
+\ymarks{-1,1,2}
+\tlpointsep{4pt}
+\tiny 
+\axislabels {x}{{$-2 \hspace{6pt}$} -2, {$1$} 1, {$2$} 2}
+\axislabels {y}{{$-1$} -1, {$1$} 1, {$2$} 2}
+\normalsize
+\arrow \reverse \arrow \function{-3,3, 0.1}{0.66667*x+0.33333}
+\end{mfpic}
+
+\end{multicols}
+
+\item \begin{multicols}{2} \raggedcolumns 
+
+$f(x) = \dfrac{1-x}{2}$
+
+slope: $m = -\frac{1}{2}$ 
+
+$y$-intercept:  $\left(0, \frac{1}{2}\right)$
+
+$x$-intercept:  $\left(1, 0\right)$
+
+\vfill
+
+\columnbreak
+
+\begin{mfpic}[15]{-3}{3}{-2}{3}
+\point[3pt]{(0,0.5), (1,0)}
+\axes
+\tlabel[cc](3,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\xmarks{-2,-1,1,2}
+\ymarks{-1,1,2}
+\tlpointsep{4pt}
+\tiny 
+\axislabels {x}{{$-2 \hspace{6pt}$} -2,{$-1 \hspace{6pt}$} -1, {$1$} 1, {$2$} 2}
+\axislabels {y}{{$-1$} -1, {$1$} 1, {$2$} 2}
+\normalsize
+\arrow \reverse \arrow \function{-3,3, 0.1}{0.5-0.5*x}
+\end{mfpic}
+
+\end{multicols}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $(-1,-1)$ and $\left(\frac{11}{5}, \frac{27}{5}\right)$
+\item  $d(t) = 3t$, $t \geq 0$.
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $E(t) = 360t$, $t \geq 0$.
+\item  $C(x) = 45x+20$, $x \geq 0$.
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $C(t) = 80t + 50$,  $0 \leq t \leq 8$.
+\item  $W(x) = 200 + .05x,\, x \geq 0\;\;$ She must make \$5500 in weekly sales.
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $C(p) = 0.035p + 1.5 \;$  The slope $0.035$ means it costs $3.5$\textcent \, per page.  $C(0) = 1.5$ means there is a fixed, or start-up, cost of $\$1.50$ to make each book.
+
+\item $F(m) = 2.25m + 2.05 \;$  The slope $2.25$ means it costs an additional $\$2.25$ for each mile beyond the first 0.2 miles.  $F(0) = 2.05$, so according to the model, it would cost $\$2.05$ for a trip of $0$ miles.  Would this ever really happen?  Depends on the driver and the passenger, we suppose.
+
+\pagebreak
+
+\item   \begin{multicols}{2}
+
+\begin{enumerate}
+
+\item $F(C) = \frac{9}{5}C + 32$
+\item $C(F) = \frac{5}{9}(F - 32) = \frac{5}{9}F - \frac{160}{9}$
+
+\setcounter{HWindent}{\value{enumii}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{enumerate}
+\setcounter{enumii}{\value{HWindent}}
+
+\item $F(-40) = -40 = C(-40)$.
+
+\end{enumerate}
+
+
+\item $N(T) = -\frac{2}{15}T + \frac{43}{3}$  
+
+Having a negative number of howls makes no sense and since $N(107.5) = 0$ we can put an upper bound of $107.5^{\circ}F$ on the domain.  The lower bound is trickier because there's nothing other than common sense to go on.  As it gets colder, he howls more often.  At some point it will either be so cold that he freezes to death or he's howling non-stop.  So we're going to say that he can withstand temperatures no lower than $-60^{\circ}F$ so that the applied domain is $[-60, 107.5]$.
+
+
+\addtocounter{enumi}{2}
+
+\item ${\displaystyle C(p) = \left\{ \begin{array}{rcl} 6p + 1.5 & \mbox{ if } & 1 \leq p \leq 5 \\
+                                                            5.5p & \mbox{ if } & p\geq 6
+                                     \end{array} \right. }$
+                                     
+
+
+\item  ${\displaystyle T(n) = \left\{ \begin{array}{rcl} 15n & \mbox{ if } & 1 \leq n \leq 9 \\
+                                                            12.5n & \mbox{ if } & n \geq 10 \\ 
+                                     \end{array} \right. }$
+                                     
+
+\item ${\displaystyle C(m) = \left\{ \begin{array}{rcl} 10 & \mbox{ if } & 0 \leq m \leq 500 \\
+                                                            10+0.15(m-500) & \mbox{ if } & m > 500
+                                     \end{array} \right. }$
+                                     
+\item ${\displaystyle P(c) = \left\{ \begin{array}{rcl} 0.12c & \mbox{ if } & 1 \leq c \leq 100 \\
+                                                            12 + 0.1(c-100) & \mbox{ if } & c > 100 
+                                     \end{array} \right. }$
+
+\item 
+
+\begin{enumerate}
+
+\item \[{\displaystyle D(d) = \left\{ \begin{array}{rcl} 8 & \mbox{ if } & 0 \leq d \leq 15 \\
+                                       -\frac{1}{2} \, d + \frac{31}{2} & \mbox{ if } & 15 \leq d \leq 27 \\
+                                       2 & \mbox{ if } & 27 \leq d \leq 37  \\                      
+                                     \end{array} \right. }\]
+
+\item \[{\displaystyle D(s) = \left\{ \begin{array}{rcl} 2 & \mbox{ if } & 0 \leq s \leq 10 \\
+                                       \frac{1}{2} \, s -3 & \mbox{ if } & 10 \leq s \leq 22 \\
+                                       8 & \mbox{ if } & 22 \leq s \leq 37  \\                      
+                                     \end{array} \right. }\]
+                                     
+
+
+
+\item  $~$
+
+\begin{center}
+\begin{tabular}{cc}
+
+\begin{mfpic}[10][15]{-1}{13}{-1}{4}
+\axes
+\polyline{(0,3), (5,3), (9,1), (12,1)}
+\point[3pt]{(0,3), (5,3), (9,1), (12,1)}
+\xmarks{5,9,12}
+\ymarks{0,1,3}
+\tlpointsep{5pt}
+\axislabels{x}{ {$15$} 5, {$27$} 9, {$37$} 12}
+\axislabels{y}{ {$2$} 1, {$8$} 3}
+\tcaption{$y = D(d)$}
+\end{mfpic}
+
+
+&
+
+\hspace{.5in}
+
+\begin{mfpic}[10][15]{-1}{13}{-1}{4}
+\axes
+\polyline{(12,3), (7,3), (3,1), (0,1)}
+\point[3pt]{(12,3), (7,3), (3,1), (0,1)}
+\xmarks{3,7,12}
+\ymarks{0,1,3}
+\tlpointsep{5pt}
+\axislabels{x}{ {$10$} 3, {$22$} 7, {$37$} 12}
+\axislabels{y}{ {$2$} 1, {$8$} 3}
+\tcaption{$y = D(s)$}
+\end{mfpic}  \\
+
+\end{tabular}
+
+\end{center}
+
+\end{enumerate}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{2^{3} - (-1)^{3}}{2 - (-1)} = 3$
+\item $\dfrac{\frac{1}{5} - \frac{1}{1}}{5 - 1} = -\dfrac{1}{5}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item $\dfrac{\sqrt{16} - \sqrt{0}}{16 - 0} = \dfrac{1}{4}$
+\item $\dfrac{3^{2} - (-3)^{2}}{3 - (-3)} = 0$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item $\dfrac{\frac{7 + 4}{7 - 3} - \frac{5 + 4}{5 - 3}}{7 - 5} = -\dfrac{7}{8}$ 
+\item \scriptsize $\dfrac{(3(2)^{2}+2(2)-7)-(3(-4)^{2}+2(-4)-7)}{2-(-4)}=-4$ \normalsize
+
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item $3x^{2} + 3xh + h^{2}$ \vphantom{$\dfrac{4}{x}$}
+\item $\dfrac{-1}{x(x + h)}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item $\dfrac{-7}{(x - 3)(x + h - 3)}$
+\item $6x + 3h + 2$ \vphantom{$\dfrac{4}{x}$}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item The average rate of change is $\frac{h(2) - h(0)}{2-0}=-32$.  During the first two seconds after it is dropped, the object has fallen at an average rate of $32$ feet per second.  (This is called the \textit{average velocity} of the object.)
+
+\item The average rate of change is $\frac{F(28) - F(0)}{28-0}=0.2372$.  During the years from 1980 to 2008, the average fuel economy of passenger cars in the US increased, on average, at a rate of $0.2372$ miles per gallon per year.
+
+\item 
+\begin{enumerate}
+
+\item  $T(4) = 56$, so at 10 AM (4 hours after 6 AM), it is $56^{\circ}$F.  $T(8) = 64$, so at 2 PM (8 hours after 6 AM), it is $64^{\circ}$F.  $T(12) = 56$, so at 6 PM (12 hours after 6 AM), it is $56^{\circ}$F.
+
+\item  The average rate of change is $\frac{T(8)-T(4)}{8-4}=2$.  Between 10 AM and 2 PM, the temperature increases, on average, at a rate of $2^{\circ}$F per hour.
+
+\item  The average rate of change is $\frac{T(12)-T(8)}{12-8}=-2$.  Between 2 PM and 6 PM, the temperature decreases, on average, at a rate of $2^{\circ}$F per hour.
+
+\item  The average rate of change is $\frac{T(12)-T(4)}{12-4}=0$.  Between 10 AM and 6 PM, the temperature, on average, remains constant.
+
+\end{enumerate}
+
+
+\item The average rate of change is $\frac{C(5)-C(3)}{5-3}=-2$.  As production is increased from 3000 to 5000 pens, the cost decreases at an average rate of  $\$200$ per 1000 pens produced (20\textcent \, per pen.)
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+\addtocounter{enumi}{1}
+
+\item $y = 3x$
+\item $y = -6x + 20$
+\item $y = \frac{2}{3} x - 4$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $y = -\frac{1}{3} x - \frac{2}{3}$
+\item $y=-2$
+\item $x=-5$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $y = -3x$
+\item $y = \frac{1}{6}x + \frac{3}{2}$
+\item $y = -\frac{3}{2} x +9$
+
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $y = 3x-4$
+\item $x=3$
+\item $y=0$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+
+\closegraphsfile

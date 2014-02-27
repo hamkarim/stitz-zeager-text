@@ -1,0 +1,1351 @@
+\mfpicnumber{1}
+
+\opengraphsfile{Hyperbolas}
+
+\setcounter{footnote}{0}
+
+\label{Hyperbolas}
+
+In the definition of an ellipse, Definition \ref{ellipsedefn}, we fixed two points called foci and looked at points whose distances to the foci always \textbf{added} to a constant distance $d$.  Those prone to syntactical tinkering may wonder what, if any, curve we'd generate if we replaced \textbf{added} with \textbf{subtracted}.  The answer is a hyperbola.
+
+\medskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{defn} \label{hyperboladefn} Given two distinct points $F_{\mbox{\tiny$1$}}$ and $F_{\mbox{\tiny$2$}}$ in the plane and a fixed distance $d$, a \index{hyperbola ! definition of}  \textbf{hyperbola} is the set of all points $(x, y)$ in the plane such that the absolute value of the difference of each of the distances from $F_{\mbox{\tiny$1$}}$ and $F_{\mbox{\tiny$2$}}$  to $(x, y)$ is $d$. The points $F_{\mbox{\tiny$1$}}$ and $F_{\mbox{\tiny$2$}}$ are called the \index{hyperbola ! foci} \index{focus (foci) ! of a hyperbola}\textbf{foci} of the hyperbola.
+
+\end{defn} 
+
+\ebm}
+
+\medskip
+
+\begin{center}
+
+\begin{mfpic}[15]{-6}{6}{-6}{6}
+\arrow \reverse \arrow \parafcn{-1.15,1.15,0.1}{(3*cosh(t),4*sinh(t))}
+\arrow \reverse \arrow \parafcn{-1.15,1.15,0.1}{(-3*cosh(t),4*sinh(t))}
+\dashed \polyline{(-5,0), (3.5,2.4)}
+\dashed \polyline{(5,0), (3.5,2.4)}
+\point[3pt]{(3.5,2.4)}
+\tlabel[cc](4.95,2.5){$(x_{\mbox{\tiny$1$}}, y_{\mbox{\tiny$1$}})$}
+\dashed \polyline{(-5,0), (-3.25,-1.667)}
+\dashed \polyline{(5,0), (-3.25,-1.667)}
+\point[3pt]{(-3.25,-1.667)}
+\tlabel[cc](-2.05,-2.25){$(x_{\mbox{\tiny$2$}}, y_{\mbox{\tiny$2$}})$}
+\tlabel[cc](-5,-0.75){$F_{\mbox{\tiny$1$}}$}
+\tlabel[cc](5,-0.75){$F_{\mbox{\tiny$2$}}$}
+\plotsymbol[3pt]{Asterisk}{(-5,0), (5,0)}
+\end{mfpic}
+
+\end{center}
+
+In the figure above:
+
+\[ \begin{array}{rclr} \mbox{the distance from $F_{\mbox{\tiny$1$}}$ to $(x_{\mbox{\tiny$1$}}, y_{\mbox{\tiny$1$}})$} - \mbox{the distance from $F_{\mbox{\tiny$2$}}$ to $(x_{\mbox{\tiny$1$}}, y_{\mbox{\tiny$1$}})$} & = & d & \\ \end{array}\]
+
+and
+
+\[ \begin{array}{rclr} \mbox{the distance from $F_{\mbox{\tiny$2$}}$ to $(x_{\mbox{\tiny$2$}}, y_{\mbox{\tiny$2$}})$} - \mbox{the distance from $F_{\mbox{\tiny$1$}}$ to $(x_{\mbox{\tiny$2$}}, y_{\mbox{\tiny$2$}})$} & = & d & \\ \end{array}\]
+
+Note that the hyperbola has two parts, called \index{hyperbola ! branch} \textbf{branches}.  The \index{hyperbola ! center} \index{center ! of a hyperbola} \textbf{center} of the hyperbola is the midpoint of the line segment connecting the two foci.  The \index{hyperbola ! transverse axis} \index{transverse axis of a hyperbola} \textbf{transverse axis} of the hyperbola is the line segment connecting two opposite ends of the hyperbola which also contains the center and foci.  The \index{hyperbola ! vertices} \index{vertex ! of a hyperbola} \textbf{vertices} of a hyperbola are the points of the hyperbola which lie on the transverse axis.  In addition, we will show momentarily that there are lines called \index{hyperbola ! asymptotes} \index{asymptote ! of a hyperbola} \textbf{asymptotes} which the branches of the hyperbola approach for large $x$ and $y$ values.   They serve as guides to the graph.  In pictures,
+
+
+\medskip
+
+\begin{center}
+
+\begin{mfpic}[15]{-6}{6}{-6}{6}
+\arrow \reverse \arrow \parafcn{-1.15,1.15,0.1}{(3*cosh(t),4*sinh(t))}
+\arrow \reverse \arrow \parafcn{-1.15,1.15,0.1}{(-3*cosh(t),4*sinh(t))}
+\dotted[1pt, 3pt] \polyline{(-3,0), (3,0)}
+\point[3pt]{(3,0),(-3,0)}
+\tlabel[cc](3.5,-0.55){$V_{\mbox{\tiny$2$}}$}
+\tlabel[cc](-3.5,-0.55){$V_{\mbox{\tiny$1$}}$}
+\tlabel[cc](-5,-0.55){$F_{\mbox{\tiny$1$}}$}
+\tlabel[cc](5,-0.55){$F_{\mbox{\tiny$2$}}$}
+\plotsymbol[3pt]{Asterisk}{(-5,0), (5,0)}
+\dashed \arrow \reverse \arrow \function{-4.5,4.5,0.1}{4*x/3}
+\dashed \arrow \reverse \arrow \function{-4.5,4.5,0.1}{-4*x/3}
+\gclear \tlabelrect[cc](0,0.5){\scriptsize Transverse Axis}
+\gclear \tlabelrect[cc](0,-0.55){$C$}
+\plotsymbol[3pt]{Cross}{(0,0)}
+\end{mfpic}
+
+\centerline{A hyperbola with center $C$; foci $F_{\mbox{\tiny$1$}}$, $F_{\mbox{\tiny$2$}}$; and vertices $V_{\mbox{\tiny$1$}}$, $V_{\mbox{\tiny$2$}}$ and asymptotes (dashed)}
+
+\end{center}
+
+\medskip
+
+Before we derive the standard equation of the hyperbola, we need to discuss one further parameter, the \index{hyperbola ! conjugate axis} \index{conjugate axis of a hyperbola} \textbf{conjugate axis} of the hyperbola.  The conjugate axis of a hyperbola is the line segment through the center which is perpendicular to the transverse axis and has the same length as the line segment through a vertex which connects the asymptotes.  In pictures we have
+
+\medskip
+
+\begin{center}
+
+\begin{mfpic}[15]{-6}{6}{-6}{6}
+\arrow \reverse \arrow \parafcn{-1.15,1.15,0.1}{(3*cosh(t),4*sinh(t))}
+\arrow \reverse \arrow \parafcn{-1.15,1.15,0.1}{(-3*cosh(t),4*sinh(t))}
+\point[3pt]{(3,0),(-3,0)}
+\tlabel[cc](3.75,0){$V_{\mbox{\tiny$2$}}$}
+\tlabel[cc](-3.75,0){$V_{\mbox{\tiny$1$}}$}
+\dashed \arrow \reverse \arrow \function{-4.5,4.5,0.1}{4*x/3}
+\dashed \arrow \reverse \arrow \function{-4.5,4.5,0.1}{-4*x/3}
+\dotted[1pt, 3pt] \polyline{(-3,-4),(-3,4)}
+\dotted[1pt, 3pt] \polyline{(0,-4),(0,4)}
+\dotted[1pt, 3pt] \polyline{(3,-4),(3,4)}
+\dotted[1pt, 3pt] \polyline{(-3,0), (3,0)}
+\dotted[1pt, 3pt] \polyline{(-3,4), (3,4)}
+\dotted[1pt, 3pt] \polyline{(-3,-4), (3,-4)}
+\gclear \tlabelrect[cc](0.5,0){$C$}
+\gclear \tlabelrect[cc](-0.5,0){\scriptsize \rotatebox{90}{Conjugate Axis}}
+\plotsymbol[3pt]{Cross}{(0,0)}
+\end{mfpic}
+
+\end{center}
+
+\medskip
+
+Note that in the diagram, we can construct a rectangle using line segments with lengths equal to the lengths of the transverse and conjugate axes whose center is the center of the hyperbola and whose diagonals are contained in the asymptotes.  This \index{hyperbola ! guide rectangle} \index{guide rectangle ! for a hyperbola} \textbf{guide rectangle}, much akin to the one we saw Section \ref{Ellipses} to help us graph ellipses, will aid us in graphing hyperbolas.
+
+\medskip
+
+Suppose we wish to derive the equation of a hyperbola.  For simplicity, we shall assume that the center is $(0,0)$,  the vertices are $(a,0)$ and $(-a,0)$ and the foci are $(c,0)$ and $(-c,0)$.  We label the endpoints of the conjugate axis $(0,b)$ and $(0,-b)$.  (Although $b$ does not enter into our derivation, we will have to justify this choice as you shall see later.)  As before, we assume $a$, $b$, and $c$ are all positive numbers.  Schematically we have 
+
+\begin{center}
+
+\begin{mfpic}[20]{-6}{6}{-6}{6}
+\axes
+\tlabel(6,-0.25){\scriptsize $x$}
+\tlabel(0.25,6){\scriptsize $y$}
+\arrow \reverse \arrow \parafcn{-1.15,1.15,0.1}{(3*cosh(t),4*sinh(t))}
+\arrow \reverse \arrow \parafcn{-1.15,1.15,0.1}{(-3*cosh(t),4*sinh(t))}
+\point[3pt]{(3,0),(-3,0),(0,4),(0,-4),(3.5,2.4)}
+\tlabel[cc](2,-0.5){$(a,0)$}
+\tlabel[cc](-2,-0.5){$(-a,0)$}
+\tlabel[cc](1,4.5){$(0,b)$}
+\tlabel[cc](1,-4.5){$(0,-b)$}
+\plotsymbol[3pt]{Cross}{(0,0)}
+\tlabel[cc](-5,-0.5){$(-c,0)$}
+\tlabel[cc](5,-0.5){$(c,0)$}
+\tlabel[cc](4.5,2.4){$(x,y)$}
+\plotsymbol[3pt]{Asterisk}{(-5,0), (5,0)}
+\dashed \arrow \reverse \arrow \function{-4.5,4.5,0.1}{4*x/3}
+\dashed  \arrow \reverse \arrow \function{-4.5,4.5,0.1}{-4*x/3}
+\dotted[1pt, 3pt] \polyline{(-3,-4),(-3,4)}
+\dotted[1pt, 3pt] \polyline{(3,-4),(3,4)}
+\dotted[1pt, 3pt] \polyline{(-3,4), (3,4)}
+\dotted[1pt, 3pt] \polyline{(-3,-4), (3,-4)}
+
+\end{mfpic}
+
+\end{center}
+
+\medskip
+
+Since $(a,0)$ is on the hyperbola, it must satisfy the conditions of Definition \ref{hyperboladefn}.  That is, the distance from $(-c,0)$ to $(a,0)$ minus the distance from $(c,0)$ to $(a,0)$ must equal the fixed distance $d$.  Since all these points lie on the $x$-axis, we get
+
+\[ \begin{array}{rclr} \mbox{distance from $(-c,0)$ to $(a,0)$} - \mbox{distance from $(c,0)$ to $(a,0)$} & = & d & \\ (a+c) - (c-a) & = & d & \\
+2a & = & d \\ \end{array}\]
+
+\medskip
+
+In other words, the fixed distance $d$ from the definition of the hyperbola is actually the length of the transverse axis!  (Where have we seen that type of coincidence before?)  Now consider a point $(x,y)$ on the hyperbola.  Applying Definition \ref{hyperboladefn}, we get
+
+
+\[ \begin{array}{rclr} 
+\mbox{distance from  $(-c,0)$ to $(x,y)$} - \mbox{distance from $(c,0)$ to $(x,y)$} & = & 2a & \\ \sqrt{(x-(-c))^2+(y-0)^2} - \sqrt{(x-c)^2+(y-0)^2} & = & 2a & \\ 
+\sqrt{(x+c)^2+y^2} - \sqrt{(x-c)^2+y^2} & = & 2a  \\ \end{array}\]
+
+\medskip
+
+Using the same arsenal of Intermediate Algebra weaponry we used in deriving the standard formula of an ellipse, Equation \ref{standardellipse}, we arrive at the following.\footnote{It is a good exercise to actually work this out.} 
+
+\[ \begin{array}{rclr} \left(a^2 - c^2\right) x^2 +a^2 y^2 & = & a^2 \left(a^2 - c^2\right)  & \end{array}\]
+
+What remains is to determine the relationship between $a$, $b$ and $c$.  To that end, we note that since $a$ and $c$ are both positive numbers with $a < c$, we get $a^2 < c^2$ so that $a^2 - c^2$ is a negative number.  Hence, $c^2 - a^2$ is a positive number.  For reasons which will become clear soon, we re-write the equation by solving for $y^2/x^2$ to get
+ 
+\[ \begin{array}{rclr} \left(a^2 - c^2\right) x^2 +a^2 y^2 & = & a^2 \left(a^2 - c^2\right)  & \\
+-\left(c^2 - a^2\right) x^2 +a^2 y^2 & = & -a^2 \left(c^2 - a^2\right)  & \\
+a^2 y^2 & = &  \left(c^2 - a^2\right) x^2 -  a^2\left(c^2 - a^2\right)& \\
+\dfrac{y^2}{x^2} & = &  \dfrac{\left(c^2 - a^2\right)}{a^2} -  \dfrac{\left(c^2 - a^2\right)}{x^2}& \\ \end{array}\]
+
+As $x$ and $y$ attain very large values, the quantity $\frac{\left(c^2 - a^2\right)}{x^2} \rightarrow 0$ so that $\frac{y^2}{x^2}  \rightarrow  \frac{\left(c^2 - a^2\right)}{a^2}$.  By setting $b^{2} = c^{2} - a^{2}$ we get 
+$\frac{y^2}{x^2}  \rightarrow  \frac{b^2}{a^2}$.  This shows that $y \rightarrow \pm \frac{b}{a} x$ as $|x|$ grows large.  Thus $y = \pm \frac{b}{a} x$ are the asymptotes to the graph as predicted and our choice of labels for the endpoints of the conjugate axis is justified.  In our equation of the hyperbola we can substitute $a^2 - c^2 = -b^2$ which yields 
+
+\[ \begin{array}{rclr} \left(a^2 - c^2\right) x^2 +a^2 y^2 & = & a^2 \left(a^2 - c^2\right)  &\\
+-b^2 x^2 +a^2 y^2 & = & - a^2 b^2  & \\
+\dfrac{x^2}{a^2} - \dfrac{y^2}{b^2} & = & 1 & \end{array} \]
+
+The equation above is for a hyperbola whose center is the origin and which opens to the left and right.  If the hyperbola were centered at a point $(h,k)$, we would get the following.
+
+\medskip
+
+\colorbox{ResultColor}{\bbm
+
+\begin{eqn} \label{standardhhyperbola} \index{hyperbola ! standard equation ! horizontal} \textbf{The Standard Equation of a Horizontal\footnote{That is, a hyperbola whose branches open to the left and right} Hyperbola}  For positive numbers $a$ and $b$, the equation of a horizontal hyperbola with center $(h,k)$ is
+
+\[ \dfrac{(x-h)^2}{a^2} - \dfrac{(y-k)^2}{b^2} = 1 \]
+
+\end{eqn}
+  
+\ebm}
+  
+\medskip
+  
+If the roles of $x$ and $y$ were interchanged, then the hyperbola's branches would open upwards and downwards and we would get a `vertical' hyperbola.
+  
+\medskip
+  
+\colorbox{ResultColor}{\bbm
+
+\begin{eqn}  \label{standardvhyperbola} \index{hyperbola ! standard equation ! vertical} \textbf{The Standard Equation of a Vertical Hyperbola}  For positive numbers $a$ and $b$, the equation of a vertical hyperbola with center $(h,k)$ is:
+
+\[ \dfrac{(y-k)^2}{b^2} - \dfrac{(x-h)^2}{a^2} = 1 \]
+
+\end{eqn}
+  
+\ebm}
+  
+\medskip
+
+The values of $a$ and $b$ determine how far in the $x$ and $y$ directions, respectively, one counts from the center to determine the rectangle through which the asymptotes pass.  In both cases, the distance from the center to the foci, $c$, as seen in the derivation, can be found by the formula $c = \sqrt{a^2 + b^2}$.  Lastly, note that we can quickly distinguish the equation of a hyperbola from that of a circle or ellipse because the hyperbola formula involves a \textbf{difference} of squares where the circle and ellipse formulas both involve the \textbf{sum} of squares.
+
+\begin{ex} Graph the equation $\frac{(x-2)^2}{4} -\frac{y^2}{25} = 1.$  Find the center, the lines which contain the transverse and conjugate axes, the vertices, the foci and the equations of the asymptotes.
+
+\medskip
+
+{\bf Solution.}  We first see that this equation is given to us in the standard form of Equation \ref{standardhhyperbola}.  Here $x-h$ is $x-2$ so $h = 2$, and $y-k$ is $y$ so $k = 0$.  Hence, our hyperbola is centered at $(2,0)$.  We see that $a^2 = 4$ so $a = 2$, and $b^2 = 25$ so $b=5$.  This means we move $2$ units to the  left and right of the center and $5$ units up and down from the center to arrive at points on the guide rectangle.  The asymptotes pass through the center of the hyperbola as well as the corners of the rectangle.  This yields the following set up.
+
+\begin{center}
+
+\begin{mfpic}[15]{-3}{7}{-8}{8}
+\axes
+\tlabel(7,-0.5){\scriptsize $x$}
+\tlabel(0.5,8){\scriptsize $y$}
+\xmarks{-2, -1, 0, 1, 2, 3, 4, 5,6}
+\ymarks{-7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7}
+\dotted[1pt, 3pt] \polyline{(0, -5), (0, 5), (4, 5), (4, -5), (0, -5)}
+\plotsymbol[3pt]{Cross}{(2,0)}
+\arrow \reverse \arrow \dashed \function{-0.75,4.75,.1}{(5/2)*(x-2)}
+\arrow \reverse \arrow \dashed \function{-0.75,4.75,.1}{(-5/2)*(x-2)}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+\axislabels {y}{{$-7$} -7, {$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7}
+\normalsize
+\end{mfpic}
+
+\end{center}
+
+Since the $y^2$ term is being subtracted from the $x^2$ term, we know that the branches of the hyperbola open to the left and right.  This means that the transverse axis lies along the $x$-axis.  Hence, the conjugate axis lies along the vertical line $x = 2$.  Since the vertices of the hyperbola are where the hyperbola intersects the transverse axis, we get that the vertices are $2$ units to the left and right of $(2,0)$ at $(0,0)$ and $(4,0)$.  To find the foci, we need $c = \sqrt{a^2 + b^2} = \sqrt{4+25} = \sqrt{29}$.  Since the foci lie on the transverse axis, we move $\sqrt{29}$ units to the left and right of $(2,0)$ to arrive at $(2 - \sqrt{29},0)$ (approximately $(-3.39, 0)$) and $(2 + \sqrt{29}, 0)$ (approximately $(7.39, 0)$).  To determine the equations of the asymptotes, recall that the asymptotes go through the center of the hyperbola, $(2,0)$, as well as the corners of guide rectangle, so they have slopes of $\pm \frac{b}{a} = \pm \frac{5}{2}$.  Using the point-slope equation of a line, Equation \ref{pointslope}, yields $y -0 = \pm \frac{5}{2} (x - 2)$, so we get $y = \frac{5}{2}x - 5$ and $y = -\frac{5}{2}x + 5$.  Putting it all together, we get
+
+\begin{center}
+
+\begin{mfpic}[15]{-4}{8}{-8}{8}
+\axes
+\tlabel(8,-0.5){\scriptsize $x$}
+\tlabel(0.5,8){\scriptsize $y$}
+\xmarks{-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7}
+\ymarks{-7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7}
+\point[3pt]{(0,0),(4,0)}
+\dotted[1pt, 3pt] \polyline{(0, -5), (0, 5), (4, 5), (4, -5), (0, -5)}
+\dotted[1pt, 3pt] \polyline{(2,-5), (2,5) }
+\arrow \reverse \arrow \parafcn{-1.25,1.25,0.1}{(2+2*cosh(t),5*sinh(t))}
+\arrow \reverse \arrow \parafcn{-1.25,1.25,0.1}{(2-2*cosh(t),5*sinh(t))}
+\arrow \reverse \arrow \dashed \function{-1.25,5.25,.1}{(5/2)*(x-2)}
+\arrow \reverse \arrow \dashed \function{-1.25,5.25,.1}{(-5/2)*(x-2)}
+\plotsymbol[3pt]{Cross}{(2,0)}
+\plotsymbol[3pt]{Asterisk}{(7.385164807, 0), (-3.385164807, 0)}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7}
+\axislabels {y}{{$-7$} -7, {$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7}
+\normalsize
+\end{mfpic}
+
+\end{center}
+
+\qed
+
+\end{ex}
+
+\begin{ex} Find the equation of the hyperbola with asymptotes $y= \pm 2x$ and vertices $(\pm 5,0)$.
+
+\medskip
+
+{\bf Solution.}  Plotting the data given to us, we have
+
+\begin{center}
+
+\begin{mfpic}[10]{-6}{6}{-6}{6}
+\axes
+\tlabel(6,-0.5){\scriptsize $x$}
+\tlabel(0.5,6){\scriptsize $y$}
+\xmarks{-5, -4, -3, -2, -1, 0,1,2,3,4,5}
+\ymarks{-5, -4, -3, -2, -1, 0,1,2,3,4,5}
+\point[3pt]{(5,0),(-5,0)}
+\arrow \reverse \arrow \dashed \function{-3,3,0.1}{2x}
+\arrow \reverse \arrow \dashed \function{-3,3,0.1}{-2x}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$-5 \hspace{6pt}$} -5, {$5$} 5}
+\axislabels {y}{{$-5$} -5, {$5$} 5}
+\end{mfpic}
+
+\end{center}
+
+This graph not only tells us that the branches of the hyperbola open to the left and to the right, it also tells us that the center is $(0,0)$.  Hence, our standard form is  $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$.  Since the vertices are $(\pm 5, 0)$, we have $a=5$ so $a^2 = 25$.  In order to determine $b^2$, we recall that the slopes of the asymptotes are $\pm \frac{b}{a}$.  Since $a = 5$ and the slope of the line $y=2x$ is $2$, we have that $\frac{b}{5} = 2$, so $b=10$.  Hence, $b^2 = 100$ and our final answer is $\frac{x^2}{25} - \frac{y^2}{100} = 1$. \qed
+
+\end{ex}
+
+As with the other conic sections, an equation whose graph is a hyperbola may not be given in either of the standard forms.  To rectify that, we have the following.
+
+\medskip
+
+\colorbox{ResultColor}{\bbm
+
+\centerline{\textbf{To Write the Equation of a Hyperbola in Standard Form}}
+
+\begin{enumerate}
+
+\item  Group the same variables together on one side of the equation and position the constant on the other side
+
+\item  Complete the square in both variables as needed
+
+\item  Divide both sides by the constant term so that the constant on the other side of the equation becomes $1$
+
+\end{enumerate}
+
+\ebm}
+
+\medskip
+
+\begin{ex} \label{ctshyperbolaex} Consider the equation $9y^2-x^2-6x=10$.  Put this equation in to standard form and graph.  Find the center, the lines which contain the transverse and conjugate axes, the vertices, the foci, and the equations of the asymptotes.   
+
+\medskip
+
+{\bf Solution.} We need only complete the square on $x$:
+
+\[ \begin{array}{rclr} 9y^2-x^2-6x & = & 10 & \\[5pt]
+9y^2-1\left(x^2+6x\right) &  = & 10 &  \\[5pt]
+9y^2-\left(x^2+6x + 9\right) &  = & 10 - 1(9) &  \\[5pt]
+9y^2-(x+3)^2 &  = & 1 &  \\ [5pt]
+\dfrac{y^2}{\frac{1}{9}} - \dfrac{(x+3)^2}{1} & = & 1 &  \end{array} \]
+
+Now that this equation is in the standard form of Equation \ref{standardvhyperbola}, we see that $x-h$ is $x+3$ so $h = -3$, and $y-k$ is $y$ so $k = 0$.  Hence, our hyperbola is centered at $(-3, 0)$.  We find that $a^2 = 1$ so $a=1$, and $b^2 = \frac{1}{9}$ so  $b=\frac{1}{3}$.  This means that we move $1$ unit to the left and right of the center and $\frac{1}{3}$ units up and down from the center to arrive at points on the guide rectangle.  Since the $x^2$ term is being subtracted from the $y^2$ term, we know the branches of the hyperbola open upwards and downwards.  This means the transverse axis lies along the vertical line $x=-3$ and the conjugate axis lies along the $x$-axis.  Since the vertices of the hyperbola are where the hyperbola intersects the transverse axis, we get that the vertices are $\frac{1}{3}$ of a unit above and below $(-3, 0)$ at $\left(-3, \frac{1}{3}\right)$ and $\left(-3, -\frac{1}{3}\right)$.  To find the foci, we use \[c = \sqrt{a^2 + b^2} = \sqrt{\frac{1}{9} + 1} = \frac{\sqrt{10}}{3}\] Since the foci lie on the transverse axis, we move $\frac{\sqrt{10}}{3}$ units above and below $(-3, 0)$ to arrive at $\left(-3, \frac{\sqrt{10}}{3}\right)$ and $\left(-3, -\frac{\sqrt{10}}{3}\right)$.  To determine the asymptotes, recall that the asymptotes go through the center of the hyperbola, $(-3,0)$, as well as the corners of guide rectangle, so they have slopes of $\pm \frac{b}{a} = \pm \frac{1}{3}$.  Using the point-slope equation of a line, Equation \ref{pointslope}, we get  $y = \frac{1}{3}x + 1$ and $y = -\frac{1}{3}x - 1$.  Putting it all together, we get
+
+\begin{center}
+
+\begin{mfpic}[30]{-7}{1}{-2}{2}
+\axes
+\tlabel(1,-0.15){\scriptsize $x$}
+\tlabel(0.15,2){\scriptsize $y$}
+\xmarks{-6, -5, -4, -3, -2, -1}
+\ymarks{-1,1}
+\point[3pt]{(-3,1/3),(-3,-1/3)}
+\dotted[1pt, 3pt] \polyline{(-4, -1/3), (-4, 1/3), (-2, 1/3), (-2, -1/3), (-4, -1/3)}
+\arrow \reverse \arrow \parafcn{-1.75,1.75,0.1}{(-3+sinh(t), (1/3)*cosh (t))}
+\arrow \reverse \arrow \parafcn{-1.75,1.75,0.1}{(-3+sinh(t), (-1/3)*cosh (t))}
+\dotted[1pt, 3pt] \polyline{(-3,-0.333),(-3,0.333)}
+\dashed \arrow \reverse \arrow \function{-6,0,0.1}{(1/3)*(x+3)}
+\dashed \arrow \reverse \arrow \function{-6,0,0.1}{(-1/3)*(x+3)}
+\plotsymbol[3pt]{Cross}{(-3,0)}
+\plotsymbol[3pt]{Asterisk}{(-3, 1.054092553), (-3, -1.054092553)}
+\tlpointsep{6pt}
+\axislabels {x}{{\scriptsize $-6 \hspace{7pt}$} -6, {\scriptsize $-1 \hspace{7pt}$} -1}
+\tlabel[cc](0.33,0.98){\scriptsize $1$}
+\tlabel[cc](0.25,-1.02){\scriptsize $-1$}
+\end{mfpic}
+
+\end{center}
+
+\qed
+
+\end{ex}
+
+Hyperbolas can be used in so-called `\href{http://en.wikipedia.org/wiki/Trilateration}{\underline{trilateration}},' or `positioning' problems.  The procedure outlined in the next example is the basis of the (now virtually defunct) LOng Range Aid to Navigation (\href{http://en.wikipedia.org/wiki/LORAN}{\underline{LORAN}} for short) \index{LORAN} system.\footnote{GPS now rules the positioning kingdom.  Is there still a place for LORAN and other land-based systems?  Do satellites ever malfunction?}
+
+\begin{ex}  Jeff is stationed $10$ miles due west of Carl in an otherwise empty forest in an attempt to locate an elusive Sasquatch.  At the stroke of midnight, Jeff records a Sasquatch call $9$ seconds earlier than Carl.  If the speed of sound that night is $760$ miles per hour, determine a hyperbolic path along which Sasquatch must be located.
+
+\medskip
+
+{\bf Solution.}  Since Jeff hears Sasquatch sooner, it is closer to Jeff than it is to Carl.  Since the speed of sound is $760$ miles per hour, we can determine how much closer Sasquatch is to Jeff by multiplying \[760 \, \frac{\mbox{miles}}{\mbox{hour}} \times \frac{ 1 \, \mbox{hour}}{ 3600 \, \mbox{seconds}} \times 9 \, \mbox{seconds}  = 1.9 \, \mbox{miles}\]  This means that Sasquatch is $1.9$ miles closer to Jeff than it is to Carl.  In other words, Sasquatch must lie on a path where \[\text{(the distance to Carl)} - \text{(the distance to Jeff)} = 1.9\]  This is exactly the situation in the definition of a hyperbola, Definition \ref{hyperboladefn}.  In this case, Jeff and Carl are located at the foci,\footnote{We usually like to be the \textit{center} of attention, but being the \textit{focus} of attention works equally well.} and our fixed distance $d$ is 1.9.  For simplicity, we assume the hyperbola is centered at $(0,0)$ with its foci at $(-5, 0)$ and $(5, 0)$.  Schematically, we have
+
+
+\begin{center}
+
+\begin{mfpic}[15]{-7}{7}{-7}{7}
+\axes
+\tlabel(7,-0.5){\scriptsize $x$}
+\tlabel(0.5,7){\scriptsize $y$}
+\xmarks{-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
+\ymarks{-6, -5,-4,-3,-2,-1,1,2,3,4,5,6}
+\arrow \reverse \arrow \parafcn{-1.2,1.2,0.1}{(0.95*cosh(t),4.91*sinh(t))}
+\arrow \reverse \arrow \parafcn{-1.2,1.2,0.1}{(-0.95*cosh(t),4.91*sinh(t))}
+\plotsymbol[3pt]{Cross}{(0,0)}
+\plotsymbol[3pt]{Asterisk}{(-5,0), (5,0)}
+\tlabel[cc](-5,0.5){Jeff}
+\tlabel[cc](5,0.5){Carl}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$-6 \hspace{7pt}$} -6, {$-5 \hspace{7pt}$} -5, {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+\axislabels {y}{{$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+\normalsize
+\end{mfpic}
+
+\end{center}
+
+We are seeking a curve of the form $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$ in which the distance from the center to each focus is $c = 5$.  As we saw in the derivation of the standard equation of the hyperbola, Equation \ref{standardhhyperbola}, $d = 2a$, so that $2a = 1.9$, or $a = 0.95$ and $a^2 = 0.9025$.  All that remains is to find $b^2$.  To that end, we recall that $a^2 + b^2 = c^2$ so $b^2 = c^2 - a^2 = 25 - 0.9025 = 24.0975$. Since Sasquatch is closer to Jeff than it is to Carl, it must be on the western (left hand) branch of $\frac{x^2}{0.9025} - \frac{y^2}{24.0975} = 1$.  \qed
+
+\end{ex}
+
+In our previous example, we did not have enough information to pin down the exact location of Sasquatch.  To accomplish this, we would need a third observer.  
+
+\begin{ex}  \label{FindtheSasquatch} By a stroke of luck, Kai was also camping in the woods during the events of the previous example.  He was located $6$ miles due north of Jeff and heard the Sasquatch call $18$ seconds after Jeff did.  Use this added information to locate Sasquatch.
+
+\medskip
+
+{\bf Solution.} Kai and Jeff are now the foci of a second hyperbola where the fixed distance $d$ can be determined as before \[760 \, \dfrac{\mbox{miles}}{\mbox{hour}} \times \dfrac{ 1 \, \mbox{hour}}{ 3600 \, \mbox{seconds}} \times 18 \, \mbox{seconds}  = 3.8 \, \mbox{miles}\]  Since Jeff was positioned at $(-5, 0)$, we place Kai at $(-5, 6)$.  This puts the center of the new hyperbola at $(-5, 3)$.  Plotting Kai's position and the new center gives us the diagram below on the left. The second hyperbola is vertical, so it must be of the form $\frac{(y-3)^2}{b^2} - \frac{(x+5)^2}{a^2} = 1$.  As before, the distance $d$ is the length of the major axis, which in this case is $2b$.  We get $2b = 3.8$ so that $b = 1.9$ and $b^2 = 3.61$.  With Kai $6$ miles due North of Jeff, we have that the distance from the center to the focus is $c = 3$.  Since $a^2 + b^2 = c^2$, we get $a^2 = c^2 - b^2 = 9 - 3.61 = 5.39$.  Kai heard the Sasquatch call after Jeff, so Kai is farther from Sasquatch than Jeff.  Thus Sasquatch must lie on the southern branch of the hyperbola $\frac{(y-3)^2}{3.61} - \frac{(x+5)^2}{5.39} = 1$.  Looking at the western branch of the hyperbola determined by Jeff and Carl along with the southern branch of the hyperbola determined by Kai and Jeff, we see that there is exactly one point in common, and this is where Sasquatch must have been when it called.
+
+
+\begin{center}
+
+\begin{tabular}{cc}
+\begin{mfpic}[10]{-10}{7}{-7}{7}
+\axes
+\tlabel(7,-0.5){\scriptsize $x$}
+\tlabel(0.5,7){\scriptsize $y$}
+\xmarks{-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
+\ymarks{-6, -5,-4,-3,-2,-1,1,2,3,4,5,6}
+\arrow \reverse \arrow \parafcn{-1.5,1.5,0.1}{(-5+2.32164*sinh(t),3+1.9*cosh(t))}
+\arrow \reverse \arrow \parafcn{-1.5,1.5,0.1}{(-5+2.32164*sinh(t),3 - 1.9*cosh(t))}
+\dotted[1pt, 3pt] \arrow \reverse \arrow \parafcn{-1.1,1.2,0.1}{(0.95*cosh(t),4.91*sinh(t))}
+\dotted[1pt, 3pt] \arrow \reverse \arrow \parafcn{-1.1,1.2,0.1}{(-0.95*cosh(t),4.91*sinh(t))}
+\tlabel[cc](-5,0.5){\scriptsize Jeff}
+\tlabel[cc](5,0.5){\scriptsize Carl}
+\tlabel[cc](-5, 6.5){\scriptsize Kai}
+\plotsymbol[3pt]{Asterisk}{(-5,0),(5,0),(-5,6)}
+\plotsymbol[3pt]{Cross}{(0,0),(-5,3)}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$-9 \hspace{7pt}$} -9,{$-8 \hspace{7pt}$} -8,{$-7 \hspace{7pt}$} -7,{$-6 \hspace{7pt}$} -6, {$-5 \hspace{7pt}$} -5, {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt} $} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+\axislabels {y}{{$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+\normalsize
+\end{mfpic}
+
+&
+
+\begin{mfpic}[10]{-10}{7}{-7}{7}
+\axes
+\tlabel(7,-0.5){\scriptsize $x$}
+\tlabel(0.5,7){\scriptsize $y$}
+\xmarks{-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
+\ymarks{-6, -5,-4,-3,-2,-1,1,2,3,4,5,6}
+\arrow \reverse \arrow \parafcn{-1.5,1.5,0.1}{(-5+2.32164*sinh(t),3 - 1.9*cosh(t))} 
+\arrow \reverse \arrow \parafcn{-1.1,1.1,0.1}{(-0.95*cosh(t),4.91*sinh(t))}
+\tlabel[cc](-5,0.5){\scriptsize Jeff}
+\tlabel[cc](5,0.5){\scriptsize Carl}
+\tlabel[cc](-5, 6.5){\scriptsize Kai}
+\plotsymbol[3pt]{Asterisk}{(-5,0),(5,0),(-5,6)}
+\plotsymbol[3pt]{Cross}{(0,0),(-5,3)}
+\point[3pt]{(-0.9628865,-0.8112885)}
+\tlabel[cc](-2.9,-1.4){\scriptsize Sasquatch}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$-9 \hspace{7pt}$} -9,{$-8 \hspace{7pt}$} -8,{$-7 \hspace{7pt}$} -7,{$-6 \hspace{7pt}$} -6, {$-5 \hspace{7pt}$} -5, {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+\axislabels {y}{{$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+\normalsize
+\end{mfpic} \\
+
+\end{tabular}
+
+\end{center}
+
+To determine the coordinates of this point of intersection exactly, we would need techniques for solving systems of non-linear equations (which we won't see until Section \ref{NonLinear}), so we use the calculator\footnote{First solve each hyperbola for $y$,  and choose the correct equation (branch) before proceeding.} Doing so, we get Sasquatch is approximately at $(-0.9629, -0.8113)$. \qed   
+
+\end{ex}
+
+Each of the conic sections we have studied in this chapter result from graphing equations of the form $Ax^2 + Cy^2 + Dx + Ey + F = 0$ for different choices of $A$, $C$, $D$, $E$, and\footnote{See Section \ref{PolarConics} to see why we skip $B$.} $F$. While we've seen examples\footnote{Examples \ref{ctscircleex}, \ref{ctsparabolaex}, \ref{ctsellipseex}, and \ref{ctshyperbolaex}, in particular.} demonstrate \textit{how} to convert an equation from this general form to one of the standard forms, we close this chapter with some advice about \textit{which} standard form to choose.\footnote{We formalize this in Exercise \ref{conicsclassificationnoxytermex}.}
+
+\smallskip
+
+\phantomsection
+\label{idconocsrulesofthumb}
+\colorbox{ResultColor}{\bbm
+
+\centerline{\textbf{Strategies for Identifying Conic Sections}}
+
+\smallskip
+
+Suppose the graph of  equation $Ax^2 + Cy^2 + Dx + Ey + F = 0$ is a non-degenerate conic section.\footnote{That is, a parabola, circle, ellipse, or hyperbola -- see Section \ref{IntrotoConics}.}
+
+\begin{itemize}
+
+\item  If just \textit{one} variable is squared, the graph is a parabola.  Put the equation in the form of Equation \ref{standardvparabola} (if $x$ is squared)  or Equation \ref{standardhparabola} (if $y$ is squared).
+
+\end{itemize}
+
+If \textit{both} variables are squared, look at the coefficients of $x^2$ and $y^2$, $A$ and $B$.
+
+\begin{itemize}
+
+\item  If $A=B$, the graph is a circle.  Put the equation in the form of Equation \ref{standardcircle}.
+
+\item If $A \neq B$ but $A$ and $B$ have the \textit{same sign}, the graph is an ellipse. Put the equation in the form of Equation \ref {standardellipse}.
+
+
+\item   If  $A$ and $B$ have the \textit{different signs}, the graph is a hyperbola.  Put the equation in the form of either Equation \ref{standardhhyperbola} or Equation \ref{standardvhyperbola}.
+
+\end{itemize}
+
+\ebm}
+
+
+    
+
+\newpage
+
+\subsection{Exercises}
+
+
+In Exercises \ref{graphhyperbolafirst} - \ref{graphhyperbolalast}, graph the hyperbola.  Find the center, the lines which contain the transverse and conjugate axes, the vertices, the foci and the equations of the asymptotes.
+
+\begin{multicols}{2}
+\begin{enumerate}
+
+\item $\dfrac{x^{2}}{16} - \dfrac{y^{2}}{9} = 1$ \label{graphhyperbolafirst}
+
+\item $\dfrac{y^{2}}{9} - \dfrac{x^{2}}{16} = 1$ 
+
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{(x - 2)^{2}}{4} - \dfrac{(y + 3)^{2}}{9} = 1$
+\item $\dfrac{(y - 3)^{2}}{11} - \dfrac{(x - 1)^{2}}{10} = 1$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item $\dfrac{(x + 4)^{2}}{16} - \dfrac{(y - 4)^{2}}{1} = 1$
+\item  $\dfrac{(x+1)^2}{9} - \dfrac{(y-3)^2}{4} = 1$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $\dfrac{(y+2)^2}{16} - \dfrac{(x-5)^2}{20} = 1$
+\item  $\dfrac{(x-4)^2}{8} - \dfrac{(y-2)^2}{18} = 1$ \label{graphhyperbolalast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+In Exercises \ref{stdfrmhypfirst} - \ref{stdfrmhyplast}, put the equation in standard form.  Find the center, the lines which contain the transverse and conjugate axes, the vertices, the foci and the equations of the asymptotes.
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $12x^{2} - 3y^{2} + 30y - 111 = 0$  \label{stdfrmhypfirst}
+\item $18y^{2} - 5x^{2} +  72y + 30x - 63= 0$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $9x^2-25y^2-54x-50y-169 = 0$
+\item $-6x^2+5y^2-24x+40y+26=0$  \label{stdfrmhyplast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+In Exercises \ref{buildhypfirst} - \ref{buildhyplast},  find the standard form of the equation of the hyperbola which has the given properties.
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item Center $(3, 7)$, Vertex $(3, 3)$, Focus $(3, 2)$  \label{buildhypfirst}
+\item Vertex $(0, 1)$, Vertex $(8, 1)$, Focus $(-3, 1)$
+
+\item Foci $(0, \pm 8)$, Vertices $(0, \pm 5)$.
+\item Foci $(\pm 5, 0)$, length of the Conjugate Axis $6$
+
+
+\item Vertices $(3,2)$, $(13,2)$; Endpoints of the Conjugate Axis $(8,4)$, $(8,0)$
+\item Vertex $(-10, 5)$, Asymptotes $y = \pm \frac{1}{2}(x - 6) + 5$ \label{buildhyplast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+
+In Exercises \ref{generalconicfirst} - \ref{generalconiclast}, find the standard form of the equation using the guidelines on page \pageref{idconocsrulesofthumb} and then graph the conic section.
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $x^2-2x-4y-11=0$  \label{generalconicfirst}
+\item $x^2 + y^2-8x+4y+11=0$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $9x^2 + 4y^2-36x+24y + 36=0$
+
+\item $9x^2-4y^2-36x-24y-36=0$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $y^2+8y-4x+16=0$
+
+\item  $4x^2+y^2-8x+4=0$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item   $4x^2+9y^2-8x+54y+49=0$
+
+\item  $x^2 + y^2-6x+4y+14=0$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $2x^2+ 4y^2+12x-8y+25=0$
+
+\item   $4x^2-5y^2-40x-20y+160=0$  \label{generalconiclast}
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item The graph of a vertical or horizontal hyperbola clearly fails the Vertical Line Test, Theorem \ref{VLT}, so the equation of a vertical of horizontal hyperbola does not define $y$ as a function of $x$.\footnote{We will see later in the text that the graphs of certain rotated hyperbolas pass the Vertical Line Test.}  However, much like with circles, horizontal parabolas and ellipses, we can split a hyperbola into pieces, each of which would indeed represent $y$ as a function of $x$.  With the help of your classmates, use your calculator to graph the hyperbolas given in Exercises \ref{graphhyperbolafirst} - \ref{graphhyperbolalast} above.  How many pieces do you need for a vertical hyperbola?  How many for a horizontal hyperbola?  
+
+
+\item The location of an earthquake's epicenter $-$ the point on the surface of the Earth directly above where the earthquake actually occurred $-$ can be determined by a process similar to how we located Sasquatch in Example \ref{FindtheSasquatch}.  (As we said back in Exercise \ref{Richterexercise} in Section \ref{IntroExpLogs}, earthquakes are complicated events and it is not our intent to provide a complete discussion of the science involved in them.  Instead, we refer the interested reader to a course in Geology or the U.S. Geological Survey's Earthquake Hazards Program found \href{http://earthquake.usgs.gov/}{\underline{here}}.)  Our technique works only for relatively small distances because we need to assume that the Earth is flat in order to use hyperbolas in the plane.\footnote{Back in the Exercises in Section \ref{CartesianPlane} you were asked to research people who believe the world is flat.  What did you discover?}  The P-waves (``P'' stands for Primary) of an earthquake in Sasquatchia travel at 6 kilometers per second.\footnote{Depending on the composition of the crust at a specific location, P-waves can travel between 5 kps and 8 kps.}  Station A records the waves first. Then Station B, which is 100 kilometers due north of Station A, records the waves 2 seconds later.  Station C, which is 150 kilometers due west of Station A records the waves 3 seconds after that (a total of 5 seconds after Station A). Where is the epicenter?
+
+\item \label{hyperbolaeccentricity} The notion of eccentricity introduced for ellipses in Definition \ref{ellipseeccentricity} in Section \ref{Ellipses} is the same for hyperbolas in that we can define the eccentricity $e$ of a hyperbola as 
+
+\[  e = \dfrac{\mbox{distance from the center to a focus}}{\mbox{distance from the center to a vertex}} \]
+  
+
+\begin{enumerate}
+
+\item  With the help of your classmates, explain why $e > 1$ for any hyperbola.
+
+\item  Find the equation of the hyperbola with vertices $(\pm 3,0)$ and eccentricity $e = 2$.
+
+\item  With the help of your classmates, find the eccentricity of each of the hyperbolas in  Exercises \ref{graphhyperbolafirst} - \ref{graphhyperbolalast}.  What role does eccentricity play in the shape of the graphs?
+
+\end{enumerate}
+
+\item  On page \pageref{paraboloid} in Section \ref{Parabolas}, we discussed paraboloids of revolution when studying the design of satellite dishes and parabolic mirrors.  In much the same way, `natural draft' cooling towers are often shaped as \index{hyperboloid} \textbf{hyperboloids of revolution}.  Each vertical cross section of these towers is a hyperbola.  Suppose the a natural draft cooling tower has the cross section below. Suppose the tower is 450 feet wide at the base,  275 feet wide at the top, and 220 feet at its narrowest point (which occurs 330 feet above the ground.)  Determine the height of the tower to the nearest foot.
+\begin{center}
+
+\begin{mfpic}[20]{-3}{3}{0}{5}
+\curve{(3,0), (1.5,3), (2,5)}
+\curve{(-3,0), (-1.5,3), (-2,5)}
+\point[3pt]{(3,0), (1.5,3), (2,5), (-3,0), (-1.5,3), (-2,5)}
+\arrow \reverse \arrow \polyline{(-2.75,0), (2.75,0)}
+\tlabel[cc](0,-0.5){\scriptsize $450$ ft}
+\arrow \reverse \arrow \polyline{(-1.25,3), (1.25,3)}
+\tlabel[cc](0,2.5){\scriptsize $220$ ft}
+\arrow \reverse \arrow \polyline{(-1.75,5), (1.75,5)}
+\tlabel[cc](0,5.5){\scriptsize $275$ ft}
+\arrow \reverse \arrow \polyline{(5,0.25), (5,2.75)}
+\dotted \polyline{(1.5,3), (5,3)}
+\gclear \tlabelrect[cc]{(5,1.5)}{\scriptsize $330$ ft}
+\end{mfpic}
+
+\end{center} 
+
+\item With the help of your classmates, research the Cassegrain Telescope.  It uses the reflective property of the hyperbola as well as that of the parabola to make an ingenious telescope.
+
+\item \label{conicsclassificationnoxytermex} With the help of your classmates show that if $Ax^2 + Cy^2 + Dx + Ey + F = 0$ determines a non-degenerate conic\footnote{Recall that this means its graph is either a circle, parabola, ellipse or hyperbola.} then
+
+\begin{itemize}
+
+\item  $AC < 0$ means that the graph is a hyperbola
+
+\item  $AC = 0$ means that the graph is a parabola
+
+\item  $AC > 0$ means that the graph is an ellipse or circle
+
+\end{itemize}
+
+\textbf{NOTE:}  This result will be generalized in Theorem \ref{conicclassification} in Section \ref{rotationaxes}.
+
+\end{enumerate}
+
+\newpage
+
+\subsection{Answers}
+
+\begin{enumerate}
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{x^{2}}{16} - \dfrac{y^{2}}{9} = 1$
+
+Center $(0, 0)$\\
+Transverse axis on $y = 0$\\
+Conjugate axis on $x = 0$\\
+Vertices $(4, 0), (-4, 0)$\\
+Foci $(5, 0), (-5, 0)$\\
+Asymptotes $y = \pm \frac{3}{4} x$\\
+
+\begin{mfpic}[12][9]{-7}{7}{-7}{7}
+\axes
+\tlabel(7,-0.5){\scriptsize $x$}
+\tlabel(0.5,7){\scriptsize $y$}
+\xmarks{-6 step 1 until 6}
+\ymarks{-6 step 1 until 6}
+\point[3pt]{(4,0),(-4,0)}
+\dotted[1pt, 3pt] \polyline{(-4,3), (4,3), (4, -3), (-4,-3), (-4,3)}
+\arrow \reverse \arrow \parafcn{-5,5,0.1}{(sqrt(16 + (1.778*(t**2))),t)}
+\arrow \reverse \arrow \parafcn{-5,5,0.1}{(-sqrt(16 + (1.778*(t**2))),t)}
+\arrow \reverse \arrow \dashed \function{-7,7,0.1}{0.75*x}
+\arrow \reverse \arrow \dashed \function{-7,7,0.1}{-0.75*x}
+\plotsymbol[3pt]{Cross}{(0,0)}
+\plotsymbol[3pt]{Asterisk}{(5,0), (-5,0)}
+
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-6 \hspace{6pt}$} -6, {$-5 \hspace{6pt}$} -5, {$-4 \hspace{6pt}$} -4, {$-3 \hspace{6pt}$} -3, {$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+\axislabels {y}{{$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+\normalsize
+\end{mfpic}
+
+\end{multicols}
+
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{y^{2}}{9} - \dfrac{x^{2}}{16} = 1$
+
+Center $(0, 0)$\\
+Transverse axis on $x = 0$\\
+Conjugate axis on $y = 0$\\
+Vertices $(0, 3), (0, -3)$\\
+Foci $(0, 5), (0, -5)$\\
+Asymptotes $y = \pm \frac{3}{4} x$\\
+
+\begin{mfpic}[12][9]{-7}{7}{-7}{7}
+\axes
+\tlabel(7,-0.5){\scriptsize $x$}
+\tlabel(0.5,7){\scriptsize $y$}
+\xmarks{-6 step 1 until 6}
+\ymarks{-6 step 1 until 6}
+\point[3pt]{(0,3),(0,-3)}
+\dotted[1pt, 3pt] \polyline{(-4,3), (4,3), (4, -3), (-4,-3), (-4,3)}
+\arrow \reverse \arrow \function{-7,7,0.1}{sqrt(9 + (0.5625*(x**2)))}
+\arrow \reverse \arrow \function{-7,7,0.1}{-sqrt(9 + (0.5625*(x**2)))}
+\arrow \reverse \arrow \dashed \function{-7,7,0.1}{0.75*x}
+\arrow \reverse \arrow \dashed \function{-7,7,0.1}{-0.75*x}
+\plotsymbol[3pt]{Cross}{(0,0)}
+\plotsymbol[3pt]{Asterisk}{(0,5), (0,-5)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-6 \hspace{6pt}$} -6, {$-5 \hspace{6pt}$} -5, {$-4 \hspace{6pt}$} -4, {$-3 \hspace{6pt}$} -3, {$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+\axislabels {y}{{$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+\normalsize
+\end{mfpic}
+
+\end{multicols}
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{(x - 2)^{2}}{4} - \dfrac{(y + 3)^{2}}{9} = 1$
+
+Center $(2, -3)$\\
+Transverse axis on $y = -3$\\
+Conjugate axis on $x = 2$\\
+Vertices $(0, -3), (4, -3)$\\
+Foci $(2 + \sqrt{13}, -3), (2 - \sqrt{13}, -3)$\\
+Asymptotes $y = \pm \frac{3}{2}(x - 2) - 3$\\
+
+\begin{mfpic}[12][9]{-4}{8}{-11}{5}
+\axes
+\tlabel(8,-0.5){\scriptsize $x$}
+\tlabel(0.5,5){\scriptsize $y$}
+\xmarks{-3 step 1 until 7}
+\ymarks{-10 step 1 until 4}
+\point[3pt]{(0,-3),(4,-3)}
+\dotted[1pt, 3pt] \polyline{(0,0), (4,0), (4, -6), (0,-6), (0,0)}
+\arrow \function{4,7,0.1}{-3 + sqrt((2.25*((x - 2)**2)) - 9)}
+\arrow \reverse \function{-3,0,0.1}{-3 + sqrt((2.25*((x - 2)**2)) - 9)}
+\arrow \function{4,7,0.1}{-3 - sqrt((2.25*((x - 2)**2)) - 9)}
+\arrow \reverse \function{-3,0,0.1}{-3 - sqrt((2.25*((x - 2)**2)) - 9)}
+\arrow \reverse \arrow \dashed \function{-3,7,0.1}{-1.5*x}
+\arrow \reverse \arrow \dashed \function{-3,7,0.1}{(1.5*x) - 6}
+\plotsymbol[3pt]{Cross}{(2,-3)}
+\plotsymbol[3pt]{Asterisk}{(5.60555,-3), (-1.60555,-3)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-3 \hspace{6pt}$} -3, {$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7}
+\axislabels {y}{{$-10$} -10, {$-9$} -9, {$-8$} -8, {$-7$} -7, {$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\end{mfpic}
+
+\end{multicols}
+
+\pagebreak
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{(y - 3)^{2}}{11} - \dfrac{(x - 1)^{2}}{10} = 1$
+
+Center $(1, 3)$\\
+Transverse axis on $x = 1$\\
+Conjugate axis on $y = 3$\\
+Vertices $(1, 3 + \sqrt{11}), (1, 3 - \sqrt{11})$\\
+Foci $(1, 3 + \sqrt{21}), (1, 3 - \sqrt{21})$\\
+Asymptotes $y = \pm \frac{\sqrt{110}}{10}(x - 1) + 3$\\
+
+\begin{mfpic}[12][9]{-6}{8}{-4}{10}
+\axes
+\tlabel(8,-0.5){\scriptsize $x$}
+\tlabel(0.5,10){\scriptsize $y$}
+\xmarks{-5 step 1 until 7}
+\ymarks{-3 step 1 until 9}
+\point[3pt]{(1,6.16228),(1,-0.16228)}
+\dotted[1pt, 3pt] \polyline{(-2.3166,6.16228), (4.3166,6.16228), (4.3166,-0.16228), (-2.3166,-0.16228), (-2.3166,6.16228)}
+\arrow \reverse \arrow \function{-5.5,7.5,0.1}{3 + sqrt(10 + (0.90909*((x-1)**2)))}
+\arrow \reverse \arrow \function{-5.5,7.5,0.1}{3 - sqrt(10 + (0.90909*((x-1)**2)))}
+\arrow \reverse \arrow \dashed \function{-6,8,0.1}{0.95346*(x - 1) + 3}
+\arrow \reverse \arrow \dashed \function{-6,8,0.1}{-0.95346*(x - 1) + 3}
+\plotsymbol[3pt]{Cross}{(1,3)}
+\plotsymbol[3pt]{Asterisk}{(1,7.58258), (1,-1.58258)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-5 \hspace{6pt}$} -5, {$-4 \hspace{6pt}$} -4, {$-3 \hspace{6pt}$} -3, {$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7}
+\axislabels {y}{{$-3$} -3, {$-2$} -2, {$-1$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9}
+\normalsize
+\end{mfpic}
+
+\end{multicols}
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{(x + 4)^{2}}{16} - \dfrac{(y - 4)^{2}}{1} = 1$
+
+Center $(-4, 4)$\\
+Transverse axis on $y = 4$\\
+Conjugate axis on $x = -4$\\
+Vertices $(-8, 4), (0, 4)$\\
+Foci $(-4 + \sqrt{17}, 4), (-4 - \sqrt{17}, 4)$\\
+Asymptotes $y = \pm \frac{1}{4}(x +4) +4$\\
+
+\begin{mfpic}[12][9]{-12}{4}{-1}{6}
+\axes
+\tlabel(4,-0.5){\scriptsize $x$}
+\tlabel(0.5,6){\scriptsize $y$}
+\xmarks{-11 step 1 until 3}
+\ymarks{1 step 1 until 5}
+\point[3pt]{(-8,4),(0,4)}
+\dotted[1pt, 3pt] \polyline{(-8,5), (0,5), (0,3), (-8,3), (-8,5)}
+\arrow \function{0,4,0.1}{4 + sqrt((0.0625*((x + 4)**2)) - 1)}
+\arrow \reverse \function{-12,-8,0.1}{4 + sqrt((0.0625*((x + 4)**2)) - 1)}
+\arrow \function{0,4,0.1}{4 - sqrt((0.0625*((x + 4)**2)) - 1)}
+\arrow \reverse \function{-12,-8,0.1}{4 - sqrt((0.0625*((x + 4)**2)) - 1)}
+\arrow \reverse \arrow \dashed \function{-12,4,0.1}{0.25*x + 5}
+\arrow \reverse \arrow \dashed \function{-12,4,0.1}{-0.25*x + 3}
+\plotsymbol[3pt]{Cross}{(-4,4)}
+\plotsymbol[3pt]{Asterisk}{(0.123106,4), (-8.123106,4)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-11 \hspace{6pt}$} -11, {$-10 \hspace{6pt}$} -10, {$-9 \hspace{6pt}$} -9, {$-8 \hspace{6pt}$} -8, {$-7 \hspace{6pt}$} -7, {$-6 \hspace{6pt}$} -6, {$-5 \hspace{6pt}$} -5, {$-4 \hspace{6pt}$} -4, {$-3 \hspace{6pt}$} -3, {$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3}
+\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\normalsize
+\end{mfpic}
+
+\end{multicols}
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{(x+1)^2}{9} - \dfrac{(y-3)^2}{4} = 1$
+
+Center $(-1, 3)$\\
+Transverse axis on $y=3$\\
+Conjugate axis on $x=-1$\\
+Vertices $(2, 3), (-4, 3)$\\
+Foci $\left(-1+\sqrt{13}, 3\right), \left(-1-\sqrt{13}, 3\right)$\\
+Asymptotes $y = \pm \frac{2}{3} (x+1)+3$\\
+
+\begin{mfpic}[12]{-8}{6}{-1}{6}
+\axes
+\tlabel(6,-0.5){\scriptsize $x$}
+\tlabel(0.5,6){\scriptsize $y$}
+\xmarks{-7 step 1 until 5}
+\ymarks{1 step 1 until 5}
+\point[3pt]{(2,3),(-4,3)}
+\dotted \polyline{(-4,1), (-4,5), (2, 5), (2,1),(-4,1)}
+\arrow \reverse \arrow \parafcn{-1.4,1.4,0.1}{(3*cosh(t)-1,2*sinh(t)+3)}
+\arrow \reverse \arrow \parafcn{-1.4,1.4,0.1}{(-3*cosh(t)-1,2*sinh(t)+3)}
+\arrow \reverse \arrow \dashed \function{-7,5,0.1}{(2/3)*(x+1)+3}
+\arrow \reverse \arrow \dashed \function{-7,5,0.1}{3-(2/3)*(x+1)}
+\plotsymbol[3pt]{Cross}{(-1,3)}
+\plotsymbol[3pt]{Asterisk}{(2.6056,3), (-4.6056,3)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-7 \hspace{6pt}$} -7,{$-6 \hspace{6pt}$} -6,{$-5 \hspace{6pt}$} -5, {$-4 \hspace{6pt}$} -4, {$-3 \hspace{6pt}$} -3, {$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\normalsize
+\end{mfpic}
+
+\end{multicols}
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{(y+2)^2}{16} - \dfrac{(x-5)^2}{20} = 1$
+
+Center $(5, -2)$\\
+Transverse axis on $x=5$\\
+Conjugate axis on $y=-2$\\
+Vertices $(5,2), (5,-6)$\\
+Foci $\left(5,4 \right), \left(5,-8\right)$\\
+Asymptotes $y = \pm \frac{2\sqrt{5}}{5} (x-5)-2$\\
+
+\begin{mfpic}[10]{-2}{12}{-9}{5}
+\axes
+\tlabel(12,-0.5){\scriptsize $x$}
+\tlabel(0.5,5){\scriptsize $y$}
+\xmarks{-1 step 1 until 11}
+\ymarks{-8 step 1 until 4}
+\point[3pt]{(5,2),(5,-6)}
+\dotted \polyline{(0.5279,-6), (0.5279,2), (9.4721, 2), (9.4721,-6),(0.5279,-6)}
+\arrow \reverse \arrow \parafcn{-1.25,1.25,0.1}{(4.4721*sinh(t)+5,4*cosh(t)-2)}
+\arrow \reverse \arrow \parafcn{-1.25,1.25,0.1}{(4.4721*sinh(t)+5,0-4*cosh(t)-2)}
+\arrow \reverse \arrow \dashed \function{-2,12,0.1}{0.89442*(x-5)-2}
+\arrow \reverse \arrow \dashed \function{-2,12,0.1}{0-2-0.89442*(x-5)}
+\plotsymbol[3pt]{Cross}{(5,-2)}
+\plotsymbol[3pt]{Asterisk}{(5,4), (5,-8)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-1 \hspace{6pt}$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9, {$10$} 10, {$11$} 11}
+\axislabels {y}{{$-8$} -8,{$-7$} -7,{$-6$} -6,{$-5$} -5,{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\end{mfpic}
+
+\end{multicols}
+
+\pagebreak
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{(x-4)^2}{8} - \dfrac{(y-2)^2}{18} = 1$
+
+Center $(4, 2)$\\
+Transverse axis on $y=2$\\
+Conjugate axis on $x=4$\\
+Vertices $\left(4+2\sqrt{2},2\right), \left(4-2\sqrt{2},2\right)$\\
+Foci $\left(4+\sqrt{26},2 \right), \left(4-\sqrt{26},2\right)$\\
+Asymptotes $y = \pm \frac{3}{2} (x-4)+2$\\
+
+\begin{mfpic}[10]{-3}{11}{-4}{10}
+\axes
+\tlabel(9,-0.5){\scriptsize $x$}
+\tlabel(0.5,10){\scriptsize $y$}
+\xmarks{-2 step 1 until 10}
+\ymarks{-3 step 1 until 9}
+\point[3pt]{(6.8284,2),(1.1716,2)}
+\dotted \polyline{(1.1716,-2.2426), (1.1716,6.2426), (6.8284, 6.2426), (6.8284,-2.2426),(1.1716,-2.2426)}
+\arrow \reverse \arrow \parafcn{-1.2,1.2,0.1}{(2.8284*cosh(t)+4,4.2426*sinh(t)+2)}
+\arrow \reverse \arrow \parafcn{-1.2,1.2,0.1}{(0-2.8284*cosh(t)+4,4.2426*sinh(t)+2)}
+\arrow \reverse \arrow \dashed \function{-1,9,0.1}{1.5*(x-4)+2}
+\arrow \reverse \arrow \dashed \function{-1,9,0.1}{2-1.5*(x-4)}
+\plotsymbol[3pt]{Cross}{(4,2)}
+\plotsymbol[3pt]{Asterisk}{(9.0990,2), (-1.0990,2)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9, {$10$} 10}
+\axislabels {y}{ -3,{$-2$} -2,{$-1$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9}
+\normalsize
+\end{mfpic}
+
+\end{multicols}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item $\dfrac{x^{2}}{3} - \dfrac{(y - 5)^{2}}{12} = 1$
+
+Center $(0, 5)$\\
+Transverse axis on $y = 5$\\
+Conjugate axis on $x = 0$\\
+Vertices $(\sqrt{3}, 5), (-\sqrt{3}, 5)$\\
+Foci $(\sqrt{15}, 5), (-\sqrt{15}, 5)$\\
+Asymptotes $y = \pm 2x + 5$
+
+\item $\dfrac{(y + 2)^{2}}{5} - \dfrac{(x - 3)^{2}}{18} = 1$
+
+Center $(3, -2)$\\
+Transverse axis on $x = 3$\\
+Conjugate axis on $y = -2$\\
+Vertices $(3, -2 + \sqrt{5}), (3, -2 - \sqrt{5})$\\
+Foci $(3, -2 + \sqrt{23}), (3, -2 - \sqrt{23})$\\
+Asymptotes $y = \pm \frac{\sqrt{10}}{6}(x - 3) - 2$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{(x-3)^{2}}{25} - \dfrac{(y+1)^{2}}{9} = 1$
+
+Center $(3, -1)$\\
+Transverse axis on $y=-1$\\
+Conjugate axis on $x=3$\\
+Vertices $(8, -1), (-2, -1)$\\
+Foci $\left(3+\sqrt{34}, -1 \right), \left(3-\sqrt{34}, -1 \right)$\\
+Asymptotes $y = \pm \frac{3}{5}(x - 3) - 1$
+
+
+
+\item $\dfrac{(y+4)^{2}}{6} - \dfrac{(x+2)^{2}}{5} = 1$
+
+Center $(-2, -4)$\\
+Transverse axis on $x=-2$\\
+Conjugate axis on $y=-4$\\
+Vertices $\left(-2,-4+\sqrt{6} \right), \left(-2,-4-\sqrt{6} \right)$\\
+Foci $\left(-2, -4+\sqrt{11} \right), \left(-2, -4-\sqrt{11} \right)$\\
+Asymptotes $y = \pm \frac{\sqrt{30}}{5}(x + 2) - 4$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{(y - 7)^{2}}{16} - \dfrac{(x - 3)^{2}}{9} = 1$
+\item $\dfrac{(x - 4)^{2}}{16} - \dfrac{(y - 1)^{2}}{33} = 1$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{y^{2}}{25} - \dfrac{x^{2}}{39} = 1$
+\item $\dfrac{x^{2}}{16} - \dfrac{y^{2}}{9} = 1$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{(x - 8)^{2}}{25} - \dfrac{(y - 2)^{2}}{4} = 1$
+\item $\dfrac{(x - 6)^{2}}{256} - \dfrac{(y - 5)^{2}}{64} = 1$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\pagebreak
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $(x-1)^2 = 4(y+3)$ \\
+
+\begin{mfpic}[15]{-4}{5}{-5}{1}
+\axes
+\xmarks{-3 step 1 until 4}
+\ymarks{-4 step 1 until 0}
+\arrow \reverse \arrow \function{-3,5,0.1}{((x -1)**2)/4 - 3}
+\arrow \reverse \arrow \polyline{(-5,-4),(5,-4)}
+\plotsymbol[3pt]{Asterisk}{(1,-2)}
+\tlabel(5,-0.5){\scriptsize $x$}
+\tlabel(0.5,1){\scriptsize $y$}
+\point[3pt]{(3,-2),(1,-3),(-1,-2)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1}
+\normalsize
+\end{mfpic}
+
+
+\vfill
+
+\columnbreak
+
+
+\item $(x-4)^2+(y+2)^2 = 9$ \\
+
+\begin{mfpic}[20]{-1}{8}{-6}{2}
+\axes
+\circle{(4,-2),3}
+\plotsymbol[3pt]{Cross}{(4,-2)}
+\xmarks{1,4,7}
+\ymarks{-5,-2,1}
+\tlabel(8,-0.5){\scriptsize $x$}
+\tlabel(0.5,2){\scriptsize $y$}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$1$} 1,{$4$} 4,{$7$} 7}
+\axislabels {y}{{$-5$} -5, {$-2$} -2, {$1$} 1 }
+\normalsize
+\end{mfpic}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{(x - 2)^{2}}{4} + \dfrac{(y + 3)^{2}}{9} = 1$\\
+
+\begin{mfpic}[15]{-1}{5}{-7}{1}
+\axes
+\tlabel(5,-0.5){\scriptsize $x$}
+\tlabel(0.5,1){\scriptsize $y$}
+\xmarks{1 step 1 until 4}
+\ymarks{-6 step 1 until 0}
+\ellipse{(2,-3),2,3}
+\plotsymbol[3pt]{Asterisk}{(2, -0.7639), (2,-5.23606)}
+\plotsymbol[3pt]{Cross}{(2,-3)}
+\point[3pt]{(2,0), (2,-6), (0,-3), (4,-3)}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1}
+\normalsize
+\end{mfpic} 
+
+\vfill
+
+\columnbreak
+
+\item $\dfrac{(x - 2)^{2}}{4} - \dfrac{(y + 3)^{2}}{9} = 1$ \\
+
+\begin{mfpic}[12][9]{-4}{8}{-11}{5}
+\axes
+\tlabel(8,-0.5){\scriptsize $x$}
+\tlabel(0.5,5){\scriptsize $y$}
+\xmarks{-3 step 1 until 7}
+\ymarks{-10 step 1 until 4}
+\point[3pt]{(0,-3),(4,-3)}
+\dotted[1pt, 3pt] \polyline{(0,0), (4,0), (4, -6), (0,-6), (0,0)}
+\arrow \function{4,7,0.1}{-3 + sqrt((2.25*((x - 2)**2)) - 9)}
+\arrow \reverse \function{-3,0,0.1}{-3 + sqrt((2.25*((x - 2)**2)) - 9)}
+\arrow \function{4,7,0.1}{-3 - sqrt((2.25*((x - 2)**2)) - 9)}
+\arrow \reverse \function{-3,0,0.1}{-3 - sqrt((2.25*((x - 2)**2)) - 9)}
+\arrow \reverse \arrow \dashed \function{-3,7,0.1}{-1.5*x}
+\arrow \reverse \arrow \dashed \function{-3,7,0.1}{(1.5*x) - 6}
+\plotsymbol[3pt]{Cross}{(2,-3)}
+\plotsymbol[3pt]{Asterisk}{(5.60555,-3), (-1.60555,-3)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-3 \hspace{6pt}$} -3, {$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7}
+\axislabels {y}{{$-10$} -10, {$-9$} -9, {$-8$} -8, {$-7$} -7, {$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\end{mfpic}
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $(y + 4)^{2} = 4x$ \\
+
+\begin{mfpic}[15]{-2}{5}{-9}{1}
+\axes
+\xmarks{-1 step 1 until 4}
+\ymarks{-8 step 1 until 0}
+\arrow \function{0,5,0.1}{-4-(2*sqrt(x))}
+\arrow \function{0,5,0.1}{-4+(2*sqrt(x))}
+\arrow \reverse \arrow \polyline{(-1,-9),(-1,1)}
+\plotsymbol[3pt]{Asterisk}{(1,-4)}
+\tlabel(5,-0.5){\scriptsize $x$}
+\tlabel(0.5,1){\scriptsize $y$}
+\point[3pt]{(0,-4),(1,-2),(1,-6)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-8$} -8, {$-7$} -7, {$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1}
+\normalsize
+\end{mfpic}
+
+\vfill
+
+\columnbreak
+
+\item $\dfrac{(x-1)^2}{1}+\dfrac{y^2}{4}=0$ \\
+The graph is the point $(1,0)$ only.
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{(x-1)^2}{9}+\dfrac{(y+3)^2}{4} = 1$ \\
+
+
+\begin{mfpic}[18]{-3}{5}{-6}{1}
+\axes
+\tlabel(5,-0.25){\scriptsize $x$}
+\tlabel(0.25,1){\scriptsize $y$}
+\xmarks{-2 step 1 until 4}
+\ymarks{-5 step 1 until -1}
+\ellipse{(1,-3),3,2}
+\plotsymbol[3pt]{Asterisk}{(3.2361,-3), (-1.2361,-3)}
+\plotsymbol[3pt]{Cross}{(1,-3)}
+\point[3pt]{(4,-3), (-2,-3), (1,-1), (1,-5)}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1}
+\normalsize
+\end{mfpic} 
+
+\vfill
+
+\columnbreak
+
+\item  $(x-3)^2+(y+2)^2=-1$ \\
+There is no graph.
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{(x+3)^2}{2}+\dfrac{(y-1)^2}{1} = -\dfrac{3}{4}$ \\
+There is no graph.
+
+\vfill
+
+\columnbreak
+
+\item $\dfrac{(y+2)^2}{16} - \dfrac{(x-5)^2}{20} = 1$ \\
+
+\begin{mfpic}[10]{-2}{12}{-9}{5}
+\axes
+\tlabel(12,-0.5){\scriptsize $x$}
+\tlabel(0.5,5){\scriptsize $y$}
+\xmarks{-1 step 1 until 11}
+\ymarks{-8 step 1 until 4}
+\point[3pt]{(5,2),(5,-6)}
+\dotted \polyline{(0.5279,-6), (0.5279,2), (9.4721, 2), (9.4721,-6),(0.5279,-6)}
+\arrow \reverse \arrow \parafcn{-1.25,1.25,0.1}{(4.4721*sinh(t)+5,4*cosh(t)-2)}
+\arrow \reverse \arrow \parafcn{-1.25,1.25,0.1}{(4.4721*sinh(t)+5,0-4*cosh(t)-2)}
+\arrow \reverse \arrow \dashed \function{-2,12,0.1}{0.89442*(x-5)-2}
+\arrow \reverse \arrow \dashed \function{-2,12,0.1}{0-2-0.89442*(x-5)}
+\plotsymbol[3pt]{Cross}{(5,-2)}
+\plotsymbol[3pt]{Asterisk}{(5,4), (5,-8)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-1 \hspace{6pt}$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9, {$10$} 10, {$11$} 11}
+\axislabels {y}{{$-8$} -8,{$-7$} -7,{$-6$} -6,{$-5$} -5,{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\end{mfpic}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\addtocounter{enumi}{1}
+
+\item By placing Station A at $(0, -50)$ and Station B at $(0, 50)$, the two second time difference yields the hyperbola $\frac{y^{2}}{36} - \frac{x^{2}}{2464} = 1$ with foci A and B and center $(0, 0)$.  Placing Station C at $(-150, -50)$ and using foci A and C gives us a center of $(-75, -50)$ and the hyperbola $\frac{(x + 75)^{2}}{225} - \frac{(y + 50)^{2}}{5400} = 1$.  The point of intersection of these two hyperbolas which is closer to A than B and closer to A than C is $(-57.8444, -9.21336)$ so that is the epicenter.  
+
+\item  \begin{enumerate} \setcounter{enumii}{1} \item $\dfrac{x^2}{9} - \dfrac{y^2}{27} = 1$. \end{enumerate}
+
+\item  The tower may be modeled (approximately)\footnote{The exact value underneath $(y - 330)^{2}$ is $\frac{52707600}{1541}$ in case you need more precision.} by $\frac{x^2}{12100} - \frac{(y-330)^2}{34203} = 1$.  To find the height, we plug in $x = 137.5$ which yields $y \approx 191$ or $y \approx 469$.  Since the top of the tower is above the narrowest point, we get the tower is approximately 469 feet tall.
+
+\end{enumerate}
+
+\closegraphsfile
