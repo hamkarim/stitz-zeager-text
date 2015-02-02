@@ -6,7 +6,7 @@
 
 \label{IntroExpLogs}
 
-Of all of the  functions we study in this text, exponential and logarithmic functions are possibly the ones which impact everyday life the most.\footnote{Take a class in Differential Equations and you'll see why.} This section will introduce us to these functions while the rest of the chapter will more thoroughly explore their properties.  Up to this point, we have dealt with functions which involve terms like $x^2$ or $x^{2/3}$, in other words, terms of the form  $x^{p}$ where the base of the term, $x$, varies but the exponent of each term, $p$, remains constant.  In this chapter, we study functions of the form $f(x) = b^{x}$ where the base $b$ is a constant and the exponent $x$ is the variable.  We start our exploration of these functions with $f(x) = 2^{x}$. (Apparently this is a tradition.  Every College Algebra book we have ever read starts with $f(x) = 2^{x}$.) We make a table of values, plot the points and connect them in a pleasing fashion.
+Of all of the functions we study in this text, exponential and logarithmic functions are possibly the ones which impact everyday life the most.\footnote{Take a class in Differential Equations and you'll see why.} This section introduces us to these functions while the rest of the chapter will more thoroughly explore their properties.  Up to this point, we have dealt with functions which involve terms like $x^2$ or $x^{2/3}$, in other words, terms of the form  $x^{p}$ where the base of the term, $x$, varies but the exponent of each term, $p$, remains constant.  In this chapter, we study functions of the form $f(x) = b^{x}$ where the base $b$ is a constant and the exponent $x$ is the variable.  We start our exploration of these functions with $f(x) = 2^{x}$. (Apparently this is a tradition.  Every College Algebra book we have ever read starts with $f(x) = 2^{x}$.) We make a table of values, plot the points and connect the dots in a pleasing fashion.
 
 \hspace{1in} \begin{tabular}{m{2.7in}m{3in}}
 
@@ -16,13 +16,13 @@ Of all of the  functions we study in this text, exponential and logarithmic func
 \hline
 
  x & f(x) & (x,f(x)) \\ \hline
--3  & 2^{-3} = \frac{1}{8} & \left(-3, \frac{1}{8} \right) \\ [2pt] \hline
--2  & 2^{-2} = \frac{1}{4} &  \left(-2, \frac{1}{4} \right) \\ [2pt] \hline
--1 & 2^{-1} &  \left(-1, \frac{1}{2} \right) \\ [2pt]  \hline
+-3 & 2^{-3} = \frac{1}{8} & \left(-3, \frac{1}{8} \right) \\ [2pt] \hline
+-2 & 2^{-2} = \frac{1}{4} &  \left(-2, \frac{1}{4} \right) \\ [2pt] \hline
+-1 & 2^{-1} = \frac{1}{2} &  \left(-1, \frac{1}{2} \right) \\ [2pt]  \hline
 0  & 2^{0} = 1 & ( 0 ,1) \\  \hline
-1 & 2^{1} = 2 & ( 1, 2) \\  \hline
+1  & 2^{1} = 2 & ( 1, 2) \\  \hline
 2  & 2^{2} = 4 & (2,4) \\  \hline
-3  & 2^{3}=8 & (3, 8) \\  \hline
+3  & 2^{3} = 8 & (3, 8) \\  \hline
 \end{array} \] 
 \setlength{\extrarowheight}{2pt}
 
@@ -55,7 +55,7 @@ Suppose we wish to study the family of functions $f(x) = b^{x}$.  Which bases $b
 
 \colorbox{ResultColor}{\bbm
 
-\begin{defn} \label{expfcndefn}  A function of the form $f(x) = b^{x}$ where $b$ is a fixed real number, $b > 0$, $b \neq 1$ is called a \index{function ! exponential} \index{exponential function ! definition of} \textbf{base \emph{b} exponential function}.
+\begin{defn} \label{expfcndefn}  A function of the form $f(x) = b^{x}$ where $b$ is a fixed real number, $b > 0$, $b \neq 1$ is called a \index{function ! exponential}\index{exponential function ! definition of}\textbf{base \emph{b} exponential function}.
 
 \end{defn}
 
@@ -201,7 +201,7 @@ We see that the domain and range of $g$ match that of $f$, namely $(-\infty, \in
 
 \smallskip
 
-Of all of the bases for exponential functions, two occur the most often in scientific circles.  The first, base $10$, is often called the \index{exponential function ! common base} \index{common base} \textbf{common base}.  The second base is an irrational number, $e \approx 2.718$, called the \index{natural base} \index{exponential function ! natural base} \textbf{natural base}.  We will more formally discuss the origins of this number in Section \ref{ExpLogApplications}.  For now, it is enough to know that since $e > 1$, $f(x) = e^{x}$ is an increasing exponential function.  The following examples give us an idea how these functions are used in the wild.
+Of all of the bases for exponential functions, two occur the most often in scientific circles.  The first, base $10$, is often called the \index{exponential function ! common base}\index{common base}\textbf{common base}.  The second base is an irrational number, $e \approx 2.718$, called the \index{natural base}\index{exponential function ! natural base}\textbf{natural base}.  We will more formally discuss the origins of this number in Section \ref{ExpLogApplications}.  For now, it is enough to know that since $e > 1$, $f(x) = e^{x}$ is an increasing exponential function.  The following examples give us an idea how these functions are used in the wild.
 
 \begin{ex}  \label{cardepreciationex} The value of a car can be modeled by $V(x) = 25\left(\frac{4}{5}\right)^{x}$, where $x \geq 0$ is age of the car in years and $V(x)$ is the value in thousands of dollars. \index{depreciation}
 
@@ -346,7 +346,7 @@ As we have already remarked, the graphs of $f(x) = b^{x}$ all pass the Horizonta
 
 \colorbox{ResultColor}{\bbm
 
-\begin{defn} \label{logfcndefn} The inverse of the exponential function $f(x) = b^{x}$ is called the \index{function ! logarithmic} \textbf{base \boldmath $b$ logarithm function}, and is denoted  $f^{-1}(x) = \log_{b}(x)$  The expression $\log_{b}(x)$ is read `log base $b$ of $x$.' \index{logarithm ! general, ``base $b$''}
+\begin{defn} \label{logfcndefn} The inverse of the exponential function $f(x) = b^{x}$ is called the \index{function ! logarithmic} \textbf{base \boldmath $b$ logarithm function}, and is denoted  $f^{-1}(x) = \log_{b}(x)$  We read `$\log_{b}(x)$' as `log base $b$ of $x$.' \index{logarithm ! general, ``base $b$''}
 
 \end{defn}
 
@@ -497,13 +497,13 @@ As we have mentioned, Theorem \ref{logfcnprops} is a consequence of Theorems \re
 \begin{multicols}{4}
 \begin{enumerate}
 
-\item  $\log_{3}(81)$
+\item  $\log_{3}(81)$ \vphantom{$\log_{2}\left(\dfrac{1}{8}\right)$}
 
 \item  $\log_{2}\left(\dfrac{1}{8}\right)$
 
-\item  $\log_{\sqrt{5}}(25)$
+\item  $\log_{\sqrt{5}}(25)$ \vphantom{$\log_{2}\left(\dfrac{1}{8}\right)$}
 
-\item  $\ln\left(\sqrt[3]{e^2}\right)$
+\item  $\ln\left(\sqrt[3]{e^2}\right)$ \vphantom{$\log_{2}\left(\dfrac{1}{8}\right)$}
 
 \setcounter{HW}{\value{enumi}}
 \end{enumerate}
@@ -513,7 +513,7 @@ As we have mentioned, Theorem \ref{logfcnprops} is a consequence of Theorems \re
 \begin{enumerate}
 \setcounter{enumi}{\value{HW}}
 
-\item  $\log(0.001)$
+\item  $\log(0.001)$ \vphantom{$2^{\log_{2}(8)}$}
 
 \item  $2^{\log_{2}(8)}$
 
@@ -817,6 +817,7 @@ For all real numbers $x > -3$, we have\footnote{Pay attention - can you spot in 
 \newpage
 
 \subsection{Exercises}
+\label{IntroExpLogsExercises}
 
 In Exercises \ref{rewritefirstex} - \ref{rewritelastex}, use the property: $b^{a} = c$ if and only if $\log_{b}(c) = a$ from Theorem \ref{logfcnprops} to rewrite the given equation in the other form.  That is, rewrite the exponential equations as logarithmic equations and rewrite the logarithmic equations as exponential equations.
 

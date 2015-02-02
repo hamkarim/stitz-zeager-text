@@ -981,23 +981,23 @@ In Exercises \ref{nonlinearsysineqfirst} - \ref{nonlinearsysineqlast}, sketch th
 
 \item  $\left\{\begin{array}{rcr}  y & > & 10x - x^{2} \\ y & < & x^{3} + 8  \end{array} \right.$ \\
 
-\begin{mfpic}[10][1]{-5}{3.1}{-56}{42}
+\begin{mfpic}[10][1]{-5}{7}{-28}{120}
 \fillcolor[gray]{.7}
-\gfill \btwnfcn{-4,1,0.1}{10*x - (x**2)}{(x**3) + 8}
-\gfill \btwnfcn{2,3.2,0.1}{10*x - (x**2)}{(x**3) + 8}
-\dashed \function{-4,1,0.1}{10*x - (x**2)}
-\dashed \function{-4,1,0.1}{(x**3) + 8}
-\arrow \dashed \function{2,3.2,0.1}{10*x - (x**2)}
-\arrow \dashed \function{2,3.2,0.1}{(x**3) + 8}
+\gfill \btwnfcn{-4,1,0.1}{0.5*(10*x - (x**2))}{0.5*((x**3) + 8)}
+\gfill \btwnfcn{2,6.2,0.1}{0.5*(10*x - (x**2))}{0.5*((x**3) + 8)}
+\dashed \function{-4,1,0.1}{0.5*(10*x - (x**2))}
+\dashed \function{-4,1,0.1}{0.5*((x**3) + 8)}
+\arrow \dashed \function{2,6.2,0.1}{0.5*(10*x - (x**2))}
+\arrow \dashed \function{2,6.2,0.1}{0.5*((x**3) + 8)}
 \axes
-\tlabel[cc](3,-4){\scriptsize $x$}
-\tlabel[cc](0.5,42){\scriptsize $y$}
+\tlabel[cc](7,-4){\scriptsize $x$}
+\tlabel[cc](0.5,120){\scriptsize $y$}
 \xmarks{-4 step 1 until 2}
-\ymarks{-56,9,16}
+\ymarks{-28,4.5,8}
 \tlpointsep{4pt}
 \tiny
 \axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2}
-\axislabels {y}{{$-56$} -56, {$9$} 9, {$16$} 16}
+\axislabels {y}{{$-56$} -28, {$9$} 4.5, {$16$} 8}
 \normalsize
 \end{mfpic}
 

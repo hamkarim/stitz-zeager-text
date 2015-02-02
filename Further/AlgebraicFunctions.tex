@@ -12,7 +12,7 @@ This section serves as a watershed for functions which are combinations of polyn
 
 \colorbox{ResultColor}{\bbm
 
-\begin{defn} \label{principalnthrootdefn} Let $x$ be a real number and $n$ a natural number.\footnote{Recall this means $n=1,2,3,\ldots$.} If $n$ is odd, the \index{$n^{\textrm{th}}$ root ! principal} \index{principal $n^{\textrm{th}}$ root} \textbf{principal \boldmath $n^{\textbf{th}}$ root} of $x$, denoted $\sqrt[n]{x}$ is the unique real number satisfying $\left(\sqrt[n]{x}\right)^n = x$.  If $n$ is even, $\sqrt[n]{x}$ is defined similarly\footnote{Recall both $x=-2$ and $x=2$ satisfy $x^4=16$, but $\sqrt[4]{16} =2$, not $-2$.} provided  $x \geq 0$ and $\sqrt[n]{x} \geq 0$.  The \index{root ! index} \index{index of a root} \textbf{index} is the number $n$ and the \index{root ! radicand} \index{radicand} \textbf{radicand} is the number $x$.  For $n=2$, we write $\sqrt{x}$ instead of $\sqrt[2]{x}$.
+\begin{defn} \label{principalnthrootdefn} Let $x$ be a real number and $n$ a natural number.\footnote{Recall this means $n=1,2,3,\ldots$.} If $n$ is odd, the \index{$n^{\textrm{th}}$ root ! principal}\index{principal $n^{\textrm{th}}$ root}\textbf{principal \boldmath $n^{\textbf{th}}$ root} of $x$, denoted $\sqrt[n]{x}$ is the unique real number satisfying $\left(\sqrt[n]{x}\right)^n = x$.  If $n$ is even, $\sqrt[n]{x}$ is defined similarly\footnote{Recall both $x=-2$ and $x=2$ satisfy $x^4=16$, but $\sqrt[4]{16} =2$, not $-2$.} provided  $x \geq 0$ and $\sqrt[n]{x} \geq 0$.  The \index{root ! index}\index{index of a root}\textbf{index} is the number $n$ and the \index{root ! radicand}\index{radicand}\textbf{radicand} is the number $x$.  For $n=2$, we write $\sqrt{x}$ instead of $\sqrt[2]{x}$.
 
 \end{defn}
 
@@ -158,7 +158,7 @@ The rational exponents defined in Definition \ref{rationalexponentdefn} behave v
 
 \[ \left(x^{2/3}\right)^{3/2} = \left(\left(\sqrt[3]{x}\right)^2\right)^{3/2} =  \left(\sqrt{\left(\sqrt[3]{x}\right)^2}\right)^3 =\left(\left|\sqrt[3]{x}\right|\right)^3 = \left| \left(\sqrt[3]{x}\right)^3  \right| = |x|\]
 
-In the play-by-play analysis, we see that when we canceled the $2$'s in multiplying $\frac{2}{3} \cdot \frac{3}{2}$, we were, in fact, attempting to cancel a square with a square root.  The fact that $\sqrt{x^2} = |x|$ and not simply $x$ is the root\footnote{Did you like that pun?} of the trouble.  It may amuse the reader to know that  $\left(x^{3/2}\right)^{2/3} = x$, and this verification is left as an exercise.  The moral of the story is that when simplifying fractional exponents, it's usually best to rewrite them as radicals.\footnote{In most other cases, though, rational exponents are preferred.}   The last major property we will state, and leave to Calculus to prove, is that radical functions are continuous on their domains, so the Intermediate Value Theorem, Theorem \ref{IVT}, applies.  This means that if we take combinations of radical functions with polynomial and rational functions to form what the authors consider \index{function ! algebraic} the \textbf{algebraic functions},\footnote{As mentioned in Section \ref{AbsoluteValueFunctions}, $f(x) = \sqrt{x^2}=|x|$ so that absolute value is also considered an algebraic functions.} we can make sign diagrams using the procedure set forth in Section \ref{RationalGraphs}.  
+In the play-by-play analysis, we see that when we canceled the $2$'s in multiplying $\frac{2}{3} \cdot \frac{3}{2}$, we were, in fact, attempting to cancel a square with a square root.  The fact that $\sqrt{x^2} = |x|$ and not simply $x$ is the root\footnote{Did you like that pun?} of the trouble.  It may amuse the reader to know that  $\left(x^{3/2}\right)^{2/3} = x$, and this verification is left as an exercise.  The moral of the story is that when simplifying fractional exponents, it's usually best to rewrite them as radicals.\footnote{In most other cases, though, rational exponents are preferred.}   The last major property we will state, and leave to Calculus to prove, is that radical functions are continuous on their domains, so the Intermediate Value Theorem, Theorem \ref{IVT}, applies.  This means that if we take combinations of radical functions with polynomial and rational functions to form what the authors consider \index{function ! algebraic} the \textbf{algebraic functions},\footnote{As mentioned in Section \ref{AbsoluteValueFunctions}, $f(x) = \sqrt{x^2}=|x|$ so that absolute value is also considered an algebraic function.} we can make sign diagrams using the procedure set forth in Section \ref{RationalGraphs}.  
 
 \medskip
 
@@ -1189,48 +1189,6 @@ No cusps\\
 \end{multicols}
 
 \item \begin{multicols}{2} 
-$f(x) = x^{\frac{2}{3}}(x - 7)^{\frac{1}{3}}$\\
-Domain: $(-\infty, \infty)$\\
-\begin{mfpic}[10]{-3}{10}{-2}{2}
-\arrow \reverse \arrow \polyline{(-3,0),(10,0)}
-\xmarks{0,7}
-\tlabel[cc](-1.5,1){$(-)$}
-\tlabel[cc](0,-1){$0$}
-\tlabel[cc](0,1){$0$}
-\tlabel[cc](3.5,1){$(-)$}
-\tlabel[cc](7,-1){$7$}
-\tlabel[cc](7,1){$0$}
-\tlabel[cc](8.5,1){$(+)$}
-\end{mfpic}
-
-No vertical or horizontal asymptotes\footnote{Using Calculus it can be shown that $y = x - \frac{7}{3}$ is a slant asymptote of this graph.}\\
-Unusual steepness at $x = 7$\\
-Cusp at $x = 0$\\
-
-\vfill
-
-\columnbreak
-
-\begin{mfpic}[10]{-4}{10}{-5}{5.5}
-\point[3pt]{(0,0), (7,0)}
-\arrow \reverse \function{-3,0,0.1}{-((x**2)**(1/3))*((7 - x)**(1/3))}
-\function{0,7,0.1}{-((x**2)**(1/3))*((7 - x)**(1/3))}
-\arrow \function{7,9,0.1}{((x**2)**(1/3))*((x - 7)**(1/3))}
-\axes
-\tlabel[cc](10,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5.5){\scriptsize $y$}
-\xmarks{-3 step 1 until 9}
-\ymarks{-4 step 1 until 5}
-\tlpointsep{4pt}
-\tiny
-\axislabels {x}{{$-3 \hspace{6pt}$} -3, {$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9}
-\axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\normalsize
-\end{mfpic}
-
-\end{multicols}
-
-\item \begin{multicols}{2} 
 $f(x) = \dfrac{5x}{\sqrt[3]{x^{3} + 8}}$\\
 Domain: $(-\infty, -2) \cup (-2, \infty)$\\
 \begin{mfpic}[20]{-4}{2}{-1}{1}
@@ -1273,6 +1231,47 @@ No unusual steepness or cusps\\
 
 \end{multicols}
 
+\item \begin{multicols}{2} 
+$f(x) = x^{\frac{2}{3}}(x - 7)^{\frac{1}{3}}$\\
+Domain: $(-\infty, \infty)$\\
+\begin{mfpic}[10]{-3}{10}{-2}{2}
+\arrow \reverse \arrow \polyline{(-3,0),(10,0)}
+\xmarks{0,7}
+\tlabel[cc](-1.5,1){$(-)$}
+\tlabel[cc](0,-1){$0$}
+\tlabel[cc](0,1){$0$}
+\tlabel[cc](3.5,1){$(-)$}
+\tlabel[cc](7,-1){$7$}
+\tlabel[cc](7,1){$0$}
+\tlabel[cc](8.5,1){$(+)$}
+\end{mfpic}
+
+No vertical or horizontal asymptotes\footnote{Using Calculus it can be shown that $y = x - \frac{7}{3}$ is a slant asymptote of this graph.}\\
+Unusual steepness at $x = 7$\\
+Cusp at $x = 0$\\
+
+\vfill
+
+\columnbreak
+
+\begin{mfpic}[10]{-4}{10}{-5}{5.5}
+\point[3pt]{(0,0), (7,0)}
+\arrow \reverse \function{-3,0,0.1}{-((x**2)**(1/3))*((7 - x)**(1/3))}
+\function{0,7,0.1}{-((x**2)**(1/3))*((7 - x)**(1/3))}
+\arrow \function{7,9,0.1}{((x**2)**(1/3))*((x - 7)**(1/3))}
+\axes
+\tlabel[cc](10,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5.5){\scriptsize $y$}
+\xmarks{-3 step 1 until 9}
+\ymarks{-4 step 1 until 5}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-3 \hspace{6pt}$} -3, {$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9}
+\axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\normalsize
+\end{mfpic}
+
+\end{multicols}
 
 \item \begin{multicols}{2} 
 $f(x) = x^{\frac{3}{2}}(x - 7)^{\frac{1}{3}}$\\

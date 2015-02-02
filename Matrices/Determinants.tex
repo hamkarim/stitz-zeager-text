@@ -113,7 +113,7 @@ To evaluate the determinant of a $4 \times 4$ matrix, we would have to evaluate 
 
 \colorbox{ResultColor}{\bbm
 
-\begin{defn}  \label{minorcofactordefn} Let $A$ be an $n \times n$ matrix and $A_{ij}$ be defined as in Definition \ref{Aijdefn}.  The \index{matrix ! minor} \index{minor} \textbf{\boldmath $ij$ minor} of $A$, denoted $M_{ij}$ is defined by $M_{ij} = \det\left(A_{ij}\right)$. The \index{matrix ! cofactor} \index{cofactor} \textbf{\boldmath $ij$ cofactor} of $A$, denoted $C_{ij}$ is defined by $C_{ij} = (-1)^{i+j}M_{ij} = (-1)^{i+j}\det\left(A_{ij}\right)$. 
+\begin{defn}  \label{minorcofactordefn} Let $A$ be an $n \times n$ matrix and $A_{ij}$ be defined as in Definition \ref{Aijdefn}.  The \index{matrix ! minor} \index{minor} \textbf{\boldmath $ij$ minor} of $A$, denoted $M_{ij}$ is defined by $M_{ij} = \det\left(A_{ij}\right)$. The \index{matrix ! cofactor}\index{cofactor}\textbf{\boldmath $ij$ cofactor} of $A$, denoted $C_{ij}$ is defined by $C_{ij} = (-1)^{i+j}M_{ij} = (-1)^{i+j}\det\left(A_{ij}\right)$. 
 
 \end{defn}
 
@@ -181,7 +181,7 @@ Unfortunately, while we can easily \textit{demonstrate} the results in Theorem \
 
 \[A =  \left[ \begin{array}{rrr} 3 & 1 & \hphantom{-}2 \\ 0 & -1 & 5 \\ 2 & 1 & 4 \\ \end{array} \right] \]
 
-We found $\det(A) = -13$ by expanding along the first row.  To take advantage of the $0$ in the second row, we use Theorem \ref{determinantprops}to find $\det(A) = -13$ by expanding along that row.
+We found $\det(A) = -13$ by expanding along the first row.  To take advantage of the $0$ in the second row, we use Theorem \ref{determinantprops} to find $\det(A) = -13$ by expanding along that row.
 
 \[ \begin{array}{rcl} 
 
@@ -483,7 +483,7 @@ To generalize this to invertible $n \times n$ matrices, we need another definiti
 
 \colorbox{ResultColor}{\bbm
 
-\begin{defn}  \label{matrixadjoint} Let $A$ be an $n \times n$ matrix, and $C_{ij}$ denote the $ij$ cofactor of $A$.  The \index{matrix ! adjoint} \index{adjoint of a matrix} \textbf{adjoint} of $A$, denoted $\text{adj}(A)$ is the matrix whose $ij$-entry is the $ji$ cofactor of $A$, $C_{ji}$.  That is
+\begin{defn}  \label{matrixadjoint} Let $A$ be an $n \times n$ matrix, and $C_{ij}$ denote the $ij$ cofactor of $A$.  The \index{matrix ! adjoint}\index{adjoint of a matrix}\textbf{adjoint} of $A$, denoted $\text{adj}(A)$ is the matrix whose $ij$-entry is the $ji$ cofactor of $A$, $C_{ji}$.  That is
 
 \[ \text{adj}(A) = \left[
 \begin{array}{cccc} 
@@ -694,7 +694,7 @@ In Exercises \ref{invadjfirst} - \ref{invadjlast}, find the inverse of the given
 
 \begin{enumerate}
 
-\item Show that $\det(I_{\mbox{\tiny$3$}}) = 1$.\footnote{If you think about it for just a moment, you'll see that $\det(I_{n}) = 1$ for any natural number $n$.  The formal proof of this fact requires the Principle of Mathematical Induction (Section \ref{Induction}) so we'll stick with $n = 3$ for the time being.}
+\item Show that $\det(I_{\mbox{\tiny$3$}}) = 1$. (See footnote\footnote{If you think about it for just a moment, you'll see that $\det(I_{n}) = 1$ for any natural number $n$.  The formal proof of this fact requires the Principle of Mathematical Induction (Section \ref{Induction}) so we'll stick with $n = 3$ for the time being.} below.)
 
 \item Using the facts that $AA^{-1} = I_{3}$ and $\det(AA^{-1}) = \det(A)\det(A^{-1})$, show that \[\det(A^{-1}) = \dfrac{1}{\det(A)}\]
 

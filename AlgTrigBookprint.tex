@@ -1,0 +1,152 @@
+\documentclass[11pt]{book}
+\oddsidemargin 0in
+\evensidemargin 0in
+\marginparwidth 0in
+\textheight 8in
+\textwidth 6.5in
+\topmargin 0in
+\headheight 14pt
+\usepackage{amssymb,amsmath,amsthm,fancyhdr,supertabular,longtable,hhline}
+\usepackage{colortbl}
+\usepackage{import, multicol,boxedminipage}
+\usepackage{chapterfolder}
+\usepackage[metapost,truebbox]{mfpic}
+\usepackage[pdflatex]{graphicx}
+\usepackage{makeidx}
+\usepackage[colorlinks, hyperindex, plainpages=false, linkcolor=black, urlcolor=black, pdfpagelabels]{hyperref}
+\usepackage[all]{hypcap}
+\definecolor{ResultColor}{gray}{0.9}
+\theoremstyle{definition}  % this prevents the text in definitions, theorems, and corollaries from being italicized
+\newtheorem{defn}{\bf Definition}[chapter]
+\newtheorem{thm}{\bf Theorem}[chapter]
+\newtheorem{cor}[thm]{\bf Corollary}
+\newtheorem{eqn}{\bf Equation}[chapter]
+\newtheorem{ex}{\bf Example}[section]
+\newtheorem{fig}{\bf Figure}[chapter]
+\setlength{\parindent}{0in}
+\newcommand{\bbm}{\begin{boxedminipage}{6.41in}}
+\newcommand{\ebm}{\end{boxedminipage}}
+\usepackage{array}
+\setlength{\extrarowheight}{2pt}
+\allowdisplaybreaks[2]
+\usepackage{cancel}
+\usepackage{sectsty}
+\usepackage{textcomp}
+\usepackage{multirow}
+\usepackage[nottoc]{tocbibind}
+\allsectionsfont{\mdseries \scshape}
+\makeatletter
+\renewcommand\l@section{\@dottedtocline{1}{1.5em}{3em}}
+\renewcommand\l@subsection{\@dottedtocline{2}{4.5em}{3.5em}}
+\makeatother
+\pagestyle{fancy}
+\newcounter{HW}
+\newcounter{HWindent}
+\makeindex
+
+\begin{document}
+
+
+\renewcommand{\chaptermark}[1]%
+                  {\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]%
+               {\markright{\thesection\ #1}}
+\renewcommand{\headrulewidth}{0pt}
+\lhead[\fancyplain{}{\sc\thepage}]%
+      {\fancyplain{}{\sc \nouppercase{\rightmark}}}
+\rhead[\fancyplain{}{\sc \nouppercase{\leftmark}}]%
+      {\fancyplain{}{\sc\thepage}}
+\cfoot{}
+
+\frontmatter
+
+\title{\Huge \sc Precalculus \\ \vspace{.1in} \large Version $\lfloor \pi \rfloor = 3$, Corrected Edition \\ \vspace{.25in} \large by}
+
+\author{\sc \begin{tabular}{cc} Carl Stitz, Ph.D. &  Jeff Zeager, Ph.D. \\ Lakeland Community College & Lorain County Community College \\   \end{tabular}}
+
+\renewcommand{\today}{\sc July 4, 2013}
+
+\maketitle
+
+\include{acknowledgements}
+
+\thispagestyle{empty}
+
+\renewcommand{\contentsname}{Table of Contents}
+
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+
+\clearpage
+\phantomsection
+\pdfbookmark[1]{\contentsname}{toc}
+
+\tableofcontents
+
+\chapter{Preface}
+\label{Preface}
+\thispagestyle{empty}
+\input{BookPreface}
+
+\mainmatter
+ 
+\renewcommand{\chaptername}{Chapter}
+
+\chapter{Relations and Functions}
+\label{RelationsandFunctions}
+\thispagestyle{empty}
+\import{./RelationsandFunctions/}{RelationsandFunctions}
+
+\chapter{Linear and Quadratic Functions}
+\label{LinearQuadratic}
+\thispagestyle{empty}
+\import{./LinearQuadratic/}{LinearQuadratic}
+
+\chapter{Polynomial Functions}
+\label{Polynomials}
+\thispagestyle{empty}
+\import{./Polynomials/}{Polynomials}
+
+\chapter{Rational Functions}
+\label{Rationals}
+\thispagestyle{empty}
+\import{./Rationals/}{Rationals}
+
+\chapter{Further Topics in Functions}
+\label{Further}
+\thispagestyle{empty}
+\import{./Further/}{Further}
+
+\chapter{Exponential and Logarithmic Functions}
+\label{ExpLogs}
+\thispagestyle{empty}
+\import{./ExpLogs/}{ExpLogs}
+
+\chapter{Hooked on Conics}
+\label{Conics}
+\thispagestyle{empty}
+\import{./Conics/}{Conics}
+
+\chapter{Systems of Equations and Matrices}
+\label{Matrices}
+\thispagestyle{empty}
+\import{./Matrices/}{Matrices}
+
+\chapter{Sequences and the Binomial Theorem}
+\label{SequencesandSeries}
+\thispagestyle{empty}
+\import{./SequencesandSeries/}{SequencesandSeries}
+
+\chapter{Foundations of Trigonometry}
+\label{IntroTrig}
+\thispagestyle{empty}
+\import{./IntroTrig/}{IntroTrig}
+
+\chapter{Applications of Trigonometry}
+\label{AppExt}
+\thispagestyle{empty}
+\import{./AppExt/}{AppExt}
+
+\printindex
+
+
+\end{document}

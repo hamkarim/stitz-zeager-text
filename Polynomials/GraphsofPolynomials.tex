@@ -6,7 +6,7 @@
 
 \label{GraphsofPolynomials}
 
-Three of the families of functions studied thus far: constant, linear and  quadratic, belong to a much larger group of functions called \textbf{polynomials}.  We begin our formal study of general polynomials with a definition and some examples.
+Three of the families of functions studied thus far -- constant, linear and  quadratic -- belong to a much larger group of functions called \textbf{polynomials}.  We begin our formal study of general polynomials with a definition and some examples.
 
 \smallskip
 
@@ -473,7 +473,7 @@ The notion of smoothness is what tells us graphically that, for example, $f(x) =
 
 \smallskip
 
-The Intermediate Value Theorem is extremely profound;  it gets to the heart of what it means to be a real number, and is one of the most oft used and under appreciated theorems in Mathematics.  With that being said, most students see the result as common sense since it says, geometrically, that the graph of a polynomial function cannot be above the $x$-axis at one point and below the $x$-axis at another point without crossing the $x$-axis somewhere in between.  The following example uses the Intermediate Value Theorem to establish a fact that that most students take for granted.  Many students, and sadly some instructors, will find it silly.
+The Intermediate Value Theorem is extremely profound;  it gets to the heart of what it means to be a real number, and is one of the most often used and under appreciated theorems in Mathematics.  With that being said, most students see the result as common sense since it says, geometrically, that the graph of a polynomial function cannot be above the $x$-axis at one point and below the $x$-axis at another point without crossing the $x$-axis somewhere in between.  The following example uses the Intermediate Value Theorem to establish a fact that that most students take for granted.  Many students, and sadly some instructors, will find it silly.
 
 \begin{ex}  Use the Intermediate Value Theorem to establish that $\sqrt{2}$ is a real number.
 
@@ -517,7 +517,7 @@ Our primary use of the Intermediate Value Theorem is in the construction of sign
 
 &
 
-\begin{mfpic}[10]{-8}{8}{-2}{2}
+\begin{mfpic}[10]{-8}{8}{-2}{30}
 \arrow \reverse \arrow \polyline{(-8,0),(8,0)}
 \xmarks{-3,0,3}
 \arrow \polyline{(-5,-1.5),(-5,-0.5)}
@@ -541,11 +541,11 @@ Our primary use of the Intermediate Value Theorem is in the construction of sign
 
 &
 
-\begin{mfpic}[15]{-5}{5}{-2}{2}
-\arrow \reverse \arrow \function{-2.3,4, 0.1}{0.1*(x)*(x+2)*((x-3)**2)} 
+\begin{mfpic}[15]{-5}{5}{-2}{3}
+\arrow \reverse \arrow \function{-2.2,3.5, 0.1}{0.05*((x)**3)*(x+2)*((x-3)**2)} 
 \axes
 \tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,2){\scriptsize $y$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
 \point[3pt]{(-2,0), (0,0), (3,0)}
 \xmarks{-4,-3,-2,-1,1,2,3,4}
 \tcaption{ \scriptsize A sketch of $y=f(x)$}
@@ -640,11 +640,11 @@ Let's return to the function in Example \ref{polygraphex}, $f(x) = x^3 (x-3)^2 (
 
 &
 
-\begin{mfpic}[15]{-5}{5}{-2}{2}
-\arrow \reverse \arrow \function{-2.3,4, 0.1}{0.1*(x)*(x+2)*((x-3)**2)} 
+\begin{mfpic}[15]{-5}{5}{-2}{3}
+\arrow \reverse \arrow \function{-2.2,3.5, 0.1}{0.05*((x)**3)*(x+2)*((x-3)**2)} 
 \axes
 \tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,2){\scriptsize $y$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
 \point[3pt]{(-2,0), (0,0), (3,0)}
 \xmarks{-4,-3,-2,-1,1,2,3,4}
 \tcaption{ \scriptsize A sketch of $y=f(x)$}
@@ -907,7 +907,7 @@ In Exercises \ref{lcdmaxprofitexerfirst} - \ref{lcdmaxprofitexerlast}, suppose t
 \begin{enumerate}
 \setcounter{enumi}{\value{HW}}
 
-\item According to US Postal regulations, a rectangular shipping box must satisfy the inequality ``Length + Girth $\leq$ 130 inches'' for Parcel Post and ``Length + Girth $\leq$ 108 inches'' for other services.\footnote{See \href{http://www.usps.com/send/preparemailandpackages/measuringtips.htm}{\underline{here}} for details.}  Let's assume we have a closed rectangular box with a square face of side length $x$ as drawn below.  The length is the longest side and is clearly labeled.  The girth is the distance around the box in the other two dimensions so in our case it is the sum of the four sides of the square, $4x$.  
+\item According to US Postal regulations, a rectangular shipping box must satisfy the inequality ``Length + Girth $\leq$ 130 inches'' for Parcel Post and ``Length + Girth $\leq$ 108 inches'' for other services. Let's assume we have a closed rectangular box with a square face of side length $x$ as drawn below.  The length is the longest side and is clearly labeled.  The girth is the distance around the box in the other two dimensions so in our case it is the sum of the four sides of the square, $4x$.  
 
 \begin{enumerate}
 
